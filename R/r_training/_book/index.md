@@ -23,15 +23,27 @@ No prior programming experience is required. The only requirements are :
 
 - a [**RStudio Cloud account**](https://rstudio.cloud/), it's free.
 - a strong motivation to learn.
+- time.
 
 You do not need to install any software on your computer.
 
 
-## Objectives
+## What you will learn
 
 At the end of this course, you should be able to :
 
+- replace your Excel workflow with R
 - manipulate different types of data sources (excel, csv, json, database, pdf).
-- compute basic statistics.
-- create ad-hoc visualizations.
-- use statistical modeling : regression, clustering, timeseries analysis.
+- create and share relevant KPI (both figures and charts).
+- create a simple interactive Dashboard with Shiny.
+- use statistical modeling : regression, clustering.
+
+
+## Why this course ?
+
+From [Quora](https://qr.ae/pGDngn) : **Have you ever seen a data scientist get fired? If yes, why?**
+
+*I’ve seen entire teams of data scientists get fired and replaced with different type of “data science” team.I’ve been talking about the paradigm shift of data science for multiple years now and it seems like only now it is getting traction. What this means: companies are realizing that what they really need isn’t “data science” but data practitioners. They need people who are data savvy and they need    the tools and infrastructure to enable them. This is far different than a classical data scientist skill set.The reason it took so long is because of hype waves. The first wave of data science made sense. You were dealing with readily available marketing or consumer data or political data - it was easy for data scientists without extremely deep subject matter expertise to tackle big problems.The ordinary companies (e.g manufacturing, etc) started investing much later. Many approached data scientists completely backwards. They built siloed teams of PhD level data scientists, gave them data, and expected them to wow stakeholders.For mostly political reasons, the leaders who made this error kept those teams funded for quite awhile, even knowing that it was more of a playground recess activity than real results. But the fun needs to end sometime, those teams are being disbanded.Does that mean data science is fading? Absolutely not. But it means that expectations are changing, and organizations are waking up to the idea that education and data science skills won’t magically solve their hardest problems.The goal here is to get organizations to be data-driven. Not to develop a magic machine learning model that is tuned to every possible scenario and can optimize operations by 20%.As we progress, I expect far fewer data scientists, far more data engineers, and far more normal employees being trained in pieces of the data science skill sets. Casey McNamara - 2020.*
+
+
+## Why R ?        

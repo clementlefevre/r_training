@@ -38,18 +38,10 @@
 </form>
 
       <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled">
-<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
-<li><a class="" href="getting-started.html"><span class="header-section-number">2</span> Getting started</a></li>
-<li><a class="active" href="your-first-notebook.html"><span class="header-section-number">3</span> Your first notebook</a></li>
-<li><a class="" href="data-manipulation-with-datatable.html"><span class="header-section-number">4</span> Data manipulation with datatable</a></li>
-<li><a class="" href="visualization-with-ggplot2.html"><span class="header-section-number">5</span> Visualization with ggplot2</a></li>
-<li><a class="" href="first-assignment.html"><span class="header-section-number">6</span> First assignment</a></li>
-<li><a class="" href="references.html">References</a></li>
-</ul>
+        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 3</span> Your first notebook</a></li></ul>
 
         <div class="book-extra">
-          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+          <p><a id="book-repo" href="https://github.com/clementlefevre/r_training/tree/main/R/r_training">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
@@ -89,30 +81,39 @@ plot(cars)
 ```r
 library(openxlsx)
 ```</code></pre>
-<p>Then click on the green “<em>PLAY</em>” icon on the top right of this code chunk.
+<p>Then click on the green <strong>ᐅ</strong> icon above the code chunk.
 RStudio will load the package, and we are now good to read our first Excel file !</p>
 <p>In the Code chunk, add the following line :</p>
-<p><code>DT &lt;- openxlsx::read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")</code></p>
+<p><code>DT &lt;- read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")</code></p>
 <p>Your code chunk should look like this :</p>
 <pre><code>
 ```r
 library(openxlsx)
-DT &lt;- openxlsx::read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")
+DT &lt;- read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")
 ```</code></pre>
-<p>Click again on the green “<em>PLAY</em>” icon</p>
-<p>You should then see in the top right area of your notebook, in the <code>Environment</code> tab a new variable <code>DT</code>. Just click on it, a new View Tab should pop up with the content of your first Dataframe. You are now officially a Data Scientist.</p>
+<p>Click again on the green <strong>ᐅ</strong> icon</p>
+<p>You should then see in the top right area of your notebook, in the <code>Environment</code> tab a new variable <code>DT</code>. Click on it, a new View Tab should pop up with the content of your first Dataframe.
+You can’t believe it ? Neither i do. OK, open your favorite internet browser and open the following link : <a href="https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx" class="uri">https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx</a></p>
+<p>This should download the very same Excel file. Open it with Excel. What do you see ? the same table as in the <code>DT</code> tab.</p>
+<p>You are now officially a Data Scientist.</p>
 <div id="exercise" class="section level3" number="3.2.1">
 <h3>
 <span class="header-section-number">3.2.1</span> Exercise<a class="anchor" aria-label="anchor" href="#exercise"><i class="fas fa-link"></i></a>
 </h3>
-<p>Upload an Excel of your own with the <strong><code>Upload</code></strong> button located at the bottom right area, just above the file explorer.
-The name of the file should then appear in the file explorer.
-To load the file into a new dataframe, just type :</p>
-<p><code>DT_2 &lt;- openxlsx::read.xlsx("your_file_name.xslx")</code></p>
-<p><strong>Hint</strong>: <em>if your excel file contains multiple sheets, the <code>openxlsx</code> will load the first sheet of the file by default.
-To set the sheetname just add the</em> <strong>sheet</strong> <em>parameter in the previous command</em> :</p>
-<p><code>DT_2 &lt;- openxlsx::read.xlsx("your_file_name.xslx",  sheet = "my_sheet_name")</code></p>
-<p>Do not forget to click “<em>PLAY</em>” to run the code.</p>
+<p>Upload an Excel of your own :</p>
+<ul>
+<li>click on the <strong><code>Upload</code></strong> button at the bottom right,</li>
+<li>click on <code>Select File</code> (<code>Datei Auswählen</code>)</li>
+<li>select your file</li>
+<li>click on <code>OK</code>.</li>
+</ul>
+<p>The name of the file should then appear in the file explorer (bottom right of the screen).</p>
+<p><em>Note : Make sure this file contains only one sheet, and that the column names are located in the first row. Later on in this course we will show you how to handle other cases.</em></p>
+<p>Let’s assume the file you uploaded is <strong>report_22.xlsx</strong>. To load this file in R, type in the code chunk :</p>
+<p><code>DT_2 &lt;- read.xlsx("report_22.xlsx")</code></p>
+<p>Do not forget to click the green <strong>ᐅ</strong> icon above the code chunk to execute the code.</p>
+<p>You should then see in the top right area of your notebook, in the <code>Environment</code> tab a new variable <code>DT_2</code>. Click on it, a new View Tab should pop up with the content of your own Excel sheet.</p>
+<p>Are you happy now ?</p>
 </div>
 </div>
 <div id="common-pitfalls" class="section level2" number="3.3">
@@ -128,20 +129,12 @@ To set the sheetname just add the</em> <strong>sheet</strong> <em>parameter in t
 ```</code></pre>
 <p>If you delete one of the ` character (a backtick), RStudio will not recognize it as a chunk.</p>
 <ul>
-<li>Every now and then, reset your environment (<code>Rstudio -&gt; Session -&gt; Restart and clear output</code>)</li>
-<li>When using the <code>data.table</code> package, do not forget to convert your data.frame into a data.table with <code>setDT(my-dataframe)</code>
-</li>
+<li>Every now and then, reset your environment (<code>Session</code> -&gt; <code>Restart and clear output</code>)</li>
 </ul>
 <div id="how-to-read" class="section level3" number="3.3.1">
 <h3>
 <span class="header-section-number">3.3.1</span> How to read…<a class="anchor" aria-label="anchor" href="#how-to-read"><i class="fas fa-link"></i></a>
 </h3>
-<dl>
-<dt>Do not forget to upload you file first in RStudio cloud</dt>
-<dd>
-<code>Upload</code> button at the bottom right.
-</dd>
-</dl>
 <div id="an-excel-file" class="section level4" number="3.3.1.1">
 <h4>
 <span class="header-section-number">3.3.1.1</span> …an Excel file<a class="anchor" aria-label="anchor" href="#an-excel-file"><i class="fas fa-link"></i></a>
@@ -173,27 +166,15 @@ To set the sheetname just add the</em> <strong>sheet</strong> <em>parameter in t
 </div>
 </div>
   <div class="chapter-nav">
-<div class="prev"><a href="getting-started.html"><span class="header-section-number">2</span> Getting started</a></div>
-<div class="next"><a href="data-manipulation-with-datatable.html"><span class="header-section-number">4</span> Data manipulation with datatable</a></div>
+<div class="empty"></div>
+<div class="empty"></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#your-first-notebook"><span class="header-section-number">3</span> Your first notebook</a></li>
-<li>
-<a class="nav-link" href="#create-a-new-notebook"><span class="header-section-number">3.1</span> Create a new Notebook</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#install-the-required-libraries"><span class="header-section-number">3.1.1</span> Install the required libraries</a></li></ul>
-</li>
-<li>
-<a class="nav-link" href="#load-your-first-excel-file"><span class="header-section-number">3.2</span> Load your first Excel file</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#exercise"><span class="header-section-number">3.2.1</span> Exercise</a></li></ul>
-</li>
-<li>
-<a class="nav-link" href="#common-pitfalls"><span class="header-section-number">3.3</span> Common pitfalls</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#how-to-read"><span class="header-section-number">3.3.1</span> How to read…</a></li></ul>
-</li>
-</ul>
+      <div id="book-on-this-page"></div>
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/02-firstnotebook.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/02-firstnotebook.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+          
         </ul>
 </div>
     </nav>

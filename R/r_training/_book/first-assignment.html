@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 6 First assignment | Intro to R</title>
 <meta name="author" content="Clement Lefevre">
-<meta name="description" content="This chunk downloads the Statsbomb data.You need to run this script once, then you can set the update_data variable to FALSE library(data.table) update_data &lt;- TRUE if (update_data) { ...">
+<meta name="description" content="6.1 The big picture Last year the biggest untapped Bitcoin deposit was discovered in Burkina Faso. The Thomas Sankara Sovereign Found has commissioned you to assess new investment opportunities in...">
 <meta name="generator" content="bookdown 0.24 with bs4_book()">
 <meta property="og:title" content="Chapter 6 First assignment | Intro to R">
 <meta property="og:type" content="book">
-<meta property="og:description" content="This chunk downloads the Statsbomb data.You need to run this script once, then you can set the update_data variable to FALSE library(data.table) update_data &lt;- TRUE if (update_data) { ...">
+<meta property="og:description" content="6.1 The big picture Last year the biggest untapped Bitcoin deposit was discovered in Burkina Faso. The Thomas Sankara Sovereign Found has commissioned you to assess new investment opportunities in...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 6 First assignment | Intro to R">
-<meta name="twitter:description" content="This chunk downloads the Statsbomb data.You need to run this script once, then you can set the update_data variable to FALSE library(data.table) update_data &lt;- TRUE if (update_data) { ...">
+<meta name="twitter:description" content="6.1 The big picture Last year the biggest untapped Bitcoin deposit was discovered in Burkina Faso. The Thomas Sankara Sovereign Found has commissioned you to assess new investment opportunities in...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.4/tabs.js"></script><script src="libs/bs3compat-0.2.4/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
@@ -49,7 +49,7 @@
 </ul>
 
         <div class="book-extra">
-          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+          <p><a id="book-repo" href="https://github.com/clementlefevre/r_training/tree/main/R/r_training">View book source <i class="fab fa-github"></i></a></p>
         </div>
       </nav>
 </div>
@@ -57,17 +57,6 @@
 <h1>
 <span class="header-section-number">6</span> First assignment<a class="anchor" aria-label="anchor" href="#first-assignment"><i class="fas fa-link"></i></a>
 </h1>
-<p>This chunk downloads the Statsbomb data.You need to run this script once, then you can set the <code>update_data</code> variable to <code>FALSE</code></p>
-<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com">data.table</a></span><span class="op">)</span>
-<span class="va">update_data</span> <span class="op">&lt;-</span> <span class="cn">TRUE</span>
-
-<span class="kw">if</span> <span class="op">(</span><span class="va">update_data</span><span class="op">)</span> <span class="op">{</span>
-  <span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span><span class="st">"https://r-training-bookdown.s3.amazonaws.com/data/data.zip"</span>, dest <span class="op">=</span> <span class="st">"data.zip"</span>, mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span>
-  <span class="fu"><a href="https://rdrr.io/r/utils/unzip.html">unzip</a></span><span class="op">(</span><span class="st">"data.zip"</span>, exdir <span class="op">=</span> <span class="st">"."</span><span class="op">)</span>
-  <span class="fu"><a href="https://rdrr.io/r/base/files.html">file.remove</a></span><span class="op">(</span><span class="st">"data.zip"</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="co">#&gt; [1] TRUE</span></code></pre></div>
 <div id="the-big-picture" class="section level2" number="6.1">
 <h2>
 <span class="header-section-number">6.1</span> The big picture<a class="anchor" aria-label="anchor" href="#the-big-picture"><i class="fas fa-link"></i></a>
@@ -76,7 +65,19 @@
 The Thomas Sankara Sovereign Found has commissioned you to assess new investment opportunities in the field of football. Due to material reasons (the allocated budget disappeared somewhere between Zurich and Basel), you will not be able to make on-site visits to the Europeans clubs. Nevertheless, the Found, in its infinite kindness, has created a Gmail account for you, which will allow you to access <a href="https://rstudio.cloud/">RStudio Cloud</a>, the most powerful analysis tool in the world (after the Cross-multiplication, of course).</p>
 <p>The scope of the study is the Spanish Liga 1, and we will use the <a href="https://github.com/statsbomb/open-data">StatsBomb</a> data.
 As you may be now aware of, due to the financial limitations of the project, there are only the free datasets available for this study. Don’t be sad, there is still lot of fun to have with this dataset !</p>
-<p>You can find the raw data in the <code>./data</code> folder.</p>
+<p>You can find the raw data in the <code>./data</code> folder after you running this code in a chunk :</p>
+<div class="sourceCode" id="cb25"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># This chunk downloads the Statsbomb data.You need to run this script once, then you can set the `update_data` variable to `FALSE`</span>
+
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com">data.table</a></span><span class="op">)</span>
+<span class="va">update_data</span> <span class="op">&lt;-</span> <span class="cn">TRUE</span>
+
+<span class="kw">if</span> <span class="op">(</span><span class="va">update_data</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span><span class="st">"https://r-training-bookdown.s3.amazonaws.com/data/data.zip"</span>, dest <span class="op">=</span> <span class="st">"data.zip"</span>, mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/unzip.html">unzip</a></span><span class="op">(</span><span class="st">"data.zip"</span>, exdir <span class="op">=</span> <span class="st">"."</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/files.html">file.remove</a></span><span class="op">(</span><span class="st">"data.zip"</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
 <p><em>[Hint : Be a real iconoclast, and start by having a look at the <a href="https://github.com/statsbomb/open-data/tree/master/doc">documentation</a>]</em></p>
 <p>In order to be able to add the title Senior Data Scientist to your TikTok profile, you must first prove the extent of your skills. So let’s start with some basic calculations.</p>
 <p>Using the <code>./data/DT_all_matches.csv</code> file, compute the following informations :</p>
@@ -93,7 +94,7 @@ As you may be now aware of, due to the financial limitations of the project, the
 <p>*SFW</p>
 <p>Given the results, where would put your money on ?</p>
 <p>And why have you got no money ?</p>
-<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">DT_matches</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/fread.html">fread</a></span><span class="op">(</span><span class="st">"./data/DT_all_matches.csv"</span><span class="op">)</span>
 <span class="co">#DT_matches[, .N, by = .(season.season_name)]</span>
 <span class="co"># You wonderfully crafted code goes here...</span></code></pre></div>
@@ -121,7 +122,7 @@ As you may be now aware of, due to the financial limitations of the project, the
 <li>check that the number of rows of the newly datatable is the same as the number of lineups’rows.</li>
 </ul>
 <p><strong>Let’s Just Do It and Be Legends !</strong></p>
-<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb27"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">DT_lineups</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/fread.html">fread</a></span><span class="op">(</span><span class="st">"./data/DT_all_lineups_players.csv"</span>, encoding <span class="op">=</span> <span class="st">"UTF-8"</span><span class="op">)</span>
 <span class="co"># merge example :</span>
 <span class="co"># df_merged &lt;-  merge(df1, df2, by.x = "df1ColName", by.y = "df2ColName")</span></code></pre></div>
@@ -142,8 +143,8 @@ As you may be now aware of, due to the financial limitations of the project, the
 
       <div class="book-extra">
         <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/05-firstassignment.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/05-firstassignment.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+<li><a id="book-source" href="https://github.com/clementlefevre/r_training/tree/main/R/r_training/blob/master/05-firstassignment.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/clementlefevre/r_training/tree/main/R/r_training/edit/master/05-firstassignment.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
         </ul>
 </div>
     </nav>

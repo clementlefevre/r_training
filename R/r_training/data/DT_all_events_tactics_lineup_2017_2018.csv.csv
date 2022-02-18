@@ -1,0 +1,1959 @@
+index,jersey_number,player.id,player.name,position.id,position.name,match_id
+1,18,15615,Pauline Peyraud Magnin,1,Goalkeeper,19717
+1,17,10179,Lisa Evans,2,Right Back,19717
+1,20,10666,Dominique Johanna Anna Bloodworth,3,Right Center Back,19717
+1,16,15621,Louise Quinn,5,Left Center Back,19717
+1,15,15620,Katie McCabe,6,Left Back,19717
+1,8,10192,Jordan Nobbs,13,Right Center Midfield,19717
+1,19,10405,Lia Wälti,14,Center Midfield,19717
+1,10,15616,Kim Little,15,Left Center Midfield,19717
+1,7,10658,Danielle van de Donk,17,Right Wing,19717
+1,23,15619,Bethany Mead,21,Left Wing,19717
+1,11,15623,Vivianne Miedema,23,Center Forward,19717
+2,1,15626,Anke Preuß,1,Goalkeeper,19717
+2,6,15614,Sophie Elizabeth Bradley-Auckland,3,Right Center Back,19717
+2,12,15622,Leandra Little,4,Center Back,19717
+2,2,15618,Jasmine Matthews,5,Left Center Back,19717
+2,44,15629,Satara Murray,12,Right Midfield,19717
+2,10,15628,Christie Murray,13,Right Center Midfield,19717
+2,5,19777,Niamh Fahey,14,Center Midfield,19717
+2,8,19416,Laura Coombs,15,Left Center Midfield,19717
+2,3,15630,Leigh-Anne Robe,16,Left Midfield,19717
+2,7,15218,Jessica Anne Clarke,23,Center Forward,19717
+2,17,15631,Niamh Charles,25,Secondary Striker,19717
+1772,1,15626,Anke Preuß,1,Goalkeeper,19717
+1772,44,15629,Satara Murray,3,Right Center Back,19717
+1772,6,15614,Sophie Elizabeth Bradley-Auckland,4,Center Back,19717
+1772,2,15618,Jasmine Matthews,5,Left Center Back,19717
+1772,20,15613,Rinsola Babajide,12,Right Midfield,19717
+1772,10,15628,Christie Murray,13,Right Center Midfield,19717
+1772,5,19777,Niamh Fahey,14,Center Midfield,19717
+1772,8,19416,Laura Coombs,15,Left Center Midfield,19717
+1772,3,15630,Leigh-Anne Robe,16,Left Midfield,19717
+1772,7,15218,Jessica Anne Clarke,23,Center Forward,19717
+1772,17,15631,Niamh Charles,25,Secondary Striker,19717
+2920,18,15615,Pauline Peyraud Magnin,1,Goalkeeper,19717
+2920,12,15612,Jessica Marie Samuelsson,2,Right Back,19717
+2920,20,10666,Dominique Johanna Anna Bloodworth,3,Right Center Back,19717
+2920,16,15621,Louise Quinn,5,Left Center Back,19717
+2920,15,15620,Katie McCabe,6,Left Back,19717
+2920,10,15616,Kim Little,9,Right Defensive Midfield,19717
+2920,19,10405,Lia Wälti,11,Left Defensive Midfield,19717
+2920,23,15619,Bethany Mead,17,Right Wing,19717
+2920,8,10192,Jordan Nobbs,19,Center Attacking Midfield,19717
+2920,7,10658,Danielle van de Donk,21,Left Wing,19717
+2920,11,15623,Vivianne Miedema,23,Center Forward,19717
+3160,1,15626,Anke Preuß,1,Goalkeeper,19717
+3160,44,15629,Satara Murray,3,Right Center Back,19717
+3160,6,15614,Sophie Elizabeth Bradley-Auckland,4,Center Back,19717
+3160,2,15618,Jasmine Matthews,5,Left Center Back,19717
+3160,20,15613,Rinsola Babajide,12,Right Midfield,19717
+3160,10,15628,Christie Murray,13,Right Center Midfield,19717
+3160,5,19777,Niamh Fahey,14,Center Midfield,19717
+3160,8,19416,Laura Coombs,15,Left Center Midfield,19717
+3160,3,15630,Leigh-Anne Robe,16,Left Midfield,19717
+3160,9,15611,Courtney Sweetman-Kirk,23,Center Forward,19717
+3160,7,15218,Jessica Anne Clarke,25,Secondary Striker,19717
+3424,18,15615,Pauline Peyraud Magnin,1,Goalkeeper,19717
+3424,12,15612,Jessica Marie Samuelsson,2,Right Back,19717
+3424,20,10666,Dominique Johanna Anna Bloodworth,3,Right Center Back,19717
+3424,16,15621,Louise Quinn,5,Left Center Back,19717
+3424,15,15620,Katie McCabe,6,Left Back,19717
+3424,19,10405,Lia Wälti,10,Center Defensive Midfield,19717
+3424,8,10192,Jordan Nobbs,13,Right Center Midfield,19717
+3424,7,10658,Danielle van de Donk,15,Left Center Midfield,19717
+3424,23,15619,Bethany Mead,17,Right Wing,19717
+3424,24,15610,Ava Kuyken,21,Left Wing,19717
+3424,11,15623,Vivianne Miedema,23,Center Forward,19717
+1,1,15576,Kirstie Levell,1,Goalkeeper,19726
+1,20,18254,Megan Finnigan,3,Right Center Back,19726
+1,6,15574,Georgia Brougham,4,Center Back,19726
+1,4,15575,Gabrielle George,5,Left Center Back,19726
+1,2,15578,Faye Bryson,7,Right Wing Back,19726
+1,14,19687,Taylor Hinds,8,Left Wing Back,19726
+1,12,15577,Angharad James,13,Right Center Midfield,19726
+1,13,15573,Abbey-Leigh Stringer,15,Left Center Midfield,19726
+1,10,15559,Simone Magill,17,Right Wing,19726
+1,8,15579,Inessa Kaagman,21,Left Wing,19726
+1,16,18253,Hannah Cain,23,Center Forward,19726
+2,28,19421,Carly Mitchell Telford,1,Goalkeeper,19726
+2,7,19422,Jessica Carter,2,Right Back,19726
+2,4,4642,Millie Bright,3,Right Center Back,19726
+2,16,4633,Magdalena Lilly Eriksson,5,Left Center Back,19726
+2,20,10222,Jonna Ann-Charlotte Andersson,6,Left Back,19726
+2,5,15549,Sophie Louise Ingle,10,Center Defensive Midfield,19726
+2,8,15553,Karen Julia Carney,13,Right Center Midfield,19726
+2,10,4647,So-Yun Ji,15,Left Center Midfield,19726
+2,17,17273,Adelina Engman,17,Right Wing,19726
+2,23,4659,Ramona Bachmann,21,Left Wing,19726
+2,24,4638,Drew Spence,23,Center Forward,19726
+558,28,19421,Carly Mitchell Telford,1,Goalkeeper,19726
+558,7,19422,Jessica Carter,2,Right Back,19726
+558,4,4642,Millie Bright,3,Right Center Back,19726
+558,16,4633,Magdalena Lilly Eriksson,5,Left Center Back,19726
+558,20,10222,Jonna Ann-Charlotte Andersson,6,Left Back,19726
+558,5,15549,Sophie Louise Ingle,10,Center Defensive Midfield,19726
+558,8,15553,Karen Julia Carney,13,Right Center Midfield,19726
+558,10,4647,So-Yun Ji,15,Left Center Midfield,19726
+558,23,4659,Ramona Bachmann,17,Right Wing,19726
+558,17,17273,Adelina Engman,21,Left Wing,19726
+558,24,4638,Drew Spence,23,Center Forward,19726
+1789,28,19421,Carly Mitchell Telford,1,Goalkeeper,19726
+1789,7,19422,Jessica Carter,2,Right Back,19726
+1789,4,4642,Millie Bright,3,Right Center Back,19726
+1789,16,4633,Magdalena Lilly Eriksson,5,Left Center Back,19726
+1789,20,10222,Jonna Ann-Charlotte Andersson,6,Left Back,19726
+1789,18,10395,Maren Nævdal Mjelde,10,Center Defensive Midfield,19726
+1789,5,15549,Sophie Louise Ingle,13,Right Center Midfield,19726
+1789,10,4647,So-Yun Ji,15,Left Center Midfield,19726
+1789,23,4659,Ramona Bachmann,17,Right Wing,19726
+1789,17,17273,Adelina Engman,21,Left Wing,19726
+1789,24,4638,Drew Spence,23,Center Forward,19726
+2156,28,19421,Carly Mitchell Telford,1,Goalkeeper,19726
+2156,7,19422,Jessica Carter,2,Right Back,19726
+2156,4,4642,Millie Bright,3,Right Center Back,19726
+2156,16,4633,Magdalena Lilly Eriksson,5,Left Center Back,19726
+2156,20,10222,Jonna Ann-Charlotte Andersson,6,Left Back,19726
+2156,18,10395,Maren Nævdal Mjelde,10,Center Defensive Midfield,19726
+2156,17,17273,Adelina Engman,17,Right Wing,19726
+2156,5,15549,Sophie Louise Ingle,19,Center Attacking Midfield,19726
+2156,15,15550,Bethany England,21,Left Wing,19726
+2156,24,4638,Drew Spence,22,Right Center Forward,19726
+2156,14,4641,Francesca Kirby,24,Left Center Forward,19726
+1,28,19421,Carly Mitchell Telford,1,Goalkeeper,19736
+1,7,19422,Jessica Carter,2,Right Back,19736
+1,4,4642,Millie Bright,3,Right Center Back,19736
+1,16,4633,Magdalena Lilly Eriksson,5,Left Center Back,19736
+1,20,10222,Jonna Ann-Charlotte Andersson,6,Left Back,19736
+1,2,4636,Maria Thorisdottir,10,Center Defensive Midfield,19736
+1,10,4647,So-Yun Ji,13,Right Center Midfield,19736
+1,24,4638,Drew Spence,15,Left Center Midfield,19736
+1,23,4659,Ramona Bachmann,17,Right Wing,19736
+1,17,17273,Adelina Engman,21,Left Wing,19736
+1,14,4641,Francesca Kirby,23,Center Forward,19736
+2,18,15615,Pauline Peyraud Magnin,1,Goalkeeper,19736
+2,17,10179,Lisa Evans,2,Right Back,19736
+2,6,18999,Leah Williamson,3,Right Center Back,19736
+2,20,10666,Dominique Johanna Anna Bloodworth,5,Left Center Back,19736
+2,3,18998,Emma Mitchell,6,Left Back,19736
+2,10,15616,Kim Little,9,Right Defensive Midfield,19736
+2,19,10405,Lia Wälti,11,Left Defensive Midfield,19736
+2,7,10658,Danielle van de Donk,17,Right Wing,19736
+2,8,10192,Jordan Nobbs,19,Center Attacking Midfield,19736
+2,23,15619,Bethany Mead,21,Left Wing,19736
+2,11,15623,Vivianne Miedema,23,Center Forward,19736
+2049,18,15615,Pauline Peyraud Magnin,1,Goalkeeper,19736
+2049,17,10179,Lisa Evans,2,Right Back,19736
+2049,6,18999,Leah Williamson,3,Right Center Back,19736
+2049,20,10666,Dominique Johanna Anna Bloodworth,5,Left Center Back,19736
+2049,3,18998,Emma Mitchell,6,Left Back,19736
+2049,7,10658,Danielle van de Donk,9,Right Defensive Midfield,19736
+2049,19,10405,Lia Wälti,11,Left Defensive Midfield,19736
+2049,23,15619,Bethany Mead,17,Right Wing,19736
+2049,8,10192,Jordan Nobbs,19,Center Attacking Midfield,19736
+2049,15,15620,Katie McCabe,21,Left Wing,19736
+2049,11,15623,Vivianne Miedema,23,Center Forward,19736
+2843,18,15615,Pauline Peyraud Magnin,1,Goalkeeper,19736
+2843,12,15612,Jessica Marie Samuelsson,2,Right Back,19736
+2843,6,18999,Leah Williamson,3,Right Center Back,19736
+2843,20,10666,Dominique Johanna Anna Bloodworth,5,Left Center Back,19736
+2843,3,18998,Emma Mitchell,6,Left Back,19736
+2843,7,10658,Danielle van de Donk,9,Right Defensive Midfield,19736
+2843,19,10405,Lia Wälti,11,Left Defensive Midfield,19736
+2843,17,10179,Lisa Evans,17,Right Wing,19736
+2843,8,10192,Jordan Nobbs,19,Center Attacking Midfield,19736
+2843,15,15620,Katie McCabe,21,Left Wing,19736
+2843,11,15623,Vivianne Miedema,23,Center Forward,19736
+1,1,15709,Megan Walsh,1,Goalkeeper,19742
+1,2,15708,Amy Goddard,2,Right Back,19742
+1,6,15717,Hannah Short,3,Right Center Back,19742
+1,5,15712,Nicola Cousins,5,Left Center Back,19742
+1,3,15710,Megan Alexander,6,Left Back,19742
+1,9,15714,Anne-Marie Heatherson,12,Right Midfield,19742
+1,16,15707,Georgia Evans,13,Right Center Midfield,19742
+1,12,15715,Ellie Mason,15,Left Center Midfield,19742
+1,10,15711,Amber Gaylor,16,Left Midfield,19742
+1,7,15718,Olivia Fergusson,22,Right Center Forward,19742
+1,29,19775,Shannon Albuery,24,Left Center Forward,19742
+2,1,16376,Sophie Baggaley,1,Goalkeeper,19742
+2,2,16391,Loren Dykes,2,Right Back,19742
+2,5,10171,Frankie Brown,3,Right Center Back,19742
+2,3,16381,Gemma Evans,5,Left Center Back,19742
+2,7,17274,Poppy Pattinson,6,Left Back,19742
+2,20,10095,Julie Biesmans,10,Center Defensive Midfield,19742
+2,8,16384,Carla Humphrey,13,Right Center Midfield,19742
+2,14,16386,Lucy Graham,15,Left Center Midfield,19742
+2,16,16382,Heather Payne,17,Right Wing,19742
+2,10,16388,Ella Rutherford,21,Left Wing,19742
+2,9,16390,Juliette Kemppi,23,Center Forward,19742
+2480,1,16376,Sophie Baggaley,1,Goalkeeper,19742
+2480,6,16383,Danique Kerkdijk,3,Right Center Back,19742
+2480,5,10171,Frankie Brown,4,Center Back,19742
+2480,3,16381,Gemma Evans,5,Left Center Back,19742
+2480,2,16391,Loren Dykes,7,Right Wing Back,19742
+2480,7,17274,Poppy Pattinson,8,Left Wing Back,19742
+2480,8,16384,Carla Humphrey,13,Right Center Midfield,19742
+2480,20,10095,Julie Biesmans,15,Left Center Midfield,19742
+2480,17,21048,Rosella Ayane,17,Right Wing,19742
+2480,14,16386,Lucy Graham,21,Left Wing,19742
+2480,10,16388,Ella Rutherford,23,Center Forward,19742
+1,1,15626,Anke Preuß,1,Goalkeeper,19754
+1,3,15630,Leigh-Anne Robe,2,Right Back,19754
+1,6,15614,Sophie Elizabeth Bradley-Auckland,3,Right Center Back,19754
+1,19,19417,Amy Rodgers,5,Left Center Back,19754
+1,23,24239,Jemma Elizabeth Purfield,6,Left Back,19754
+1,8,19416,Laura Coombs,9,Right Defensive Midfield,19754
+1,10,15628,Christie Murray,11,Left Defensive Midfield,19754
+1,11,10093,Yana Daniels,12,Right Midfield,19754
+1,9,15611,Courtney Sweetman-Kirk,16,Left Midfield,19754
+1,24,19418,Kirsty Linnett,19,Center Attacking Midfield,19754
+1,20,15613,Rinsola Babajide,23,Center Forward,19754
+2,18,15615,Pauline Peyraud Magnin,1,Goalkeeper,19754
+2,17,10179,Lisa Evans,2,Right Back,19754
+2,6,18999,Leah Williamson,3,Right Center Back,19754
+2,16,15621,Louise Quinn,5,Left Center Back,19754
+2,2,10088,Katrine Veje,6,Left Back,19754
+2,20,10666,Dominique Johanna Anna Bloodworth,10,Center Defensive Midfield,19754
+2,15,15620,Katie McCabe,12,Right Midfield,19754
+2,10,15616,Kim Little,13,Right Center Midfield,19754
+2,7,10658,Danielle van de Donk,15,Left Center Midfield,19754
+2,23,15619,Bethany Mead,16,Left Midfield,19754
+2,11,15623,Vivianne Miedema,23,Center Forward,19754
+1,1,15626,Anke Preuß,1,Goalkeeper,19765
+1,44,15629,Satara Murray,2,Right Back,19765
+1,6,15614,Sophie Elizabeth Bradley-Auckland,3,Right Center Back,19765
+1,2,15618,Jasmine Matthews,5,Left Center Back,19765
+1,3,15630,Leigh-Anne Robe,6,Left Back,19765
+1,5,19777,Niamh Fahey,10,Center Defensive Midfield,19765
+1,10,15628,Christie Murray,13,Right Center Midfield,19765
+1,8,19416,Laura Coombs,15,Left Center Midfield,19765
+1,7,15218,Jessica Anne Clarke,17,Right Wing,19765
+1,20,15613,Rinsola Babajide,21,Left Wing,19765
+1,9,15611,Courtney Sweetman-Kirk,23,Center Forward,19765
+2,29,22032,Hannah Hampton,1,Goalkeeper,19765
+2,23,19592,Harriet Scott,2,Right Back,19765
+2,3,19502,Meaghan Sargeant,3,Right Center Back,19765
+2,25,19503,Aoife Mannion,5,Left Center Back,19765
+2,6,15569,Kerys Harrop,6,Left Back,19765
+2,4,19501,Hayley Ladd,9,Right Defensive Midfield,19765
+2,7,10193,Chloe Arthur,11,Left Defensive Midfield,19765
+2,14,15557,Emma Follis,17,Right Wing,19765
+2,37,15562,Lucy Staniforth,19,Center Attacking Midfield,19765
+2,18,21556,Connie Scofield,21,Left Wing,19765
+2,15,15563,Charlie Wellings,23,Center Forward,19765
+3441,29,22032,Hannah Hampton,1,Goalkeeper,19765
+3441,23,19592,Harriet Scott,2,Right Back,19765
+3441,3,19502,Meaghan Sargeant,3,Right Center Back,19765
+3441,25,19503,Aoife Mannion,5,Left Center Back,19765
+3441,6,15569,Kerys Harrop,6,Left Back,19765
+3441,4,19501,Hayley Ladd,9,Right Defensive Midfield,19765
+3441,7,10193,Chloe Arthur,11,Left Defensive Midfield,19765
+3441,18,21556,Connie Scofield,17,Right Wing,19765
+3441,37,15562,Lucy Staniforth,19,Center Attacking Midfield,19765
+3441,8,19500,Sarah Emma Mayling,21,Left Wing,19765
+3441,15,15563,Charlie Wellings,23,Center Forward,19765
+1,1,15576,Kirstie Levell,1,Goalkeeper,19774
+1,2,15578,Faye Bryson,2,Right Back,19774
+1,6,15574,Georgia Brougham,3,Right Center Back,19774
+1,4,15575,Gabrielle George,5,Left Center Back,19774
+1,14,19687,Taylor Hinds,6,Left Back,19774
+1,20,18254,Megan Finnigan,10,Center Defensive Midfield,19774
+1,10,15559,Simone Magill,12,Right Midfield,19774
+1,12,15577,Angharad James,13,Right Center Midfield,19774
+1,22,15558,Dominique Bruinenberg,15,Left Center Midfield,19774
+1,11,15570,Chloe Kelly,16,Left Midfield,19774
+1,8,15579,Inessa Kaagman,23,Center Forward,19774
+2,1,16376,Sophie Baggaley,1,Goalkeeper,19774
+2,2,16391,Loren Dykes,2,Right Back,19774
+2,6,16383,Danique Kerkdijk,3,Right Center Back,19774
+2,5,10171,Frankie Brown,5,Left Center Back,19774
+2,7,17274,Poppy Pattinson,6,Left Back,19774
+2,8,16384,Carla Humphrey,9,Right Defensive Midfield,19774
+2,20,10095,Julie Biesmans,11,Left Defensive Midfield,19774
+2,17,21048,Rosella Ayane,17,Right Wing,19774
+2,14,16386,Lucy Graham,19,Center Attacking Midfield,19774
+2,10,16388,Ella Rutherford,21,Left Wing,19774
+2,9,16390,Juliette Kemppi,23,Center Forward,19774
+1382,1,16376,Sophie Baggaley,1,Goalkeeper,19774
+1382,2,16391,Loren Dykes,2,Right Back,19774
+1382,6,16383,Danique Kerkdijk,3,Right Center Back,19774
+1382,5,10171,Frankie Brown,5,Left Center Back,19774
+1382,7,17274,Poppy Pattinson,6,Left Back,19774
+1382,8,16384,Carla Humphrey,9,Right Defensive Midfield,19774
+1382,20,10095,Julie Biesmans,11,Left Defensive Midfield,19774
+1382,10,16388,Ella Rutherford,17,Right Wing,19774
+1382,14,16386,Lucy Graham,19,Center Attacking Midfield,19774
+1382,17,21048,Rosella Ayane,21,Left Wing,19774
+1382,9,16390,Juliette Kemppi,23,Center Forward,19774
+2973,1,15576,Kirstie Levell,1,Goalkeeper,19774
+2973,20,18254,Megan Finnigan,3,Right Center Back,19774
+2973,6,15574,Georgia Brougham,4,Center Back,19774
+2973,4,15575,Gabrielle George,5,Left Center Back,19774
+2973,7,15556,Chantelle Boye-Hlorkah,12,Right Midfield,19774
+2973,14,19687,Taylor Hinds,13,Right Center Midfield,19774
+2973,12,15577,Angharad James,15,Left Center Midfield,19774
+2973,11,15570,Chloe Kelly,16,Left Midfield,19774
+2973,9,15580,Claudia Walker,22,Right Center Forward,19774
+2973,28,21230,Elise Hughes,24,Left Center Forward,19774
+2973,8,15579,Inessa Kaagman,25,Secondary Striker,19774
+1,1,4640,Rut Hedvig Lindahl,1,Goalkeeper,19783
+1,3,17275,Hannah Jayne Blundell,2,Right Back,19783
+1,4,4642,Millie Bright,3,Right Center Back,19783
+1,16,4633,Magdalena Lilly Eriksson,5,Left Center Back,19783
+1,20,10222,Jonna Ann-Charlotte Andersson,6,Left Back,19783
+1,24,4638,Drew Spence,13,Right Center Midfield,19783
+1,5,15549,Sophie Louise Ingle,15,Left Center Midfield,19783
+1,22,4660,Erin Cuthbert,17,Right Wing,19783
+1,10,4647,So-Yun Ji,19,Center Attacking Midfield,19783
+1,8,15553,Karen Julia Carney,21,Left Wing,19783
+1,15,15550,Bethany England,23,Center Forward,19783
+2,1,15576,Kirstie Levell,1,Goalkeeper,19783
+2,14,19687,Taylor Hinds,2,Right Back,19783
+2,6,15574,Georgia Brougham,3,Right Center Back,19783
+2,4,15575,Gabrielle George,5,Left Center Back,19783
+2,3,15571,Danielle Turner,6,Left Back,19783
+2,20,18254,Megan Finnigan,10,Center Defensive Midfield,19783
+2,12,15577,Angharad James,13,Right Center Midfield,19783
+2,10,15559,Simone Magill,15,Left Center Midfield,19783
+2,11,15570,Chloe Kelly,17,Right Wing,19783
+2,7,15556,Chantelle Boye-Hlorkah,21,Left Wing,19783
+2,28,21230,Elise Hughes,23,Center Forward,19783
+2733,1,4640,Rut Hedvig Lindahl,1,Goalkeeper,19783
+2733,3,17275,Hannah Jayne Blundell,2,Right Back,19783
+2733,4,4642,Millie Bright,3,Right Center Back,19783
+2733,16,4633,Magdalena Lilly Eriksson,5,Left Center Back,19783
+2733,11,21062,Alexandra Riley,6,Left Back,19783
+2733,24,4638,Drew Spence,13,Right Center Midfield,19783
+2733,5,15549,Sophie Louise Ingle,15,Left Center Midfield,19783
+2733,14,4641,Francesca Kirby,17,Right Wing,19783
+2733,10,4647,So-Yun Ji,19,Center Attacking Midfield,19783
+2733,8,15553,Karen Julia Carney,21,Left Wing,19783
+2733,15,15550,Bethany England,23,Center Forward,19783
+2895,1,15576,Kirstie Levell,1,Goalkeeper,19783
+2895,20,18254,Megan Finnigan,2,Right Back,19783
+2895,6,15574,Georgia Brougham,3,Right Center Back,19783
+2895,4,15575,Gabrielle George,5,Left Center Back,19783
+2895,3,15571,Danielle Turner,6,Left Back,19783
+2895,12,15577,Angharad James,10,Center Defensive Midfield,19783
+2895,11,15570,Chloe Kelly,13,Right Center Midfield,19783
+2895,10,15559,Simone Magill,15,Left Center Midfield,19783
+2895,14,19687,Taylor Hinds,17,Right Wing,19783
+2895,8,15579,Inessa Kaagman,21,Left Wing,19783
+2895,28,21230,Elise Hughes,23,Center Forward,19783
+2906,1,4640,Rut Hedvig Lindahl,1,Goalkeeper,19783
+2906,3,17275,Hannah Jayne Blundell,2,Right Back,19783
+2906,4,4642,Millie Bright,3,Right Center Back,19783
+2906,16,4633,Magdalena Lilly Eriksson,5,Left Center Back,19783
+2906,11,21062,Alexandra Riley,6,Left Back,19783
+2906,24,4638,Drew Spence,13,Right Center Midfield,19783
+2906,5,15549,Sophie Louise Ingle,15,Left Center Midfield,19783
+2906,8,15553,Karen Julia Carney,17,Right Wing,19783
+2906,10,4647,So-Yun Ji,19,Center Attacking Midfield,19783
+2906,14,4641,Francesca Kirby,21,Left Wing,19783
+2906,15,15550,Bethany England,23,Center Forward,19783
+1,28,19421,Carly Mitchell Telford,1,Goalkeeper,19794
+1,3,17275,Hannah Jayne Blundell,2,Right Back,19794
+1,21,20061,Deanna Cooper,3,Right Center Back,19794
+1,16,4633,Magdalena Lilly Eriksson,5,Left Center Back,19794
+1,20,10222,Jonna Ann-Charlotte Andersson,6,Left Back,19794
+1,5,15549,Sophie Louise Ingle,10,Center Defensive Midfield,19794
+1,22,4660,Erin Cuthbert,13,Right Center Midfield,19794
+1,23,4659,Ramona Bachmann,15,Left Center Midfield,19794
+1,10,4647,So-Yun Ji,19,Center Attacking Midfield,19794
+1,14,4641,Francesca Kirby,22,Right Center Forward,19794
+1,15,15550,Bethany England,24,Left Center Forward,19794
+2,1,16376,Sophie Baggaley,1,Goalkeeper,19794
+2,2,16391,Loren Dykes,2,Right Back,19794
+2,6,16383,Danique Kerkdijk,3,Right Center Back,19794
+2,3,16381,Gemma Evans,5,Left Center Back,19794
+2,7,17274,Poppy Pattinson,6,Left Back,19794
+2,5,10171,Frankie Brown,10,Center Defensive Midfield,19794
+2,15,23412,Abigail Harrison,12,Right Midfield,19794
+2,8,16384,Carla Humphrey,13,Right Center Midfield,19794
+2,20,10095,Julie Biesmans,15,Left Center Midfield,19794
+2,10,16388,Ella Rutherford,16,Left Midfield,19794
+2,9,16390,Juliette Kemppi,23,Center Forward,19794
+267,1,16376,Sophie Baggaley,1,Goalkeeper,19794
+267,6,16383,Danique Kerkdijk,3,Right Center Back,19794
+267,5,10171,Frankie Brown,4,Center Back,19794
+267,3,16381,Gemma Evans,5,Left Center Back,19794
+267,2,16391,Loren Dykes,7,Right Wing Back,19794
+267,7,17274,Poppy Pattinson,8,Left Wing Back,19794
+267,20,10095,Julie Biesmans,13,Right Center Midfield,19794
+267,8,16384,Carla Humphrey,15,Left Center Midfield,19794
+267,15,23412,Abigail Harrison,17,Right Wing,19794
+267,10,16388,Ella Rutherford,21,Left Wing,19794
+267,9,16390,Juliette Kemppi,23,Center Forward,19794
+3754,28,19421,Carly Mitchell Telford,1,Goalkeeper,19794
+3754,7,19422,Jessica Carter,2,Right Back,19794
+3754,21,20061,Deanna Cooper,3,Right Center Back,19794
+3754,16,4633,Magdalena Lilly Eriksson,5,Left Center Back,19794
+3754,11,21062,Alexandra Riley,6,Left Back,19794
+3754,5,15549,Sophie Louise Ingle,9,Right Defensive Midfield,19794
+3754,22,4660,Erin Cuthbert,11,Left Defensive Midfield,19794
+3754,17,17273,Adelina Engman,12,Right Midfield,19794
+3754,23,4659,Ramona Bachmann,16,Left Midfield,19794
+3754,14,4641,Francesca Kirby,22,Right Center Forward,19794
+3754,15,15550,Bethany England,24,Left Center Forward,19794
+1,1,15626,Anke Preuß,1,Goalkeeper,19799
+1,3,15630,Leigh-Anne Robe,2,Right Back,19799
+1,6,15614,Sophie Elizabeth Bradley-Auckland,3,Right Center Back,19799
+1,12,15622,Leandra Little,5,Left Center Back,19799
+1,23,24239,Jemma Elizabeth Purfield,6,Left Back,19799
+1,5,19777,Niamh Fahey,9,Right Defensive Midfield,19799
+1,19,19417,Amy Rodgers,11,Left Defensive Midfield,19799
+1,11,10093,Yana Daniels,17,Right Wing,19799
+1,8,19416,Laura Coombs,19,Center Attacking Midfield,19799
+1,9,15611,Courtney Sweetman-Kirk,21,Left Wing,19799
+1,24,19418,Kirsty Linnett,23,Center Forward,19799
+2,30,15560,Ann-Katrin Berger,1,Goalkeeper,19799
+2,3,17275,Hannah Jayne Blundell,2,Right Back,19799
+2,18,10395,Maren Nævdal Mjelde,3,Right Center Back,19799
+2,16,4633,Magdalena Lilly Eriksson,5,Left Center Back,19799
+2,20,10222,Jonna Ann-Charlotte Andersson,6,Left Back,19799
+2,24,4638,Drew Spence,13,Right Center Midfield,19799
+2,7,19422,Jessica Carter,15,Left Center Midfield,19799
+2,22,4660,Erin Cuthbert,17,Right Wing,19799
+2,14,4641,Francesca Kirby,19,Center Attacking Midfield,19799
+2,8,15553,Karen Julia Carney,21,Left Wing,19799
+2,23,4659,Ramona Bachmann,23,Center Forward,19799
+1,1,10646,Sari van Veenendaal,1,Goalkeeper,19811
+1,17,10179,Lisa Evans,2,Right Back,19811
+1,6,18999,Leah Williamson,3,Right Center Back,19811
+1,16,15621,Louise Quinn,5,Left Center Back,19811
+1,2,10088,Katrine Veje,6,Left Back,19811
+1,10,15616,Kim Little,9,Right Defensive Midfield,19811
+1,20,10666,Dominique Johanna Anna Bloodworth,11,Left Defensive Midfield,19811
+1,23,15619,Bethany Mead,17,Right Wing,19811
+1,7,10658,Danielle van de Donk,19,Center Attacking Midfield,19811
+1,15,15620,Katie McCabe,21,Left Wing,19811
+1,11,15623,Vivianne Miedema,23,Center Forward,19811
+2,1,15576,Kirstie Levell,1,Goalkeeper,19811
+2,14,19687,Taylor Hinds,2,Right Back,19811
+2,20,18254,Megan Finnigan,3,Right Center Back,19811
+2,5,15572,Siri Worm,5,Left Center Back,19811
+2,3,15571,Danielle Turner,6,Left Back,19811
+2,12,15577,Angharad James,9,Right Defensive Midfield,19811
+2,13,15573,Abbey-Leigh Stringer,11,Left Defensive Midfield,19811
+2,7,15556,Chantelle Boye-Hlorkah,17,Right Wing,19811
+2,8,15579,Inessa Kaagman,19,Center Attacking Midfield,19811
+2,16,18253,Hannah Cain,21,Left Wing,19811
+2,10,15559,Simone Magill,23,Center Forward,19811
+985,1,10646,Sari van Veenendaal,1,Goalkeeper,19811
+985,17,10179,Lisa Evans,2,Right Back,19811
+985,6,18999,Leah Williamson,3,Right Center Back,19811
+985,16,15621,Louise Quinn,5,Left Center Back,19811
+985,2,10088,Katrine Veje,6,Left Back,19811
+985,10,15616,Kim Little,9,Right Defensive Midfield,19811
+985,20,10666,Dominique Johanna Anna Bloodworth,11,Left Defensive Midfield,19811
+985,15,15620,Katie McCabe,17,Right Wing,19811
+985,7,10658,Danielle van de Donk,19,Center Attacking Midfield,19811
+985,23,15619,Bethany Mead,21,Left Wing,19811
+985,11,15623,Vivianne Miedema,23,Center Forward,19811
+1149,1,10646,Sari van Veenendaal,1,Goalkeeper,19811
+1149,17,10179,Lisa Evans,2,Right Back,19811
+1149,6,18999,Leah Williamson,3,Right Center Back,19811
+1149,16,15621,Louise Quinn,5,Left Center Back,19811
+1149,2,10088,Katrine Veje,6,Left Back,19811
+1149,10,15616,Kim Little,9,Right Defensive Midfield,19811
+1149,20,10666,Dominique Johanna Anna Bloodworth,11,Left Defensive Midfield,19811
+1149,11,15623,Vivianne Miedema,17,Right Wing,19811
+1149,7,10658,Danielle van de Donk,19,Center Attacking Midfield,19811
+1149,23,15619,Bethany Mead,21,Left Wing,19811
+1149,15,15620,Katie McCabe,23,Center Forward,19811
+1474,1,10646,Sari van Veenendaal,1,Goalkeeper,19811
+1474,17,10179,Lisa Evans,2,Right Back,19811
+1474,6,18999,Leah Williamson,3,Right Center Back,19811
+1474,16,15621,Louise Quinn,5,Left Center Back,19811
+1474,2,10088,Katrine Veje,6,Left Back,19811
+1474,10,15616,Kim Little,9,Right Defensive Midfield,19811
+1474,20,10666,Dominique Johanna Anna Bloodworth,11,Left Defensive Midfield,19811
+1474,15,15620,Katie McCabe,17,Right Wing,19811
+1474,7,10658,Danielle van de Donk,19,Center Attacking Midfield,19811
+1474,23,15619,Bethany Mead,21,Left Wing,19811
+1474,11,15623,Vivianne Miedema,23,Center Forward,19811
+2266,1,15576,Kirstie Levell,1,Goalkeeper,19811
+2266,14,19687,Taylor Hinds,2,Right Back,19811
+2266,20,18254,Megan Finnigan,3,Right Center Back,19811
+2266,5,15572,Siri Worm,5,Left Center Back,19811
+2266,3,15571,Danielle Turner,6,Left Back,19811
+2266,13,15573,Abbey-Leigh Stringer,9,Right Defensive Midfield,19811
+2266,12,15577,Angharad James,11,Left Defensive Midfield,19811
+2266,10,15559,Simone Magill,17,Right Wing,19811
+2266,8,15579,Inessa Kaagman,19,Center Attacking Midfield,19811
+2266,7,15556,Chantelle Boye-Hlorkah,21,Left Wing,19811
+2266,28,21230,Elise Hughes,23,Center Forward,19811
+2996,1,10646,Sari van Veenendaal,1,Goalkeeper,19811
+2996,17,10179,Lisa Evans,2,Right Back,19811
+2996,6,18999,Leah Williamson,3,Right Center Back,19811
+2996,16,15621,Louise Quinn,5,Left Center Back,19811
+2996,15,15620,Katie McCabe,6,Left Back,19811
+2996,22,10235,Viktoria Schnaderbeck,9,Right Defensive Midfield,19811
+2996,20,10666,Dominique Johanna Anna Bloodworth,11,Left Defensive Midfield,19811
+2996,7,10658,Danielle van de Donk,17,Right Wing,19811
+2996,10,15616,Kim Little,19,Center Attacking Midfield,19811
+2996,9,24281,Danielle Carter,21,Left Wing,19811
+2996,11,15623,Vivianne Miedema,23,Center Forward,19811
+3268,1,10646,Sari van Veenendaal,1,Goalkeeper,19811
+3268,17,10179,Lisa Evans,2,Right Back,19811
+3268,6,18999,Leah Williamson,3,Right Center Back,19811
+3268,16,15621,Louise Quinn,5,Left Center Back,19811
+3268,15,15620,Katie McCabe,6,Left Back,19811
+3268,22,10235,Viktoria Schnaderbeck,9,Right Defensive Midfield,19811
+3268,20,10666,Dominique Johanna Anna Bloodworth,11,Left Defensive Midfield,19811
+3268,7,10658,Danielle van de Donk,17,Right Wing,19811
+3268,10,15616,Kim Little,19,Center Attacking Midfield,19811
+3268,21,10415,Tabea Kemme,21,Left Wing,19811
+3268,9,24281,Danielle Carter,23,Center Forward,19811
+1,1,20015,Jens Lehmann,1,Goalkeeper,3749642
+1,12,40222,Laureano Bisan-Etame Mayer,2,Right Back,3749642
+1,28,38412,Kolo Habib Touré,3,Right Center Back,3749642
+1,23,15637,"Sulzeer Jeremiah ""Sol"" Campbell",5,Left Center Back,3749642
+1,3,12529,Ashley Cole,6,Left Back,3749642
+1,4,15515,Patrick Vieira,9,Right Defensive Midfield,3749642
+1,17,26014,Eduardo César Daude Gaspar,11,Left Defensive Midfield,3749642
+1,8,15754,Fredrik Ljungberg,12,Right Midfield,3749642
+1,7,19312,Robert Pirès ,16,Left Midfield,3749642
+1,10,15042,Dennis Bergkamp,22,Right Center Forward,3749642
+1,14,15516,Thierry Henry,24,Left Center Forward,3749642
+2,1,40378,Dean Kiely,1,Goalkeeper,3749642
+2,19,40416,Luke Young,2,Right Back,3749642
+2,6,40380,Mark Fish,3,Right Center Back,3749642
+2,24,40417,Jonathan Fortune,5,Left Center Back,3749642
+2,12,40377,Hermann Hreidarsson,6,Left Back,3749642
+2,2,13808,Radostin Kishishev,12,Right Midfield,3749642
+2,8,40379,Matt Holland,13,Right Center Midfield,3749642
+2,10,20153,Claus Jensen,15,Left Center Midfield,3749642
+2,4,40376,Graham Stuart,16,Left Midfield,3749642
+2,35,40418,Carlton Cole Okirie,22,Right Center Forward,3749642
+2,11,40375,Paolo Di Canio,24,Left Center Forward,3749642
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9575
+1,2,6374,Nélson Cabral Semedo,2,Right Back,9575
+1,14,5506,Javier Alejandro Mascherano,3,Right Center Back,9575
+1,23,5492,Samuel Yves Umtiti,5,Left Center Back,9575
+1,18,5211,Jordi Alba Ramos,6,Left Back,9575
+1,16,3726,Gerard Deulofeu Lázaro,12,Right Midfield,9575
+1,5,5203,Sergio Busquets i Burgos,13,Right Center Midfield,9575
+1,4,5470,Ivan Rakitić,15,Left Center Midfield,9575
+1,17,6402,Francisco Alcácer García,16,Left Midfield,9575
+1,20,6379,Sergi Roberto Carnicer,19,Center Attacking Midfield,9575
+1,10,5503,Lionel Andrés Messi Cuccittini,23,Center Forward,9575
+2,13,6654,Antonio Adán Garrido,1,Goalkeeper,9575
+2,19,6663,Antonio Barragán Fernández,2,Right Back,9575
+2,23,6648,Aïssa Mandi,3,Right Center Back,9575
+2,4,6647,Zouhair Feddal,5,Left Center Back,9575
+2,21,6835,Alin Dorinel Toșca,6,Left Back,9575
+2,18,5563,José Andrés Guardado Hernández,10,Center Defensive Midfield,9575
+2,29,20062,Juan José Narváez Solarte,13,Right Center Midfield,9575
+2,8,6659,Víctor Camarasa Ferrando,15,Left Center Midfield,9575
+2,11,18867,Matías Nahuel Leiva Esquivel,17,Right Wing,9575
+2,17,6651,Joaquín Sánchez Rodríguez,21,Left Wing,9575
+2,7,6657,Sergio León Limones,23,Center Forward,9575
+2855,1,20055,Marc-André ter Stegen,1,Goalkeeper,9575
+2855,2,6374,Nélson Cabral Semedo,2,Right Back,9575
+2855,14,5506,Javier Alejandro Mascherano,3,Right Center Back,9575
+2855,23,5492,Samuel Yves Umtiti,5,Left Center Back,9575
+2855,18,5211,Jordi Alba Ramos,6,Left Back,9575
+2855,17,6402,Francisco Alcácer García,12,Right Midfield,9575
+2855,4,5470,Ivan Rakitić,13,Right Center Midfield,9575
+2855,5,5203,Sergio Busquets i Burgos,15,Left Center Midfield,9575
+2855,16,3726,Gerard Deulofeu Lázaro,16,Left Midfield,9575
+2855,10,5503,Lionel Andrés Messi Cuccittini,23,Center Forward,9575
+2855,20,6379,Sergi Roberto Carnicer,25,Secondary Striker,9575
+3129,13,6654,Antonio Adán Garrido,1,Goalkeeper,9575
+3129,19,6663,Antonio Barragán Fernández,2,Right Back,9575
+3129,23,6648,Aïssa Mandi,3,Right Center Back,9575
+3129,4,6647,Zouhair Feddal,5,Left Center Back,9575
+3129,21,6835,Alin Dorinel Toșca,6,Left Back,9575
+3129,3,6836,Francisco Javier García Fernández,10,Center Defensive Midfield,9575
+3129,18,5563,José Andrés Guardado Hernández,13,Right Center Midfield,9575
+3129,8,6659,Víctor Camarasa Ferrando,15,Left Center Midfield,9575
+3129,11,18867,Matías Nahuel Leiva Esquivel,17,Right Wing,9575
+3129,17,6651,Joaquín Sánchez Rodríguez,21,Left Wing,9575
+3129,7,6657,Sergio León Limones,23,Center Forward,9575
+3218,1,20055,Marc-André ter Stegen,1,Goalkeeper,9575
+3218,2,6374,Nélson Cabral Semedo,2,Right Back,9575
+3218,14,5506,Javier Alejandro Mascherano,3,Right Center Back,9575
+3218,23,5492,Samuel Yves Umtiti,5,Left Center Back,9575
+3218,18,5211,Jordi Alba Ramos,6,Left Back,9575
+3218,22,6400,Aleix Vidal Parreu,12,Right Midfield,9575
+3218,4,5470,Ivan Rakitić,13,Right Center Midfield,9575
+3218,5,5203,Sergio Busquets i Burgos,15,Left Center Midfield,9575
+3218,17,6402,Francisco Alcácer García,16,Left Midfield,9575
+3218,10,5503,Lionel Andrés Messi Cuccittini,23,Center Forward,9575
+3218,20,6379,Sergi Roberto Carnicer,25,Secondary Striker,9575
+1,1,6629,Fernando Pacheco Flores,1,Goalkeeper,9581
+1,2,6856,Carlos Martín Vigaray,2,Right Back,9581
+1,4,6614,Alexis Ruano Delgado,3,Right Center Back,9581
+1,12,6636,Rodrigo Ely,5,Left Center Back,9581
+1,17,6737,Alfonso Pedraza Sag,6,Left Back,9581
+1,18,6622,Tomás Pina Isla,10,Center Defensive Midfield,9581
+1,10,6628,Óscar David Romero Villamayor,12,Right Midfield,9581
+1,22,6626,Mubarak Wakaso,13,Right Center Midfield,9581
+1,19,6632,Manuel Alejandro García Sánchez,15,Left Center Midfield,9581
+1,11,6617,Ibai Gómez Pérez,16,Left Midfield,9581
+1,7,6613,Rubén Sobrino Pozuelo,23,Center Forward,9581
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9581
+2,20,6379,Sergi Roberto Carnicer,2,Right Back,9581
+2,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9581
+2,23,5492,Samuel Yves Umtiti,5,Left Center Back,9581
+2,18,5211,Jordi Alba Ramos,6,Left Back,9581
+2,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9581
+2,4,5470,Ivan Rakitić,13,Right Center Midfield,9581
+2,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9581
+2,22,6400,Aleix Vidal Parreu,17,Right Wing,9581
+2,16,3726,Gerard Deulofeu Lázaro,21,Left Wing,9581
+2,10,5503,Lionel Andrés Messi Cuccittini,23,Center Forward,9581
+2273,1,20055,Marc-André ter Stegen,1,Goalkeeper,9581
+2273,20,6379,Sergi Roberto Carnicer,2,Right Back,9581
+2273,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9581
+2273,23,5492,Samuel Yves Umtiti,5,Left Center Back,9581
+2273,18,5211,Jordi Alba Ramos,6,Left Back,9581
+2273,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9581
+2273,4,5470,Ivan Rakitić,13,Right Center Midfield,9581
+2273,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9581
+2273,16,3726,Gerard Deulofeu Lázaro,17,Right Wing,9581
+2273,17,6402,Francisco Alcácer García,21,Left Wing,9581
+2273,10,5503,Lionel Andrés Messi Cuccittini,23,Center Forward,9581
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9592
+1,2,6374,Nélson Cabral Semedo,2,Right Back,9592
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9592
+1,23,5492,Samuel Yves Umtiti,5,Left Center Back,9592
+1,18,5211,Jordi Alba Ramos,6,Left Back,9592
+1,4,5470,Ivan Rakitić,9,Right Defensive Midfield,9592
+1,5,5203,Sergio Busquets i Burgos,11,Left Defensive Midfield,9592
+1,16,3726,Gerard Deulofeu Lázaro,12,Right Midfield,9592
+1,8,5216,Andrés Iniesta Luján,16,Left Midfield,9592
+1,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9592
+1,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9592
+2,1,6792,Pau López Sabata,1,Goalkeeper,9592
+2,4,6758,Víctor Sánchez Mata,2,Right Back,9592
+2,15,6754,David López Silva,3,Right Center Back,9592
+2,22,6790,Mario Hermoso Canseco,5,Left Center Back,9592
+2,3,6757,Aarón Martín Caricol,6,Left Back,9592
+2,19,6763,Pablo Daniel Piatti,12,Right Midfield,9592
+2,20,6867,Papa Kouly Diop,13,Right Center Midfield,9592
+2,18,6751,Javier Fuego Martínez,15,Left Center Midfield,9592
+2,25,3236,Sergi Darder Moll,16,Left Midfield,9592
+2,11,6761,Leonardo Carrilho Baptistão,22,Right Center Forward,9592
+2,7,6766,Gerard Moreno Balaguero,24,Left Center Forward,9592
+2926,1,20055,Marc-André ter Stegen,1,Goalkeeper,9592
+2926,2,6374,Nélson Cabral Semedo,2,Right Back,9592
+2926,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9592
+2926,23,5492,Samuel Yves Umtiti,5,Left Center Back,9592
+2926,18,5211,Jordi Alba Ramos,6,Left Back,9592
+2926,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9592
+2926,4,5470,Ivan Rakitić,15,Left Center Midfield,9592
+2926,11,5477,Ousmane Dembélé,17,Right Wing,9592
+2926,8,5216,Andrés Iniesta Luján,21,Left Wing,9592
+2926,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9592
+2926,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9592
+1,13,6625,Vicente Guaita Panadero,1,Goalkeeper,9602
+1,22,6627,Damián Nicolás Suárez Suárez,2,Right Back,9602
+1,2,6634,Djené Dakonam Ortega,3,Right Center Back,9602
+1,16,6861,Juan Torres Ruiz,5,Left Center Back,9602
+1,3,6619,Vitorino Gabriel Pacheco Antunes,6,Left Back,9602
+1,5,6633,Markel Bergara Larrañaga,9,Right Defensive Midfield,9602
+1,18,6863,Mauro Wilney Arambarri Rosa,11,Left Defensive Midfield,9602
+1,21,5724,Fayçal Fajr,17,Right Wing,9602
+1,10,5693,Gaku Shibasaki,19,Center Attacking Midfield,9602
+1,23,6621,Amath Ndiaye,21,Left Wing,9602
+1,19,6630,Jorge Molina Vidal,23,Center Forward,9602
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9602
+2,20,6379,Sergi Roberto Carnicer,2,Right Back,9602
+2,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9602
+2,23,5492,Samuel Yves Umtiti,5,Left Center Back,9602
+2,18,5211,Jordi Alba Ramos,6,Left Back,9602
+2,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9602
+2,4,5470,Ivan Rakitić,13,Right Center Midfield,9602
+2,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9602
+2,11,5477,Ousmane Dembélé,17,Right Wing,9602
+2,10,5503,Lionel Andrés Messi Cuccittini,21,Left Wing,9602
+2,9,5246,Luis Alberto Suárez Díaz,23,Center Forward,9602
+883,1,20055,Marc-André ter Stegen,1,Goalkeeper,9602
+883,20,6379,Sergi Roberto Carnicer,2,Right Back,9602
+883,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9602
+883,23,5492,Samuel Yves Umtiti,5,Left Center Back,9602
+883,18,5211,Jordi Alba Ramos,6,Left Back,9602
+883,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9602
+883,4,5470,Ivan Rakitić,13,Right Center Midfield,9602
+883,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9602
+883,10,5503,Lionel Andrés Messi Cuccittini,17,Right Wing,9602
+883,11,5477,Ousmane Dembélé,21,Left Wing,9602
+883,9,5246,Luis Alberto Suárez Díaz,23,Center Forward,9602
+1285,1,20055,Marc-André ter Stegen,1,Goalkeeper,9602
+1285,20,6379,Sergi Roberto Carnicer,2,Right Back,9602
+1285,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9602
+1285,23,5492,Samuel Yves Umtiti,5,Left Center Back,9602
+1285,18,5211,Jordi Alba Ramos,6,Left Back,9602
+1285,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9602
+1285,4,5470,Ivan Rakitić,13,Right Center Midfield,9602
+1285,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9602
+1285,16,3726,Gerard Deulofeu Lázaro,17,Right Wing,9602
+1285,10,5503,Lionel Andrés Messi Cuccittini,21,Left Wing,9602
+1285,9,5246,Luis Alberto Suárez Díaz,23,Center Forward,9602
+2240,13,6625,Vicente Guaita Panadero,1,Goalkeeper,9602
+2240,22,6627,Damián Nicolás Suárez Suárez,2,Right Back,9602
+2240,2,6634,Djené Dakonam Ortega,3,Right Center Back,9602
+2240,16,6861,Juan Torres Ruiz,5,Left Center Back,9602
+2240,3,6619,Vitorino Gabriel Pacheco Antunes,6,Left Back,9602
+2240,5,6633,Markel Bergara Larrañaga,9,Right Defensive Midfield,9602
+2240,18,6863,Mauro Wilney Arambarri Rosa,11,Left Defensive Midfield,9602
+2240,7,6864,Álvaro José Jiménez Guerrero,17,Right Wing,9602
+2240,21,5724,Fayçal Fajr,19,Center Attacking Midfield,9602
+2240,23,6621,Amath Ndiaye,21,Left Wing,9602
+2240,19,6630,Jorge Molina Vidal,23,Center Forward,9602
+2887,13,6625,Vicente Guaita Panadero,1,Goalkeeper,9602
+2887,22,6627,Damián Nicolás Suárez Suárez,2,Right Back,9602
+2887,2,6634,Djené Dakonam Ortega,3,Right Center Back,9602
+2887,16,6861,Juan Torres Ruiz,5,Left Center Back,9602
+2887,3,6619,Vitorino Gabriel Pacheco Antunes,6,Left Back,9602
+2887,14,6858,Sergio Mora Sánchez,9,Right Defensive Midfield,9602
+2887,5,6633,Markel Bergara Larrañaga,11,Left Defensive Midfield,9602
+2887,7,6864,Álvaro José Jiménez Guerrero,12,Right Midfield,9602
+2887,21,5724,Fayçal Fajr,16,Left Midfield,9602
+2887,19,6630,Jorge Molina Vidal,22,Right Center Forward,9602
+2887,18,6863,Mauro Wilney Arambarri Rosa,24,Left Center Forward,9602
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9609
+1,2,6374,Nélson Cabral Semedo,2,Right Back,9609
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9609
+1,14,5506,Javier Alejandro Mascherano,5,Left Center Back,9609
+1,19,6849,Lucas Digne,6,Left Back,9609
+1,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9609
+1,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9609
+1,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9609
+1,16,3726,Gerard Deulofeu Lázaro,17,Right Wing,9609
+1,6,6609,Denis Suárez Fernández,21,Left Wing,9609
+1,10,5503,Lionel Andrés Messi Cuccittini,23,Center Forward,9609
+2,25,6698,Marko Dmitrović,1,Goalkeeper,9609
+2,18,6709,Anaitz Arbilla Zabala,2,Right Back,9609
+2,12,6708,Paulo André Rodrigues de Oliveira,3,Right Center Back,9609
+2,3,6924,Alejandro Gálvez Jimena,5,Left Center Back,9609
+2,23,6776,David Juncà Reñé,6,Left Back,9609
+2,14,6775,Daniel García Carrillo,9,Right Defensive Midfield,9609
+2,5,6712,Gonzalo Escalante,11,Left Defensive Midfield,9609
+2,7,6699,Ander Capa Rodríguez,17,Right Wing,9609
+2,24,6701,Joan Jordán Moreno,19,Center Attacking Midfield,9609
+2,8,5687,Takashi Inui,21,Left Wing,9609
+2,9,6700,Sergio Enrich Ametller,23,Center Forward,9609
+69,25,6698,Marko Dmitrović,1,Goalkeeper,9609
+69,18,6709,Anaitz Arbilla Zabala,2,Right Back,9609
+69,12,6708,Paulo André Rodrigues de Oliveira,3,Right Center Back,9609
+69,3,6924,Alejandro Gálvez Jimena,5,Left Center Back,9609
+69,23,6776,David Juncà Reñé,6,Left Back,9609
+69,5,6712,Gonzalo Escalante,9,Right Defensive Midfield,9609
+69,14,6775,Daniel García Carrillo,11,Left Defensive Midfield,9609
+69,7,6699,Ander Capa Rodríguez,17,Right Wing,9609
+69,24,6701,Joan Jordán Moreno,19,Center Attacking Midfield,9609
+69,8,5687,Takashi Inui,21,Left Wing,9609
+69,9,6700,Sergio Enrich Ametller,23,Center Forward,9609
+1,1,6576,Gorka Iraizoz Moreno,1,Goalkeeper,9620
+1,4,6887,Jonás Ramalho Chimeno,2,Right Back,9620
+1,2,6573,Bernardo José Espinosa Zúñiga,4,Center Back,9620
+1,15,6572,Juan Pedro Ramírez López,6,Left Back,9620
+1,25,6564,Pablo Maffeo Becerra,10,Center Defensive Midfield,9620
+1,9,6582,Cristian Portugués Manzanera,12,Right Midfield,9620
+1,23,6888,Aleix García Serrano,13,Right Center Midfield,9620
+1,8,6565,Pere Pons Riera,15,Left Center Midfield,9620
+1,11,6578,Francesc Aday Benítez Caraballo,16,Left Midfield,9620
+1,14,6897,Michael Olunga Ogada,23,Center Forward,9620
+1,12,6574,Douglas Luiz Soares de Paulo,25,Secondary Striker,9620
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9620
+2,20,6379,Sergi Roberto Carnicer,2,Right Back,9620
+2,14,5506,Javier Alejandro Mascherano,3,Right Center Back,9620
+2,23,5492,Samuel Yves Umtiti,5,Left Center Back,9620
+2,18,5211,Jordi Alba Ramos,6,Left Back,9620
+2,22,6400,Aleix Vidal Parreu,12,Right Midfield,9620
+2,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9620
+2,4,5470,Ivan Rakitić,15,Left Center Midfield,9620
+2,8,5216,Andrés Iniesta Luján,16,Left Midfield,9620
+2,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9620
+2,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9620
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9636
+1,20,6379,Sergi Roberto Carnicer,2,Right Back,9636
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9636
+1,14,5506,Javier Alejandro Mascherano,5,Left Center Back,9636
+1,18,5211,Jordi Alba Ramos,6,Left Back,9636
+1,15,5542,José Paulo Bezzera Maciel Júnior,9,Right Defensive Midfield,9636
+1,5,5203,Sergio Busquets i Burgos,11,Left Defensive Midfield,9636
+1,22,6400,Aleix Vidal Parreu,12,Right Midfield,9636
+1,6,6609,Denis Suárez Fernández,16,Left Midfield,9636
+1,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9636
+1,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9636
+2,13,6931,Leandro Chichizola,1,Goalkeeper,9636
+2,12,6922,Míchel Macedo Rocha Machado,2,Right Back,9636
+2,3,7692,Mauricio Lemos Merladet,3,Right Center Back,9636
+2,22,6923,Joaquín Navarro Jiménez,5,Left Center Back,9636
+2,15,8204,Borja Herrera González,6,Left Back,9636
+2,14,15805,Hernán Daniel Santana Trujillo,9,Right Defensive Midfield,9636
+2,25,6920,Alberto Aquilani,11,Left Defensive Midfield,9636
+2,10,4265,Oussama Tannane,17,Right Wing,9636
+2,21,10755,Jonathan Viera Ramos,19,Center Attacking Midfield,9636
+2,24,6928,Pedro Taunausú Domínguez Placeres,21,Left Wing,9636
+2,9,6930,Jonathan Calleri,23,Center Forward,9636
+2081,1,20055,Marc-André ter Stegen,1,Goalkeeper,9636
+2081,20,6379,Sergi Roberto Carnicer,2,Right Back,9636
+2081,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9636
+2081,14,5506,Javier Alejandro Mascherano,5,Left Center Back,9636
+2081,18,5211,Jordi Alba Ramos,6,Left Back,9636
+2081,4,5470,Ivan Rakitić,9,Right Defensive Midfield,9636
+2081,5,5203,Sergio Busquets i Burgos,11,Left Defensive Midfield,9636
+2081,6,6609,Denis Suárez Fernández,12,Right Midfield,9636
+2081,8,5216,Andrés Iniesta Luján,16,Left Midfield,9636
+2081,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9636
+2081,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9636
+1,13,6378,Jan Oblak,1,Goalkeeper,9642
+1,20,6375,Juan Francisco Torres Belén,2,Right Back,9642
+1,15,6376,Stefan Savić,3,Right Center Back,9642
+1,2,5249,Diego Roberto Godín Leal,5,Left Center Back,9642
+1,3,6320,Filipe Luís Kasmirski,6,Left Back,9642
+1,14,6384,Gabriel Fernández Arenas,9,Right Defensive Midfield,9642
+1,8,6381,Saúl Ñíguez Esclapez,11,Left Defensive Midfield,9642
+1,6,5199,Jorge Resurrección Merodio,12,Right Midfield,9642
+1,10,5633,Yannick Ferreira Carrasco,16,Left Midfield,9642
+1,11,6377,Ángel Martín Correa,22,Right Center Forward,9642
+1,7,5487,Antoine Griezmann,24,Left Center Forward,9642
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9642
+2,2,6374,Nélson Cabral Semedo,2,Right Back,9642
+2,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9642
+2,23,5492,Samuel Yves Umtiti,5,Left Center Back,9642
+2,18,5211,Jordi Alba Ramos,6,Left Back,9642
+2,4,5470,Ivan Rakitić,9,Right Defensive Midfield,9642
+2,5,5203,Sergio Busquets i Burgos,11,Left Defensive Midfield,9642
+2,21,10802,André Filipe Tavares Gomes,12,Right Midfield,9642
+2,8,5216,Andrés Iniesta Luján,16,Left Midfield,9642
+2,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9642
+2,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9642
+2584,13,6378,Jan Oblak,1,Goalkeeper,9642
+2584,20,6375,Juan Francisco Torres Belén,2,Right Back,9642
+2584,15,6376,Stefan Savić,3,Right Center Back,9642
+2584,2,5249,Diego Roberto Godín Leal,5,Left Center Back,9642
+2584,3,6320,Filipe Luís Kasmirski,6,Left Back,9642
+2584,14,6384,Gabriel Fernández Arenas,9,Right Defensive Midfield,9642
+2584,8,6381,Saúl Ñíguez Esclapez,11,Left Defensive Midfield,9642
+2584,6,5199,Jorge Resurrección Merodio,12,Right Midfield,9642
+2584,22,19669,Osvaldo Nicolás Fabián Gaitán,16,Left Midfield,9642
+2584,7,5487,Antoine Griezmann,22,Right Center Forward,9642
+2584,10,5633,Yannick Ferreira Carrasco,24,Left Center Forward,9642
+2734,1,20055,Marc-André ter Stegen,1,Goalkeeper,9642
+2734,20,6379,Sergi Roberto Carnicer,2,Right Back,9642
+2734,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9642
+2734,23,5492,Samuel Yves Umtiti,5,Left Center Back,9642
+2734,18,5211,Jordi Alba Ramos,6,Left Back,9642
+2734,4,5470,Ivan Rakitić,9,Right Defensive Midfield,9642
+2734,5,5203,Sergio Busquets i Burgos,11,Left Defensive Midfield,9642
+2734,16,3726,Gerard Deulofeu Lázaro,12,Right Midfield,9642
+2734,21,10802,André Filipe Tavares Gomes,16,Left Midfield,9642
+2734,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9642
+2734,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9642
+3168,13,6378,Jan Oblak,1,Goalkeeper,9642
+3168,20,6375,Juan Francisco Torres Belén,2,Right Back,9642
+3168,15,6376,Stefan Savić,3,Right Center Back,9642
+3168,2,5249,Diego Roberto Godín Leal,5,Left Center Back,9642
+3168,3,6320,Filipe Luís Kasmirski,6,Left Back,9642
+3168,14,6384,Gabriel Fernández Arenas,9,Right Defensive Midfield,9642
+3168,8,6381,Saúl Ñíguez Esclapez,11,Left Defensive Midfield,9642
+3168,5,6383,Thomas Teye Partey,12,Right Midfield,9642
+3168,22,19669,Osvaldo Nicolás Fabián Gaitán,16,Left Midfield,9642
+3168,7,5487,Antoine Griezmann,22,Right Center Forward,9642
+3168,6,5199,Jorge Resurrección Merodio,24,Left Center Forward,9642
+3488,13,6378,Jan Oblak,1,Goalkeeper,9642
+3488,20,6375,Juan Francisco Torres Belén,2,Right Back,9642
+3488,15,6376,Stefan Savić,3,Right Center Back,9642
+3488,2,5249,Diego Roberto Godín Leal,5,Left Center Back,9642
+3488,3,6320,Filipe Luís Kasmirski,6,Left Back,9642
+3488,5,6383,Thomas Teye Partey,9,Right Defensive Midfield,9642
+3488,8,6381,Saúl Ñíguez Esclapez,11,Left Defensive Midfield,9642
+3488,6,5199,Jorge Resurrección Merodio,12,Right Midfield,9642
+3488,22,19669,Osvaldo Nicolás Fabián Gaitán,16,Left Midfield,9642
+3488,9,6382,Fernando José Torres Sanz,22,Right Center Forward,9642
+3488,7,5487,Antoine Griezmann,24,Left Center Forward,9642
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9650
+1,20,6379,Sergi Roberto Carnicer,2,Right Back,9650
+1,14,5506,Javier Alejandro Mascherano,3,Right Center Back,9650
+1,23,5492,Samuel Yves Umtiti,5,Left Center Back,9650
+1,19,6849,Lucas Digne,6,Left Back,9650
+1,4,5470,Ivan Rakitić,9,Right Defensive Midfield,9650
+1,5,5203,Sergio Busquets i Burgos,11,Left Defensive Midfield,9650
+1,16,3726,Gerard Deulofeu Lázaro,12,Right Midfield,9650
+1,8,5216,Andrés Iniesta Luján,16,Left Midfield,9650
+1,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9650
+1,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9650
+2,25,6848,Andrés Tomás Prieto Albert,1,Goalkeeper,9650
+2,18,6569,Roberto José Rosales Altuve,2,Right Back,9650
+2,4,6561,Luis Hernández Rodríguez,3,Right Center Back,9650
+2,22,4443,Paul Baysse,5,Left Center Back,9650
+2,7,6559,Juan Carlos Pérez López,6,Left Back,9650
+2,5,6843,Esteban Rolón,9,Right Defensive Midfield,9650
+2,8,6557,Adrián González Morales,11,Left Defensive Midfield,9650
+2,20,6742,Sergio Gontán Gallardo,17,Right Wing,9650
+2,16,6847,Adalberto Peñaranda Maestre,19,Center Attacking Midfield,9650
+2,11,6740,Gonzalo Castro Irizábal,21,Left Wing,9650
+2,24,6739,Diego Alejandro Rolan Silva,23,Center Forward,9650
+3124,25,6848,Andrés Tomás Prieto Albert,1,Goalkeeper,9650
+3124,18,6569,Roberto José Rosales Altuve,2,Right Back,9650
+3124,4,6561,Luis Hernández Rodríguez,3,Right Center Back,9650
+3124,22,4443,Paul Baysse,5,Left Center Back,9650
+3124,7,6559,Juan Carlos Pérez López,6,Left Back,9650
+3124,19,6575,Emanuel Cecchini,9,Right Defensive Midfield,9650
+3124,8,6557,Adrián González Morales,11,Left Defensive Midfield,9650
+3124,20,6742,Sergio Gontán Gallardo,12,Right Midfield,9650
+3124,11,6740,Gonzalo Castro Irizábal,16,Left Midfield,9650
+3124,9,6566,Borja González Tomás,22,Right Center Forward,9650
+3124,10,6563,Juan Pablo Añor Acosta,24,Left Center Forward,9650
+3125,1,20055,Marc-André ter Stegen,1,Goalkeeper,9650
+3125,2,6374,Nélson Cabral Semedo,2,Right Back,9650
+3125,14,5506,Javier Alejandro Mascherano,3,Right Center Back,9650
+3125,23,5492,Samuel Yves Umtiti,5,Left Center Back,9650
+3125,19,6849,Lucas Digne,6,Left Back,9650
+3125,4,5470,Ivan Rakitić,9,Right Defensive Midfield,9650
+3125,5,5203,Sergio Busquets i Burgos,11,Left Defensive Midfield,9650
+3125,20,6379,Sergi Roberto Carnicer,12,Right Midfield,9650
+3125,8,5216,Andrés Iniesta Luján,16,Left Midfield,9650
+3125,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9650
+3125,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9650
+1,1,6395,Kepa Arrizabalaga Revuelta,1,Goalkeeper,9661
+1,2,6386,Eneko Bóveda Altube,2,Right Back,9661
+1,30,6397,Unai Núñez Gestoso,3,Right Center Back,9661
+1,4,4353,Aymeric Laporte,5,Left Center Back,9661
+1,15,6392,Íñigo Lekue Martínez,6,Left Back,9661
+1,8,6388,Ander Iturraspe Derteano,9,Right Defensive Midfield,9661
+1,6,6389,Mikel San José Domínguez,11,Left Defensive Midfield,9661
+1,11,6393,Iñaki Williams Arthuer,17,Right Wing,9661
+1,22,6391,Raúl García Escudero,19,Center Attacking Midfield,9661
+1,28,6387,Iñigo Córdoba Kerejeta,21,Left Wing,9661
+1,20,6394,Aritz Aduriz Zubeldia,23,Center Forward,9661
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9661
+2,20,6379,Sergi Roberto Carnicer,2,Right Back,9661
+2,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9661
+2,23,5492,Samuel Yves Umtiti,5,Left Center Back,9661
+2,18,5211,Jordi Alba Ramos,6,Left Back,9661
+2,5,5203,Sergio Busquets i Burgos,9,Right Defensive Midfield,9661
+2,15,5542,José Paulo Bezzera Maciel Júnior,11,Left Defensive Midfield,9661
+2,4,5470,Ivan Rakitić,12,Right Midfield,9661
+2,21,10802,André Filipe Tavares Gomes,16,Left Midfield,9661
+2,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9661
+2,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9661
+3161,1,20055,Marc-André ter Stegen,1,Goalkeeper,9661
+3161,2,6374,Nélson Cabral Semedo,2,Right Back,9661
+3161,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9661
+3161,23,5492,Samuel Yves Umtiti,5,Left Center Back,9661
+3161,18,5211,Jordi Alba Ramos,6,Left Back,9661
+3161,4,5470,Ivan Rakitić,9,Right Defensive Midfield,9661
+3161,5,5203,Sergio Busquets i Burgos,11,Left Defensive Midfield,9661
+3161,20,6379,Sergi Roberto Carnicer,12,Right Midfield,9661
+3161,15,5542,José Paulo Bezzera Maciel Júnior,16,Left Midfield,9661
+3161,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9661
+3161,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9661
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9673
+1,2,6374,Nélson Cabral Semedo,2,Right Back,9673
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9673
+1,23,5492,Samuel Yves Umtiti,5,Left Center Back,9673
+1,18,5211,Jordi Alba Ramos,6,Left Back,9673
+1,17,6402,Francisco Alcácer García,12,Right Midfield,9673
+1,5,5203,Sergio Busquets i Burgos,13,Right Center Midfield,9673
+1,4,5470,Ivan Rakitić,15,Left Center Midfield,9673
+1,8,5216,Andrés Iniesta Luján,16,Left Midfield,9673
+1,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9673
+1,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9673
+2,13,6722,David Soria Solís,1,Goalkeeper,9673
+2,2,6716,Sébastien Corchia,2,Right Back,9673
+2,4,5534,Simon Thorup Kjær,3,Right Center Back,9673
+2,5,6826,Clément Lenglet,5,Left Center Back,9673
+2,18,6718,Sergio Escudero Palomo,6,Left Back,9673
+2,15,5737,Steven N''Kemboanza Mike Christopher Nzonzi,9,Right Defensive Midfield,9673
+2,14,6715,Guido Hernán Pizarro,11,Left Defensive Midfield,9673
+2,16,6821,Jesús Navas González,12,Right Midfield,9673
+2,10,5504,Éver Maximiliano David Banega,14,Center Midfield,9673
+2,17,6720,Pablo Sarabia García,16,Left Midfield,9673
+2,20,6334,Luis Fernando Muriel Fruto,25,Secondary Striker,9673
+2929,1,20055,Marc-André ter Stegen,1,Goalkeeper,9673
+2929,2,6374,Nélson Cabral Semedo,2,Right Back,9673
+2929,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9673
+2929,23,5492,Samuel Yves Umtiti,5,Left Center Back,9673
+2929,18,5211,Jordi Alba Ramos,6,Left Back,9673
+2929,4,5470,Ivan Rakitić,12,Right Midfield,9673
+2929,5,5203,Sergio Busquets i Burgos,13,Right Center Midfield,9673
+2929,15,5542,José Paulo Bezzera Maciel Júnior,15,Left Center Midfield,9673
+2929,16,3726,Gerard Deulofeu Lázaro,16,Left Midfield,9673
+2929,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9673
+2929,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9673
+3856,1,20055,Marc-André ter Stegen,1,Goalkeeper,9673
+3856,2,6374,Nélson Cabral Semedo,2,Right Back,9673
+3856,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9673
+3856,23,5492,Samuel Yves Umtiti,5,Left Center Back,9673
+3856,18,5211,Jordi Alba Ramos,6,Left Back,9673
+3856,15,5542,José Paulo Bezzera Maciel Júnior,12,Right Midfield,9673
+3856,14,5506,Javier Alejandro Mascherano,13,Right Center Midfield,9673
+3856,5,5203,Sergio Busquets i Burgos,15,Left Center Midfield,9673
+3856,16,3726,Gerard Deulofeu Lázaro,16,Left Midfield,9673
+3856,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9673
+3856,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9673
+1,1,6610,Iván Cuéllar Sacristán,1,Goalkeeper,9682
+1,20,6605,Joseba Zaldúa Bengoetxea,2,Right Back,9682
+1,19,6894,Ezequiel Muñoz,3,Right Center Back,9682
+1,22,6603,Dimitrios Siovas,5,Left Center Back,9682
+1,15,6895,Diego Rico Salguero,6,Left Back,9682
+1,21,6599,Rubén Salvador Pérez Del Mármol,13,Right Center Midfield,9682
+1,8,6597,Gabriel Appelt Pires,15,Left Center Midfield,9682
+1,10,6608,Nabil El Zhar,17,Right Wing,9682
+1,17,6606,Javier Eraso Goñi,19,Center Attacking Midfield,9682
+1,11,6875,Alexander Szymanowski,21,Left Wing,9682
+1,25,3302,Nordin Amrabat,23,Center Forward,9682
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9682
+2,2,6374,Nélson Cabral Semedo,2,Right Back,9682
+2,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9682
+2,23,5492,Samuel Yves Umtiti,5,Left Center Back,9682
+2,18,5211,Jordi Alba Ramos,6,Left Back,9682
+2,5,5203,Sergio Busquets i Burgos,11,Left Defensive Midfield,9682
+2,17,6402,Francisco Alcácer García,12,Right Midfield,9682
+2,4,5470,Ivan Rakitić,13,Right Center Midfield,9682
+2,8,5216,Andrés Iniesta Luján,16,Left Midfield,9682
+2,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9682
+2,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9682
+2572,1,6610,Iván Cuéllar Sacristán,1,Goalkeeper,9682
+2572,20,6605,Joseba Zaldúa Bengoetxea,2,Right Back,9682
+2572,19,6894,Ezequiel Muñoz,3,Right Center Back,9682
+2572,22,6603,Dimitrios Siovas,5,Left Center Back,9682
+2572,15,6895,Diego Rico Salguero,6,Left Back,9682
+2572,21,6599,Rubén Salvador Pérez Del Mármol,9,Right Defensive Midfield,9682
+2572,6,6834,Gerard Gumbau Garriga,11,Left Defensive Midfield,9682
+2572,10,6608,Nabil El Zhar,12,Right Midfield,9682
+2572,25,3302,Nordin Amrabat,16,Left Midfield,9682
+2572,8,6597,Gabriel Appelt Pires,19,Center Attacking Midfield,9682
+2572,12,6600,Claudio Beauvue,23,Center Forward,9682
+2770,1,20055,Marc-André ter Stegen,1,Goalkeeper,9682
+2770,22,6400,Aleix Vidal Parreu,2,Right Back,9682
+2770,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9682
+2770,23,5492,Samuel Yves Umtiti,5,Left Center Back,9682
+2770,18,5211,Jordi Alba Ramos,6,Left Back,9682
+2770,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9682
+2770,4,5470,Ivan Rakitić,13,Right Center Midfield,9682
+2770,15,5542,José Paulo Bezzera Maciel Júnior,15,Left Center Midfield,9682
+2770,10,5503,Lionel Andrés Messi Cuccittini,19,Center Attacking Midfield,9682
+2770,9,5246,Luis Alberto Suárez Díaz,22,Right Center Forward,9682
+2770,17,6402,Francisco Alcácer García,24,Left Center Forward,9682
+1,13,6590,Norberto Murara Neto,1,Goalkeeper,9695
+1,21,6593,Martín Montoya Torralbo,2,Right Back,9695
+1,24,6891,Ezequiel Marcelo Garay,3,Right Center Back,9695
+1,5,6746,Gabriel Armando de Abreu,5,Left Center Back,9695
+1,14,6596,José Luis Gayà Peña,6,Left Back,9695
+1,16,6589,Geoffrey Kondogbia,9,Right Defensive Midfield,9695
+1,10,6595,Daniel Parejo Muñoz,11,Left Defensive Midfield,9695
+1,18,6583,Carlos Soler Barragán,12,Right Midfield,9695
+1,7,4367,Gonçalo Manuel Ganchinho Guedes,16,Left Midfield,9695
+1,9,6584,Simone Zaza,22,Right Center Forward,9695
+1,19,5718,Rodrigo Moreno Machado,24,Left Center Forward,9695
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9695
+2,2,6374,Nélson Cabral Semedo,2,Right Back,9695
+2,23,5492,Samuel Yves Umtiti,3,Right Center Back,9695
+2,25,6332,Thomas Vermaelen,5,Left Center Back,9695
+2,18,5211,Jordi Alba Ramos,6,Left Back,9695
+2,15,5542,José Paulo Bezzera Maciel Júnior,9,Right Defensive Midfield,9695
+2,5,5203,Sergio Busquets i Burgos,11,Left Defensive Midfield,9695
+2,4,5470,Ivan Rakitić,12,Right Midfield,9695
+2,8,5216,Andrés Iniesta Luján,16,Left Midfield,9695
+2,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9695
+2,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9695
+3691,13,6590,Norberto Murara Neto,1,Goalkeeper,9695
+3691,21,6593,Martín Montoya Torralbo,2,Right Back,9695
+3691,3,6592,Rúben Miguel Nunes Vezo,3,Right Center Back,9695
+3691,5,6746,Gabriel Armando de Abreu,5,Left Center Back,9695
+3691,14,6596,José Luis Gayà Peña,6,Left Back,9695
+3691,16,6589,Geoffrey Kondogbia,9,Right Defensive Midfield,9695
+3691,10,6595,Daniel Parejo Muñoz,11,Left Defensive Midfield,9695
+3691,18,6583,Carlos Soler Barragán,12,Right Midfield,9695
+3691,11,6846,Andreas Hoelgebaum Pereira,16,Left Midfield,9695
+3691,9,6584,Simone Zaza,22,Right Center Forward,9695
+3691,7,4367,Gonçalo Manuel Ganchinho Guedes,24,Left Center Forward,9695
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9700
+1,20,6379,Sergi Roberto Carnicer,2,Right Back,9700
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9700
+1,23,5492,Samuel Yves Umtiti,5,Left Center Back,9700
+1,18,5211,Jordi Alba Ramos,6,Left Back,9700
+1,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9700
+1,4,5470,Ivan Rakitić,13,Right Center Midfield,9700
+1,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9700
+1,15,5542,José Paulo Bezzera Maciel Júnior,19,Center Attacking Midfield,9700
+1,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9700
+1,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9700
+2,13,6795,Rubén Blanco Veiga,1,Goalkeeper,9700
+2,18,6797,Daniel Wass,2,Right Back,9700
+2,20,6804,Sergi Gómez Solà,3,Right Center Back,9700
+2,3,6890,Andreu Fontàs Prat,5,Left Center Back,9700
+2,2,6805,Hugo Mallo Novegil,6,Left Back,9700
+2,26,6799,Brais Méndez Portela,12,Right Midfield,9700
+2,16,6852,Jozabed Sánchez Ruiz,13,Right Center Midfield,9700
+2,14,6798,Stanislav Lobotka,15,Left Center Midfield,9700
+2,11,5516,Pione Sisto Ifolo Emirmija,16,Left Midfield,9700
+2,7,6297,Maximiliano Gómez González,22,Right Center Forward,9700
+2,10,5217,Iago Aspas Juncal,24,Left Center Forward,9700
+4084,1,20055,Marc-André ter Stegen,1,Goalkeeper,9700
+4084,20,6379,Sergi Roberto Carnicer,2,Right Back,9700
+4084,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9700
+4084,25,6332,Thomas Vermaelen,5,Left Center Back,9700
+4084,18,5211,Jordi Alba Ramos,6,Left Back,9700
+4084,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9700
+4084,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9700
+4084,6,6609,Denis Suárez Fernández,15,Left Center Midfield,9700
+4084,17,6402,Francisco Alcácer García,22,Right Center Forward,9700
+4084,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9700
+4084,10,5503,Lionel Andrés Messi Cuccittini,25,Secondary Striker,9700
+1,1,6755,Sergio Asenjo Andrés,1,Goalkeeper,9717
+1,2,6772,Mario Gaspar Pérez Martínez,2,Right Back,9717
+1,3,6762,Álvaro González Soberón,3,Right Center Back,9717
+1,6,6752,Víctor Ruíz Torre,5,Left Center Back,9717
+1,11,6828,Jaume Vicent Costa Jordá,6,Left Back,9717
+1,4,6857,Rúben Afonso Borges Semedo,10,Center Defensive Midfield,9717
+1,28,6753,Daniel Raba Antolín,12,Right Midfield,9717
+1,14,6771,Manuel Trigueros Muñoz,13,Right Center Midfield,9717
+1,16,6765,Rodrigo Hernández Cascante,15,Left Center Midfield,9717
+1,20,6759,Roberto Soriano,16,Left Midfield,9717
+1,17,6862,Cédric Bakambu,23,Center Forward,9717
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9717
+2,20,6379,Sergi Roberto Carnicer,2,Right Back,9717
+2,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9717
+2,25,6332,Thomas Vermaelen,5,Left Center Back,9717
+2,18,5211,Jordi Alba Ramos,6,Left Back,9717
+2,4,5470,Ivan Rakitić,12,Right Midfield,9717
+2,5,5203,Sergio Busquets i Burgos,13,Right Center Midfield,9717
+2,15,5542,José Paulo Bezzera Maciel Júnior,15,Left Center Midfield,9717
+2,6,6609,Denis Suárez Fernández,16,Left Midfield,9717
+2,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9717
+2,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9717
+2180,1,6755,Sergio Asenjo Andrés,1,Goalkeeper,9717
+2180,2,6772,Mario Gaspar Pérez Martínez,2,Right Back,9717
+2180,3,6762,Álvaro González Soberón,3,Right Center Back,9717
+2180,6,6752,Víctor Ruíz Torre,5,Left Center Back,9717
+2180,11,6828,Jaume Vicent Costa Jordá,6,Left Back,9717
+2180,16,6765,Rodrigo Hernández Cascante,10,Center Defensive Midfield,9717
+2180,28,6753,Daniel Raba Antolín,12,Right Midfield,9717
+2180,10,6829,Samuel Castillejo Azuaga,13,Right Center Midfield,9717
+2180,14,6771,Manuel Trigueros Muñoz,15,Left Center Midfield,9717
+2180,20,6759,Roberto Soriano,16,Left Midfield,9717
+2180,17,6862,Cédric Bakambu,23,Center Forward,9717
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9726
+1,20,6379,Sergi Roberto Carnicer,2,Right Back,9726
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9726
+1,25,6332,Thomas Vermaelen,5,Left Center Back,9726
+1,18,5211,Jordi Alba Ramos,6,Left Back,9726
+1,4,5470,Ivan Rakitić,9,Right Defensive Midfield,9726
+1,15,5542,José Paulo Bezzera Maciel Júnior,11,Left Defensive Midfield,9726
+1,8,5216,Andrés Iniesta Luján,12,Right Midfield,9726
+1,17,6402,Francisco Alcácer García,16,Left Midfield,9726
+1,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9726
+1,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9726
+2,13,6730,Rubén Iván Martínez Andrade,1,Goalkeeper,9726
+2,2,6738,Juan Francisco Moreno Fuertes,2,Right Back,9726
+2,24,5537,Fabian Lukas Schär,3,Right Center Back,9726
+2,12,6777,Sidnei Rechel da Silva Júnior,5,Left Center Back,9726
+2,3,6913,Fernando Navarro i Corbacho,6,Left Back,9726
+2,20,6729,Guilherme dos Santos Torres,9,Right Defensive Midfield,9726
+2,22,5582,Celso Borges Mora,11,Left Defensive Midfield,9726
+2,11,6800,Carles Gil de Pareja Vicent,17,Right Wing,9726
+2,8,6779,Emre Çolak,19,Center Attacking Midfield,9726
+2,15,6735,Adrián López Álvarez,21,Left Wing,9726
+2,7,6732,Lucas Pérez Martínez,23,Center Forward,9726
+1134,1,20055,Marc-André ter Stegen,1,Goalkeeper,9726
+1134,20,6379,Sergi Roberto Carnicer,2,Right Back,9726
+1134,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9726
+1134,25,6332,Thomas Vermaelen,5,Left Center Back,9726
+1134,18,5211,Jordi Alba Ramos,6,Left Back,9726
+1134,4,5470,Ivan Rakitić,9,Right Defensive Midfield,9726
+1134,15,5542,José Paulo Bezzera Maciel Júnior,11,Left Defensive Midfield,9726
+1134,22,6400,Aleix Vidal Parreu,12,Right Midfield,9726
+1134,8,5216,Andrés Iniesta Luján,16,Left Midfield,9726
+1134,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9726
+1134,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9726
+2787,13,6730,Rubén Iván Martínez Andrade,1,Goalkeeper,9726
+2787,2,6738,Juan Francisco Moreno Fuertes,2,Right Back,9726
+2787,24,5537,Fabian Lukas Schär,3,Right Center Back,9726
+2787,12,6777,Sidnei Rechel da Silva Júnior,5,Left Center Back,9726
+2787,3,6913,Fernando Navarro i Corbacho,6,Left Back,9726
+2787,22,5582,Celso Borges Mora,9,Right Defensive Midfield,9726
+2787,17,6773,Federico Santiago Valverde Dipetta,11,Left Defensive Midfield,9726
+2787,11,6800,Carles Gil de Pareja Vicent,12,Right Midfield,9726
+2787,18,6725,Zakaria Bakkali,16,Left Midfield,9726
+2787,15,6735,Adrián López Álvarez,22,Right Center Forward,9726
+2787,7,6732,Lucas Pérez Martínez,24,Left Center Forward,9726
+3660,13,6730,Rubén Iván Martínez Andrade,1,Goalkeeper,9726
+3660,2,6738,Juan Francisco Moreno Fuertes,2,Right Back,9726
+3660,24,5537,Fabian Lukas Schär,3,Right Center Back,9726
+3660,12,6777,Sidnei Rechel da Silva Júnior,5,Left Center Back,9726
+3660,3,6913,Fernando Navarro i Corbacho,6,Left Back,9726
+3660,22,5582,Celso Borges Mora,9,Right Defensive Midfield,9726
+3660,17,6773,Federico Santiago Valverde Dipetta,11,Left Defensive Midfield,9726
+3660,18,6725,Zakaria Bakkali,12,Right Midfield,9726
+3660,19,6774,Borja Valle Balonga,16,Left Midfield,9726
+3660,15,6735,Adrián López Álvarez,22,Right Center Forward,9726
+3660,7,6732,Lucas Pérez Martínez,24,Left Center Forward,9726
+1,1,5597,Keylor Navas Gamboa,1,Goalkeeper,9736
+1,2,5721,Daniel Carvajal Ramos,2,Right Back,9736
+1,5,5485,Raphaël Varane,3,Right Center Back,9736
+1,4,5201,Sergio Ramos García,5,Left Center Back,9736
+1,12,5552,Marcelo Vieira da Silva Júnior,6,Left Back,9736
+1,14,5539,Carlos Henrique Casimiro,10,Center Defensive Midfield,9736
+1,10,5463,Luka Modrić,13,Right Center Midfield,9736
+1,23,5456,Mateo Kovačić,14,Center Midfield,9736
+1,8,5574,Toni Kroos,15,Left Center Midfield,9736
+1,7,5207,Cristiano Ronaldo dos Santos Aveiro,22,Right Center Forward,9736
+1,9,19677,Karim Benzema,24,Left Center Forward,9736
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9736
+2,20,6379,Sergi Roberto Carnicer,2,Right Back,9736
+2,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9736
+2,25,6332,Thomas Vermaelen,5,Left Center Back,9736
+2,18,5211,Jordi Alba Ramos,6,Left Back,9736
+2,15,5542,José Paulo Bezzera Maciel Júnior,12,Right Midfield,9736
+2,5,5203,Sergio Busquets i Burgos,13,Right Center Midfield,9736
+2,4,5470,Ivan Rakitić,15,Left Center Midfield,9736
+2,8,5216,Andrés Iniesta Luján,16,Left Midfield,9736
+2,9,5246,Luis Alberto Suárez Díaz,22,Right Center Forward,9736
+2,10,5503,Lionel Andrés Messi Cuccittini,24,Left Center Forward,9736
+2905,1,5597,Keylor Navas Gamboa,1,Goalkeeper,9736
+2905,6,5202,José Ignacio Fernández Iglesias,2,Right Back,9736
+2905,5,5485,Raphaël Varane,3,Right Center Back,9736
+2905,4,5201,Sergio Ramos García,5,Left Center Back,9736
+2905,12,5552,Marcelo Vieira da Silva Júnior,6,Left Back,9736
+2905,2,5721,Daniel Carvajal Ramos,10,Center Defensive Midfield,9736
+2905,10,5463,Luka Modrić,12,Right Midfield,9736
+2905,14,5539,Carlos Henrique Casimiro,13,Right Center Midfield,9736
+2905,8,5574,Toni Kroos,15,Left Center Midfield,9736
+2905,23,5456,Mateo Kovačić,16,Left Midfield,9736
+2905,7,5207,Cristiano Ronaldo dos Santos Aveiro,23,Center Forward,9736
+3305,1,5597,Keylor Navas Gamboa,1,Goalkeeper,9736
+3305,6,5202,José Ignacio Fernández Iglesias,2,Right Back,9736
+3305,5,5485,Raphaël Varane,3,Right Center Back,9736
+3305,4,5201,Sergio Ramos García,5,Left Center Back,9736
+3305,12,5552,Marcelo Vieira da Silva Júnior,6,Left Back,9736
+3305,2,5721,Daniel Carvajal Ramos,10,Center Defensive Midfield,9736
+3305,8,5574,Toni Kroos,13,Right Center Midfield,9736
+3305,10,5463,Luka Modrić,15,Left Center Midfield,9736
+3305,11,6399,Gareth Frank Bale,17,Right Wing,9736
+3305,20,5719,Marco Asensio Willemsen,21,Left Wing,9736
+3305,7,5207,Cristiano Ronaldo dos Santos Aveiro,23,Center Forward,9736
+3539,1,20055,Marc-André ter Stegen,1,Goalkeeper,9736
+3539,2,6374,Nélson Cabral Semedo,2,Right Back,9736
+3539,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9736
+3539,25,6332,Thomas Vermaelen,5,Left Center Back,9736
+3539,18,5211,Jordi Alba Ramos,6,Left Back,9736
+3539,20,6379,Sergi Roberto Carnicer,12,Right Midfield,9736
+3539,5,5203,Sergio Busquets i Burgos,13,Right Center Midfield,9736
+3539,4,5470,Ivan Rakitić,15,Left Center Midfield,9736
+3539,15,5542,José Paulo Bezzera Maciel Júnior,16,Left Midfield,9736
+3539,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9736
+3539,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9736
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9742
+1,20,6379,Sergi Roberto Carnicer,2,Right Back,9742
+1,14,5506,Javier Alejandro Mascherano,3,Right Center Back,9742
+1,25,6332,Thomas Vermaelen,5,Left Center Back,9742
+1,18,5211,Jordi Alba Ramos,6,Left Back,9742
+1,11,5477,Ousmane Dembélé,12,Right Midfield,9742
+1,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9742
+1,4,5470,Ivan Rakitić,15,Left Center Midfield,9742
+1,8,5216,Andrés Iniesta Luján,16,Left Midfield,9742
+1,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9742
+1,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9742
+2,13,6692,Oier Olazábal Paredes,1,Goalkeeper,9742
+2,26,6806,Shaquell Moore,2,Right Back,9742
+2,18,6809,Erick Cathriel Cabaco Almada,3,Right Center Back,9742
+2,15,6682,Sergio Postigo Redondo,5,Left Center Back,9742
+2,22,6675,Antonio Manuel Luna Rodríguez,6,Left Back,9742
+2,20,6687,Saša Lukić,10,Center Defensive Midfield,9742
+2,23,6691,David Remeseiro Salgueiro,12,Right Midfield,9742
+2,8,5678,Jefferson Andrés Lerma Solís,13,Right Center Midfield,9742
+2,5,6683,Cheick Doukouré,15,Left Center Midfield,9742
+2,14,6780,Iván López Álvarez,16,Left Midfield,9742
+2,21,6678,Emmanuel Okyere Boateng,23,Center Forward,9742
+1571,1,20055,Marc-André ter Stegen,1,Goalkeeper,9742
+1571,20,6379,Sergi Roberto Carnicer,2,Right Back,9742
+1571,14,5506,Javier Alejandro Mascherano,3,Right Center Back,9742
+1571,25,6332,Thomas Vermaelen,5,Left Center Back,9742
+1571,18,5211,Jordi Alba Ramos,6,Left Back,9742
+1571,4,5470,Ivan Rakitić,10,Center Defensive Midfield,9742
+1571,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9742
+1571,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9742
+1571,11,5477,Ousmane Dembélé,17,Right Wing,9742
+1571,9,5246,Luis Alberto Suárez Díaz,21,Left Wing,9742
+1571,10,5503,Lionel Andrés Messi Cuccittini,25,Secondary Striker,9742
+2576,1,20055,Marc-André ter Stegen,1,Goalkeeper,9742
+2576,2,6374,Nélson Cabral Semedo,2,Right Back,9742
+2576,14,5506,Javier Alejandro Mascherano,3,Right Center Back,9742
+2576,25,6332,Thomas Vermaelen,5,Left Center Back,9742
+2576,18,5211,Jordi Alba Ramos,6,Left Back,9742
+2576,15,5542,José Paulo Bezzera Maciel Júnior,9,Right Defensive Midfield,9742
+2576,4,5470,Ivan Rakitić,11,Left Defensive Midfield,9742
+2576,20,6379,Sergi Roberto Carnicer,12,Right Midfield,9742
+2576,8,5216,Andrés Iniesta Luján,16,Left Midfield,9742
+2576,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9742
+2576,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9742
+3299,1,20055,Marc-André ter Stegen,1,Goalkeeper,9742
+3299,2,6374,Nélson Cabral Semedo,2,Right Back,9742
+3299,14,5506,Javier Alejandro Mascherano,3,Right Center Back,9742
+3299,25,6332,Thomas Vermaelen,5,Left Center Back,9742
+3299,18,5211,Jordi Alba Ramos,6,Left Back,9742
+3299,15,5542,José Paulo Bezzera Maciel Júnior,9,Right Defensive Midfield,9742
+3299,4,5470,Ivan Rakitić,11,Left Defensive Midfield,9742
+3299,21,10802,André Filipe Tavares Gomes,12,Right Midfield,9742
+3299,37,6810,José Manuel Arnáiz Díaz,16,Left Midfield,9742
+3299,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9742
+3299,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9742
+1,1,6694,Gerónimo Rulli,1,Goalkeeper,9754
+1,19,6689,Álvaro Odriozola Arzallus,2,Right Back,9754
+1,3,6713,Diego Javier Llorente Ríos,3,Right Center Back,9754
+1,22,6693,Raúl Rodríguez Navas,5,Left Center Back,9754
+1,20,6885,Kévin Manuel Rodrigues,6,Left Back,9754
+1,16,6673,Sergio Canales Madrazo,12,Right Midfield,9754
+1,4,6671,Asier Illarramendi Andonegi,13,Right Center Midfield,9754
+1,17,6669,David Zurutuza Veillet,15,Left Center Midfield,9754
+1,7,6695,Juan Miguel Jiménez López,16,Left Midfield,9754
+1,10,6690,Xabier Prieto Argarate,19,Center Attacking Midfield,9754
+1,12,6721,Willian José da Silva,25,Secondary Striker,9754
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9754
+2,20,6379,Sergi Roberto Carnicer,2,Right Back,9754
+2,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9754
+2,25,6332,Thomas Vermaelen,5,Left Center Back,9754
+2,18,5211,Jordi Alba Ramos,6,Left Back,9754
+2,4,5470,Ivan Rakitić,13,Right Center Midfield,9754
+2,5,5203,Sergio Busquets i Burgos,15,Left Center Midfield,9754
+2,15,5542,José Paulo Bezzera Maciel Júnior,17,Right Wing,9754
+2,21,10802,André Filipe Tavares Gomes,21,Left Wing,9754
+2,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9754
+2,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9754
+1,13,6654,Antonio Adán Garrido,1,Goalkeeper,9765
+1,3,6836,Francisco Javier García Fernández,3,Right Center Back,9765
+1,23,6648,Aïssa Mandi,4,Center Back,9765
+1,4,6647,Zouhair Feddal,5,Left Center Back,9765
+1,6,6655,Fabián Ruiz Peña,9,Right Defensive Midfield,9765
+1,18,5563,José Andrés Guardado Hernández,11,Left Defensive Midfield,9765
+1,27,6831,Francisco Javier Guerrero Martín,12,Right Midfield,9765
+1,14,6646,Riza Durmisi,16,Left Midfield,9765
+1,17,6651,Joaquín Sánchez Rodríguez,19,Center Attacking Midfield,9765
+1,7,6657,Sergio León Limones,22,Right Center Forward,9765
+1,20,6658,Cristian Tello Herrera,24,Left Center Forward,9765
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9765
+2,2,6374,Nélson Cabral Semedo,2,Right Back,9765
+2,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9765
+2,25,6332,Thomas Vermaelen,5,Left Center Back,9765
+2,18,5211,Jordi Alba Ramos,6,Left Back,9765
+2,4,5470,Ivan Rakitić,13,Right Center Midfield,9765
+2,5,5203,Sergio Busquets i Burgos,15,Left Center Midfield,9765
+2,20,6379,Sergi Roberto Carnicer,17,Right Wing,9765
+2,21,10802,André Filipe Tavares Gomes,21,Left Wing,9765
+2,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9765
+2,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9765
+2907,1,20055,Marc-André ter Stegen,1,Goalkeeper,9765
+2907,2,6374,Nélson Cabral Semedo,2,Right Back,9765
+2907,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9765
+2907,23,5492,Samuel Yves Umtiti,5,Left Center Back,9765
+2907,18,5211,Jordi Alba Ramos,6,Left Back,9765
+2907,5,5203,Sergio Busquets i Burgos,13,Right Center Midfield,9765
+2907,15,5542,José Paulo Bezzera Maciel Júnior,15,Left Center Midfield,9765
+2907,4,5470,Ivan Rakitić,17,Right Wing,9765
+2907,20,6379,Sergi Roberto Carnicer,21,Left Wing,9765
+2907,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9765
+2907,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9765
+3733,13,6654,Antonio Adán Garrido,1,Goalkeeper,9765
+3733,27,6831,Francisco Javier Guerrero Martín,3,Right Center Back,9765
+3733,23,6648,Aïssa Mandi,4,Center Back,9765
+3733,4,6647,Zouhair Feddal,5,Left Center Back,9765
+3733,8,6659,Víctor Camarasa Ferrando,9,Right Defensive Midfield,9765
+3733,18,5563,José Andrés Guardado Hernández,11,Left Defensive Midfield,9765
+3733,17,6651,Joaquín Sánchez Rodríguez,12,Right Midfield,9765
+3733,14,6646,Riza Durmisi,16,Left Midfield,9765
+3733,10,6661,Ryad Boudebouz,18,Right Attacking Midfield,9765
+3733,24,6832,Rubén Castro Martín,22,Right Center Forward,9765
+3733,20,6658,Cristian Tello Herrera,24,Left Center Forward,9765
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9774
+1,2,6374,Nélson Cabral Semedo,2,Right Back,9774
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9774
+1,23,5492,Samuel Yves Umtiti,5,Left Center Back,9774
+1,19,6849,Lucas Digne,6,Left Back,9774
+1,14,3501,Philippe Coutinho Correia,12,Right Midfield,9774
+1,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9774
+1,4,5470,Ivan Rakitić,15,Left Center Midfield,9774
+1,8,5216,Andrés Iniesta Luján,16,Left Midfield,9774
+1,9,5246,Luis Alberto Suárez Díaz,22,Right Center Forward,9774
+1,10,5503,Lionel Andrés Messi Cuccittini,24,Left Center Forward,9774
+2,1,6629,Fernando Pacheco Flores,1,Goalkeeper,9774
+2,4,6614,Alexis Ruano Delgado,2,Right Back,9774
+2,5,6615,Víctor Laguardia Cisneros,3,Right Center Back,9774
+2,6,6855,Guillermo Alfonso Maripán Loaysa,5,Left Center Back,9774
+2,3,6612,Rubén Duarte Sánchez,6,Left Back,9774
+2,21,6838,Hernán Arsenio Pérez González,12,Right Midfield,9774
+2,23,6736,Álvaro Medrán Just,13,Right Center Midfield,9774
+2,22,6626,Mubarak Wakaso,15,Left Center Midfield,9774
+2,11,6617,Ibai Gómez Pérez,16,Left Midfield,9774
+2,10,6038,John Guidetti,22,Right Center Forward,9774
+2,7,6613,Rubén Sobrino Pozuelo,24,Left Center Forward,9774
+2643,1,6629,Fernando Pacheco Flores,1,Goalkeeper,9774
+2643,4,6614,Alexis Ruano Delgado,2,Right Back,9774
+2643,5,6615,Víctor Laguardia Cisneros,3,Right Center Back,9774
+2643,6,6855,Guillermo Alfonso Maripán Loaysa,5,Left Center Back,9774
+2643,3,6612,Rubén Duarte Sánchez,6,Left Back,9774
+2643,11,6617,Ibai Gómez Pérez,12,Right Midfield,9774
+2643,23,6736,Álvaro Medrán Just,13,Right Center Midfield,9774
+2643,22,6626,Mubarak Wakaso,15,Left Center Midfield,9774
+2643,17,6737,Alfonso Pedraza Sag,16,Left Midfield,9774
+2643,10,6038,John Guidetti,22,Right Center Forward,9774
+2643,7,6613,Rubén Sobrino Pozuelo,24,Left Center Forward,9774
+2721,1,20055,Marc-André ter Stegen,1,Goalkeeper,9774
+2721,20,6379,Sergi Roberto Carnicer,2,Right Back,9774
+2721,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9774
+2721,23,5492,Samuel Yves Umtiti,5,Left Center Back,9774
+2721,18,5211,Jordi Alba Ramos,6,Left Back,9774
+2721,10,5503,Lionel Andrés Messi Cuccittini,12,Right Midfield,9774
+2721,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9774
+2721,4,5470,Ivan Rakitić,15,Left Center Midfield,9774
+2721,8,5216,Andrés Iniesta Luján,16,Left Midfield,9774
+2721,9,5246,Luis Alberto Suárez Díaz,22,Right Center Forward,9774
+2721,17,6402,Francisco Alcácer García,24,Left Center Forward,9774
+3454,1,6629,Fernando Pacheco Flores,1,Goalkeeper,9774
+3454,4,6614,Alexis Ruano Delgado,2,Right Back,9774
+3454,5,6615,Víctor Laguardia Cisneros,3,Right Center Back,9774
+3454,6,6855,Guillermo Alfonso Maripán Loaysa,5,Left Center Back,9774
+3454,17,6737,Alfonso Pedraza Sag,6,Left Back,9774
+3454,11,6617,Ibai Gómez Pérez,12,Right Midfield,9774
+3454,23,6736,Álvaro Medrán Just,13,Right Center Midfield,9774
+3454,22,6626,Mubarak Wakaso,15,Left Center Midfield,9774
+3454,7,6613,Rubén Sobrino Pozuelo,16,Left Midfield,9774
+3454,24,6616,Munir El Haddadi Mohamed,22,Right Center Forward,9774
+3454,29,6874,Ermedin Demirović,24,Left Center Forward,9774
+1,13,6768,Diego López Rodríguez,1,Goalkeeper,9783
+1,2,6756,Marc Navarro Ceciliano,2,Right Back,9783
+1,15,6754,David López Silva,3,Right Center Back,9783
+1,5,6769,Edinaldo Gomes Pereira,5,Left Center Back,9783
+1,3,6757,Aarón Martín Caricol,6,Left Back,9783
+1,25,3236,Sergi Darder Moll,13,Right Center Midfield,9783
+1,4,6758,Víctor Sánchez Mata,15,Left Center Midfield,9783
+1,10,6870,José Manuel Jurado Marín,17,Right Wing,9783
+1,23,6770,Esteban Félix Granero Molina,21,Left Wing,9783
+1,11,6761,Leonardo Carrilho Baptistão,22,Right Center Forward,9783
+1,7,6766,Gerard Moreno Balaguero,24,Left Center Forward,9783
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9783
+2,2,6374,Nélson Cabral Semedo,2,Right Back,9783
+2,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9783
+2,23,5492,Samuel Yves Umtiti,5,Left Center Back,9783
+2,19,6849,Lucas Digne,6,Left Back,9783
+2,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9783
+2,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9783
+2,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9783
+2,17,6402,Francisco Alcácer García,17,Right Wing,9783
+2,14,3501,Philippe Coutinho Correia,21,Left Wing,9783
+2,9,5246,Luis Alberto Suárez Díaz,23,Center Forward,9783
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9794
+1,20,6379,Sergi Roberto Carnicer,2,Right Back,9794
+1,24,6196,Yerry Fernando Mina González,3,Right Center Back,9794
+1,19,6849,Lucas Digne,5,Left Center Back,9794
+1,18,5211,Jordi Alba Ramos,6,Left Back,9794
+1,17,6402,Francisco Alcácer García,12,Right Midfield,9794
+1,4,5470,Ivan Rakitić,13,Right Center Midfield,9794
+1,5,5203,Sergio Busquets i Burgos,15,Left Center Midfield,9794
+1,14,3501,Philippe Coutinho Correia,16,Left Midfield,9794
+1,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9794
+1,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9794
+2,13,6625,Vicente Guaita Panadero,1,Goalkeeper,9794
+2,22,6627,Damián Nicolás Suárez Suárez,2,Right Back,9794
+2,2,6634,Djené Dakonam Ortega,3,Right Center Back,9794
+2,4,6872,Bruno González Cabrera,5,Left Center Back,9794
+2,3,6619,Vitorino Gabriel Pacheco Antunes,6,Left Back,9794
+2,18,6863,Mauro Wilney Arambarri Rosa,13,Right Center Midfield,9794
+2,21,5724,Fayçal Fajr,15,Left Center Midfield,9794
+2,12,6873,Francisco Portillo Soler,17,Right Wing,9794
+2,23,6621,Amath Ndiaye,21,Left Wing,9794
+2,10,5693,Gaku Shibasaki,22,Right Center Forward,9794
+2,9,6611,Ángel Luis Rodríguez Díaz,24,Left Center Forward,9794
+3745,13,6625,Vicente Guaita Panadero,1,Goalkeeper,9794
+3745,22,6627,Damián Nicolás Suárez Suárez,2,Right Back,9794
+3745,2,6634,Djené Dakonam Ortega,3,Right Center Back,9794
+3745,4,6872,Bruno González Cabrera,5,Left Center Back,9794
+3745,3,6619,Vitorino Gabriel Pacheco Antunes,6,Left Back,9794
+3745,18,6863,Mauro Wilney Arambarri Rosa,13,Right Center Midfield,9794
+3745,21,5724,Fayçal Fajr,15,Left Center Midfield,9794
+3745,12,6873,Francisco Portillo Soler,17,Right Wing,9794
+3745,8,6631,Mathieu Flamini,21,Left Wing,9794
+3745,6,6635,Leandro Daniel Cabrera Sasía,22,Right Center Forward,9794
+3745,19,6630,Jorge Molina Vidal,24,Left Center Forward,9794
+1,25,6698,Marko Dmitrović,1,Goalkeeper,9799
+1,11,6710,Rubén Peña Jiménez,2,Right Back,9799
+1,4,6778,Iván Ramis Barrios,3,Right Center Back,9799
+1,18,6709,Anaitz Arbilla Zabala,5,Left Center Back,9799
+1,15,6705,José Ángel Valdés Díaz,6,Left Back,9799
+1,14,6775,Daniel García Carrillo,9,Right Defensive Midfield,9799
+1,3,6867,Papa Kouly Diop,11,Left Defensive Midfield,9799
+1,2,7105,Fabián Ariel Orellana Valenzuela,17,Right Wing,9799
+1,24,6701,Joan Jordán Moreno,19,Center Attacking Midfield,9799
+1,8,5687,Takashi Inui,21,Left Wing,9799
+1,17,6711,Enrique García Martínez,23,Center Forward,9799
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9799
+2,20,6379,Sergi Roberto Carnicer,2,Right Back,9799
+2,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9799
+2,23,5492,Samuel Yves Umtiti,5,Left Center Back,9799
+2,18,5211,Jordi Alba Ramos,6,Left Back,9799
+2,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9799
+2,4,5470,Ivan Rakitić,13,Right Center Midfield,9799
+2,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9799
+2,15,5542,José Paulo Bezzera Maciel Júnior,19,Center Attacking Midfield,9799
+2,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9799
+2,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9799
+3003,25,6698,Marko Dmitrović,1,Goalkeeper,9799
+3003,11,6710,Rubén Peña Jiménez,2,Right Back,9799
+3003,22,6702,David Rodríguez Lombán,3,Right Center Back,9799
+3003,18,6709,Anaitz Arbilla Zabala,5,Left Center Back,9799
+3003,15,6705,José Ángel Valdés Díaz,6,Left Back,9799
+3003,14,6775,Daniel García Carrillo,9,Right Defensive Midfield,9799
+3003,3,6867,Papa Kouly Diop,11,Left Defensive Midfield,9799
+3003,24,6701,Joan Jordán Moreno,17,Right Wing,9799
+3003,2,7105,Fabián Ariel Orellana Valenzuela,19,Center Attacking Midfield,9799
+3003,8,5687,Takashi Inui,21,Left Wing,9799
+3003,17,6711,Enrique García Martínez,23,Center Forward,9799
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9811
+1,2,6374,Nélson Cabral Semedo,2,Right Back,9811
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9811
+1,23,5492,Samuel Yves Umtiti,5,Left Center Back,9811
+1,18,5211,Jordi Alba Ramos,6,Left Back,9811
+1,11,5477,Ousmane Dembélé,12,Right Midfield,9811
+1,4,5470,Ivan Rakitić,13,Right Center Midfield,9811
+1,5,5203,Sergio Busquets i Burgos,15,Left Center Midfield,9811
+1,14,3501,Philippe Coutinho Correia,16,Left Midfield,9811
+1,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9811
+1,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9811
+2,13,6785,Yassine Bounou,1,Goalkeeper,9811
+2,4,6887,Jonás Ramalho Chimeno,2,Right Back,9811
+2,2,6573,Bernardo José Espinosa Zúñiga,4,Center Back,9811
+2,15,6572,Juan Pedro Ramírez López,6,Left Back,9811
+2,25,6564,Pablo Maffeo Becerra,12,Right Midfield,9811
+2,8,6565,Pere Pons Riera,13,Right Center Midfield,9811
+2,6,6570,Alejandro Granell Nogué,15,Left Center Midfield,9811
+2,11,6578,Francesc Aday Benítez Caraballo,16,Left Midfield,9811
+2,9,6582,Cristian Portugués Manzanera,18,Right Attacking Midfield,9811
+2,24,6567,Borja García Freire,20,Left Attacking Midfield,9811
+2,19,7578,Anthony Rubén Lozano Colón,23,Center Forward,9811
+2614,1,20055,Marc-André ter Stegen,1,Goalkeeper,9811
+2614,2,6374,Nélson Cabral Semedo,2,Right Back,9811
+2614,23,5492,Samuel Yves Umtiti,3,Right Center Back,9811
+2614,25,6332,Thomas Vermaelen,5,Left Center Back,9811
+2614,18,5211,Jordi Alba Ramos,6,Left Back,9811
+2614,11,5477,Ousmane Dembélé,12,Right Midfield,9811
+2614,4,5470,Ivan Rakitić,13,Right Center Midfield,9811
+2614,5,5203,Sergio Busquets i Burgos,15,Left Center Midfield,9811
+2614,14,3501,Philippe Coutinho Correia,16,Left Midfield,9811
+2614,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9811
+2614,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9811
+1,13,6931,Leandro Chichizola,1,Goalkeeper,9827
+1,3,6921,Matías Aguirregaray Guruceaga,2,Right Back,9827
+1,20,6924,Alejandro Gálvez Jimena,3,Right Center Back,9827
+1,22,6923,Joaquín Navarro Jiménez,5,Left Center Back,9827
+1,23,6932,Dani Castellano Betancor,6,Left Back,9827
+1,6,5466,Oghenekaro Etebo,13,Right Center Midfield,9827
+1,4,6929,José Vicente Gómez Umpiérrez,15,Left Center Midfield,9827
+1,8,6926,Alen Halilović,17,Right Wing,9827
+1,24,6928,Pedro Taunausú Domínguez Placeres,19,Center Attacking Midfield,9827
+1,16,6925,Jairo Samperio Bustara,21,Left Wing,9827
+1,9,6930,Jonathan Calleri,23,Center Forward,9827
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9827
+2,20,6379,Sergi Roberto Carnicer,2,Right Back,9827
+2,23,5492,Samuel Yves Umtiti,3,Right Center Back,9827
+2,25,6332,Thomas Vermaelen,5,Left Center Back,9827
+2,19,6849,Lucas Digne,6,Left Back,9827
+2,22,6400,Aleix Vidal Parreu,12,Right Midfield,9827
+2,5,5203,Sergio Busquets i Burgos,13,Right Center Midfield,9827
+2,15,5542,José Paulo Bezzera Maciel Júnior,15,Left Center Midfield,9827
+2,8,5216,Andrés Iniesta Luján,16,Left Midfield,9827
+2,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9827
+2,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9827
+2321,1,20055,Marc-André ter Stegen,1,Goalkeeper,9827
+2321,20,6379,Sergi Roberto Carnicer,2,Right Back,9827
+2321,23,5492,Samuel Yves Umtiti,3,Right Center Back,9827
+2321,25,6332,Thomas Vermaelen,5,Left Center Back,9827
+2321,19,6849,Lucas Digne,6,Left Back,9827
+2321,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9827
+2321,4,5470,Ivan Rakitić,13,Right Center Midfield,9827
+2321,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9827
+2321,14,3501,Philippe Coutinho Correia,17,Right Wing,9827
+2321,9,5246,Luis Alberto Suárez Díaz,21,Left Wing,9827
+2321,10,5503,Lionel Andrés Messi Cuccittini,25,Secondary Striker,9827
+2616,1,20055,Marc-André ter Stegen,1,Goalkeeper,9827
+2616,20,6379,Sergi Roberto Carnicer,2,Right Back,9827
+2616,23,5492,Samuel Yves Umtiti,3,Right Center Back,9827
+2616,25,6332,Thomas Vermaelen,5,Left Center Back,9827
+2616,19,6849,Lucas Digne,6,Left Back,9827
+2616,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9827
+2616,4,5470,Ivan Rakitić,13,Right Center Midfield,9827
+2616,14,3501,Philippe Coutinho Correia,15,Left Center Midfield,9827
+2616,11,5477,Ousmane Dembélé,17,Right Wing,9827
+2616,9,5246,Luis Alberto Suárez Díaz,21,Left Wing,9827
+2616,10,5503,Lionel Andrés Messi Cuccittini,25,Secondary Striker,9827
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9837
+1,20,6379,Sergi Roberto Carnicer,2,Right Back,9837
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9837
+1,23,5492,Samuel Yves Umtiti,5,Left Center Back,9837
+1,18,5211,Jordi Alba Ramos,6,Left Back,9837
+1,4,5470,Ivan Rakitić,13,Right Center Midfield,9837
+1,5,5203,Sergio Busquets i Burgos,15,Left Center Midfield,9837
+1,14,3501,Philippe Coutinho Correia,17,Right Wing,9837
+1,8,5216,Andrés Iniesta Luján,21,Left Wing,9837
+1,9,5246,Luis Alberto Suárez Díaz,23,Center Forward,9837
+1,10,5503,Lionel Andrés Messi Cuccittini,25,Secondary Striker,9837
+2,13,6378,Jan Oblak,1,Goalkeeper,9837
+2,16,5461,Šime Vrsaljko,2,Right Back,9837
+2,24,5259,José María Giménez de Vargas,3,Right Center Back,9837
+2,2,5249,Diego Roberto Godín Leal,5,Left Center Back,9837
+2,3,6320,Filipe Luís Kasmirski,6,Left Back,9837
+2,14,6384,Gabriel Fernández Arenas,13,Right Center Midfield,9837
+2,5,6383,Thomas Teye Partey,15,Left Center Midfield,9837
+2,8,6381,Saúl Ñíguez Esclapez,17,Right Wing,9837
+2,6,5199,Jorge Resurrección Merodio,21,Left Wing,9837
+2,7,5487,Antoine Griezmann,22,Right Center Forward,9837
+2,18,5198,Diego da Silva Costa,24,Left Center Forward,9837
+2727,13,6378,Jan Oblak,1,Goalkeeper,9837
+2727,5,6383,Thomas Teye Partey,2,Right Back,9837
+2727,24,5259,José María Giménez de Vargas,3,Right Center Back,9837
+2727,2,5249,Diego Roberto Godín Leal,5,Left Center Back,9837
+2727,3,6320,Filipe Luís Kasmirski,6,Left Back,9837
+2727,14,6384,Gabriel Fernández Arenas,13,Right Center Midfield,9837
+2727,6,5199,Jorge Resurrección Merodio,15,Left Center Midfield,9837
+2727,11,6377,Ángel Martín Correa,17,Right Wing,9837
+2727,8,6381,Saúl Ñíguez Esclapez,21,Left Wing,9837
+2727,7,5487,Antoine Griezmann,22,Right Center Forward,9837
+2727,18,5198,Diego da Silva Costa,24,Left Center Forward,9837
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9855
+1,20,6379,Sergi Roberto Carnicer,2,Right Back,9855
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9855
+1,23,5492,Samuel Yves Umtiti,5,Left Center Back,9855
+1,18,5211,Jordi Alba Ramos,6,Left Back,9855
+1,11,5477,Ousmane Dembélé,12,Right Midfield,9855
+1,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9855
+1,4,5470,Ivan Rakitić,15,Left Center Midfield,9855
+1,14,3501,Philippe Coutinho Correia,16,Left Midfield,9855
+1,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9855
+1,17,6402,Francisco Alcácer García,24,Left Center Forward,9855
+2,1,6395,Kepa Arrizabalaga Revuelta,1,Goalkeeper,9855
+2,18,6649,Óscar de Marcos Arana,2,Right Back,9855
+2,12,6397,Unai Núñez Gestoso,3,Right Center Back,9855
+2,4,6665,Íñigo Martínez Berridi,5,Left Center Back,9855
+2,3,6660,Enric Saborit Teixidor,6,Left Back,9855
+2,6,6389,Mikel San José Domínguez,9,Right Defensive Midfield,9855
+2,7,6396,Beñat Etxebarria Urkiaga,11,Left Defensive Midfield,9855
+2,14,6390,Markel Susaeta Laskurain,17,Right Wing,9855
+2,22,6391,Raúl García Escudero,19,Center Attacking Midfield,9855
+2,15,6392,Íñigo Lekue Martínez,21,Left Wing,9855
+2,19,6666,Sabin Merino Zuloaga,23,Center Forward,9855
+3579,1,20055,Marc-André ter Stegen,1,Goalkeeper,9855
+3579,20,6379,Sergi Roberto Carnicer,2,Right Back,9855
+3579,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9855
+3579,23,5492,Samuel Yves Umtiti,5,Left Center Back,9855
+3579,18,5211,Jordi Alba Ramos,6,Left Back,9855
+3579,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9855
+3579,4,5470,Ivan Rakitić,15,Left Center Midfield,9855
+3579,22,6400,Aleix Vidal Parreu,17,Right Wing,9855
+3579,8,5216,Andrés Iniesta Luján,21,Left Wing,9855
+3579,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9855
+3579,14,3501,Philippe Coutinho Correia,24,Left Center Forward,9855
+3917,1,20055,Marc-André ter Stegen,1,Goalkeeper,9855
+3917,20,6379,Sergi Roberto Carnicer,2,Right Back,9855
+3917,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9855
+3917,23,5492,Samuel Yves Umtiti,5,Left Center Back,9855
+3917,18,5211,Jordi Alba Ramos,6,Left Back,9855
+3917,15,5542,José Paulo Bezzera Maciel Júnior,9,Right Defensive Midfield,9855
+3917,4,5470,Ivan Rakitić,11,Left Defensive Midfield,9855
+3917,22,6400,Aleix Vidal Parreu,17,Right Wing,9855
+3917,21,10802,André Filipe Tavares Gomes,19,Center Attacking Midfield,9855
+3917,8,5216,Andrés Iniesta Luján,21,Left Wing,9855
+3917,10,5503,Lionel Andrés Messi Cuccittini,23,Center Forward,9855
+1,1,6823,Sergio Rico González,1,Goalkeeper,9860
+1,25,5742,Gabriel Iván Mercado,2,Right Back,9860
+1,4,5534,Simon Thorup Kjær,3,Right Center Back,9860
+1,5,6826,Clément Lenglet,5,Left Center Back,9860
+1,18,6718,Sergio Escudero Palomo,6,Left Back,9860
+1,15,5737,Steven N''Kemboanza Mike Christopher Nzonzi,9,Right Defensive Midfield,9860
+1,10,5504,Éver Maximiliano David Banega,11,Left Defensive Midfield,9860
+1,16,6821,Jesús Navas González,12,Right Midfield,9860
+1,11,6822,Carlos Joaquín Correa,16,Left Midfield,9860
+1,22,6719,Franco Damián Vázquez,19,Center Attacking Midfield,9860
+1,20,6334,Luis Fernando Muriel Fruto,23,Center Forward,9860
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9860
+2,20,6379,Sergi Roberto Carnicer,2,Right Back,9860
+2,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9860
+2,23,5492,Samuel Yves Umtiti,5,Left Center Back,9860
+2,18,5211,Jordi Alba Ramos,6,Left Back,9860
+2,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9860
+2,4,5470,Ivan Rakitić,14,Center Midfield,9860
+2,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9860
+2,11,5477,Ousmane Dembélé,17,Right Wing,9860
+2,14,3501,Philippe Coutinho Correia,21,Left Wing,9860
+2,9,5246,Luis Alberto Suárez Díaz,23,Center Forward,9860
+2349,1,20055,Marc-André ter Stegen,1,Goalkeeper,9860
+2349,20,6379,Sergi Roberto Carnicer,2,Right Back,9860
+2349,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9860
+2349,23,5492,Samuel Yves Umtiti,5,Left Center Back,9860
+2349,18,5211,Jordi Alba Ramos,6,Left Back,9860
+2349,14,3501,Philippe Coutinho Correia,12,Right Midfield,9860
+2349,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9860
+2349,4,5470,Ivan Rakitić,15,Left Center Midfield,9860
+2349,8,5216,Andrés Iniesta Luján,16,Left Midfield,9860
+2349,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9860
+2349,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9860
+3400,1,6823,Sergio Rico González,1,Goalkeeper,9860
+3400,16,6821,Jesús Navas González,2,Right Back,9860
+3400,4,5534,Simon Thorup Kjær,3,Right Center Back,9860
+3400,5,6826,Clément Lenglet,5,Left Center Back,9860
+3400,18,6718,Sergio Escudero Palomo,6,Left Back,9860
+3400,15,5737,Steven N''Kemboanza Mike Christopher Nzonzi,9,Right Defensive Midfield,9860
+3400,10,5504,Éver Maximiliano David Banega,11,Left Defensive Midfield,9860
+3400,3,5556,Miguel Arturo Layún Prado,12,Right Midfield,9860
+3400,14,6715,Guido Hernán Pizarro,16,Left Midfield,9860
+3400,22,6719,Franco Damián Vázquez,19,Center Attacking Midfield,9860
+3400,20,6334,Luis Fernando Muriel Fruto,23,Center Forward,9860
+3643,1,6823,Sergio Rico González,1,Goalkeeper,9860
+3643,3,5556,Miguel Arturo Layún Prado,2,Right Back,9860
+3643,4,5534,Simon Thorup Kjær,3,Right Center Back,9860
+3643,5,6826,Clément Lenglet,5,Left Center Back,9860
+3643,18,6718,Sergio Escudero Palomo,6,Left Back,9860
+3643,15,5737,Steven N''Kemboanza Mike Christopher Nzonzi,9,Right Defensive Midfield,9860
+3643,10,5504,Éver Maximiliano David Banega,11,Left Defensive Midfield,9860
+3643,22,6719,Franco Damián Vázquez,12,Right Midfield,9860
+3643,14,6715,Guido Hernán Pizarro,16,Left Midfield,9860
+3643,24,6724,Manuel Agudo Durán,19,Center Attacking Midfield,9860
+3643,20,6334,Luis Fernando Muriel Fruto,23,Center Forward,9860
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9870
+1,2,6374,Nélson Cabral Semedo,2,Right Back,9870
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9870
+1,25,6332,Thomas Vermaelen,5,Left Center Back,9870
+1,20,6379,Sergi Roberto Carnicer,6,Left Back,9870
+1,4,5470,Ivan Rakitić,13,Right Center Midfield,9870
+1,21,10802,André Filipe Tavares Gomes,15,Left Center Midfield,9870
+1,11,5477,Ousmane Dembélé,17,Right Wing,9870
+1,10,5503,Lionel Andrés Messi Cuccittini,19,Center Attacking Midfield,9870
+1,14,3501,Philippe Coutinho Correia,21,Left Wing,9870
+1,9,5246,Luis Alberto Suárez Díaz,23,Center Forward,9870
+2,1,6610,Iván Cuéllar Sacristán,1,Goalkeeper,9870
+2,20,6605,Joseba Zaldúa Bengoetxea,2,Right Back,9870
+2,3,6598,Unai Bustinza Martínez,3,Right Center Back,9870
+2,22,6603,Dimitrios Siovas,5,Left Center Back,9870
+2,14,6601,Raúl García Carnero,6,Left Back,9870
+2,21,6599,Rubén Salvador Pérez Del Mármol,9,Right Defensive Midfield,9870
+2,8,6597,Gabriel Appelt Pires,11,Left Defensive Midfield,9870
+2,10,6608,Nabil El Zhar,17,Right Wing,9870
+2,17,6606,Javier Eraso Goñi,19,Center Attacking Midfield,9870
+2,23,6607,Julián Omar Ramos Suárez,21,Left Wing,9870
+2,7,3302,Nordin Amrabat,23,Center Forward,9870
+3341,1,6610,Iván Cuéllar Sacristán,1,Goalkeeper,9870
+3341,20,6605,Joseba Zaldúa Bengoetxea,2,Right Back,9870
+3341,3,6598,Unai Bustinza Martínez,3,Right Center Back,9870
+3341,22,6603,Dimitrios Siovas,5,Left Center Back,9870
+3341,14,6601,Raúl García Carnero,6,Left Back,9870
+3341,8,6597,Gabriel Appelt Pires,9,Right Defensive Midfield,9870
+3341,24,6604,Darko Brašanac,11,Left Defensive Midfield,9870
+3341,10,6608,Nabil El Zhar,12,Right Midfield,9870
+3341,23,6607,Julián Omar Ramos Suárez,16,Left Midfield,9870
+3341,9,6602,Miguel Ángel Guerrero Martín,22,Right Center Forward,9870
+3341,12,6600,Claudio Beauvue,24,Left Center Forward,9870
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9880
+1,20,6379,Sergi Roberto Carnicer,2,Right Back,9880
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9880
+1,23,5492,Samuel Yves Umtiti,5,Left Center Back,9880
+1,18,5211,Jordi Alba Ramos,6,Left Back,9880
+1,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9880
+1,15,5542,José Paulo Bezzera Maciel Júnior,14,Center Midfield,9880
+1,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9880
+1,14,3501,Philippe Coutinho Correia,18,Right Attacking Midfield,9880
+1,9,5246,Luis Alberto Suárez Díaz,23,Center Forward,9880
+1,10,5503,Lionel Andrés Messi Cuccittini,25,Secondary Striker,9880
+2,13,6590,Norberto Murara Neto,1,Goalkeeper,9880
+2,3,6592,Rúben Miguel Nunes Vezo,2,Right Back,9880
+2,24,6891,Ezequiel Marcelo Garay,3,Right Center Back,9880
+2,5,6746,Gabriel Armando de Abreu,5,Left Center Back,9880
+2,14,6596,José Luis Gayà Peña,6,Left Back,9880
+2,18,6583,Carlos Soler Barragán,12,Right Midfield,9880
+2,10,6595,Daniel Parejo Muñoz,13,Right Center Midfield,9880
+2,16,6589,Geoffrey Kondogbia,15,Left Center Midfield,9880
+2,7,4367,Gonçalo Manuel Ganchinho Guedes,16,Left Midfield,9880
+2,19,5718,Rodrigo Moreno Machado,22,Right Center Forward,9880
+2,22,6594,Santiago Mina Lorenzo,24,Left Center Forward,9880
+1,1,6884,Sergio Álvarez Conde,1,Goalkeeper,9889
+1,24,6830,Facundo Sebastián Roncaglia,3,Right Center Back,9889
+1,20,6804,Sergi Gómez Solà,4,Center Back,9889
+1,19,6802,Jonathan Castro Otto,5,Left Center Back,9889
+1,18,6797,Daniel Wass,7,Right Wing Back,9889
+1,11,5516,Pione Sisto Ifolo Emirmija,8,Left Wing Back,9889
+1,14,6798,Stanislav Lobotka,10,Center Defensive Midfield,9889
+1,26,6799,Brais Méndez Portela,13,Right Center Midfield,9889
+1,16,6852,Jozabed Sánchez Ruiz,15,Left Center Midfield,9889
+1,7,6297,Maximiliano Gómez González,22,Right Center Forward,9889
+1,10,5217,Iago Aspas Juncal,24,Left Center Forward,9889
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9889
+2,2,6374,Nélson Cabral Semedo,2,Right Back,9889
+2,24,6196,Yerry Fernando Mina González,3,Right Center Back,9889
+2,25,6332,Thomas Vermaelen,5,Left Center Back,9889
+2,19,6849,Lucas Digne,6,Left Back,9889
+2,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9889
+2,21,10802,André Filipe Tavares Gomes,15,Left Center Midfield,9889
+2,11,5477,Ousmane Dembélé,17,Right Wing,9889
+2,6,6609,Denis Suárez Fernández,19,Center Attacking Midfield,9889
+2,14,3501,Philippe Coutinho Correia,21,Left Wing,9889
+2,17,6402,Francisco Alcácer García,23,Center Forward,9889
+101,1,6884,Sergio Álvarez Conde,1,Goalkeeper,9889
+101,24,6830,Facundo Sebastián Roncaglia,3,Right Center Back,9889
+101,20,6804,Sergi Gómez Solà,4,Center Back,9889
+101,19,6802,Jonathan Castro Otto,5,Left Center Back,9889
+101,14,6798,Stanislav Lobotka,10,Center Defensive Midfield,9889
+101,18,6797,Daniel Wass,12,Right Midfield,9889
+101,26,6799,Brais Méndez Portela,13,Right Center Midfield,9889
+101,16,6852,Jozabed Sánchez Ruiz,15,Left Center Midfield,9889
+101,11,5516,Pione Sisto Ifolo Emirmija,16,Left Midfield,9889
+101,7,6297,Maximiliano Gómez González,22,Right Center Forward,9889
+101,10,5217,Iago Aspas Juncal,24,Left Center Forward,9889
+2458,1,20055,Marc-André ter Stegen,1,Goalkeeper,9889
+2458,2,6374,Nélson Cabral Semedo,2,Right Back,9889
+2458,24,6196,Yerry Fernando Mina González,3,Right Center Back,9889
+2458,25,6332,Thomas Vermaelen,5,Left Center Back,9889
+2458,19,6849,Lucas Digne,6,Left Back,9889
+2458,15,5542,José Paulo Bezzera Maciel Júnior,9,Right Defensive Midfield,9889
+2458,20,6379,Sergi Roberto Carnicer,11,Left Defensive Midfield,9889
+2458,6,6609,Denis Suárez Fernández,14,Center Midfield,9889
+2458,11,5477,Ousmane Dembélé,17,Right Wing,9889
+2458,17,6402,Francisco Alcácer García,21,Left Wing,9889
+2458,10,5503,Lionel Andrés Messi Cuccittini,23,Center Forward,9889
+1,13,6730,Rubén Iván Martínez Andrade,1,Goalkeeper,9912
+1,2,6738,Juan Francisco Moreno Fuertes,2,Right Back,9912
+1,6,6727,Raúl Albentosa Redal,3,Right Center Back,9912
+1,24,5537,Fabian Lukas Schär,5,Left Center Back,9912
+1,16,6734,Luis Carlos Correia Pinto,6,Left Back,9912
+1,20,6729,Guilherme dos Santos Torres,10,Center Defensive Midfield,9912
+1,14,6356,Michael Krohn-Dehli,12,Right Midfield,9912
+1,22,5582,Celso Borges Mora,16,Left Midfield,9912
+1,8,6779,Emre Çolak,19,Center Attacking Midfield,9912
+1,7,6732,Lucas Pérez Martínez,22,Right Center Forward,9912
+1,19,6774,Borja Valle Balonga,24,Left Center Forward,9912
+2,1,20055,Marc-André ter Stegen,1,Goalkeeper,9912
+2,2,6374,Nélson Cabral Semedo,2,Right Back,9912
+2,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9912
+2,23,5492,Samuel Yves Umtiti,5,Left Center Back,9912
+2,18,5211,Jordi Alba Ramos,6,Left Back,9912
+2,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9912
+2,4,5470,Ivan Rakitić,13,Right Center Midfield,9912
+2,14,3501,Philippe Coutinho Correia,15,Left Center Midfield,9912
+2,11,5477,Ousmane Dembélé,17,Right Wing,9912
+2,9,5246,Luis Alberto Suárez Díaz,21,Left Wing,9912
+2,10,5503,Lionel Andrés Messi Cuccittini,23,Center Forward,9912
+3350,1,20055,Marc-André ter Stegen,1,Goalkeeper,9912
+3350,2,6374,Nélson Cabral Semedo,2,Right Back,9912
+3350,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9912
+3350,23,5492,Samuel Yves Umtiti,5,Left Center Back,9912
+3350,18,5211,Jordi Alba Ramos,6,Left Back,9912
+3350,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9912
+3350,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9912
+3350,6,6609,Denis Suárez Fernández,15,Left Center Midfield,9912
+3350,4,5470,Ivan Rakitić,17,Right Wing,9912
+3350,9,5246,Luis Alberto Suárez Díaz,21,Left Wing,9912
+3350,10,5503,Lionel Andrés Messi Cuccittini,23,Center Forward,9912
+3743,13,6730,Rubén Iván Martínez Andrade,1,Goalkeeper,9912
+3743,2,6738,Juan Francisco Moreno Fuertes,2,Right Back,9912
+3743,6,6727,Raúl Albentosa Redal,3,Right Center Back,9912
+3743,24,5537,Fabian Lukas Schär,5,Left Center Back,9912
+3743,16,6734,Luis Carlos Correia Pinto,6,Left Back,9912
+3743,21,7914,Sulley Ali Muntari,10,Center Defensive Midfield,9912
+3743,14,6356,Michael Krohn-Dehli,12,Right Midfield,9912
+3743,7,6732,Lucas Pérez Martínez,16,Left Midfield,9912
+3743,8,6779,Emre Çolak,19,Center Attacking Midfield,9912
+3743,10,6731,Florin Andone,22,Right Center Forward,9912
+3743,9,6728,Federico Nicolás Cartabia,24,Left Center Forward,9912
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9924
+1,20,6379,Sergi Roberto Carnicer,2,Right Back,9924
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9924
+1,23,5492,Samuel Yves Umtiti,5,Left Center Back,9924
+1,18,5211,Jordi Alba Ramos,6,Left Back,9924
+1,5,5203,Sergio Busquets i Burgos,9,Right Defensive Midfield,9924
+1,4,5470,Ivan Rakitić,11,Left Defensive Midfield,9924
+1,8,5216,Andrés Iniesta Luján,17,Right Wing,9924
+1,10,5503,Lionel Andrés Messi Cuccittini,19,Center Attacking Midfield,9924
+1,14,3501,Philippe Coutinho Correia,21,Left Wing,9924
+1,9,5246,Luis Alberto Suárez Díaz,23,Center Forward,9924
+2,1,5597,Keylor Navas Gamboa,1,Goalkeeper,9924
+2,6,5202,José Ignacio Fernández Iglesias,2,Right Back,9924
+2,5,5485,Raphaël Varane,3,Right Center Back,9924
+2,4,5201,Sergio Ramos García,5,Left Center Back,9924
+2,12,5552,Marcelo Vieira da Silva Júnior,6,Left Back,9924
+2,14,5539,Carlos Henrique Casimiro,10,Center Defensive Midfield,9924
+2,10,5463,Luka Modrić,13,Right Center Midfield,9924
+2,8,5574,Toni Kroos,15,Left Center Midfield,9924
+2,11,6399,Gareth Frank Bale,17,Right Wing,9924
+2,7,5207,Cristiano Ronaldo dos Santos Aveiro,21,Left Wing,9924
+2,9,19677,Karim Benzema,23,Center Forward,9924
+1,13,8652,Jasper Cillessen,1,Goalkeeper,9928
+1,2,6374,Nélson Cabral Semedo,2,Right Back,9928
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9928
+1,25,6332,Thomas Vermaelen,5,Left Center Back,9928
+1,19,6849,Lucas Digne,6,Left Back,9928
+1,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9928
+1,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9928
+1,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9928
+1,11,5477,Ousmane Dembélé,17,Right Wing,9928
+1,14,3501,Philippe Coutinho Correia,21,Left Wing,9928
+1,10,5503,Lionel Andrés Messi Cuccittini,23,Center Forward,9928
+2,1,6755,Sergio Asenjo Andrés,1,Goalkeeper,9928
+2,2,6772,Mario Gaspar Pérez Martínez,2,Right Back,9928
+2,3,6762,Álvaro González Soberón,3,Right Center Back,9928
+2,6,6752,Víctor Ruíz Torre,5,Left Center Back,9928
+2,11,6828,Jaume Vicent Costa Jordá,6,Left Back,9928
+2,10,6829,Samuel Castillejo Azuaga,12,Right Midfield,9928
+2,16,6765,Rodrigo Hernández Cascante,13,Right Center Midfield,9928
+2,14,6771,Manuel Trigueros Muñoz,15,Left Center Midfield,9928
+2,7,5186,Denis Cheryshev,16,Left Midfield,9928
+2,8,6764,Pablo Fornals Malla,22,Right Center Forward,9928
+2,9,5688,Carlos Arturo Bacca Ahumada,24,Left Center Forward,9928
+2439,1,6755,Sergio Asenjo Andrés,1,Goalkeeper,9928
+2439,2,6772,Mario Gaspar Pérez Martínez,2,Right Back,9928
+2439,3,6762,Álvaro González Soberón,3,Right Center Back,9928
+2439,6,6752,Víctor Ruíz Torre,5,Left Center Back,9928
+2439,11,6828,Jaume Vicent Costa Jordá,6,Left Back,9928
+2439,10,6829,Samuel Castillejo Azuaga,12,Right Midfield,9928
+2439,16,6765,Rodrigo Hernández Cascante,13,Right Center Midfield,9928
+2439,14,6771,Manuel Trigueros Muñoz,15,Left Center Midfield,9928
+2439,8,6764,Pablo Fornals Malla,16,Left Midfield,9928
+2439,9,5688,Carlos Arturo Bacca Ahumada,22,Right Center Forward,9928
+2439,18,6859,Nicola Sansone,24,Left Center Forward,9928
+2937,13,8652,Jasper Cillessen,1,Goalkeeper,9928
+2937,2,6374,Nélson Cabral Semedo,2,Right Back,9928
+2937,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9928
+2937,25,6332,Thomas Vermaelen,5,Left Center Back,9928
+2937,19,6849,Lucas Digne,6,Left Back,9928
+2937,15,5542,José Paulo Bezzera Maciel Júnior,13,Right Center Midfield,9928
+2937,5,5203,Sergio Busquets i Burgos,15,Left Center Midfield,9928
+2937,11,5477,Ousmane Dembélé,17,Right Wing,9928
+2937,14,3501,Philippe Coutinho Correia,21,Left Wing,9928
+2937,10,5503,Lionel Andrés Messi Cuccittini,22,Right Center Forward,9928
+2937,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9928
+1,1,20055,Marc-André ter Stegen,1,Goalkeeper,9948
+1,2,6374,Nélson Cabral Semedo,2,Right Back,9948
+1,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9948
+1,24,6196,Yerry Fernando Mina González,5,Left Center Back,9948
+1,18,5211,Jordi Alba Ramos,6,Left Back,9948
+1,5,5203,Sergio Busquets i Burgos,10,Center Defensive Midfield,9948
+1,4,5470,Ivan Rakitić,13,Right Center Midfield,9948
+1,8,5216,Andrés Iniesta Luján,15,Left Center Midfield,9948
+1,11,5477,Ousmane Dembélé,17,Right Wing,9948
+1,14,3501,Philippe Coutinho Correia,21,Left Wing,9948
+1,9,5246,Luis Alberto Suárez Díaz,23,Center Forward,9948
+2,25,7069,Miguel Ángel Moyà Rumbo,1,Goalkeeper,9948
+2,15,6679,Aritz Elustondo Irribaria,2,Right Back,9948
+2,3,6713,Diego Javier Llorente Ríos,3,Right Center Back,9948
+2,22,6693,Raúl Rodríguez Navas,5,Left Center Back,9948
+2,24,6674,Alberto De La Bella Madureño,6,Left Back,9948
+2,4,6671,Asier Illarramendi Andonegi,9,Right Defensive Midfield,9948
+2,17,6669,David Zurutuza Veillet,11,Left Defensive Midfield,9948
+2,8,6330,Adnan Januzaj,17,Right Wing,9948
+2,7,6695,Juan Miguel Jiménez López,19,Center Attacking Midfield,9948
+2,18,6685,Mikel Oyarzabal Ugarte,21,Left Wing,9948
+2,12,6721,Willian José da Silva,23,Center Forward,9948
+3427,1,20055,Marc-André ter Stegen,1,Goalkeeper,9948
+3427,2,6374,Nélson Cabral Semedo,2,Right Back,9948
+3427,3,5213,Gerard Piqué Bernabéu,3,Right Center Back,9948
+3427,24,6196,Yerry Fernando Mina González,5,Left Center Back,9948
+3427,18,5211,Jordi Alba Ramos,6,Left Back,9948
+3427,4,5470,Ivan Rakitić,13,Right Center Midfield,9948
+3427,5,5203,Sergio Busquets i Burgos,15,Left Center Midfield,9948
+3427,10,5503,Lionel Andrés Messi Cuccittini,17,Right Wing,9948
+3427,6,6609,Denis Suárez Fernández,21,Left Wing,9948
+3427,17,6402,Francisco Alcácer García,22,Right Center Forward,9948
+3427,9,5246,Luis Alberto Suárez Díaz,24,Left Center Forward,9948
