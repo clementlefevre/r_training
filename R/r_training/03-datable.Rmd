@@ -1,0 +1,111 @@
+# Data manipulation with datatable
+
+To manipulate data with R, there are two options :
+
+- the **dplyr** package. Very beginner friendly, most of the tutorials you can find online are using `dplyr`.
+- the **data.table** package is the workhorse of data manipulation in R. For this introduction we will use it, for the following reasons : the syntax is much concise as `dplyr`, and it works seamlessly with large dataset (like 5 millions rows). As as sidenote, Excel can handle a maximum of 1,048,576 rows.
+
+*Hint : an Excel "Table" is the equivalent of a R "dataframe".*
+
+## First steps with data.table
+
+In your notebook, create a new chunk as following :
+
+```{r eval=TRUE}
+
+library(data.table)
+library(openxlsx)
+DT <- openxlsx::read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")
+DT <- setDT(DT) # we convert the dataframe into a data.table, to be able to use the data.table operations on it.
+```
+
+
+### Basic operations :
+
+
+*show the dataframe structure :*
+```{r eval=TRUE}
+str(DT)
+```
+*list the Product names :*
+```{r}
+unique(DT$Product)
+```
+
+*get the max value of Profit :*
+```{r}
+max(DT$Profit)
+```
+*filter the dataframe on Product "Carretera" :*
+```{r  results='hide'}
+DT[Product=="Carretera"]
+```
+
+```{r echo=FALSE}
+knitr::kable(
+  head(DT[Product=="Carretera"]), booktabs = TRUE,
+  caption = 'A table of the Carretera Products.'
+)
+```
+
+
+<br />
+&nbsp;
+*add a new column **"Profit.Margin"** = "Sale.Price" - "Manufacturing.Price" :*
+```{r}
+DT[,Profit.Margin:=(Sale.Price - Manufacturing.Price)]
+```
+
+### Pivot table in R
+The R equivalent of the Excel Pivot Table is the group operation.
+
+*For instance, we want to count the* **number of Product categories per Country** :
+
+```{r}
+DT[,.(count_Products=uniqueN(Product)), by=.(Country)]
+```
+
+
+*we want to create a pivot table with the* **total number of units sold** *per* **Product** :
+
+```{r}
+DT[,.(total_units_sold=sum(Units.Sold)), by=.(Product)]
+```
+
+Neat isn't it ?
+
+
+*But your Boss© want those results sorted per value. No big deal here :*
+```{r}
+DT[,.(total_units_sold=sum(Units.Sold)), by=.(Product)][order(total_units_sold)]
+```
+
+*But your Boss© want those results sorted per value, in the descending order :*
+
+```{r}
+DT[,.(total_units_sold=sum(Units.Sold)), by=.(Product)][order(-total_units_sold)]
+```
+
+*How about grouping the data on multiple columns ? Like by* **Product** and **Country** ?
+```{r}
+DT[,.(total_units_sold=sum(Units.Sold)), by=.(Product, Country)]
+```
+*your Sales team only needs the* **Top 2  Sellers Countries per Product** :
+
+For this, we first copy the grouped dataframe in a new variable `DT_grouped` :
+```{r}
+DT_grouped <- DT[,.(total_units_sold=sum(Units.Sold)), by=.(Product, Country)]
+DT_grouped[,head(.SD, 2), by=.(Product, Country)]
+```
+
+### Export the result as an Excel file :
+
+```{r}
+write.xlsx(DT_grouped, "DT_grouped.xlsx", sheetName="gouped Sales")
+```
+
+Useful resources to learn data.table :
+
+- https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html
+- https://franknarf1.github.io/r-tutorial/_book/tables.html#tables
+

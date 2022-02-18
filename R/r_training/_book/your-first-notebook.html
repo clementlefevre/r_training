@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 3 Your first notebook | Intro to R</title>
+<meta name="author" content="Clement Lefevre">
+<meta name="description" content="3.1 Create a new Notebook with your Rstudio Cloud project open : File -&gt; New -&gt; R Notebook (always click OK if you are suggested to install any additional packages)  3.1.1 Install the required...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 3 Your first notebook | Intro to R">
+<meta property="og:type" content="book">
+<meta property="og:description" content="3.1 Create a new Notebook with your Rstudio Cloud project open : File -&gt; New -&gt; R Notebook (always click OK if you are suggested to install any additional packages)  3.1.1 Install the required...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 3 Your first notebook | Intro to R">
+<meta name="twitter:description" content="3.1 Create a new Notebook with your Rstudio Cloud project open : File -&gt; New -&gt; R Notebook (always click OK if you are suggested to install any additional packages)  3.1.1 Install the required...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.4/tabs.js"></script><script src="libs/bs3compat-0.2.4/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Intro to R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="getting-started.html"><span class="header-section-number">2</span> Getting started</a></li>
+<li><a class="active" href="your-first-notebook.html"><span class="header-section-number">3</span> Your first notebook</a></li>
+<li><a class="" href="data-manipulation-with-datatable.html"><span class="header-section-number">4</span> Data manipulation with datatable</a></li>
+<li><a class="" href="visualization-with-ggplot2.html"><span class="header-section-number">5</span> Visualization with ggplot2</a></li>
+<li><a class="" href="first-assignment.html"><span class="header-section-number">6</span> First assignment</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="your-first-notebook" class="section level1" number="3">
+<h1>
+<span class="header-section-number">3</span> Your first notebook<a class="anchor" aria-label="anchor" href="#your-first-notebook"><i class="fas fa-link"></i></a>
+</h1>
+<div id="create-a-new-notebook" class="section level2" number="3.1">
+<h2>
+<span class="header-section-number">3.1</span> Create a new Notebook<a class="anchor" aria-label="anchor" href="#create-a-new-notebook"><i class="fas fa-link"></i></a>
+</h2>
+<p>with your <a href="https://rstudio.cloud"><strong>Rstudio Cloud</strong></a> project open :</p>
+<p><code>File</code> -&gt; <code>New</code> -&gt; <code>R Notebook</code>
+(always click OK if you are suggested to install any additional packages)</p>
+<div id="install-the-required-libraries" class="section level3" number="3.1.1">
+<h3>
+<span class="header-section-number">3.1.1</span> Install the required libraries<a class="anchor" aria-label="anchor" href="#install-the-required-libraries"><i class="fas fa-link"></i></a>
+</h3>
+<p>R runs with a set of basics functionalities, and for specific needs, let’s say if you want to read an Excel file, we need to install additional librairies (e.g. packages).
+With RStudio this is quite straightforward : just go to</p>
+<p><code>RStudio -&gt; Tools -&gt; Install Packages</code></p>
+<p>type <strong><code>openxlsx</code></strong> in the search bar and click <code>install</code></p>
+<p>RStudio will then automatically install the package.</p>
+</div>
+</div>
+<div id="load-your-first-excel-file" class="section level2" number="3.2">
+<h2>
+<span class="header-section-number">3.2</span> Load your first Excel file<a class="anchor" aria-label="anchor" href="#load-your-first-excel-file"><i class="fas fa-link"></i></a>
+</h2>
+<p>in the code chunk below, replace the following content :</p>
+<pre><code>
+```r
+plot(cars)
+```</code></pre>
+<p>with :</p>
+<pre><code>
+```r
+library(openxlsx)
+```</code></pre>
+<p>Then click on the green “<em>PLAY</em>” icon on the top right of this code chunk.
+RStudio will load the package, and we are now good to read our first Excel file !</p>
+<p>In the Code chunk, add the following line :</p>
+<p><code>DT &lt;- openxlsx::read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")</code></p>
+<p>Your code chunk should look like this :</p>
+<pre><code>
+```r
+library(openxlsx)
+DT &lt;- openxlsx::read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")
+```</code></pre>
+<p>Click again on the green “<em>PLAY</em>” icon</p>
+<p>You should then see in the top right area of your notebook, in the <code>Environment</code> tab a new variable <code>DT</code>. Just click on it, a new View Tab should pop up with the content of your first Dataframe. You are now officially a Data Scientist.</p>
+<div id="exercise" class="section level3" number="3.2.1">
+<h3>
+<span class="header-section-number">3.2.1</span> Exercise<a class="anchor" aria-label="anchor" href="#exercise"><i class="fas fa-link"></i></a>
+</h3>
+<p>Upload an Excel of your own with the <strong><code>Upload</code></strong> button located at the bottom right area, just above the file explorer.
+The name of the file should then appear in the file explorer.
+To load the file into a new dataframe, just type :</p>
+<p><code>DT_2 &lt;- openxlsx::read.xlsx("your_file_name.xslx")</code></p>
+<p><strong>Hint</strong>: <em>if your excel file contains multiple sheets, the <code>openxlsx</code> will load the first sheet of the file by default.
+To set the sheetname just add the</em> <strong>sheet</strong> <em>parameter in the previous command</em> :</p>
+<p><code>DT_2 &lt;- openxlsx::read.xlsx("your_file_name.xslx",  sheet = "my_sheet_name")</code></p>
+<p>Do not forget to click “<em>PLAY</em>” to run the code.</p>
+</div>
+</div>
+<div id="common-pitfalls" class="section level2" number="3.3">
+<h2>
+<span class="header-section-number">3.3</span> Common pitfalls<a class="anchor" aria-label="anchor" href="#common-pitfalls"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>a R chunk (snippet of code) is defined as such :</li>
+</ul>
+<pre><code>
+```r
+#YOUR CODE CHUNK HERE
+```</code></pre>
+<p>If you delete one of the ` character (a backtick), RStudio will not recognize it as a chunk.</p>
+<ul>
+<li>Every now and then, reset your environment (<code>Rstudio -&gt; Session -&gt; Restart and clear output</code>)</li>
+<li>When using the <code>data.table</code> package, do not forget to convert your data.frame into a data.table with <code>setDT(my-dataframe)</code>
+</li>
+</ul>
+<div id="how-to-read" class="section level3" number="3.3.1">
+<h3>
+<span class="header-section-number">3.3.1</span> How to read…<a class="anchor" aria-label="anchor" href="#how-to-read"><i class="fas fa-link"></i></a>
+</h3>
+<dl>
+<dt>Do not forget to upload you file first in RStudio cloud</dt>
+<dd>
+<code>Upload</code> button at the bottom right.
+</dd>
+</dl>
+<div id="an-excel-file" class="section level4" number="3.3.1.1">
+<h4>
+<span class="header-section-number">3.3.1.1</span> …an Excel file<a class="anchor" aria-label="anchor" href="#an-excel-file"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span>
+<span class="va">DT</span>  <span class="op">&lt;-</span> <span class="fu">openxlsx</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">"/path/to/file.xlsx"</span>, sheet<span class="op">=</span><span class="st">"the-name-of-the-sheet"</span>,startRow<span class="op">=</span><span class="fl">1</span><span class="op">)</span></code></pre></div>
+<p>Make sure to adjust the sheet name if you have more than one sheet in your Excel file, and also the starting row index.</p>
+</div>
+<div id="a-comma-separated-values-file-aka-.csv" class="section level4" number="3.3.1.2">
+<h4>
+<span class="header-section-number">3.3.1.2</span> …a Comma separated values file (aka .csv)<a class="anchor" aria-label="anchor" href="#a-comma-separated-values-file-aka-.csv"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com">data.table</a></span><span class="op">)</span>
+<span class="va">DT</span><span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/fread.html">fread</a></span><span class="op">(</span><span class="st">"/path/to/file.csv"</span>, sep<span class="op">=</span><span class="st">";"</span><span class="op">)</span></code></pre></div>
+<p>Make sure to adjust the separator.</p>
+</div>
+<div id="a-json-file" class="section level4" number="3.3.1.3">
+<h4>
+<span class="header-section-number">3.3.1.3</span> …a Json file<a class="anchor" aria-label="anchor" href="#a-json-file"><i class="fas fa-link"></i></a>
+</h4>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://arxiv.org/abs/1403.2805">jsonlite</a></span><span class="op">)</span>
+<span class="va">DT</span><span class="op">&lt;-</span> <span class="fu">jsonlite</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/jsonlite/man/fromJSON.html">fromJSON</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/statsbomb/open-data/master/data/competitions.json"</span>,flatten <span class="op">=</span> <span class="cn">T</span><span class="op">)</span></code></pre></div>
+
+</div>
+</div>
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="getting-started.html"><span class="header-section-number">2</span> Getting started</a></div>
+<div class="next"><a href="data-manipulation-with-datatable.html"><span class="header-section-number">4</span> Data manipulation with datatable</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#your-first-notebook"><span class="header-section-number">3</span> Your first notebook</a></li>
+<li>
+<a class="nav-link" href="#create-a-new-notebook"><span class="header-section-number">3.1</span> Create a new Notebook</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#install-the-required-libraries"><span class="header-section-number">3.1.1</span> Install the required libraries</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#load-your-first-excel-file"><span class="header-section-number">3.2</span> Load your first Excel file</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#exercise"><span class="header-section-number">3.2.1</span> Exercise</a></li></ul>
+</li>
+<li>
+<a class="nav-link" href="#common-pitfalls"><span class="header-section-number">3.3</span> Common pitfalls</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#how-to-read"><span class="header-section-number">3.3.1</span> How to read…</a></li></ul>
+</li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/02-firstnotebook.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/02-firstnotebook.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Intro to R</strong>" was written by Clement Lefevre. It was last built on 2022-02-18.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

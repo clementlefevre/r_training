@@ -1,0 +1,222 @@
+---
+title: "01_Assignement"
+output: html_notebook
+---
+
+
+# Load librairies
+```{r}
+library(httr)
+library(data.table)
+library(stringr)
+library(doParallel) # will load parallel, foreach, and iterators
+
+dir.create(file.path("../data"), showWarnings = FALSE)
+```
+
+
+Objectives :
+- filter and aggregate data
+- merge two dataframes
+- parse a character column into a Date
+
+
+1 - Retrieve the Statsbomb dataset :
+
+```{r}
+
+req <- GET("https://api.github.com/repos/statsbomb/open-data/git/trees/master?recursive=1")
+stop_for_status(req)
+filelist <- unlist(lapply(content(req)$tree, "[", "path"), use.names = F)
+DT_filelist <- setDT(as.data.frame(filelist))
+names(DT_filelist) <- c("filepath")
+fwrite(DT_filelist, "../data/DT_filelist.csv")
+```
+
+
+
+## Create a table with all matches for Spain Liga 1 : (competition id 11)
+```{r}
+# Filter matches on Spain / Liga1 / Season Id 11 (2020/2021):
+DT_filelist_filtered <- DT_filelist[str_detect(filepath, "data/matches/11/")]
+
+# Combine all matches for this season :
+
+combine_matches <- function(filepath) {
+ 
+  DT_match <- jsonlite::fromJSON(paste0("https://raw.githubusercontent.com/statsbomb/open-data/master/", filepath), flatten = T)
+  setDT(DT_match)
+  DT_match[, match_id := as.integer(match_id)]
+
+  if ("away_team.managers" %in% names(DT_match)) {
+   
+    DT_match_away_manager <- DT_match[, rbindlist(setNames(away_team.managers, match_id), idcol = "match_id")]
+    DT_match_away_manager[, match_id := as.integer(match_id)]
+
+    DT_match <- merge(DT_match[, away_team.managers := NULL], DT_match_away_manager, by = "match_id", all.x = TRUE)
+  }
+  if ("home_team.managers" %in% names(DT_match)) {
+   
+    DT_match_home_manager <- DT_match[, rbindlist(setNames(home_team.managers, match_id), idcol = "match_id")]
+    DT_match_home_manager[, match_id := as.integer(match_id)]
+    DT_match <- merge(DT_match[, "home_team.managers" := NULL], DT_match_home_manager, by = "match_id", all.x = TRUE, suffixes = c("_manager_away", "_manager_home"))
+  }
+  return((DT_match))
+}
+
+DT_all_matches <- rbindlist(lapply(DT_filelist_filtered$filepath, combine_matches), fill = TRUE)
+names(DT_all_matches) <- make.names(names(DT_all_matches))
+
+fwrite(DT_all_matches, "../data/DT_all_matches.csv")
+```
+
+## Create a table for all lineup Spain Liga 1 (competition id 11) :
+```{r}
+# Filter lineups on Spain / Liga1 / Season Id 11 (2020/2021):
+DT_filelist_filtered_lineup <- DT_filelist[(str_detect(filepath, "data/lineups/")) & (str_detect(filepath, paste(as.character(DT_all_matches$match_id), collapse = "|")))]
+
+DT_all_matches <- fread("../data/DT_all_matches.csv")
+
+combine_lineup_players <- function(filepath) {
+  print(filepath)
+  match_id <- as.integer(sub(pattern = "(.*)\\..*$", replacement = "\\1", basename(filepath)))
+  DT_lineup <- jsonlite::fromJSON(paste0("https://raw.githubusercontent.com/statsbomb/open-data/master/", filepath), flatten = T)
+  setDT(DT_lineup)
+  DT_lineup_players <- DT_lineup[, rbindlist(setNames(lineup, team_id), idcol = "team_id")]
+  DT_lineup_players[, player_id := as.integer(player_id)]
+
+  DT_lineup_positions <- DT_lineup_players[, rbindlist(setNames(positions, player_id), idcol = "player_id")]
+  DT_lineup_positions[, player_id := as.integer(player_id)]
+
+  DT_lineup_player_and_positions <- merge(DT_lineup_players, DT_lineup_positions, by = "player_id", all = TRUE)
+
+  DT_lineup_player_and_positions[, match_id := match_id]
+  DT_lineup_player_and_positions[, positions := NULL]
+  DT_lineup_player_and_positions[, cards := NULL]
+
+  return(DT_lineup_player_and_positions)
+}
+
+cl <- makeCluster(detectCores())
+registerDoParallel(cl)
+
+all_players_lineups <- foreach(i = DT_filelist_filtered_lineup$filepath, .packages = "data.table") %dopar% combine_lineup_players(i)
+parallel::stopCluster(cl)
+
+DT_all_lineups_players <- rbindlist(all_players_lineups, fill = TRUE)
+
+fwrite(DT_all_lineups_players, "../data/DT_all_lineups_players.csv")
+```
+
+## Create a players cards table for Spain Liga 1 (competition id 11) : 
+```{r}
+combine_all_players_cards <- function(filepath) {
+  print(filepath)
+  match_id <- as.integer(sub(pattern = "(.*)\\..*$", replacement = "\\1", basename(filepath)))
+  DT_lineup <- jsonlite::fromJSON(paste0("https://raw.githubusercontent.com/statsbomb/open-data/master/", filepath), flatten = T)
+  setDT(DT_lineup)
+  DT_lineup_players <- DT_lineup[, rbindlist(setNames(lineup, team_id), idcol = "team_id")]
+  DT_lineup_players[, player_id := as.integer(player_id)]
+  DT_lineup_cards <- DT_lineup_players[, rbindlist(setNames(cards, player_id), idcol = "player_id")]
+  if (nrow(DT_lineup_cards) > 0) {
+    DT_lineup_cards[, match_id := match_id]
+    return(DT_lineup_cards)
+  }
+}
+
+
+cl <- makeCluster(detectCores())
+registerDoParallel(cl)
+
+all_players_cards <- foreach(i = DT_filelist_filtered_lineup$filepath, .packages = "data.table") %dopar% combine_all_players_cards(i)
+parallel::stopCluster(cl)
+
+DT_all_players_cards <- rbindlist(all_players_cards, fill = TRUE)
+
+fwrite(DT_all_players_cards, "../data/DT_all_players_cards.csv")
+```
+
+
+## Create a table of events for Spain Liga 1 (competition id 11) : 
+```{r}
+
+# Filter lineups on Spain / Liga1 / Season Id 11 (2020/2021) and for Barcelona :
+
+DT_all_matches <- fread("../data/DT_all_matches.csv")
+DT_all_matches$away_team.away_team_name
+DT_all_matches_2017_2018 <- DT_all_matches[(season.season_name=="2017/2018")&((away_team.away_team_name=="Barcelona")|(home_team.home_team_name=="Barcelona"))]
+
+DT_filelist_filtered_events <- DT_filelist[(str_detect(filepath, "data/events/")) & (str_detect(filepath, paste(as.character(DT_all_matches_2017_2018$match_id), collapse = "|")))]
+
+
+clean_location <- function(DT, colum_name) {
+  col_values <- DT[, get(colum_name)]
+  splits <- max(lengths(strsplit(as.character(col_values), ", ")))
+
+  cols_to_apply <- paste0(colum_name, 1:splits)
+  DT[, eval(cols_to_apply) := tstrsplit(get(colum_name), ", ", fixed = T)]
+  DT[, eval(cols_to_apply) := lapply(.SD, function(x) {
+    gsub("c\\(|\\)", "", x)
+  }), .SDcols = cols_to_apply]
+  DT[, eval(cols_to_apply) := lapply(.SD, as.numeric), .SDcols = cols_to_apply]
+}
+
+
+combine_all_events <- function(filepath) {
+  match_id <- as.integer(sub(pattern = "(.*)\\..*$", replacement = "\\1", basename(filepath)))
+  DT_event <- jsonlite::fromJSON(paste0("https://raw.githubusercontent.com/statsbomb/open-data/master/", filepath), flatten = T)
+  setDT(DT_event)
+
+  locations_columns <- names(DT_event)[str_detect(names(DT_event), "location")]
+
+  for (loc in locations_columns) {
+    clean_location(DT_event, loc)
+  }
+  set(DT_event, , locations_columns, NULL)
+  DT_event[, related_events := NULL]
+  DT_event[, shot.freeze_frame := NULL]
+  DT_event[, tactics.lineup := NULL]
+
+  DT_event[, match_id := match_id]
+  return(DT_event)
+}
+
+
+cl <- makeCluster(detectCores())
+registerDoParallel(cl)
+
+all_events <- foreach(i =DT_filelist_filtered_events$filepath, .packages = c("stringr", "data.table")) %dopar% combine_all_events(i)
+parallel::stopCluster(cl)
+
+DT_all_events <- rbindlist(all_events, fill = TRUE)
+
+fwrite(DT_all_events, "../data/DT_all_events_2017_2018.csv")
+```
+
+## Create an events tactics lineup table :
+```{r}
+
+combine_all_events_tactics_lineup <- function(filepath) {
+  match_id <- as.integer(sub(pattern = "(.*)\\..*$", replacement = "\\1", basename(filepath)))
+  DT_event <- jsonlite::fromJSON(paste0("https://raw.githubusercontent.com/statsbomb/open-data/master/", filepath), flatten = T)
+  setDT(DT_event)
+
+  DT_event_tactics_lineup <- DT_event[, rbindlist(setNames(tactics.lineup, index), idcol = "index")]
+  DT_event_tactics_lineup[, match_id := match_id]
+  return(DT_event_tactics_lineup)
+}
+
+
+cl <- makeCluster(detectCores())
+registerDoParallel(cl)
+
+all_events_tactics_lineup <- foreach(i = DT_filelist_filtered_events$filepath, .packages = "data.table") %dopar% combine_all_events_tactics_lineup(i)
+parallel::stopCluster(cl)
+
+DT_all_events_tactics_lineup <- rbindlist(all_events_tactics_lineup, fill = TRUE)
+
+fwrite(DT_all_events_tactics_lineup, "../data/DT_all_events_tactics_lineup_2017_2018.csv.csv")
+```
+
+
+

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 6 First assignment | Intro to R</title>
+<meta name="author" content="Clement Lefevre">
+<meta name="description" content="This chunk downloads the Statsbomb data.You need to run this script once, then you can set the update_data variable to FALSE library(data.table) update_data &lt;- TRUE if (update_data) { ...">
+<meta name="generator" content="bookdown 0.24 with bs4_book()">
+<meta property="og:title" content="Chapter 6 First assignment | Intro to R">
+<meta property="og:type" content="book">
+<meta property="og:description" content="This chunk downloads the Statsbomb data.You need to run this script once, then you can set the update_data variable to FALSE library(data.table) update_data &lt;- TRUE if (update_data) { ...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 6 First assignment | Intro to R">
+<meta name="twitter:description" content="This chunk downloads the Statsbomb data.You need to run this script once, then you can set the update_data variable to FALSE library(data.table) update_data &lt;- TRUE if (update_data) { ...">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.4/tabs.js"></script><script src="libs/bs3compat-0.2.4/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Intro to R</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html"><span class="header-section-number">1</span> About</a></li>
+<li><a class="" href="getting-started.html"><span class="header-section-number">2</span> Getting started</a></li>
+<li><a class="" href="your-first-notebook.html"><span class="header-section-number">3</span> Your first notebook</a></li>
+<li><a class="" href="data-manipulation-with-datatable.html"><span class="header-section-number">4</span> Data manipulation with datatable</a></li>
+<li><a class="" href="visualization-with-ggplot2.html"><span class="header-section-number">5</span> Visualization with ggplot2</a></li>
+<li><a class="active" href="first-assignment.html"><span class="header-section-number">6</span> First assignment</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/rstudio/bookdown-demo">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="first-assignment" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> First assignment<a class="anchor" aria-label="anchor" href="#first-assignment"><i class="fas fa-link"></i></a>
+</h1>
+<p>This chunk downloads the Statsbomb data.You need to run this script once, then you can set the <code>update_data</code> variable to <code>FALSE</code></p>
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com">data.table</a></span><span class="op">)</span>
+<span class="va">update_data</span> <span class="op">&lt;-</span> <span class="cn">TRUE</span>
+
+<span class="kw">if</span> <span class="op">(</span><span class="va">update_data</span><span class="op">)</span> <span class="op">{</span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span><span class="st">"https://r-training-bookdown.s3.amazonaws.com/data/data.zip"</span>, dest <span class="op">=</span> <span class="st">"data.zip"</span>, mode <span class="op">=</span> <span class="st">"wb"</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/utils/unzip.html">unzip</a></span><span class="op">(</span><span class="st">"data.zip"</span>, exdir <span class="op">=</span> <span class="st">"."</span><span class="op">)</span>
+  <span class="fu"><a href="https://rdrr.io/r/base/files.html">file.remove</a></span><span class="op">(</span><span class="st">"data.zip"</span><span class="op">)</span>
+<span class="op">}</span>
+<span class="co">#&gt; [1] TRUE</span></code></pre></div>
+<div id="the-big-picture" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> The big picture<a class="anchor" aria-label="anchor" href="#the-big-picture"><i class="fas fa-link"></i></a>
+</h2>
+<p>Last year the biggest untapped Bitcoin deposit was discovered in Burkina Faso.
+The Thomas Sankara Sovereign Found has commissioned you to assess new investment opportunities in the field of football. Due to material reasons (the allocated budget disappeared somewhere between Zurich and Basel), you will not be able to make on-site visits to the Europeans clubs. Nevertheless, the Found, in its infinite kindness, has created a Gmail account for you, which will allow you to access <a href="https://rstudio.cloud/">RStudio Cloud</a>, the most powerful analysis tool in the world (after the Cross-multiplication, of course).</p>
+<p>The scope of the study is the Spanish Liga 1, and we will use the <a href="https://github.com/statsbomb/open-data">StatsBomb</a> data.
+As you may be now aware of, due to the financial limitations of the project, there are only the free datasets available for this study. Don’t be sad, there is still lot of fun to have with this dataset !</p>
+<p>You can find the raw data in the <code>./data</code> folder.</p>
+<p><em>[Hint : Be a real iconoclast, and start by having a look at the <a href="https://github.com/statsbomb/open-data/tree/master/doc">documentation</a>]</em></p>
+<p>In order to be able to add the title Senior Data Scientist to your TikTok profile, you must first prove the extent of your skills. So let’s start with some basic calculations.</p>
+<p>Using the <code>./data/DT_all_matches.csv</code> file, compute the following informations :</p>
+<ul>
+<li>the first and last date of matches.</li>
+<li>the eldest and youngest manager of all times. <em>[Hint: have a look at the <a href="https://lubridate.tidyverse.org/"><code>lubridate</code></a>* package to easily manipulate dates]</em>
+</li>
+<li>the eldest and youngest manager per season.</li>
+<li>the Team with the biggest home scores over all times.</li>
+<li>the Team with the biggest away scores per season.</li>
+<li>the name of the referee who has participated in the most matches over all seasons.</li>
+<li>the list of the Teams which only took part to one season.</li>
+</ul>
+<p>*SFW</p>
+<p>Given the results, where would put your money on ?</p>
+<p>And why have you got no money ?</p>
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">DT_matches</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/fread.html">fread</a></span><span class="op">(</span><span class="st">"./data/DT_all_matches.csv"</span><span class="op">)</span>
+<span class="co">#DT_matches[, .N, by = .(season.season_name)]</span>
+<span class="co"># You wonderfully crafted code goes here...</span></code></pre></div>
+</div>
+<div id="data-scientist-but-also-part-time-visual-designer" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Data Scientist, but also part-time Visual Designer<a class="anchor" aria-label="anchor" href="#data-scientist-but-also-part-time-visual-designer"><i class="fas fa-link"></i></a>
+</h2>
+<p>after having read the <a href="https://uc-r.github.io/ggplot_intro">ggplot2</a> introduction, you should now be able to plot some nice charts to impress the Board.</p>
+<ul>
+<li><p>plot the number of <strong>Home Score per Team</strong> for the Season 2017/2018 (order per Number of Home Scores) <em>[Hint : use the <a href="https://www.r-graph-gallery.com/218-basic-barplots-with-ggplot2.html">geom_bar</a> function]</em></p></li>
+<li><p>plot the timeline of <strong>home scores</strong> for Betis Sevilla over all seasons and all matches. [see <a href="https://rpubs.com/admiralbyng/geom_line_tutorial">here</a>]</p></li>
+<li><p>plot the Distribution of <strong>Home and Away Scores</strong> over all seasons <em>[Hint: The <a href="https://t-redactyl.io/blog/2016/04/creating-plots-in-r-using-ggplot2-part-10-boxplots.html">boxplot</a> does a pretty good job]</em></p></li>
+</ul>
+<p>How about pimping your charts with <a href="https://yutannihilation.github.io/allYourFigureAreBelongToUs/ggthemes/">ggtheme</a> and make them instagrammable ?</p>
+</div>
+<div id="merging-and-acquisition" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Merging and Acquisition<a class="anchor" aria-label="anchor" href="#merging-and-acquisition"><i class="fas fa-link"></i></a>
+</h2>
+<p>Now the real fun starts. We start by combining the matches data with the the lineups.</p>
+<p>For this, we expect you have a basic understanding of the <code>merge</code> (for the Excel community, think <code>VLOOKUP</code>, for the SQL staff think the <code>JOIN</code>)</p>
+<ul>
+<li>merge the matches and lineups table on the <strong>match_id</strong> value.</li>
+<li>check that the number of rows of the newly datatable is the same as the number of lineups’rows.</li>
+</ul>
+<p><strong>Let’s Just Do It and Be Legends !</strong></p>
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">DT_lineups</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/fread.html">fread</a></span><span class="op">(</span><span class="st">"./data/DT_all_lineups_players.csv"</span>, encoding <span class="op">=</span> <span class="st">"UTF-8"</span><span class="op">)</span>
+<span class="co"># merge example :</span>
+<span class="co"># df_merged &lt;-  merge(df1, df2, by.x = "df1ColName", by.y = "df2ColName")</span></code></pre></div>
+
+</div>
+</div>
+  <div class="chapter-nav">
+<div class="prev"><a href="visualization-with-ggplot2.html"><span class="header-section-number">5</span> Visualization with ggplot2</a></div>
+<div class="next"><a href="references.html">References</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#first-assignment"><span class="header-section-number">6</span> First assignment</a></li>
+<li><a class="nav-link" href="#the-big-picture"><span class="header-section-number">6.1</span> The big picture</a></li>
+<li><a class="nav-link" href="#data-scientist-but-also-part-time-visual-designer"><span class="header-section-number">6.2</span> Data Scientist, but also part-time Visual Designer</a></li>
+<li><a class="nav-link" href="#merging-and-acquisition"><span class="header-section-number">6.3</span> Merging and Acquisition</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/rstudio/bookdown-demo/blob/master/05-firstassignment.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/rstudio/bookdown-demo/edit/master/05-firstassignment.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Intro to R</strong>" was written by Clement Lefevre. It was last built on 2022-02-18.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>
