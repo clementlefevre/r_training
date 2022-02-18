@@ -98,11 +98,22 @@ DT_grouped <- DT[,.(total_units_sold=sum(Units.Sold)), by=.(Product, Country)]
 DT_grouped[,head(.SD, 2), by=.(Product, Country)]
 ```
 
+
+### Merge, the VLOOKUP variant in R
+
+One common operation in Excel is to combine two tables, based on a specific column. 
+
+
+
 ### Export the result as an Excel file :
 
 ```{r}
 write.xlsx(DT_grouped, "DT_grouped.xlsx", sheetName="gouped Sales")
 ```
+
+
+To download this file, just check the box besides the filename (DT_grouped.xlsx) in the file explorer (bottom right) and `More` -> `export`
+
 
 Useful resources to learn data.table :
 
