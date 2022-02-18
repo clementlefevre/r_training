@@ -34,13 +34,13 @@ library(openxlsx)
 ```
 ````
 
-Then click on the green "*PLAY*" icon on the top right of this code chunk.
+Then click on the green **ᐅ** icon above the code chunk.
 RStudio will load the package, and we are now good to read our first Excel file !
 
 
 In the Code chunk, add the following line :
 
-`DT <- openxlsx::read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")`
+`DT <- read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")`
 
 
 Your code chunk should look like this :
@@ -49,29 +49,44 @@ Your code chunk should look like this :
 ````
 ```{r eval=FALSE}
 library(openxlsx)
-DT <- openxlsx::read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")
+DT <- read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")
 ```
 ````
 
-Click again on the green "*PLAY*" icon
+Click again on the green **ᐅ** icon
 
-You should then see in the top right area of your notebook, in the `Environment` tab a new variable `DT`. Just click on it, a new View Tab should pop up with the content of your first Dataframe. You are now officially a Data Scientist. 
+You should then see in the top right area of your notebook, in the `Environment` tab a new variable `DT`. Click on it, a new View Tab should pop up with the content of your first Dataframe. 
+You can't believe it ? Neither i do. OK, open your favorite internet browser and open the following link : https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx
+
+This should download the very same Excel file. Open it with Excel. What do you see ? the same table as in the `DT` tab.
+
+You are now officially a Data Scientist.    
 
 
 ### Exercise
 
-Upload an Excel of your own with the **`Upload`** button located at the bottom right area, just above the file explorer.
-The name of the file should then appear in the file explorer.
-To load the file into a new dataframe, just type :
+Upload an Excel of your own :
 
-`DT_2 <- openxlsx::read.xlsx("your_file_name.xslx")`
+- click on the **`Upload`** button at the bottom right,
+- click on `Select File` (`Datei Auswählen`)
+- select your file 
+- click on `OK`.
 
-**Hint**: *if your excel file contains multiple sheets, the `openxlsx` will load the first sheet of the file by default.
-To set the sheetname just add the* **sheet** *parameter in the previous command* :
+The name of the file should then appear in the file explorer (bottom right of the screen). 
 
-`DT_2 <- openxlsx::read.xlsx("your_file_name.xslx",  sheet = "my_sheet_name")`
+*Note : Make sure this file contains only one sheet, and that the column names are located in the first row. Later on in this course we will show you how to handle other cases.*
 
-Do not forget to click "*PLAY*" to run the code.
+
+
+Let's assume the file you uploaded is **report_22.xlsx**. To load this file in R,  type in the code chunk :
+
+`DT_2 <- read.xlsx("report_22.xlsx")`
+
+Do not forget to click the green **ᐅ** icon above the code chunk to execute the code.
+
+You should then see in the top right area of your notebook, in the `Environment` tab a new variable `DT_2`. Click on it, a new View Tab should pop up with the content of your own Excel sheet.
+
+Are you happy now ?
 
 
 ## Common pitfalls
@@ -85,14 +100,12 @@ Do not forget to click "*PLAY*" to run the code.
 
 If you delete one of the ` character (a backtick), RStudio will not recognize it as a chunk.
 
-- Every now and then, reset your environment (`Rstudio -> Session -> Restart and clear output`)
-- When using the `data.table` package, do not forget to convert your data.frame into a data.table with `setDT(my-dataframe)`
+- Every now and then, reset your environment (`Session` -> `Restart and clear output`)
 
 
 
 ### How to read...
-Do not forget to upload you file first in RStudio cloud 
-: `Upload` button at the bottom right.
+
 
 
 #### ...an Excel file
