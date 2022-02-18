@@ -15,7 +15,10 @@ In your notebook, create a new chunk as following :
 
 library(data.table)
 library(openxlsx)
-DT <- openxlsx::read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")
+download.file("https://r-training-bookdown.s3.amazonaws.com/data/Financial%2BSample.xlsx", "test.xlsx", mode="wb")
+openxlsx::getSheetNames( "test.xlsx")
+
+openxlsx::read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial%2BSample.xlsx", sheet = "Managers")
 DT <- setDT(DT) # we convert the dataframe into a data.table, to be able to use the data.table operations on it.
 ```
 

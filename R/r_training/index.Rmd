@@ -23,6 +23,7 @@ No prior programming experience is required. The only requirements are :
 
 - a [**RStudio Cloud account**](https://rstudio.cloud/), it's free.
 - a strong motivation to learn.
+- time.
 
 You do not need to install any software on your computer.
 
