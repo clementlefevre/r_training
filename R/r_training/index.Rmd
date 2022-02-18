@@ -35,4 +35,4 @@ At the end of this course, you should be able to :
 - manipulate different types of data sources (excel, csv, json, database, pdf).
 - compute basic statistics.
 - create ad-hoc visualizations.
-- use statistical modeling : regression, clustering, timeseries analysis.
+- use statistical modeling : regression, clustering.

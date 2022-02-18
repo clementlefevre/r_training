@@ -3,23 +3,44 @@
 To manipulate data with R, there are two options :
 
 - the **dplyr** package. Very beginner friendly, most of the tutorials you can find online are using `dplyr`.
-- the **data.table** package is the workhorse of data manipulation in R. For this introduction we will use it, for the following reasons : the syntax is much concise as `dplyr`, and it works seamlessly with large dataset (like 5 millions rows). As as sidenote, Excel can handle a maximum of 1,048,576 rows.
+- the **data.table** package is the workhorse of data manipulation in R. For this introduction we will use it, for the following reasons : the syntax is much concise as `dplyr`, and it works seamlessly with large dataset (like 5 millions rows). In comparison, Excel can handle a maximum of 1,048,576 rows.
 
 *Hint : an Excel "Table" is the equivalent of a R "dataframe".*
 
 ## First steps with data.table
 
-In your notebook, create a new chunk as following :
+*first we load the necessary packages* : **openxlsx** *and* **data.table** :
+
+```{r}
+library(openxlsx)
+library(data.table)
+```
+
+
+At this point you should get an error message like :
+
+*copy the following code to download the* **Financial sample.xlsx** Excel File :
 
 ```{r eval=TRUE}
+download.file("https://r-training-bookdown.s3.amazonaws.com/data/Financial+sample.xlsx", "Financial sample.xlsx", mode="wb")
+```
+*list the names of the sheets that the Excel file contains:*
+```{r}
+getSheetNames( "Financial sample.xlsx")
+```
 
-library(data.table)
-library(openxlsx)
-download.file("https://r-training-bookdown.s3.amazonaws.com/data/Financial%2BSample.xlsx", "test.xlsx", mode="wb")
-openxlsx::getSheetNames( "test.xlsx")
+This excel file contains three sheets : **Sales**, **Managers** and **CustomerSupport**
 
-openxlsx::read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial%2BSample.xlsx", sheet = "Managers")
-DT <- setDT(DT) # we convert the dataframe into a data.table, to be able to use the data.table operations on it.
+
+*load the "Sales" sheet as a dataframe :*
+```{r}
+DT_sales <- read.xlsx( "Financial sample.xlsx", sheet="Sales")
+setDT(DT_sales)
+```
+
+
+
+```{r eval=TRUE}
 ```
 
 
