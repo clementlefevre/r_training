@@ -1,23 +1,23 @@
 # Your first notebook 
 
 
-## Create a new Notebook
-with your [**Rstudio Cloud**](https://rstudio.cloud) project open :
+## Create a new Notebook {-}
+with your **Rstudio** project open :
 
 `File` -> `New` -> `R Notebook` 
 (always click OK if you are suggested to install any additional packages)
 
-### Install the required libraries
+### Install the required libraries  {-}
 R runs with a set of basics functionalities, and for specific needs, let's say if you want to read an Excel file, we need to install additional librairies (e.g. packages).
 With RStudio this is quite straightforward : just go to 
 
-`RStudio -> Tools -> Install Packages` 
+`Tools` -> `Install Packages` 
 
 type **`openxlsx`** in the search bar and click `install`
 
 RStudio will then automatically install the package.
 
-## Load your first Excel file
+## Load your first Excel file  {-}
 
 in the code chunk below, replace the following content :
 
@@ -34,7 +34,7 @@ library(openxlsx)
 ```
 ````
 
-Then click on the green **ᐅ** icon above the code chunk.
+Then click on the <span style="color:green;font-size: 24px">**►**</span> button above the code chunk.
 RStudio will load the package, and we are now good to read our first Excel file !
 
 
@@ -53,7 +53,7 @@ DT <- read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sam
 ```
 ````
 
-Click again on the green **ᐅ** icon
+Click again on the <span style="color:green;font-size: 24px">**►**</span> button
 
 You should then see in the top right area of your notebook, in the `Environment` tab a new variable `DT`. Click on it, a new View Tab should pop up with the content of your first Dataframe. 
 You can't believe it ? Neither i do. OK, open your favorite internet browser and open the following link : https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx
@@ -63,7 +63,7 @@ This should download the very same Excel file. Open it with Excel. What do you s
 You are now officially a Data Scientist.    
 
 
-### Exercise
+#### Exercise {-}
 
 Upload an Excel of your own :
 
@@ -82,14 +82,20 @@ Let's assume the file you uploaded is **report_22.xlsx**. To load this file in R
 
 `DT_2 <- read.xlsx("report_22.xlsx")`
 
-Do not forget to click the green **ᐅ** icon above the code chunk to execute the code.
+Do not forget to click the  <span style="color:green;font-size: 24px">**►**</span> button above the code chunk to execute the code.
 
 You should then see in the top right area of your notebook, in the `Environment` tab a new variable `DT_2`. Click on it, a new View Tab should pop up with the content of your own Excel sheet.
 
 Are you happy now ?
 
 
-## Common pitfalls
+## Basic operations  in your Notebook {-}
+
+- to create a new chunk (an area where you can write code) : `Code` -> `Insert Chunk` or use the Shortcut `Shift`+`Alt`+`i`
+- to execute the whole chunk of code, click the  <span style="color:green;font-size: 24px">**►**</span> button above the code chunk
+- to execute a single line of code, position your cursor at end of the line and press `Alt`+`Enter`
+
+## Common pitfalls  {-}
 - a R chunk (snippet of code) is defined as such :
 
 ````
@@ -104,11 +110,11 @@ If you delete one of the ` character (a backtick), RStudio will not recognize it
 
 
 
-### How to read...
+## How to read...  {-}
 
 
 
-#### ...an Excel file
+#### ...an Excel file  {-}
 
 ```{r eval=FALSE}
 library(openxlsx)
@@ -117,7 +123,7 @@ DT  <- openxlsx::read.xlsx("/path/to/file.xlsx", sheet="the-name-of-the-sheet",s
 
 Make sure to adjust the sheet name if you have more than one sheet in your Excel file, and also the starting row index.
 
-#### ...a Comma separated values file (aka .csv)
+#### ...a Comma separated values file (aka .csv)  {-}
 
 ```{r eval=FALSE}
 library(data.table)
@@ -126,7 +132,7 @@ DT<- data.table::fread("/path/to/file.csv", sep=";")
 
 Make sure to adjust the separator.
 
-#### ...a Json file
+#### ...a Json file {-}
 
 ```{r}
 library(jsonlite)
@@ -134,5 +140,6 @@ DT<- jsonlite::fromJSON("https://raw.githubusercontent.com/statsbomb/open-data/m
 ```
 
 
-
+## Help ! {-}
+You are not alone. When facing an error message, or when trying to implement some logic (let's say you want to convert a date into a week number), the one and only way to solve this is to do [**this**](https://letmegooglethat.com/?q=R+extract+week+number+from+Date+stackoverflow).
   
