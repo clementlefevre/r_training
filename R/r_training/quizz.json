@@ -26,5 +26,34 @@
             1
         ],
         "type": "radio-single"
+    },
+      "3": {
+        "question": "what is the median value of the Sales for Product ?",
+        "choices": [
+            1,
+            23,
+            4,
+            56,
+            987
+        ],
+        "answer": [
+            1
+        ],
+        "type": "radio-single"
+    },
+      "4": {
+        "question": "what is the median value of the Sales for Product ?",
+        "choices": [
+            1,
+            23,
+            4,
+            56,
+            987
+        ],
+        "answer": [
+            1
+        ],
+        "type": "radio-single"
     }
+    
 }

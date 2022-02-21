@@ -2,8 +2,15 @@
 
 
 ## The big picture
+
+<div class="figure" style="text-align: center">
+<img src="images/Thomas-sankara-dessin.jpg" alt="Thomas Sankara (1949-1987)." width="50%" />
+<p class="caption">(\#fig:thomas-sankara)Thomas Sankara (1949-1987).</p>
+</div>
+
+
 Last year the biggest untapped Bitcoin deposit was discovered in Burkina Faso.
-The Thomas Sankara Sovereign Found has commissioned you to assess new investment opportunities in the field of football. Due to material reasons (the allocated budget disappeared somewhere between Zurich and Basel), you will not be able to make on-site visits to the Europeans clubs. Nevertheless, the Found, in its infinite kindness, has created a Gmail account for you, which will allow you to access [RStudio Cloud](https://rstudio.cloud/), the most powerful analysis tool in the world (after the Cross-multiplication, of course).
+The Thomas Sankara Sovereign Found has commissioned you to assess new investment opportunities in the field of football. Due to material reasons (the allocated budget disappeared somewhere between Zurich and Basel), you will not be able to make on-site visits to the Europeans clubs. Nevertheless, the Found, in its infinite kindness, has created a Gmail account for you, which will allow you to access [RStudio Cloud](https://rstudio.cloud/), the most powerful analysis tool in the world (just after Powerpoint, of course).
 
 The scope of the study is the Spanish Liga 1, and we will use the [StatsBomb](https://github.com/statsbomb/open-data) data.
 As you may be now aware of, due to the financial limitations of the project, there are only the free datasets available for this study. Don't be sad, there is still lot of fun to have with this dataset !
@@ -22,7 +29,6 @@ if (update_data) {
   unzip("data.zip", exdir = ".")
   file.remove("data.zip")
 }
-#> [1] TRUE
 ```
 
 *[Hint : Be a real iconoclast, and start by having a look at the [documentation](https://github.com/statsbomb/open-data/tree/master/doc)]*

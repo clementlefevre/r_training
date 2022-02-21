@@ -107,7 +107,7 @@ $(":radio").change(function () {
     count++;
   });
   if ($(':radio:checked').length === count) {
-    alert("all answered");
+
     $("#button-answer").attr("disabled", false);
   }
 }).change();
@@ -121,7 +121,12 @@ button.onclick = function () {
 
   for (const id of [...unique_quizzes_ids]) {
     checkAnswer(id)
+
   }
+  var element = $("#main_Quizz");
+  element.css('outline', 'none !important')
+    .attr("tabindex", -1)
+    .focus();
 }
 var parent_main = document.getElementById("main_Quizz");
 parent_main.appendChild(button);

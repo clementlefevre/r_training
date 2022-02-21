@@ -64,7 +64,7 @@ Why here ? Why me ?
 </div>
 
 
-<div id="Quizz_2" ></div>
+<div id="Quizz_2" tabindex=-1></div>
 <div id="Answer_2" class="toggle"><p id="p_Answer_2">.</p>
 ```{r eval=FALSE}
     setdiff(mtcars, mtcars) %>% nrow()
@@ -77,10 +77,6 @@ Why here ? Why me ?
 htmltools::tags$script(src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
 htmltools::tags$script(src = "quizz.json")
 htmltools::tags$script(src = "quizz9.js")
-
-# load this only in production, in dev mode, the js does not update on hot-reload with bookdown::serve_book() :
-#htmltools::tags$script(src = "quizz.js")
-
 ```
 
 

@@ -11,6 +11,33 @@ But RStudio Cloud (the free version) has limited computing resources, and your f
 
 
 
+#### Quizz {-}
+
+<div id="main_Quizz" tabindex=-1>
+<div id="Quizz_3" ></div>
+<div id="Answer_3" class="toggle"><p id="p_Answer_3">.</p>
+```{r eval=TRUE}
+    max(mtcars$mpg)
+```
+</div>
+
+
+<div id="Quizz_4" ></div>
+<div id="Answer_4" class="toggle"><p id="p_Answer_4">.</p>
+```{r eval=FALSE}
+    setdiff(mtcars, mtcars) %>% nrow()
+```
+</div>
+</div>
+
+
+
+```{r echo=FALSE}
+htmltools::tags$script(src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+htmltools::tags$script(src = "quizz.json")
+htmltools::tags$script(src = "quizz9.js")
+```
+
 ## Option 1 : Start RStudio Cloud {-}
 
 
