@@ -391,26 +391,7 @@ The **`Financial sample.xlsx`** file in the data folder contains 2 sheets : "Sal
 
 `r max(mtcars$mpg)`
 
-```{js}
-alert("xcoucou")
 
-function myFunction() {
-  var x = document.getElementById("myText").value;
-  document.getElementById("result1").innerHTML = x;
-}
-
-function myFunction2() {
-  var answer = document.getElementById("cars").value;
-  if (answer=="saab"){
-  document.getElementById("result2").style.color = "red"
-  document.getElementById("result2").innerHTML = answer;
-  var audio = new Audio('https://freesound.org/data/previews/422/422051_5121236-lq.mp3');
-audio.play();
-  }
-  
-}
-
-```
 
 
 

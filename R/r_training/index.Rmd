@@ -17,6 +17,8 @@ csl: chicago-fullnote-bibliography.csl
 
 A gentle introduction to data manipulation with R. 
 
+
+
 ## Prerequisite   {-}
 
 No prior programming experience is required. The only requirements are :
@@ -48,4 +50,67 @@ From [Quora](https://qr.ae/pGDngn) : **Have you ever seen a data scientist get f
 ## Why R ?  {-}
 Why here ? Why me ?
 
+
+
+
+#### Quizz {-}
+
+<div id="main_Quizz">
+<div id="Quizz_1" ></div>
+<div id="Answer_1" class="toggle"><p id="p_Answer_1">.</p>
+```{r eval=TRUE}
+    max(mtcars$mpg)
+```
+</div>
+
+
+<div id="Quizz_2" ></div>
+<div id="Answer_2" class="toggle"><p id="p_Answer_2">.</p>
+```{r eval=FALSE}
+    setdiff(mtcars, mtcars) %>% nrow()
+```
+</div>
+</div>
+
+
+```{r}
+htmltools::tags$script(src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+htmltools::tags$script(src = "quizz.json")
+htmltools::tags$script(src = "quizz9.js")
+
+# load this only in production, in dev mode, the js does not update on hot-reload with bookdown::serve_book() :
+#htmltools::tags$script(src = "quizz.js")
+
+```
+
+
+```{js}
+
+```
+
+
+
+
+```{r setup, echo=FALSE}
+library(knitr)
+```
+
+```{r run-numeric-md, include=FALSE}
+out = NULL
+for (i in as.character(unique(iris$Species))) {
+  out = c(out, knit_expand(text='#### Species = {{i}}'))
+}
+
+
+```
+
+`r paste(knit(text = out), collapse = '\n')`
+
+
+<input type="text" id="Q1" value="Some text...">
+
+<p id="A1">Coucou</p>
+
+
+<button onclick="checkAnswer('Q1', 'A1')">Try it</button>
 

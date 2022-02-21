@@ -134,7 +134,7 @@ Make sure to adjust the separator.
 
 #### ...a Json file {-}
 
-```{r}
+```{r eval=FALSE}
 library(jsonlite)
 DT<- jsonlite::fromJSON("https://raw.githubusercontent.com/statsbomb/open-data/master/data/competitions.json",flatten = T)
 ```
