@@ -1,76 +1,255 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="" xml:lang="">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 3 Your first notebook | Intro to R</title>
-<meta name="author" content="Clement Lefevre">
-<meta name="description" content="3.1 Create a new Notebook with your Rstudio Cloud project open : File -&gt; New -&gt; R Notebook (always click OK if you are suggested to install any additional packages)  3.1.1 Install the required...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 3 Your first notebook | Intro to R">
-<meta property="og:type" content="book">
-<meta property="og:description" content="3.1 Create a new Notebook with your Rstudio Cloud project open : File -&gt; New -&gt; R Notebook (always click OK if you are suggested to install any additional packages)  3.1.1 Install the required...">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 3 Your first notebook | Intro to R">
-<meta name="twitter:description" content="3.1 Create a new Notebook with your Rstudio Cloud project open : File -&gt; New -&gt; R Notebook (always click OK if you are suggested to install any additional packages)  3.1.1 Install the required...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.4/tabs.js"></script><script src="libs/bs3compat-0.2.4/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 2 Your first notebook | Intro to R</title>
+  <meta name="description" content="Helping you getting started with data manipulation with R." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 2 Your first notebook | Intro to R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Helping you getting started with data manipulation with R." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Your first notebook | Intro to R" />
+  
+  <meta name="twitter:description" content="Helping you getting started with data manipulation with R." />
+  
+
+<meta name="author" content="Clement Lefevre" />
+
+
+<meta name="date" content="2022-02-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="getting-started.html"/>
+<link rel="next" href="data-manipulation---part-1.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3.9000/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
-<body data-spy="scroll" data-target="#toc">
 
-<div class="container-fluid">
-<div class="row">
-  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+<body>
 
-    <div class="d-flex align-items-start justify-content-between">
-      <h1>
-        <a href="index.html" title="">Intro to R</a>
-      </h1>
-      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Intro to R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisite"><i class="fa fa-check"></i>Prerequisite</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-you-will-learn"><i class="fa fa-check"></i>What you will learn</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-this-course"><i class="fa fa-check"></i>Why this course ?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-r"><i class="fa fa-check"></i>Why R ?</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>1</b> Getting started</a>
+<ul>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#option-1-start-rstudio-cloud"><i class="fa fa-check"></i>Option 1 : Start RStudio Cloud</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#option-2-install-rstudio-desktop"><i class="fa fa-check"></i>Option 2 : Install RStudio Desktop</a>
+<ul>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#create-a-new-project"><i class="fa fa-check"></i>Create a new project</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#overview-of-rstudio"><i class="fa fa-check"></i>Overview of RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="your-first-notebook.html"><a href="your-first-notebook.html"><i class="fa fa-check"></i><b>2</b> Your first notebook</a>
+<ul>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#create-a-new-notebook"><i class="fa fa-check"></i>Create a new Notebook</a>
+<ul>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#install-the-required-libraries"><i class="fa fa-check"></i>Install the required libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#load-your-first-excel-file"><i class="fa fa-check"></i>Load your first Excel file</a>
+<ul>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#monkey-see-monkey-do."><i class="fa fa-check"></i>Monkey See, Monkey Do.</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#basic-operations-in-your-notebook"><i class="fa fa-check"></i>Basic operations in your Notebook</a></li>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#common-pitfalls"><i class="fa fa-check"></i>Common pitfalls</a></li>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#help"><i class="fa fa-check"></i>Help !</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-manipulation---part-1.html"><a href="data-manipulation---part-1.html"><i class="fa fa-check"></i><b>3</b> Data manipulation - part 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-manipulation---part-1.html"><a href="data-manipulation---part-1.html#workflow-with-excel"><i class="fa fa-check"></i>Workflow with Excel</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-1.html"><a href="data-manipulation---part-1.html#load-your-data"><i class="fa fa-check"></i>Load your data</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-1.html"><a href="data-manipulation---part-1.html#basic-operations"><i class="fa fa-check"></i>Basic operations</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-1.html"><a href="data-manipulation---part-1.html#quiz"><i class="fa fa-check"></i>Quiz</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html"><i class="fa fa-check"></i><b>4</b> Data manipulation - part 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html#first-steps-with-data.table"><i class="fa fa-check"></i>First steps with data.table</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html#pivot-table-in-r"><i class="fa fa-check"></i>Pivot table in R</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html#merge-the-vlookup-variant-in-r"><i class="fa fa-check"></i>Merge, the VLOOKUP variant in R</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html#export-the-result-to-excel"><i class="fa fa-check"></i>Export the result to Excel</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html#send-the-result-to-leandro"><i class="fa fa-check"></i>Send the result to Leandro</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html#exercice"><i class="fa fa-check"></i>Exercice</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html#useful-resources-to-learn-data.table"><i class="fa fa-check"></i>Useful resources to learn data.table :</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="5" data-path="visualization-with-ggplot2.html"><a href="visualization-with-ggplot2.html"><i class="fa fa-check"></i><b>5</b> Visualization with ggplot2</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="visualization-with-ggplot2.html"><a href="visualization-with-ggplot2.html#the-plot-against-america"><i class="fa fa-check"></i><b>5.1</b> The Plot Against America</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="first-assignment.html"><a href="first-assignment.html"><i class="fa fa-check"></i><b>6</b> First assignment</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="first-assignment.html"><a href="first-assignment.html#the-big-picture"><i class="fa fa-check"></i><b>6.1</b> The big picture</a></li>
+<li class="chapter" data-level="6.2" data-path="first-assignment.html"><a href="first-assignment.html#data-scientist-but-also-part-time-visual-designer"><i class="fa fa-check"></i><b>6.2</b> Data Scientist, but also part-time Visual Designer</a></li>
+<li class="chapter" data-level="6.3" data-path="first-assignment.html"><a href="first-assignment.html#merging-and-acquisition"><i class="fa fa-check"></i><b>6.3</b> Merging and Acquisition</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cheatsheet.html"><a href="cheatsheet.html"><i class="fa fa-check"></i><b>7</b> Cheatsheet</a>
+<ul>
+<li class="chapter" data-level="" data-path="cheatsheet.html"><a href="cheatsheet.html#how-to-read"><i class="fa fa-check"></i>How to read…</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="http://www.lefevre.at">Clement Lefevre</a></li>
+
+</ul>
+
+      </nav>
     </div>
 
-    <div id="main-nav" class="collapse-lg">
-      <form role="search">
-        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
-</form>
-
-      <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 3</span> Your first notebook</a></li></ul>
-
-        <div class="book-extra">
-          <p><a id="book-repo" href="https://github.com/clementlefevre/r_training/tree/main/R/r_training">View book source <i class="fab fa-github"></i></a></p>
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro to R</a>
+          </h1>
         </div>
-      </nav>
-</div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="your-first-notebook" class="section level1" number="3">
-<h1>
-<span class="header-section-number">3</span> Your first notebook<a class="anchor" aria-label="anchor" href="#your-first-notebook"><i class="fas fa-link"></i></a>
-</h1>
-<div id="create-a-new-notebook" class="section level2" number="3.1">
-<h2>
-<span class="header-section-number">3.1</span> Create a new Notebook<a class="anchor" aria-label="anchor" href="#create-a-new-notebook"><i class="fas fa-link"></i></a>
-</h2>
-<p>with your <a href="https://rstudio.cloud"><strong>Rstudio Cloud</strong></a> project open :</p>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="your-first-notebook" class="section level1" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Your first notebook</h1>
+<div id="create-a-new-notebook" class="section level2 unnumbered">
+<h2>Create a new Notebook</h2>
+<p>with your <strong>RStudio</strong> project open :</p>
 <p><code>File</code> -&gt; <code>New</code> -&gt; <code>R Notebook</code>
 (always click OK if you are suggested to install any additional packages)</p>
-<div id="install-the-required-libraries" class="section level3" number="3.1.1">
-<h3>
-<span class="header-section-number">3.1.1</span> Install the required libraries<a class="anchor" aria-label="anchor" href="#install-the-required-libraries"><i class="fas fa-link"></i></a>
-</h3>
+<div id="install-the-required-libraries" class="section level3 unnumbered">
+<h3>Install the required libraries</h3>
 <p>R runs with a set of basics functionalities, and for specific needs, let’s say if you want to read an Excel file, we need to install additional librairies (e.g. packages).
 With RStudio this is quite straightforward : just go to</p>
-<p><code>RStudio -&gt; Tools -&gt; Install Packages</code></p>
+<p><code>Tools</code> -&gt; <code>Install Packages</code></p>
 <p>type <strong><code>openxlsx</code></strong> in the search bar and click <code>install</code></p>
 <p>RStudio will then automatically install the package.</p>
 </div>
 </div>
-<div id="load-your-first-excel-file" class="section level2" number="3.2">
-<h2>
-<span class="header-section-number">3.2</span> Load your first Excel file<a class="anchor" aria-label="anchor" href="#load-your-first-excel-file"><i class="fas fa-link"></i></a>
-</h2>
+<div id="load-your-first-excel-file" class="section level2 unnumbered">
+<h2>Load your first Excel file</h2>
 <p>in the code chunk below, replace the following content :</p>
 <pre><code>
 ```r
@@ -81,45 +260,85 @@ plot(cars)
 ```r
 library(openxlsx)
 ```</code></pre>
-<p>Then click on the green <strong>ᐅ</strong> icon above the code chunk.
+<p>Then click on the <span style="color:green;font-size: 24px"><strong>►</strong></span> button above the code chunk.
 RStudio will load the package, and we are now good to read our first Excel file !</p>
 <p>In the Code chunk, add the following line :</p>
-<p><code>DT &lt;- read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")</code></p>
+<p><code>DT &lt;- read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/power_plants.xlsx")</code></p>
 <p>Your code chunk should look like this :</p>
 <pre><code>
 ```r
 library(openxlsx)
-DT &lt;- read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")
+DT &lt;- read.xlsx(&quot;https://r-training-bookdown.s3.amazonaws.com/data/power_plants.xlsx&quot;)
 ```</code></pre>
-<p>Click again on the green <strong>ᐅ</strong> icon</p>
+<p>Click again on the <span style="color:green;font-size: 24px"><strong>►</strong></span> button</p>
 <p>You should then see in the top right area of your notebook, in the <code>Environment</code> tab a new variable <code>DT</code>. Click on it, a new View Tab should pop up with the content of your first Dataframe.
-You can’t believe it ? Neither i do. OK, open your favorite internet browser and open the following link : <a href="https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx" class="uri">https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx</a></p>
+You can’t believe it ? Neither i do. OK, open your favorite internet browser and open the following link : <a href="https://r-training-bookdown.s3.amazonaws.com/data/power_plants.xlsx" class="uri">https://r-training-bookdown.s3.amazonaws.com/data/power_plants.xlsx</a></p>
 <p>This should download the very same Excel file. Open it with Excel. What do you see ? the same table as in the <code>DT</code> tab.</p>
 <p>You are now officially a Data Scientist.</p>
-<div id="exercise" class="section level3" number="3.2.1">
-<h3>
-<span class="header-section-number">3.2.1</span> Exercise<a class="anchor" aria-label="anchor" href="#exercise"><i class="fas fa-link"></i></a>
-</h3>
+<div id="monkey-see-monkey-do." class="section level3 unnumbered">
+<h3>Monkey See, Monkey Do.</h3>
+<p>Now, go to</p>
+<p><code>Tools</code> -&gt; <code>Install Packages</code></p>
+<p>type <strong><code>leaflet</code></strong> in the search bar and click <code>install</code></p>
+<p>Then just copy and past the following code in your chunk.</p>
+<p>For the moment, you do need to understand what we are doing, it is just about having a feeling how efficient working with R can be.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="your-first-notebook.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb4-2"><a href="your-first-notebook.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leaflet)</span>
+<span id="cb4-3"><a href="your-first-notebook.html#cb4-3" aria-hidden="true" tabindex="-1"></a>DT <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">&quot;https://r-training-bookdown.s3.amazonaws.com/data/power_plants.xlsx&quot;</span>)</span>
+<span id="cb4-4"><a href="your-first-notebook.html#cb4-4" aria-hidden="true" tabindex="-1"></a>pal <span class="ot">&lt;-</span> <span class="fu">colorFactor</span>(<span class="fu">c</span>(<span class="st">&quot;navy&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="at">domain =</span> <span class="fu">c</span>(<span class="st">&quot;active&quot;</span>, <span class="st">&quot;phased out&quot;</span>))</span>
+<span id="cb4-5"><a href="your-first-notebook.html#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="your-first-notebook.html#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">leaflet</span>(DT) <span class="sc">%&gt;%</span> <span class="fu">addTiles</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb4-7"><a href="your-first-notebook.html#cb4-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">addCircleMarkers</span>(</span>
+<span id="cb4-8"><a href="your-first-notebook.html#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">radius =</span> <span class="sc">~</span><span class="fu">ifelse</span>(status <span class="sc">==</span> <span class="st">&quot;active&quot;</span>, <span class="dv">6</span>, <span class="dv">10</span>),</span>
+<span id="cb4-9"><a href="your-first-notebook.html#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="sc">~</span><span class="fu">pal</span>(status),</span>
+<span id="cb4-10"><a href="your-first-notebook.html#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">stroke =</span> <span class="cn">FALSE</span>, <span class="at">fillOpacity =</span> <span class="fl">0.5</span>,<span class="at">label =</span> <span class="sc">~</span>Power.station</span>
+<span id="cb4-11"><a href="your-first-notebook.html#cb4-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">addLegend</span>(<span class="at">pal =</span> pal, <span class="at">values =</span> <span class="sc">~</span>status, <span class="at">opacity =</span> .<span class="dv">8</span>)</span>
+<span id="cb4-12"><a href="your-first-notebook.html#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Assuming &quot;lon&quot; and &quot;lat&quot; are longitude and latitude, respectively</span></span></code></pre></div>
+<div id="htmlwidget-edce4c97223243f145ef" style="width:672px;height:480px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-edce4c97223243f145ef">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]},{"method":"addCircleMarkers","args":[[39.80806,-23.00833,35.31028,41.2,-33.9675,52.09111,23.985,40.62333,54.76194,47.50972,56.84167,68.05028,45.25583,48.49444,51.43083,41.24361,34.70389,44.32528,33.95833,45.8,28.82972,42.07417,38.76167,38.43194,35.05167,49.41583,44.32222,19.42306,32.39028,47.23056,50.09,46.45667,40.17222,39.21667,46.47111,32.29833,40.36194,44.63306,47.73306,43.87278,41.59667,22.59778,35.21083,51.32472,41.97528,41.38972,49.085,31.93417,-32.232,41.96278,52.47417,21.66667,30.44139,49.53639,60.40333,25.44417,33.51556,43.27778,47.36583,44.10667,32.00667,51.01528,36.70917,34.62361,35.415,37.09278,54.635,34.40278,54.02889,41.18806,51.209,39.79778,39.46778,33.49083,48.60556,43.5233,31.22306,57.90556,14.86528,21.23861,24.847167,37.42917,50.30139,-33.67639,67.46667,35.31694,43.74611,45.93833,25.20306,8.16833,51.675,19.72083,41.24556,47.60306,59.84722,59.83056,40.22667,22.60472,60.37222,35.4325,21.95806,12.5575,40.18083,35.70333,41.31194,48.26389,28.15806,49.04167,43.52083,27.04611,48.51528,38.06056,51.275,59.83056,34.79389,35.54056,61.23694,38.40111,57.41556,54.76111,46.5725,42.32278,33.38917,49.85806,49.97667,39.75833,41.80083,43.81167,44.28111,45.06889,44.62167,30.43556,41.72639,24.87222,57.25972,30.7567,51.32778,47.59944,45.40444,47.72,27.34861,39.46278,29.10111,42.89889,31.83361,35.22639,35.6333,36.97222,37.06111,35.53833,52.21333,54.16917,28.79556,47.81667,37.16556,41.08889,21.90944,35.52222,19.82778,49.18,34.68694,50.53472,36.46639,43.03611,55.96806,44.32972,40.70111,35.67278,25.43417,40.95139,34.29861,33.14306,29.99528,35.60278,38.23889,35.71111,21.70972,47.51222,36.14444,51.20611,41.50972,24.06667,null,40.35139,23.82917,55.74444,49.71,53.85083,null,25.28611,51.38944,50.91389,null,47.90306,41.52028,37.42139,37.31944,null,49.98389,54.14056,52.03528,48.51472,55.722,55.60444,41.26972,53.41,null,50.40806,49.2525,40.15389,33.36889,45.75833,46.03833,53.42778,42.44639],[-5.69694,-44.47389,-93.23139,0.56944,-59.205,47.95528,52.28361,-80.43056,26.12,2.875,61.3225,166.53861,-0.69306,17.68194,3.71833,-88.22917,-87.11861,-81.59944,-78.01028,5.27083,50.88611,-89.28194,-91.78,-76.44222,-81.07,6.21806,28.05722,108.8125,71.4625,0.17056,4.78944,0.65278,-88.835,-1.05,-119.33389,-97.785,-95.64139,4.75667,2.51667,-78.71972,-83.08639,114.54361,-120.85611,4.25861,-86.56583,-88.26806,16.14889,-82.34389,-64.443,-83.2575,7.31778,108.56306,120.94167,-1.88167,18.16667,119.44611,129.83722,-77.31,7.96667,0.84528,-91.04833,2.13611,121.38167,138.1425,126.42389,129.38361,-1.18083,-80.15833,-2.91611,141.39028,-3.128,121.47194,-75.53806,132.31139,12.29306,-76.3983,-85.11167,35.06028,74.43944,73.35,66.78825,138.59528,26.64972,18.43194,32.46667,129.3,23.77056,15.51556,121.66278,77.7125,35.60556,-96.40639,-88.66917,8.18472,29.04361,29.05722,-75.58722,114.55139,26.34722,-80.94833,120.75167,80.175,44.14889,135.96333,-72.16861,18.45694,78.40944,9.175,-76.40694,120.28833,3.51778,-77.78944,39.2,29.05722,-82.89806,135.65194,21.44083,141.49972,16.67111,26.08917,18.85417,-86.31444,-112.865,0.63556,1.21194,-76.26806,-81.14333,-79.06583,-87.53667,-66.45472,-92.63306,120.95639,-90.31,75.61389,12.11083,-91.333,25.89167,42.37194,4.75444,1.5775,-80.24639,-75.53556,121.63972,-70.85083,130.18972,-85.09167,-78.955,122.52889,136.72639,132.99917,1.61861,33.24667,-96.04889,31.21667,-76.69778,-76.14889,112.97917,135.50472,72.66111,14.37611,119.45972,5.2725,140.60667,140.5125,-2.40917,4.73222,-2.62194,136.07722,-80.33056,0.86667,-81.31472,-81.76583,-90.47111,-84.78944,-95.68889,129.475,112.26056,34.58583,33.54111,-3.14389,140.91028,89.04722,null,120.54639,117.49167,12.92083,8.41528,9.34472,null,121.5875,30.09917,0.96389,null,7.56306,-96.07722,141.0325,141.02111,null,10.18472,13.66444,9.41333,10.40222,-4.89,26.56,-73.95222,10.40889,null,7.49,8.43639,-76.72472,-117.555,5.47222,-122.885,8.48028,-87.80306],[6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,6,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10],null,null,{"interactive":true,"className":"","stroke":false,"color":["#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#808080","#808080","#808080","#808080","#808080","#808080","#808080","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#000080","#808080","#808080","#808080","#808080","#808080","#808080","#808080","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000","#FF0000"],"fillOpacity":0.5},null,null,null,null,["Almaraz","Angra","ANO","Ascó","Atucha","Balakovo","Barakah","Beaver Valley","Belarusian","Belleville","Beloyarsk","Bilibino\n","Blayais","Bohunice\n","Borssele\n","Braidwood","Browns Ferry","Bruce","Brunswick","Bugey","Bushehr","Byron","Callaway","Calvert Cliffs","Catawba","Cattenom","Cernavodă","Changjiang","Chashma","Chinon","Chooz","Civaux","Clinton","Cofrentes","Columbia","Comanche Peak","Cooper\n","Cruas","Dampierre","Darlington","Davis-Besse\n","Daya Bay","Diablo Canyon","Doel","Donald C. Cook","Dresden","Dukovany","Edwin I. Hatch","Embalse\n","Fermi","Emsland","Fangchenggang","Fangjiashan","Flamanville","Forsmark","Fuqing","Genkai","Ginna\n","Gösgen","Golfech","Grand Gulf","Gravelines","Haiyang","Hamaoka","Hanbit","Hanul","Hartlepool","H. B. Robinson\n","Heysham","Higashidōri","Hinkley Point B\n","Hongyanhe","Hope Creek","Ikata\n","Isar","James A. FitzPatrick\n","Joseph M. Farley","Kalinin","Kaiga\n","Kakrapar","Karachi","Kashiwazaki-Kariwa","Khmelnytskyi","Koeberg","Kola","Kori","Kozloduy","Krško\n","Kuosheng","Kudankulam","Kursk","Laguna Verde","LaSalle","Leibstadt","Leningrad","Leningrad II","Limerick","Ling Ao","Loviisa","McGuire","Maanshan","Madras\n","Metsamor\n","Mihama\n","Millstone","Mochovce\n","Narora\n","Neckarwestheim","Nine Mile Point","Ningde","Nogent","North Anna","Novovoronezh I","Novovoronezh II","Oconee","Ōi","Olkiluoto","Onagawa","Oskarshamn","Ostrovets\n","Paks","Palisades\n","Palo Verde","Paluel","Penly","Peach Bottom","Perry","Pickering","Point Beach","Point Lepreau\n","Prairie Island","Qinshan","Quad Cities","Rajasthan","Ringhals","River Bend\n","Rivne","Rostov","Saint-Alban","Saint-Laurent","Saint Lucie","Salem","Sanmen","Seabrook","Sendai","Sequoyah","Shearon Harris\n","Shidao Bay\n","Shika","Shimane","Sizewell-B","Smolensk","South Texas","South Ukraine","Surry","Susquehanna","Taishan","Takahama","Tarapur","Temelin","Tianwan","Tihange","Tokai","Tomari","Torness","Tricastin","Trillo","Tsuruga","Turkey Point","Vandellòs","Virgil C. Summer\n","Vogtle","Waterford","Watts Bar","Wolf Creek","Wolseong","Yangjiang","Zaporizhzhia","Akkuyu","Hinkley Point C\n","Ōma","Rooppur","San’ao","Xudabao\n","Zhangzhou\n","Barsebäck","Biblis","Brokdorf","Caorso","Chin Shan","Chernobyl","Dungeness\n","Enrico Fermi","Fessenheim","Fort Calhoun","Fukushima Daiichi","Fukushima Daini","Garigliano","Grafenrheinfeld","Greifswald","Grohnde","Gundremmingen","Hunterston B\n","Ignalina","Indian Point","Krümmel","Latina","Mülheim-Kärlich","Philippsburg","Three Mile Island","San Onofre","Superphénix","Trojan","Unterweser","Zion"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLegend","args":[{"colors":["#000080","#808080","#FF0000"],"labels":["active","in construction","phased out"],"na_color":null,"na_label":"NA","opacity":0.8,"position":"topright","type":"factor","title":"status","extra":null,"layerId":null,"className":"info legend","group":null}]}],"limits":{"lat":[-33.9675,68.05028],"lng":[-122.885,166.53861]}},"evals":[],"jsHooks":[]}</script>
+<p><strong>Nuclear Power Plants in the world - source : Wikipedia</strong></p>
+<p>You are now officially a Senior Data Scientist.</p>
+<p>Time to post the map on Instagram with the <strong><em>#DIGITALISIERUNG</em></strong> hashtag and call it a day.</p>
+<div id="exercise" class="section level4 unnumbered">
+<h4>Exercise</h4>
 <p>Upload an Excel of your own :</p>
+<div id="with-rstudio-cloud" class="section level5 unnumbered">
+<h5>With RStudio Cloud :</h5>
 <ul>
 <li>click on the <strong><code>Upload</code></strong> button at the bottom right,</li>
 <li>click on <code>Select File</code> (<code>Datei Auswählen</code>)</li>
 <li>select your file</li>
 <li>click on <code>OK</code>.</li>
 </ul>
+</div>
+<div id="with-rstudio-desktop" class="section level5 unnumbered">
+<h5>With RStudio Desktop :</h5>
+<ul>
+<li>click on <strong><code>More</code></strong> button at the bottom right,</li>
+<li><code>Show Folder in new Window</code>. This should open the current folder where your RStudio Project is located.</li>
+<li>Copy your Excel in this folder.</li>
+</ul>
 <p>The name of the file should then appear in the file explorer (bottom right of the screen).</p>
 <p><em>Note : Make sure this file contains only one sheet, and that the column names are located in the first row. Later on in this course we will show you how to handle other cases.</em></p>
 <p>Let’s assume the file you uploaded is <strong>report_22.xlsx</strong>. To load this file in R, type in the code chunk :</p>
 <p><code>DT_2 &lt;- read.xlsx("report_22.xlsx")</code></p>
-<p>Do not forget to click the green <strong>ᐅ</strong> icon above the code chunk to execute the code.</p>
+<p>Do not forget to click the <span style="color:green;font-size: 24px"><strong>►</strong></span> button above the code chunk to execute the code.</p>
 <p>You should then see in the top right area of your notebook, in the <code>Environment</code> tab a new variable <code>DT_2</code>. Click on it, a new View Tab should pop up with the content of your own Excel sheet.</p>
 <p>Are you happy now ?</p>
 </div>
 </div>
-<div id="common-pitfalls" class="section level2" number="3.3">
-<h2>
-<span class="header-section-number">3.3</span> Common pitfalls<a class="anchor" aria-label="anchor" href="#common-pitfalls"><i class="fas fa-link"></i></a>
-</h2>
+</div>
+</div>
+<div id="basic-operations-in-your-notebook" class="section level2 unnumbered">
+<h2>Basic operations in your Notebook</h2>
+<ul>
+<li>to create a new chunk (an area where you can write code) : <code>Code</code> -&gt; <code>Insert Chunk</code> or use the Shortcut <code>Shift</code>+<code>Alt</code>+<code>i</code></li>
+<li>to execute the whole chunk of code, click the <span style="color:green;font-size: 24px"><strong>►</strong></span> button above the code chunk</li>
+<li>to execute a single line of code, position your cursor at end of the line and press <code>Alt</code>+<code>Enter</code></li>
+</ul>
+</div>
+<div id="common-pitfalls" class="section level2 unnumbered">
+<h2>Common pitfalls</h2>
 <ul>
 <li>a R chunk (snippet of code) is defined as such :</li>
 </ul>
@@ -131,69 +350,73 @@ You can’t believe it ? Neither i do. OK, open your favorite internet browser a
 <ul>
 <li>Every now and then, reset your environment (<code>Session</code> -&gt; <code>Restart and clear output</code>)</li>
 </ul>
-<div id="how-to-read" class="section level3" number="3.3.1">
-<h3>
-<span class="header-section-number">3.3.1</span> How to read…<a class="anchor" aria-label="anchor" href="#how-to-read"><i class="fas fa-link"></i></a>
-</h3>
-<div id="an-excel-file" class="section level4" number="3.3.1.1">
-<h4>
-<span class="header-section-number">3.3.1.1</span> …an Excel file<a class="anchor" aria-label="anchor" href="#an-excel-file"><i class="fas fa-link"></i></a>
-</h4>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span>
-<span class="va">DT</span>  <span class="op">&lt;-</span> <span class="fu">openxlsx</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">"/path/to/file.xlsx"</span>, sheet<span class="op">=</span><span class="st">"the-name-of-the-sheet"</span>,startRow<span class="op">=</span><span class="fl">1</span><span class="op">)</span></code></pre></div>
-<p>Make sure to adjust the sheet name if you have more than one sheet in your Excel file, and also the starting row index.</p>
 </div>
-<div id="a-comma-separated-values-file-aka-.csv" class="section level4" number="3.3.1.2">
-<h4>
-<span class="header-section-number">3.3.1.2</span> …a Comma separated values file (aka .csv)<a class="anchor" aria-label="anchor" href="#a-comma-separated-values-file-aka-.csv"><i class="fas fa-link"></i></a>
-</h4>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com">data.table</a></span><span class="op">)</span>
-<span class="va">DT</span><span class="op">&lt;-</span> <span class="fu">data.table</span><span class="fu">::</span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/fread.html">fread</a></span><span class="op">(</span><span class="st">"/path/to/file.csv"</span>, sep<span class="op">=</span><span class="st">";"</span><span class="op">)</span></code></pre></div>
-<p>Make sure to adjust the separator.</p>
-</div>
-<div id="a-json-file" class="section level4" number="3.3.1.3">
-<h4>
-<span class="header-section-number">3.3.1.3</span> …a Json file<a class="anchor" aria-label="anchor" href="#a-json-file"><i class="fas fa-link"></i></a>
-</h4>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://arxiv.org/abs/1403.2805">jsonlite</a></span><span class="op">)</span>
-<span class="va">DT</span><span class="op">&lt;-</span> <span class="fu">jsonlite</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/jsonlite/man/fromJSON.html">fromJSON</a></span><span class="op">(</span><span class="st">"https://raw.githubusercontent.com/statsbomb/open-data/master/data/competitions.json"</span>,flatten <span class="op">=</span> <span class="cn">T</span><span class="op">)</span></code></pre></div>
+<div id="help" class="section level2 unnumbered">
+<h2>Help !</h2>
+<p>You are not alone. When facing an error message, or when trying to implement some logic (let’s say you want to convert a date into a week number), the one and only way to solve this is to do <a href="https://letmegooglethat.com/?q=R+extract+week+number+from+Date+stackoverflow"><strong>this</strong></a>.</p>
 
 </div>
 </div>
-</div>
-</div>
-  <div class="chapter-nav">
-<div class="empty"></div>
-<div class="empty"></div>
-</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <div id="book-on-this-page"></div>
+            </section>
 
-      <div class="book-extra">
-        <ul class="list-unstyled">
-          
-        </ul>
-</div>
-    </nav>
-</div>
-
-</div>
-</div> <!-- .container -->
-
-<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
-
-  <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Intro to R</strong>" was written by Clement Lefevre. It was last built on 2022-02-18.</p>
+          </div>
+        </div>
+      </div>
+<a href="getting-started.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-manipulation---part-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
   </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/clementlefevre/r_training/tree/main/R/r_training/02-firstnotebook.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
 
-  <div class="col-12 col-md-6 mt-3">
-    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
-  </div>
-
-</div></div>
-</footer>
 </body>
+
 </html>

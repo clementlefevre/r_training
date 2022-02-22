@@ -24,7 +24,7 @@
 <meta name="author" content="Clement Lefevre" />
 
 
-<meta name="date" content="2022-02-21" />
+<meta name="date" content="2022-02-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,6 +53,14 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3.9000/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
@@ -162,38 +170,48 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#install-the-required-libraries"><i class="fa fa-check"></i>Install the required libraries</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#load-your-first-excel-file"><i class="fa fa-check"></i>Load your first Excel file</a></li>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#load-your-first-excel-file"><i class="fa fa-check"></i>Load your first Excel file</a>
+<ul>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#monkey-see-monkey-do."><i class="fa fa-check"></i>Monkey See, Monkey Do.</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#basic-operations-in-your-notebook"><i class="fa fa-check"></i>Basic operations in your Notebook</a></li>
 <li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#common-pitfalls"><i class="fa fa-check"></i>Common pitfalls</a></li>
-<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#how-to-read"><i class="fa fa-check"></i>How to read…</a></li>
 <li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#help"><i class="fa fa-check"></i>Help !</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html"><i class="fa fa-check"></i><b>3</b> Data manipulation with datatable</a>
+<li class="chapter" data-level="3" data-path="data-manipulation---part-1.html"><a href="data-manipulation---part-1.html"><i class="fa fa-check"></i><b>3</b> Data manipulation - part 1</a>
 <ul>
-<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#workflow-with-excel"><i class="fa fa-check"></i>Workflow with Excel</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#load-your-data"><i class="fa fa-check"></i>Load your data</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#the-data.table-philosophy"><i class="fa fa-check"></i>The data.table philosophy :</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#basic-operations"><i class="fa fa-check"></i>Basic operations :</a>
-<ul>
-<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#pivot-table-in-r"><i class="fa fa-check"></i>Pivot table in R</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#merge-the-vlookup-variant-in-r"><i class="fa fa-check"></i>Merge, the VLOOKUP variant in R</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#export-the-result-to-excel"><i class="fa fa-check"></i>Export the result to Excel</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#send-the-result-to-leandro"><i class="fa fa-check"></i>Send the result to Leandro</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#exercice"><i class="fa fa-check"></i>Exercice</a></li>
-<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#useful-resources-to-learn-data.table"><i class="fa fa-check"></i>Useful resources to learn data.table :</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-1.html"><a href="data-manipulation---part-1.html#workflow-with-excel"><i class="fa fa-check"></i>Workflow with Excel</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-1.html"><a href="data-manipulation---part-1.html#load-your-data"><i class="fa fa-check"></i>Load your data</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-1.html"><a href="data-manipulation---part-1.html#basic-operations"><i class="fa fa-check"></i>Basic operations</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-1.html"><a href="data-manipulation---part-1.html#quiz"><i class="fa fa-check"></i>Quiz</a></li>
 </ul></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="visualization-with-ggplot2.html"><a href="visualization-with-ggplot2.html"><i class="fa fa-check"></i><b>4</b> Visualization with ggplot2</a>
+<li class="chapter" data-level="4" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html"><i class="fa fa-check"></i><b>4</b> Data manipulation - part 2</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="visualization-with-ggplot2.html"><a href="visualization-with-ggplot2.html#the-plot-against-america"><i class="fa fa-check"></i><b>4.1</b> The Plot Against America</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="first-assignment.html"><a href="first-assignment.html"><i class="fa fa-check"></i><b>5</b> First assignment</a>
+<li class="chapter" data-level="" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html#first-steps-with-data.table"><i class="fa fa-check"></i>First steps with data.table</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="first-assignment.html"><a href="first-assignment.html#the-big-picture"><i class="fa fa-check"></i><b>5.1</b> The big picture</a></li>
-<li class="chapter" data-level="5.2" data-path="first-assignment.html"><a href="first-assignment.html#data-scientist-but-also-part-time-visual-designer"><i class="fa fa-check"></i><b>5.2</b> Data Scientist, but also part-time Visual Designer</a></li>
-<li class="chapter" data-level="5.3" data-path="first-assignment.html"><a href="first-assignment.html#merging-and-acquisition"><i class="fa fa-check"></i><b>5.3</b> Merging and Acquisition</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html#pivot-table-in-r"><i class="fa fa-check"></i>Pivot table in R</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html#merge-the-vlookup-variant-in-r"><i class="fa fa-check"></i>Merge, the VLOOKUP variant in R</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html#export-the-result-to-excel"><i class="fa fa-check"></i>Export the result to Excel</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html#send-the-result-to-leandro"><i class="fa fa-check"></i>Send the result to Leandro</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html#exercice"><i class="fa fa-check"></i>Exercice</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation---part-2.html"><a href="data-manipulation---part-2.html#useful-resources-to-learn-data.table"><i class="fa fa-check"></i>Useful resources to learn data.table :</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="5" data-path="visualization-with-ggplot2.html"><a href="visualization-with-ggplot2.html"><i class="fa fa-check"></i><b>5</b> Visualization with ggplot2</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="visualization-with-ggplot2.html"><a href="visualization-with-ggplot2.html#the-plot-against-america"><i class="fa fa-check"></i><b>5.1</b> The Plot Against America</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="first-assignment.html"><a href="first-assignment.html"><i class="fa fa-check"></i><b>6</b> First assignment</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="first-assignment.html"><a href="first-assignment.html#the-big-picture"><i class="fa fa-check"></i><b>6.1</b> The big picture</a></li>
+<li class="chapter" data-level="6.2" data-path="first-assignment.html"><a href="first-assignment.html#data-scientist-but-also-part-time-visual-designer"><i class="fa fa-check"></i><b>6.2</b> Data Scientist, but also part-time Visual Designer</a></li>
+<li class="chapter" data-level="6.3" data-path="first-assignment.html"><a href="first-assignment.html#merging-and-acquisition"><i class="fa fa-check"></i><b>6.3</b> Merging and Acquisition</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cheatsheet.html"><a href="cheatsheet.html"><i class="fa fa-check"></i><b>7</b> Cheatsheet</a>
+<ul>
+<li class="chapter" data-level="" data-path="cheatsheet.html"><a href="cheatsheet.html#how-to-read"><i class="fa fa-check"></i>How to read…</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="http://www.lefevre.at">Clement Lefevre</a></li>
 

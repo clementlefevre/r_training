@@ -1,491 +1,1524 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="" xml:lang="">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 4 Data manipulation with datatable | Intro to R</title>
-<meta name="author" content="Clement Lefevre">
-<meta name="description" content="To manipulate data with R, there are two options : the dplyr package. Very beginner friendly, most of the tutorials you can find online are using dplyr. the data.table package is the workhorse of...">
-<meta name="generator" content="bookdown 0.24 with bs4_book()">
-<meta property="og:title" content="Chapter 4 Data manipulation with datatable | Intro to R">
-<meta property="og:type" content="book">
-<meta property="og:description" content="To manipulate data with R, there are two options : the dplyr package. Very beginner friendly, most of the tutorials you can find online are using dplyr. the data.table package is the workhorse of...">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 4 Data manipulation with datatable | Intro to R">
-<meta name="twitter:description" content="To manipulate data with R, there are two options : the dplyr package. Very beginner friendly, most of the tutorials you can find online are using dplyr. the data.table package is the workhorse of...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="libs/bootstrap-4.5.3/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.5.3/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.2.4/tabs.js"></script><script src="libs/bs3compat-0.2.4/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
-<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="bs4_style.css">
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 3 Data manipulation with datatable | Intro to R</title>
+  <meta name="description" content="Helping you getting started with data manipulation with R." />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 3 Data manipulation with datatable | Intro to R" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Helping you getting started with data manipulation with R." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 3 Data manipulation with datatable | Intro to R" />
+  
+  <meta name="twitter:description" content="Helping you getting started with data manipulation with R." />
+  
+
+<meta name="author" content="Clement Lefevre" />
+
+
+<meta name="date" content="2022-02-22" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="your-first-notebook.html"/>
+<link rel="next" href="visualization-with-ggplot2.html"/>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.3.9000/htmlwidgets.js"></script>
+<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+<link rel="stylesheet" href="style.css" type="text/css" />
 </head>
-<body data-spy="scroll" data-target="#toc">
 
-<div class="container-fluid">
-<div class="row">
-  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+<body>
 
-    <div class="d-flex align-items-start justify-content-between">
-      <h1>
-        <a href="index.html" title="">Intro to R</a>
-      </h1>
-      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Intro to R</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisite"><i class="fa fa-check"></i>Prerequisite</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#what-you-will-learn"><i class="fa fa-check"></i>What you will learn</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-this-course"><i class="fa fa-check"></i>Why this course ?</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#why-r"><i class="fa fa-check"></i>Why R ?</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="getting-started.html"><a href="getting-started.html"><i class="fa fa-check"></i><b>1</b> Getting started</a>
+<ul>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#option-1-start-rstudio-cloud"><i class="fa fa-check"></i>Option 1 : Start RStudio Cloud</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#option-2-install-rstudio-desktop"><i class="fa fa-check"></i>Option 2 : Install RStudio Desktop</a>
+<ul>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#create-a-new-project"><i class="fa fa-check"></i>Create a new project</a></li>
+<li class="chapter" data-level="" data-path="getting-started.html"><a href="getting-started.html#overview-of-rstudio"><i class="fa fa-check"></i>Overview of RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="your-first-notebook.html"><a href="your-first-notebook.html"><i class="fa fa-check"></i><b>2</b> Your first notebook</a>
+<ul>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#create-a-new-notebook"><i class="fa fa-check"></i>Create a new Notebook</a>
+<ul>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#install-the-required-libraries"><i class="fa fa-check"></i>Install the required libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#load-your-first-excel-file"><i class="fa fa-check"></i>Load your first Excel file</a>
+<ul>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#monkey-see-monkey-do."><i class="fa fa-check"></i>Monkey See, Monkey Do.</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#basic-operations-in-your-notebook"><i class="fa fa-check"></i>Basic operations in your Notebook</a></li>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#common-pitfalls"><i class="fa fa-check"></i>Common pitfalls</a></li>
+<li class="chapter" data-level="" data-path="your-first-notebook.html"><a href="your-first-notebook.html#help"><i class="fa fa-check"></i>Help !</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html"><i class="fa fa-check"></i><b>3</b> Data manipulation with datatable</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#workflow-with-excel"><i class="fa fa-check"></i>Workflow with Excel</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#load-your-data"><i class="fa fa-check"></i>Load your data</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#the-data.table-philosophy"><i class="fa fa-check"></i>The data.table philosophy :</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#basic-operations"><i class="fa fa-check"></i>Basic operations :</a>
+<ul>
+<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#pivot-table-in-r"><i class="fa fa-check"></i>Pivot table in R</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#merge-the-vlookup-variant-in-r"><i class="fa fa-check"></i>Merge, the VLOOKUP variant in R</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#export-the-result-to-excel"><i class="fa fa-check"></i>Export the result to Excel</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#send-the-result-to-leandro"><i class="fa fa-check"></i>Send the result to Leandro</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#exercice"><i class="fa fa-check"></i>Exercice</a></li>
+<li class="chapter" data-level="" data-path="data-manipulation-with-datatable.html"><a href="data-manipulation-with-datatable.html#useful-resources-to-learn-data.table"><i class="fa fa-check"></i>Useful resources to learn data.table :</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="visualization-with-ggplot2.html"><a href="visualization-with-ggplot2.html"><i class="fa fa-check"></i><b>4</b> Visualization with ggplot2</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="visualization-with-ggplot2.html"><a href="visualization-with-ggplot2.html#the-plot-against-america"><i class="fa fa-check"></i><b>4.1</b> The Plot Against America</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="first-assignment.html"><a href="first-assignment.html"><i class="fa fa-check"></i><b>5</b> First assignment</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="first-assignment.html"><a href="first-assignment.html#the-big-picture"><i class="fa fa-check"></i><b>5.1</b> The big picture</a></li>
+<li class="chapter" data-level="5.2" data-path="first-assignment.html"><a href="first-assignment.html#data-scientist-but-also-part-time-visual-designer"><i class="fa fa-check"></i><b>5.2</b> Data Scientist, but also part-time Visual Designer</a></li>
+<li class="chapter" data-level="5.3" data-path="first-assignment.html"><a href="first-assignment.html#merging-and-acquisition"><i class="fa fa-check"></i><b>5.3</b> Merging and Acquisition</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="6" data-path="cheatsheet.html"><a href="cheatsheet.html"><i class="fa fa-check"></i><b>6</b> Cheatsheet</a>
+<ul>
+<li class="chapter" data-level="" data-path="cheatsheet.html"><a href="cheatsheet.html#how-to-read"><i class="fa fa-check"></i>How to read…</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="http://www.lefevre.at">Clement Lefevre</a></li>
+
+</ul>
+
+      </nav>
     </div>
 
-    <div id="main-nav" class="collapse-lg">
-      <form role="search">
-        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
-</form>
-
-      <nav aria-label="Table of contents"><h2>Table of contents</h2>
-        <ul class="book-toc list-unstyled"><li><a class="" href="index.html"><span class="header-section-number">Chapter 4</span> Data manipulation with datatable</a></li></ul>
-
-        <div class="book-extra">
-          <p><a id="book-repo" href="https://github.com/clementlefevre/r_training/tree/main/R/r_training">View book source <i class="fab fa-github"></i></a></p>
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Intro to R</a>
+          </h1>
         </div>
-      </nav>
-</div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="data-manipulation-with-datatable" class="section level1" number="4">
-<h1>
-<span class="header-section-number">4</span> Data manipulation with datatable<a class="anchor" aria-label="anchor" href="#data-manipulation-with-datatable"><i class="fas fa-link"></i></a>
-</h1>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="data-manipulation-with-datatable" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> Data manipulation with datatable</h1>
 <p>To manipulate data with R, there are two options :</p>
 <ul>
 <li>the <strong>dplyr</strong> package. Very beginner friendly, most of the tutorials you can find online are using <code>dplyr</code>.</li>
-<li>the <strong>data.table</strong> package is the workhorse of data manipulation in R. For this introduction we will use it, for the following reasons : the syntax is much more concise as <code>dplyr</code>, and it works seamlessly with large dataset (more than 1 million rows). In comparison, Excel can handle a maximum of 1,048,576 rows.</li>
+<li>the <strong>data.table</strong> package is the workhorse of data manipulation in R. For this introduction we will use it, for the following reasons : the syntax is more concise than <code>dplyr</code>, and it works seamlessly with large datasets (more than 1 million rows). In comparison, Excel can handle a maximum of 1,048,576 rows.</li>
 </ul>
-<div id="workflow-with-excel" class="section level2" number="4.1">
-<h2>
-<span class="header-section-number">4.1</span> Workflow with Excel<a class="anchor" aria-label="anchor" href="#workflow-with-excel"><i class="fas fa-link"></i></a>
-</h2>
+<div id="workflow-with-excel" class="section level2 unnumbered">
+<h2>Workflow with Excel</h2>
 <p>A typical workflow with Excel consists in the following steps :</p>
 <ul>
 <li>load a couple of Excel or csv files,</li>
-<li>filter the tables based on a given criteria,</li>
+<li>filter the tables based on given criteria,</li>
 <li>join the tables (using the ‘VLOOKUP’ Formula in english, ‘SVERWEIS’ in German, ‘RECHERCHEV’ in french)</li>
 <li>select columns of interest</li>
-<li>add new columns such as <code>=(A1-D4)*24</code>
-</li>
-<li>save the output in an other Excel file and send it via email.</li>
+<li>add new columns such as <code>=(A1-D4)*24</code></li>
+<li>save the output in an other Excel file.</li>
+<li>call it a day.</li>
 </ul>
-<p>When this task occurs once a week, R can help to automatize the so-called “boring stuff.”
+<p><img src="images/excel_meme.jfif" width="50%" style="display: block; margin: auto;" /></p>
+<p>When this task occurs once a week, R can help to automatize the so-called “boring stuff” and allows you to spend more time on highly-valuable Teams© meetings.
 In this notebook, we are going to achieve all those steps with R.
-At the end of this lesson, you will be able to write a script that complete all those task automatically.
-Bear with me.</p>
+At the end of this lesson, you will be able to write a script that complete all those tasks automatically.
+Bear with me, this is the most complex part of this course, but also the most rewarding.</p>
 </div>
-<div id="load-your-data" class="section level2" number="4.2">
-<h2>
-<span class="header-section-number">4.2</span> Load your data<a class="anchor" aria-label="anchor" href="#load-your-data"><i class="fas fa-link"></i></a>
-</h2>
+<div id="load-your-data" class="section level2 unnumbered">
+<h2>Load your data</h2>
 <p>Loading your input files in the context of data manipulation means converting them into a a so-called <strong>dataframe</strong>.</p>
 <p>A <strong>dataframe</strong> is nothing more than a table, with columns names and rows. That’s it.
-Whrn loading into R an Excel file, you must beware of :</p>
+When loading into R an Excel file, you must beware of :</p>
 <ul>
 <li>the name of the Excel sheet you want to load,</li>
 <li>the index of the row where the column names are located.</li>
 </ul>
-<p><em>Note : a deeply enshrined pathology with Excel is to merge the columns headers, we will take of this later in this lesson.</em></p>
+<p><em>Note : a deeply enshrined pathology with Excel is to merge the columns cells headers, we will take care of this later in this lesson.</em></p>
 <p>First thing first, we load the necessary R packages for this operation : <code>openxlsx</code> and <code>data.table</code> :</p>
-<p><em>don’t forget to click on the green arrow at the top right of the chunk to execute the code</em></p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ycphs.github.io/openxlsx/index.html">openxlsx</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://r-datatable.com">data.table</a></span><span class="op">)</span></code></pre></div>
+<p><em>don’t forget to click on the <span style="color:green;font-size: 24px"><strong>►</strong></span> button above the code chunk to execute the code.</em></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="data-manipulation-with-datatable.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(openxlsx)</span>
+<span id="cb1-2"><a href="data-manipulation-with-datatable.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(data.table)</span></code></pre></div>
 <p><em>Note: If you get an error like : </em></p>
 <p><code>Error in library(data.table) : there is no package called ‘data.table’</code></p>
 <p><em>don’t be scared, it’s it perfectly normal, your R Project has not installed this package yet. To solve this, just go to</em> <code>Tools -&gt; Install Packages</code> <em>and type</em> <strong><code>openxlsx</code></strong> (or <strong><code>data.table</code></strong>) <em>in the search bar, then click</em> <code>install</code>.
 <em>RStudio will then automatically install the package.</em></p>
+<div id="download-the-samples-files" class="section level4 unnumbered">
+<h4>Download the samples files</h4>
 <p>Now time to download our input files :</p>
 <p><em>Note: This operation is only required for this lesson, as later you will use your own files</em></p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># create a new 'data' folder to store the files :</span>
-<span class="fu"><a href="https://rdrr.io/r/base/files2.html">dir.create</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/file.path.html">file.path</a></span><span class="op">(</span><span class="st">"./data"</span><span class="op">)</span>, showWarnings <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
-
-<span class="co"># download the samples files from the cloud :</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span><span class="st">"https://r-training-bookdown.s3.amazonaws.com/data/Financial+sample.xlsx"</span>, <span class="st">"./data/Financial sample.xlsx"</span>, mode<span class="op">=</span><span class="st">"wb"</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/download.file.html">download.file</a></span><span class="op">(</span><span class="st">"https://r-training-bookdown.s3.amazonaws.com/data/CustomerSupport.csv"</span>, <span class="st">"./data/CustomerSupport.csv"</span>, mode<span class="op">=</span><span class="st">"wb"</span><span class="op">)</span></code></pre></div>
-<p><em>Remember : an Excel “Table” is the equivalent of a R “dataframe.”</em></p>
-<p><em>Remember 2 : click on the green</em> <strong>ᐅ</strong> <em>to execute the code.</em></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="data-manipulation-with-datatable.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a new &#39;data&#39; folder to store the files :</span></span>
+<span id="cb2-2"><a href="data-manipulation-with-datatable.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="fu">file.path</span>(<span class="st">&quot;./data&quot;</span>), <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-3"><a href="data-manipulation-with-datatable.html#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="data-manipulation-with-datatable.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># download the samples files from the cloud :</span></span>
+<span id="cb2-5"><a href="data-manipulation-with-datatable.html#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">&quot;https://r-training-bookdown.s3.amazonaws.com/data/Financial+sample.xlsx&quot;</span>, <span class="st">&quot;./data/Financial sample.xlsx&quot;</span>, <span class="at">mode =</span> <span class="st">&quot;wb&quot;</span>)</span>
+<span id="cb2-6"><a href="data-manipulation-with-datatable.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">download.file</span>(<span class="st">&quot;https://r-training-bookdown.s3.amazonaws.com/data/CustomerSupport.csv&quot;</span>, <span class="st">&quot;./data/CustomerSupport.csv&quot;</span>, <span class="at">mode =</span> <span class="st">&quot;wb&quot;</span>)</span></code></pre></div>
+<p><em>don’t forget to click on the <span style="color:green;font-size: 24px"><strong>►</strong></span> button above the code chunk to execute the code.</em></p>
+<p>Have a look in the file explorer, a new <strong><code>data</code></strong> folder appeared. Click on it, our two sample files should be there.</p>
 </div>
-<div id="load-our-first-excel-file" class="section level2" number="4.3">
-<h2>
-<span class="header-section-number">4.3</span> Load our first excel file :<a class="anchor" aria-label="anchor" href="#load-our-first-excel-file"><i class="fas fa-link"></i></a>
-</h2>
+<div id="load-the-excel-file" class="section level4 unnumbered">
+<h4>Load the Excel file :</h4>
 <p><em>list the names of the sheets that the Excel file contains:</em></p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/getSheetNames.html">getSheetNames</a></span><span class="op">(</span> <span class="st">"./data/Financial sample.xlsx"</span><span class="op">)</span>
-<span class="co">#&gt; [1] "Sales"    "Managers"</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="data-manipulation-with-datatable.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">getSheetNames</span>(<span class="st">&quot;./data/Financial sample.xlsx&quot;</span>)</span>
+<span id="cb3-2"><a href="data-manipulation-with-datatable.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Sales&quot;    &quot;Managers&quot;</span></span></code></pre></div>
 <p>what did we do here ? We read the excel file <code>Financial sample.xlsx</code> located in the <code>data</code> folder and displayed the names of the sheets contained in this file. Nothing more.
 As you can witness with your own eyes, <code>Financial sample.xlsx</code> contains two sheets : <strong>Sales</strong> and <strong>Managers</strong></p>
-<p>Now <em>Let’s Just Do It and Be Legends©</em> : load the <strong>Sales</strong> excel Sheet into a R dataframe :</p>
-<p><em>load the “Sales” sheet as a dataframe :</em></p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">DT_sales</span> <span class="op">&lt;-</span>  <span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/read.xlsx.html">read.xlsx</a></span><span class="op">(</span><span class="st">"./data/Financial sample.xlsx"</span>, sheet <span class="op">=</span> <span class="st">"Sales"</span><span class="op">)</span>
-<span class="va">DT_customer_support</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/fread.html">fread</a></span><span class="op">(</span> <span class="st">"./data/CustomerSupport.csv"</span><span class="op">)</span></code></pre></div>
+<p><em>Let’s Just Do It and Be Legends© : load the</em> <strong>Sales</strong> <em>sheet into a R dataframe :</em></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="data-manipulation-with-datatable.html#cb4-1" aria-hidden="true" tabindex="-1"></a>DT_sales <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">&quot;./data/Financial sample.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;Sales&quot;</span>, <span class="at">detectDates =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <p>What did we did here ? We just read the content of the <strong>Sales</strong> and loaded into a R table named <strong>DT_sales</strong>.
-Now go the</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/setDT.html">setDT</a></span><span class="op">(</span><span class="va">DT_sales</span><span class="op">)</span></code></pre></div>
-<div id="basic-operations" class="section level3" number="4.3.1">
-<h3>
-<span class="header-section-number">4.3.1</span> Basic operations :<a class="anchor" aria-label="anchor" href="#basic-operations"><i class="fas fa-link"></i></a>
-</h3>
-<p><em>show the dataframe structure :</em></p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">DT_sales</span><span class="op">)</span>
-<span class="co">#&gt; Classes 'data.table' and 'data.frame':   700 obs. of  16 variables:</span>
-<span class="co">#&gt;  $ Segment            : chr  "Government" "Government" "Midmarket" "Midmarket" ...</span>
-<span class="co">#&gt;  $ Country            : chr  "Canada" "Germany" "France" "Germany" ...</span>
-<span class="co">#&gt;  $ Product            : chr  "Carretera" "Carretera" "Carretera" "Carretera" ...</span>
-<span class="co">#&gt;  $ Discount.Band      : chr  "None" "None" "None" "None" ...</span>
-<span class="co">#&gt;  $ Units.Sold         : num  1618 1321 2178 888 2470 ...</span>
-<span class="co">#&gt;  $ Manufacturing.Price: num  3 3 3 3 3 3 5 5 5 5 ...</span>
-<span class="co">#&gt;  $ Sale.Price         : num  20 20 15 15 15 350 15 12 20 12 ...</span>
-<span class="co">#&gt;  $ Gross.Sales        : num  32370 26420 32670 13320 37050 ...</span>
-<span class="co">#&gt;  $ Discounts          : num  0 0 0 0 0 0 0 0 0 0 ...</span>
-<span class="co">#&gt;  $ Sales              : num  32370 26420 32670 13320 37050 ...</span>
-<span class="co">#&gt;  $ COGS               : num  16185 13210 21780 8880 24700 ...</span>
-<span class="co">#&gt;  $ Profit             : num  16185 13210 10890 4440 12350 ...</span>
-<span class="co">#&gt;  $ Date               : num  41640 41640 41791 41791 41791 ...</span>
-<span class="co">#&gt;  $ Month.Number       : num  1 1 6 6 6 12 3 6 6 6 ...</span>
-<span class="co">#&gt;  $ Month.Name         : chr  "January" "January" "June" "June" ...</span>
-<span class="co">#&gt;  $ Year               : chr  "2014" "2014" "2014" "2014" ...</span>
-<span class="co">#&gt;  - attr(*, ".internal.selfref")=&lt;externalptr&gt;</span></code></pre></div>
-<p><em>list the Product names :</em></p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/duplicated.html">unique</a></span><span class="op">(</span><span class="va">DT_sales</span><span class="op">$</span><span class="va">Product</span><span class="op">)</span>
-<span class="co">#&gt; [1] "Carretera" "Montana"   "Paseo"     "Velo"     </span>
-<span class="co">#&gt; [5] "VTT"       "Amarilla"</span></code></pre></div>
-<p><em>get the max value of Profit :</em></p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">DT_sales</span><span class="op">$</span><span class="va">Profit</span><span class="op">)</span>
-<span class="co">#&gt; [1] 262200</span></code></pre></div>
-<p><em>filter the dataframe on Product “Carretera” :</em></p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">DT_sales</span><span class="op">[</span><span class="va">Product</span><span class="op">==</span><span class="st">"Carretera"</span><span class="op">]</span></code></pre></div>
-<div class="inline-table"><table class="table table-sm">
-<caption>
-<span id="tab:unnamed-chunk-11">Table 4.1: </span>A table of the Carretera Products.</caption>
-<colgroup>
-<col width="6%">
-<col width="4%">
-<col width="6%">
-<col width="8%">
-<col width="6%">
-<col width="12%">
-<col width="6%">
-<col width="7%">
-<col width="6%">
-<col width="4%">
-<col width="4%">
-<col width="4%">
-<col width="3%">
-<col width="7%">
-<col width="6%">
-<col width="3%">
-</colgroup>
-<thead><tr class="header">
-<th align="left">Segment</th>
-<th align="left">Country</th>
-<th align="left">Product</th>
-<th align="left">Discount.Band</th>
-<th align="right">Units.Sold</th>
-<th align="right">Manufacturing.Price</th>
-<th align="right">Sale.Price</th>
-<th align="right">Gross.Sales</th>
-<th align="right">Discounts</th>
-<th align="right">Sales</th>
-<th align="right">COGS</th>
-<th align="right">Profit</th>
-<th align="right">Date</th>
-<th align="right">Month.Number</th>
-<th align="left">Month.Name</th>
-<th align="left">Year</th>
-</tr></thead>
+Check its content by clicking on <code>DT_sales</code> in the <code>Environment</code> tab in top right area.</p>
+</div>
+<div id="load-the-.csv-file" class="section level4 unnumbered">
+<h4>Load the .csv file :</h4>
+<p>Nobody is perfect, especially Leandro from Accounting. Although you begged him to send you the List of the Customer Support Staff as an Excel file, he insists on sending it as a .csv file. Relax, take it easy :</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="data-manipulation-with-datatable.html#cb5-1" aria-hidden="true" tabindex="-1"></a>DT_customer_support <span class="ot">&lt;-</span> <span class="fu">fread</span>(<span class="st">&quot;./data/CustomerSupport.csv&quot;</span>)</span></code></pre></div>
+<p>That’s it. You have now the two files loaded as dataframes. One last thing : we must convert them into the data.table format :</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="data-manipulation-with-datatable.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setDT</span>(DT_sales)</span>
+<span id="cb6-2"><a href="data-manipulation-with-datatable.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setDT</span>(DT_customer_support)</span></code></pre></div>
+</div>
+</div>
+<div id="the-data.table-philosophy" class="section level2 unnumbered">
+<h2>The data.table philosophy :</h2>
+<p>The data.table syntax is as follow :</p>
+<p><strong><code>DT[     filtering_condition    ,    formula    ,   grouping_columns    ]</code></strong></p>
+<p>That’s it. The next part of this lesson will show you how to use it.</p>
+</div>
+<div id="basic-operations" class="section level2 unnumbered">
+<h2>Basic operations :</h2>
+<p>we begin by looking at the dataframe structure (<code>str</code> is for “structure”):</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="data-manipulation-with-datatable.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(DT_sales)</span>
+<span id="cb7-2"><a href="data-manipulation-with-datatable.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Classes &#39;data.table&#39; and &#39;data.frame&#39;:   700 obs. of  16 variables:</span></span>
+<span id="cb7-3"><a href="data-manipulation-with-datatable.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Segment            : chr  &quot;Government&quot; &quot;Government&quot; &quot;Midmarket&quot; &quot;Midmarket&quot; ...</span></span>
+<span id="cb7-4"><a href="data-manipulation-with-datatable.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Country            : chr  &quot;Canada&quot; &quot;Germany&quot; &quot;France&quot; &quot;Germany&quot; ...</span></span>
+<span id="cb7-5"><a href="data-manipulation-with-datatable.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Product            : chr  &quot;Carretera&quot; &quot;Carretera&quot; &quot;Carretera&quot; &quot;Carretera&quot; ...</span></span>
+<span id="cb7-6"><a href="data-manipulation-with-datatable.html#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Discount.Band      : chr  &quot;None&quot; &quot;None&quot; &quot;None&quot; &quot;None&quot; ...</span></span>
+<span id="cb7-7"><a href="data-manipulation-with-datatable.html#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Units.Sold         : num  1618 1321 2178 888 2470 ...</span></span>
+<span id="cb7-8"><a href="data-manipulation-with-datatable.html#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Manufacturing.Price: num  3 3 3 3 3 3 5 5 5 5 ...</span></span>
+<span id="cb7-9"><a href="data-manipulation-with-datatable.html#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Sale.Price         : num  20 20 15 15 15 350 15 12 20 12 ...</span></span>
+<span id="cb7-10"><a href="data-manipulation-with-datatable.html#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Gross.Sales        : num  32370 26420 32670 13320 37050 ...</span></span>
+<span id="cb7-11"><a href="data-manipulation-with-datatable.html#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Discounts          : num  0 0 0 0 0 0 0 0 0 0 ...</span></span>
+<span id="cb7-12"><a href="data-manipulation-with-datatable.html#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Sales              : num  32370 26420 32670 13320 37050 ...</span></span>
+<span id="cb7-13"><a href="data-manipulation-with-datatable.html#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ COGS               : num  16185 13210 21780 8880 24700 ...</span></span>
+<span id="cb7-14"><a href="data-manipulation-with-datatable.html#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Profit             : num  16185 13210 10890 4440 12350 ...</span></span>
+<span id="cb7-15"><a href="data-manipulation-with-datatable.html#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Date               : Date, format: &quot;2014-01-01&quot; ...</span></span>
+<span id="cb7-16"><a href="data-manipulation-with-datatable.html#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Month.Number       : num  1 1 6 6 6 12 3 6 6 6 ...</span></span>
+<span id="cb7-17"><a href="data-manipulation-with-datatable.html#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Month.Name         : chr  &quot;January&quot; &quot;January&quot; &quot;June&quot; &quot;June&quot; ...</span></span>
+<span id="cb7-18"><a href="data-manipulation-with-datatable.html#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Year               : chr  &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; ...</span></span>
+<span id="cb7-19"><a href="data-manipulation-with-datatable.html#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  - attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt;</span></span></code></pre></div>
+<p>Note: this operation is crucial.</p>
+<p>Why ? You can see how R loaded each column and defined a type for each : <code>chr</code> for character, <code>num</code> for numeric. Oh look, the <code>Date</code> column is a <code>num</code>.</p>
+<p>Let’s fix this problem by reloading the Excel with an extra option :</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="data-manipulation-with-datatable.html#cb8-1" aria-hidden="true" tabindex="-1"></a>DT_sales <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">&quot;./data/Financial sample.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;Sales&quot;</span>, <span class="at">detectDates =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-2"><a href="data-manipulation-with-datatable.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">setDT</span>(DT_sales) <span class="co"># you NEED this also</span></span></code></pre></div>
+<p>and here we go :</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="data-manipulation-with-datatable.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(DT_sales)</span>
+<span id="cb9-2"><a href="data-manipulation-with-datatable.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Classes &#39;data.table&#39; and &#39;data.frame&#39;:   700 obs. of  16 variables:</span></span>
+<span id="cb9-3"><a href="data-manipulation-with-datatable.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Segment            : chr  &quot;Government&quot; &quot;Government&quot; &quot;Midmarket&quot; &quot;Midmarket&quot; ...</span></span>
+<span id="cb9-4"><a href="data-manipulation-with-datatable.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Country            : chr  &quot;Canada&quot; &quot;Germany&quot; &quot;France&quot; &quot;Germany&quot; ...</span></span>
+<span id="cb9-5"><a href="data-manipulation-with-datatable.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Product            : chr  &quot;Carretera&quot; &quot;Carretera&quot; &quot;Carretera&quot; &quot;Carretera&quot; ...</span></span>
+<span id="cb9-6"><a href="data-manipulation-with-datatable.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Discount.Band      : chr  &quot;None&quot; &quot;None&quot; &quot;None&quot; &quot;None&quot; ...</span></span>
+<span id="cb9-7"><a href="data-manipulation-with-datatable.html#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Units.Sold         : num  1618 1321 2178 888 2470 ...</span></span>
+<span id="cb9-8"><a href="data-manipulation-with-datatable.html#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Manufacturing.Price: num  3 3 3 3 3 3 5 5 5 5 ...</span></span>
+<span id="cb9-9"><a href="data-manipulation-with-datatable.html#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Sale.Price         : num  20 20 15 15 15 350 15 12 20 12 ...</span></span>
+<span id="cb9-10"><a href="data-manipulation-with-datatable.html#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Gross.Sales        : num  32370 26420 32670 13320 37050 ...</span></span>
+<span id="cb9-11"><a href="data-manipulation-with-datatable.html#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Discounts          : num  0 0 0 0 0 0 0 0 0 0 ...</span></span>
+<span id="cb9-12"><a href="data-manipulation-with-datatable.html#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Sales              : num  32370 26420 32670 13320 37050 ...</span></span>
+<span id="cb9-13"><a href="data-manipulation-with-datatable.html#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ COGS               : num  16185 13210 21780 8880 24700 ...</span></span>
+<span id="cb9-14"><a href="data-manipulation-with-datatable.html#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Profit             : num  16185 13210 10890 4440 12350 ...</span></span>
+<span id="cb9-15"><a href="data-manipulation-with-datatable.html#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Date               : Date, format: &quot;2014-01-01&quot; ...</span></span>
+<span id="cb9-16"><a href="data-manipulation-with-datatable.html#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Month.Number       : num  1 1 6 6 6 12 3 6 6 6 ...</span></span>
+<span id="cb9-17"><a href="data-manipulation-with-datatable.html#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Month.Name         : chr  &quot;January&quot; &quot;January&quot; &quot;June&quot; &quot;June&quot; ...</span></span>
+<span id="cb9-18"><a href="data-manipulation-with-datatable.html#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  $ Year               : chr  &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; &quot;2014&quot; ...</span></span>
+<span id="cb9-19"><a href="data-manipulation-with-datatable.html#cb9-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  - attr(*, &quot;.internal.selfref&quot;)=&lt;externalptr&gt;</span></span></code></pre></div>
+<p><br /></p>
+<p>Excellent, now we want to display the first 10 rows of our <code>DT_sales</code> dataframe :</p>
+<p><em>Note : to display the last 10 rows, just replace <code>head</code> with <code>tail</code></em></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="data-manipulation-with-datatable.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(DT_sales)</span></code></pre></div>
+<div style="border: 0px;overflow-x: scroll; width:100%; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Segment
+</th>
+<th style="text-align:left;">
+Country
+</th>
+<th style="text-align:left;">
+Product
+</th>
+<th style="text-align:left;">
+Discount.Band
+</th>
+<th style="text-align:right;">
+Units.Sold
+</th>
+<th style="text-align:right;">
+Manufacturing.Price
+</th>
+<th style="text-align:right;">
+Sale.Price
+</th>
+<th style="text-align:right;">
+Gross.Sales
+</th>
+<th style="text-align:right;">
+Discounts
+</th>
+<th style="text-align:right;">
+Sales
+</th>
+<th style="text-align:right;">
+COGS
+</th>
+<th style="text-align:right;">
+Profit
+</th>
+<th style="text-align:left;">
+Date
+</th>
+<th style="text-align:right;">
+Month.Number
+</th>
+<th style="text-align:left;">
+Month.Name
+</th>
+<th style="text-align:left;">
+Year
+</th>
+</tr>
+</thead>
 <tbody>
-<tr class="odd">
-<td align="left">Government</td>
-<td align="left">Canada</td>
-<td align="left">Carretera</td>
-<td align="left">None</td>
-<td align="right">1618.5</td>
-<td align="right">3</td>
-<td align="right">20</td>
-<td align="right">32370</td>
-<td align="right">0</td>
-<td align="right">32370</td>
-<td align="right">16185</td>
-<td align="right">16185</td>
-<td align="right">41640</td>
-<td align="right">1</td>
-<td align="left">January</td>
-<td align="left">2014</td>
+<tr>
+<td style="text-align:left;">
+Government
+</td>
+<td style="text-align:left;">
+Canada
+</td>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+None
+</td>
+<td style="text-align:right;">
+1618.5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+32370
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+32370
+</td>
+<td style="text-align:right;">
+16185
+</td>
+<td style="text-align:right;">
+16185
+</td>
+<td style="text-align:left;">
+2014-01-01
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+January
+</td>
+<td style="text-align:left;">
+2014
+</td>
 </tr>
-<tr class="even">
-<td align="left">Government</td>
-<td align="left">Germany</td>
-<td align="left">Carretera</td>
-<td align="left">None</td>
-<td align="right">1321.0</td>
-<td align="right">3</td>
-<td align="right">20</td>
-<td align="right">26420</td>
-<td align="right">0</td>
-<td align="right">26420</td>
-<td align="right">13210</td>
-<td align="right">13210</td>
-<td align="right">41640</td>
-<td align="right">1</td>
-<td align="left">January</td>
-<td align="left">2014</td>
+<tr>
+<td style="text-align:left;">
+Government
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+None
+</td>
+<td style="text-align:right;">
+1321.0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+26420
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+26420
+</td>
+<td style="text-align:right;">
+13210
+</td>
+<td style="text-align:right;">
+13210
+</td>
+<td style="text-align:left;">
+2014-01-01
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+January
+</td>
+<td style="text-align:left;">
+2014
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Midmarket</td>
-<td align="left">France</td>
-<td align="left">Carretera</td>
-<td align="left">None</td>
-<td align="right">2178.0</td>
-<td align="right">3</td>
-<td align="right">15</td>
-<td align="right">32670</td>
-<td align="right">0</td>
-<td align="right">32670</td>
-<td align="right">21780</td>
-<td align="right">10890</td>
-<td align="right">41791</td>
-<td align="right">6</td>
-<td align="left">June</td>
-<td align="left">2014</td>
+<tr>
+<td style="text-align:left;">
+Midmarket
+</td>
+<td style="text-align:left;">
+France
+</td>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+None
+</td>
+<td style="text-align:right;">
+2178.0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+32670
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+32670
+</td>
+<td style="text-align:right;">
+21780
+</td>
+<td style="text-align:right;">
+10890
+</td>
+<td style="text-align:left;">
+2014-06-01
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+June
+</td>
+<td style="text-align:left;">
+2014
+</td>
 </tr>
-<tr class="even">
-<td align="left">Midmarket</td>
-<td align="left">Germany</td>
-<td align="left">Carretera</td>
-<td align="left">None</td>
-<td align="right">888.0</td>
-<td align="right">3</td>
-<td align="right">15</td>
-<td align="right">13320</td>
-<td align="right">0</td>
-<td align="right">13320</td>
-<td align="right">8880</td>
-<td align="right">4440</td>
-<td align="right">41791</td>
-<td align="right">6</td>
-<td align="left">June</td>
-<td align="left">2014</td>
+<tr>
+<td style="text-align:left;">
+Midmarket
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+None
+</td>
+<td style="text-align:right;">
+888.0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+13320
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+13320
+</td>
+<td style="text-align:right;">
+8880
+</td>
+<td style="text-align:right;">
+4440
+</td>
+<td style="text-align:left;">
+2014-06-01
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+June
+</td>
+<td style="text-align:left;">
+2014
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Midmarket</td>
-<td align="left">Mexico</td>
-<td align="left">Carretera</td>
-<td align="left">None</td>
-<td align="right">2470.0</td>
-<td align="right">3</td>
-<td align="right">15</td>
-<td align="right">37050</td>
-<td align="right">0</td>
-<td align="right">37050</td>
-<td align="right">24700</td>
-<td align="right">12350</td>
-<td align="right">41791</td>
-<td align="right">6</td>
-<td align="left">June</td>
-<td align="left">2014</td>
+<tr>
+<td style="text-align:left;">
+Midmarket
+</td>
+<td style="text-align:left;">
+Mexico
+</td>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+None
+</td>
+<td style="text-align:right;">
+2470.0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+37050
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+37050
+</td>
+<td style="text-align:right;">
+24700
+</td>
+<td style="text-align:right;">
+12350
+</td>
+<td style="text-align:left;">
+2014-06-01
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+June
+</td>
+<td style="text-align:left;">
+2014
+</td>
 </tr>
-<tr class="even">
-<td align="left">Government</td>
-<td align="left">Germany</td>
-<td align="left">Carretera</td>
-<td align="left">None</td>
-<td align="right">1513.0</td>
-<td align="right">3</td>
-<td align="right">350</td>
-<td align="right">529550</td>
-<td align="right">0</td>
-<td align="right">529550</td>
-<td align="right">393380</td>
-<td align="right">136170</td>
-<td align="right">41974</td>
-<td align="right">12</td>
-<td align="left">December</td>
-<td align="left">2014</td>
+<tr>
+<td style="text-align:left;">
+Government
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+None
+</td>
+<td style="text-align:right;">
+1513.0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+350
+</td>
+<td style="text-align:right;">
+529550
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+529550
+</td>
+<td style="text-align:right;">
+393380
+</td>
+<td style="text-align:right;">
+136170
+</td>
+<td style="text-align:left;">
+2014-12-01
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+December
+</td>
+<td style="text-align:left;">
+2014
+</td>
 </tr>
 </tbody>
-</table></div>
-<p><br>
- 
-<em>add a new column <strong>“Profit.Margin”</strong> = “Sale.Price” - “Manufacturing.Price” :</em></p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">DT_sales</span><span class="op">[</span>,<span class="va">Profit.Margin</span><span class="op">:=</span><span class="op">(</span><span class="va">Sale.Price</span> <span class="op">-</span> <span class="va">Manufacturing.Price</span><span class="op">)</span><span class="op">]</span></code></pre></div>
+</table>
 </div>
-<div id="pivot-table-in-r" class="section level3" number="4.3.2">
-<h3>
-<span class="header-section-number">4.3.2</span> Pivot table in R<a class="anchor" aria-label="anchor" href="#pivot-table-in-r"><i class="fas fa-link"></i></a>
-</h3>
+<p><br />
+How about the list the <strong>Product</strong> ?</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="data-manipulation-with-datatable.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(DT_sales<span class="sc">$</span>Product)</span>
+<span id="cb11-2"><a href="data-manipulation-with-datatable.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Carretera&quot; &quot;Montana&quot;   &quot;Paseo&quot;     &quot;Velo&quot;     </span></span>
+<span id="cb11-3"><a href="data-manipulation-with-datatable.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [5] &quot;VTT&quot;       &quot;Amarilla&quot;</span></span></code></pre></div>
+<p><br />
+Show me the max value of the <strong>Profit</strong> column :</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="data-manipulation-with-datatable.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(DT_sales<span class="sc">$</span>Profit)</span>
+<span id="cb12-2"><a href="data-manipulation-with-datatable.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 262200</span></span></code></pre></div>
+<p><br />
+Time to use the data.table syntax. First with the <strong><code>filtering_condition</code></strong> :
+Filter the dataframe on the “Carretera” <strong>Product</strong> :</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="data-manipulation-with-datatable.html#cb13-1" aria-hidden="true" tabindex="-1"></a>DT_sales[Product <span class="sc">==</span> <span class="st">&quot;Carretera&quot;</span>]</span></code></pre></div>
+<div style="border: 0px;overflow-x: scroll; width:100%; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Segment
+</th>
+<th style="text-align:left;">
+Country
+</th>
+<th style="text-align:left;">
+Product
+</th>
+<th style="text-align:left;">
+Discount.Band
+</th>
+<th style="text-align:right;">
+Units.Sold
+</th>
+<th style="text-align:right;">
+Manufacturing.Price
+</th>
+<th style="text-align:right;">
+Sale.Price
+</th>
+<th style="text-align:right;">
+Gross.Sales
+</th>
+<th style="text-align:right;">
+Discounts
+</th>
+<th style="text-align:right;">
+Sales
+</th>
+<th style="text-align:right;">
+COGS
+</th>
+<th style="text-align:right;">
+Profit
+</th>
+<th style="text-align:left;">
+Date
+</th>
+<th style="text-align:right;">
+Month.Number
+</th>
+<th style="text-align:left;">
+Month.Name
+</th>
+<th style="text-align:left;">
+Year
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Government
+</td>
+<td style="text-align:left;">
+Canada
+</td>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+None
+</td>
+<td style="text-align:right;">
+1618.5
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+32370
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+32370
+</td>
+<td style="text-align:right;">
+16185
+</td>
+<td style="text-align:right;">
+16185
+</td>
+<td style="text-align:left;">
+2014-01-01
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+January
+</td>
+<td style="text-align:left;">
+2014
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Government
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+None
+</td>
+<td style="text-align:right;">
+1321.0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:right;">
+26420
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+26420
+</td>
+<td style="text-align:right;">
+13210
+</td>
+<td style="text-align:right;">
+13210
+</td>
+<td style="text-align:left;">
+2014-01-01
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+January
+</td>
+<td style="text-align:left;">
+2014
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Midmarket
+</td>
+<td style="text-align:left;">
+France
+</td>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+None
+</td>
+<td style="text-align:right;">
+2178.0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+32670
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+32670
+</td>
+<td style="text-align:right;">
+21780
+</td>
+<td style="text-align:right;">
+10890
+</td>
+<td style="text-align:left;">
+2014-06-01
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+June
+</td>
+<td style="text-align:left;">
+2014
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Midmarket
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+None
+</td>
+<td style="text-align:right;">
+888.0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+13320
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+13320
+</td>
+<td style="text-align:right;">
+8880
+</td>
+<td style="text-align:right;">
+4440
+</td>
+<td style="text-align:left;">
+2014-06-01
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+June
+</td>
+<td style="text-align:left;">
+2014
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Midmarket
+</td>
+<td style="text-align:left;">
+Mexico
+</td>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+None
+</td>
+<td style="text-align:right;">
+2470.0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+15
+</td>
+<td style="text-align:right;">
+37050
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+37050
+</td>
+<td style="text-align:right;">
+24700
+</td>
+<td style="text-align:right;">
+12350
+</td>
+<td style="text-align:left;">
+2014-06-01
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+June
+</td>
+<td style="text-align:left;">
+2014
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Government
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+None
+</td>
+<td style="text-align:right;">
+1513.0
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+350
+</td>
+<td style="text-align:right;">
+529550
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+529550
+</td>
+<td style="text-align:right;">
+393380
+</td>
+<td style="text-align:right;">
+136170
+</td>
+<td style="text-align:left;">
+2014-12-01
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:left;">
+December
+</td>
+<td style="text-align:left;">
+2014
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br />
+And now the second data.table part, the <strong><code>formula</code></strong>:</p>
+<p>We add a new column <strong>“Profit.Margin”</strong> = “Sale.Price” - “Manufacturing.Price” :*</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="data-manipulation-with-datatable.html#cb14-1" aria-hidden="true" tabindex="-1"></a>DT_sales[, Profit.Margin <span class="sc">:</span><span class="er">=</span> (Sale.Price <span class="sc">-</span> Manufacturing.Price)]</span></code></pre></div>
+<p><em>Note : see the comma</em> <strong><code>,</code></strong> <em>before <code>Profit.Margin</code> ? As we do not use any filter, we keep it empty.</em>
+<em>We could also write <code>DT_sales[Product="Carretera",Profit.Margin:=(Sale.Price - Manufacturing.Price)]</code>, and this would have filtered the DT first before applying the formula. Try by yourself !</em></p>
+<p><br />
+We now want to replace “United States of America” with “USA” in the country column :</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="data-manipulation-with-datatable.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(stringr) <span class="co"># Yes, this is a new package and Yes, you need it to replace text :</span></span>
+<span id="cb15-2"><a href="data-manipulation-with-datatable.html#cb15-2" aria-hidden="true" tabindex="-1"></a>DT_sales[, Country <span class="sc">:</span><span class="er">=</span> <span class="fu">str_replace</span>(Country, <span class="st">&quot;United States of America&quot;</span>, <span class="st">&quot;USA&quot;</span>)]</span></code></pre></div>
+<p><br />
+… and we check the previous action was successful :</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="data-manipulation-with-datatable.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unique</span>(DT_sales<span class="sc">$</span>Country)</span>
+<span id="cb16-2"><a href="data-manipulation-with-datatable.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] &quot;Canada&quot;  &quot;Germany&quot; &quot;France&quot;  &quot;Mexico&quot;  &quot;USA&quot;</span></span></code></pre></div>
+<p><br />
+Select three columns : “Product,” “Country,” “Profit.Margin” and copy the result in a new dataframe :</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="data-manipulation-with-datatable.html#cb17-1" aria-hidden="true" tabindex="-1"></a>DT_sales_light <span class="ot">&lt;-</span> DT_sales[, <span class="fu">c</span>(<span class="st">&quot;Product&quot;</span>, <span class="st">&quot;Country&quot;</span>, <span class="st">&quot;Profit.Margin&quot;</span>)]</span>
+<span id="cb17-2"><a href="data-manipulation-with-datatable.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(DT_sales_light)</span></code></pre></div>
+<div style="border: 0px;overflow-x: scroll; width:100%; ">
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Product
+</th>
+<th style="text-align:left;">
+Country
+</th>
+<th style="text-align:right;">
+Profit.Margin
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+Canada
+</td>
+<td style="text-align:right;">
+17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:right;">
+17
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+France
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+Mexico
+</td>
+<td style="text-align:right;">
+12
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Carretera
+</td>
+<td style="text-align:left;">
+Germany
+</td>
+<td style="text-align:right;">
+347
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="quizz" class="section level4 unnumbered">
+<h4>Quizz</h4>
+<p>Download the <a href="https://r-training-bookdown.s3.amazonaws.com/data/Financial+sample.xlsx"><strong>Financial+sample.xlsx</strong> Excel file</a> and copy it in your RStudio project.
+Load this file <code>openxlsx</code> into a Dataframe.</p>
+<div id="main_Quizz" tabindex="-1">
+<div id="Quizz_A1">
+
+</div>
+<div id="Answer_A1" class="toggle">
+<p id="p_Answer_A1">
+.
+</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="data-manipulation-with-datatable.html#cb18-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">max</span>(mtcars<span class="sc">$</span>mpg)</span>
+<span id="cb18-2"><a href="data-manipulation-with-datatable.html#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 33.9</span></span></code></pre></div>
+</div>
+<hr />
+<div id="Quizz_A2">
+
+</div>
+<div id="Answer_A2" class="toggle">
+<p id="p_Answer_A2">
+.
+</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="data-manipulation-with-datatable.html#cb19-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">setdiff</span>(mtcars, mtcars) <span class="sc">%&gt;%</span> <span class="fu">nrow</span>()</span></code></pre></div>
+</div>
+</div>
+<p><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="quizz.json"></script><script src="quizz.js"></script></p>
+</div>
+<div id="pivot-table-in-r" class="section level3 unnumbered">
+<h3>Pivot table in R</h3>
 <p>The R equivalent of the Excel Pivot Table is the group operation.</p>
-<p><em>For instance, we want to count the</em> <strong>number of Product categories per Country</strong> :</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">DT_sales</span><span class="op">[</span>,<span class="fu">.</span><span class="op">(</span>count_Products<span class="op">=</span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/duplicated.html">uniqueN</a></span><span class="op">(</span><span class="va">Product</span><span class="op">)</span><span class="op">)</span>, by<span class="op">=</span><span class="fu">.</span><span class="op">(</span><span class="va">Country</span><span class="op">)</span><span class="op">]</span>
-<span class="co">#&gt;                     Country count_Products</span>
-<span class="co">#&gt; 1:                   Canada              6</span>
-<span class="co">#&gt; 2:                  Germany              6</span>
-<span class="co">#&gt; 3:                   France              6</span>
-<span class="co">#&gt; 4:                   Mexico              6</span>
-<span class="co">#&gt; 5: United States of America              6</span></code></pre></div>
-<p><em>we want to create a pivot table with the</em> <strong>total number of units sold</strong> <em>per</em> <strong>Product</strong> :</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">DT_sales</span><span class="op">[</span>,<span class="fu">.</span><span class="op">(</span>total_units_sold<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Units.Sold</span><span class="op">)</span><span class="op">)</span>, by<span class="op">=</span><span class="fu">.</span><span class="op">(</span><span class="va">Product</span><span class="op">)</span><span class="op">]</span>
-<span class="co">#&gt;      Product total_units_sold</span>
-<span class="co">#&gt; 1: Carretera         146846.0</span>
-<span class="co">#&gt; 2:   Montana         154198.0</span>
-<span class="co">#&gt; 3:     Paseo         338239.5</span>
-<span class="co">#&gt; 4:      Velo         162424.5</span>
-<span class="co">#&gt; 5:       VTT         168783.0</span>
-<span class="co">#&gt; 6:  Amarilla         155315.0</span></code></pre></div>
+<p>We want to count the <strong>number of Product categories per Country</strong> :</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="data-manipulation-with-datatable.html#cb20-1" aria-hidden="true" tabindex="-1"></a>DT_sales[, .(<span class="at">count_Products =</span> <span class="fu">uniqueN</span>(Product)), by <span class="ot">=</span> .(Country)]</span>
+<span id="cb20-2"><a href="data-manipulation-with-datatable.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;    Country count_Products</span></span>
+<span id="cb20-3"><a href="data-manipulation-with-datatable.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1:  Canada              6</span></span>
+<span id="cb20-4"><a href="data-manipulation-with-datatable.html#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2: Germany              6</span></span>
+<span id="cb20-5"><a href="data-manipulation-with-datatable.html#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3:  France              6</span></span>
+<span id="cb20-6"><a href="data-manipulation-with-datatable.html#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4:  Mexico              6</span></span>
+<span id="cb20-7"><a href="data-manipulation-with-datatable.html#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5:     USA              6</span></span></code></pre></div>
+<p><br />
+Create a pivot table with the <strong>total number of units sold</strong> per <strong>Product</strong> :</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="data-manipulation-with-datatable.html#cb21-1" aria-hidden="true" tabindex="-1"></a>DT_sales[, .(<span class="at">total_units_sold =</span> <span class="fu">sum</span>(Units.Sold)), by <span class="ot">=</span> .(Product)]</span>
+<span id="cb21-2"><a href="data-manipulation-with-datatable.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      Product total_units_sold</span></span>
+<span id="cb21-3"><a href="data-manipulation-with-datatable.html#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1: Carretera         146846.0</span></span>
+<span id="cb21-4"><a href="data-manipulation-with-datatable.html#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2:   Montana         154198.0</span></span>
+<span id="cb21-5"><a href="data-manipulation-with-datatable.html#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3:     Paseo         338239.5</span></span>
+<span id="cb21-6"><a href="data-manipulation-with-datatable.html#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4:      Velo         162424.5</span></span>
+<span id="cb21-7"><a href="data-manipulation-with-datatable.html#cb21-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5:       VTT         168783.0</span></span>
+<span id="cb21-8"><a href="data-manipulation-with-datatable.html#cb21-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6:  Amarilla         155315.0</span></span></code></pre></div>
 <p>Neat isn’t it ?</p>
-<p><em>But your Boss© want those results sorted per value. No big deal here :</em></p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">DT_sales</span><span class="op">[</span>,<span class="fu">.</span><span class="op">(</span>total_units_sold<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Units.Sold</span><span class="op">)</span><span class="op">)</span>, by<span class="op">=</span><span class="fu">.</span><span class="op">(</span><span class="va">Product</span><span class="op">)</span><span class="op">]</span><span class="op">[</span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/setorder.html">order</a></span><span class="op">(</span><span class="va">total_units_sold</span><span class="op">)</span><span class="op">]</span>
-<span class="co">#&gt;      Product total_units_sold</span>
-<span class="co">#&gt; 1: Carretera         146846.0</span>
-<span class="co">#&gt; 2:   Montana         154198.0</span>
-<span class="co">#&gt; 3:  Amarilla         155315.0</span>
-<span class="co">#&gt; 4:      Velo         162424.5</span>
-<span class="co">#&gt; 5:       VTT         168783.0</span>
-<span class="co">#&gt; 6:     Paseo         338239.5</span></code></pre></div>
-<p><em>But your Boss© want those results sorted per value, in the descending order :</em></p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">DT_sales</span><span class="op">[</span>,<span class="fu">.</span><span class="op">(</span>total_units_sold<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Units.Sold</span><span class="op">)</span><span class="op">)</span>, by<span class="op">=</span><span class="fu">.</span><span class="op">(</span><span class="va">Product</span><span class="op">)</span><span class="op">]</span><span class="op">[</span><span class="fu"><a href="https://Rdatatable.gitlab.io/data.table/reference/setorder.html">order</a></span><span class="op">(</span><span class="op">-</span><span class="va">total_units_sold</span><span class="op">)</span><span class="op">]</span>
-<span class="co">#&gt;      Product total_units_sold</span>
-<span class="co">#&gt; 1:     Paseo         338239.5</span>
-<span class="co">#&gt; 2:       VTT         168783.0</span>
-<span class="co">#&gt; 3:      Velo         162424.5</span>
-<span class="co">#&gt; 4:  Amarilla         155315.0</span>
-<span class="co">#&gt; 5:   Montana         154198.0</span>
-<span class="co">#&gt; 6: Carretera         146846.0</span></code></pre></div>
-<p><em>How about grouping the data on multiple columns ? Like by</em> <strong>Product</strong> and <strong>Country</strong> ?</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">DT_sales</span><span class="op">[</span>,<span class="fu">.</span><span class="op">(</span>total_units_sold<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Units.Sold</span><span class="op">)</span><span class="op">)</span>, by<span class="op">=</span><span class="fu">.</span><span class="op">(</span><span class="va">Product</span>, <span class="va">Country</span><span class="op">)</span><span class="op">]</span>
-<span class="co">#&gt;       Product                  Country total_units_sold</span>
-<span class="co">#&gt;  1: Carretera                   Canada          34804.0</span>
-<span class="co">#&gt;  2: Carretera                  Germany          24944.0</span>
-<span class="co">#&gt;  3: Carretera                   France          34056.0</span>
-<span class="co">#&gt;  4: Carretera                   Mexico          27224.0</span>
-<span class="co">#&gt;  5:   Montana                  Germany          28061.0</span>
-<span class="co">#&gt;  6:   Montana                   Canada          31488.5</span>
-<span class="co">#&gt;  7:   Montana                   France          31282.0</span>
-<span class="co">#&gt;  8:   Montana                   Mexico          31754.0</span>
-<span class="co">#&gt;  9:   Montana United States of America          31612.5</span>
-<span class="co">#&gt; 10:     Paseo                   Canada          78191.5</span>
-<span class="co">#&gt; 11:     Paseo                   Mexico          63282.0</span>
-<span class="co">#&gt; 12:     Paseo                  Germany          55693.5</span>
-<span class="co">#&gt; 13:     Paseo                   France          71606.0</span>
-<span class="co">#&gt; 14:     Paseo United States of America          69466.5</span>
-<span class="co">#&gt; 15:      Velo                   Mexico          26540.0</span>
-<span class="co">#&gt; 16:      Velo                   France          36609.5</span>
-<span class="co">#&gt; 17:      Velo                  Germany          31050.0</span>
-<span class="co">#&gt; 18:      Velo United States of America          35761.0</span>
-<span class="co">#&gt; 19:      Velo                   Canada          32464.0</span>
-<span class="co">#&gt; 20:       VTT                   Canada          41248.5</span>
-<span class="co">#&gt; 21:       VTT                  Germany          31131.0</span>
-<span class="co">#&gt; 22:       VTT                   France          35774.5</span>
-<span class="co">#&gt; 23:  Amarilla                   France          31603.0</span>
-<span class="co">#&gt; 24:  Amarilla United States of America          35469.5</span>
-<span class="co">#&gt; 25:  Amarilla                  Germany          30614.5</span>
-<span class="co">#&gt; 26: Carretera United States of America          25818.0</span>
-<span class="co">#&gt; 27:       VTT United States of America          34500.0</span>
-<span class="co">#&gt; 28:       VTT                   Mexico          26129.0</span>
-<span class="co">#&gt; 29:  Amarilla                   Mexico          28396.0</span>
-<span class="co">#&gt; 30:  Amarilla                   Canada          29232.0</span>
-<span class="co">#&gt;       Product                  Country total_units_sold</span></code></pre></div>
-<p><em>your Sales team only needs the</em> <strong>Top 2 Sellers Countries per Product</strong> :</p>
+<p><br />
+But your Boss© want those results sorted per value. No big deal here :</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="data-manipulation-with-datatable.html#cb22-1" aria-hidden="true" tabindex="-1"></a>DT_sales[, .(<span class="at">total_units_sold =</span> <span class="fu">sum</span>(Units.Sold)), by <span class="ot">=</span> .(Product)][<span class="fu">order</span>(total_units_sold)]</span>
+<span id="cb22-2"><a href="data-manipulation-with-datatable.html#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      Product total_units_sold</span></span>
+<span id="cb22-3"><a href="data-manipulation-with-datatable.html#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1: Carretera         146846.0</span></span>
+<span id="cb22-4"><a href="data-manipulation-with-datatable.html#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2:   Montana         154198.0</span></span>
+<span id="cb22-5"><a href="data-manipulation-with-datatable.html#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3:  Amarilla         155315.0</span></span>
+<span id="cb22-6"><a href="data-manipulation-with-datatable.html#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4:      Velo         162424.5</span></span>
+<span id="cb22-7"><a href="data-manipulation-with-datatable.html#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5:       VTT         168783.0</span></span>
+<span id="cb22-8"><a href="data-manipulation-with-datatable.html#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6:     Paseo         338239.5</span></span></code></pre></div>
+<p><br />
+But your Boss© want those results sorted per value, in the descending order :</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="data-manipulation-with-datatable.html#cb23-1" aria-hidden="true" tabindex="-1"></a>DT_sales[, .(<span class="at">total_units_sold =</span> <span class="fu">sum</span>(Units.Sold)), by <span class="ot">=</span> .(Product)][<span class="fu">order</span>(<span class="sc">-</span>total_units_sold)]</span>
+<span id="cb23-2"><a href="data-manipulation-with-datatable.html#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      Product total_units_sold</span></span>
+<span id="cb23-3"><a href="data-manipulation-with-datatable.html#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1:     Paseo         338239.5</span></span>
+<span id="cb23-4"><a href="data-manipulation-with-datatable.html#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2:       VTT         168783.0</span></span>
+<span id="cb23-5"><a href="data-manipulation-with-datatable.html#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3:      Velo         162424.5</span></span>
+<span id="cb23-6"><a href="data-manipulation-with-datatable.html#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4:  Amarilla         155315.0</span></span>
+<span id="cb23-7"><a href="data-manipulation-with-datatable.html#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5:   Montana         154198.0</span></span>
+<span id="cb23-8"><a href="data-manipulation-with-datatable.html#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6: Carretera         146846.0</span></span></code></pre></div>
+<p><br />
+How about grouping the data on multiple columns ? Like per <strong>Product</strong> and <strong>Country</strong> ?</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="data-manipulation-with-datatable.html#cb24-1" aria-hidden="true" tabindex="-1"></a>DT_sales[, .(<span class="at">total_units_sold =</span> <span class="fu">sum</span>(Units.Sold)), by <span class="ot">=</span> .(Product, Country)] <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span>
+<span id="cb24-2"><a href="data-manipulation-with-datatable.html#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      Product Country total_units_sold</span></span>
+<span id="cb24-3"><a href="data-manipulation-with-datatable.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1: Carretera  Canada          34804.0</span></span>
+<span id="cb24-4"><a href="data-manipulation-with-datatable.html#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2: Carretera Germany          24944.0</span></span>
+<span id="cb24-5"><a href="data-manipulation-with-datatable.html#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3: Carretera  France          34056.0</span></span>
+<span id="cb24-6"><a href="data-manipulation-with-datatable.html#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4: Carretera  Mexico          27224.0</span></span>
+<span id="cb24-7"><a href="data-manipulation-with-datatable.html#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5:   Montana Germany          28061.0</span></span>
+<span id="cb24-8"><a href="data-manipulation-with-datatable.html#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6:   Montana  Canada          31488.5</span></span></code></pre></div>
+<p><br />
+How about grouping the data on multiple columns ? Like by <strong>Product</strong> and <strong>Country</strong> ? With two grouping variables ?</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="data-manipulation-with-datatable.html#cb25-1" aria-hidden="true" tabindex="-1"></a>DT_sales[, .(<span class="at">total_units_sold =</span> <span class="fu">sum</span>(Units.Sold), <span class="at">median_units_sold =</span> <span class="fu">median</span>(Units.Sold)),</span>
+<span id="cb25-2"><a href="data-manipulation-with-datatable.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  by <span class="ot">=</span> .(Product, Country)</span>
+<span id="cb25-3"><a href="data-manipulation-with-datatable.html#cb25-3" aria-hidden="true" tabindex="-1"></a>] <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span>
+<span id="cb25-4"><a href="data-manipulation-with-datatable.html#cb25-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      Product Country total_units_sold median_units_sold</span></span>
+<span id="cb25-5"><a href="data-manipulation-with-datatable.html#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 1: Carretera  Canada          34804.0           1589.25</span></span>
+<span id="cb25-6"><a href="data-manipulation-with-datatable.html#cb25-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 2: Carretera Germany          24944.0           1050.50</span></span>
+<span id="cb25-7"><a href="data-manipulation-with-datatable.html#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 3: Carretera  France          34056.0           2005.00</span></span>
+<span id="cb25-8"><a href="data-manipulation-with-datatable.html#cb25-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 4: Carretera  Mexico          27224.0           1379.50</span></span>
+<span id="cb25-9"><a href="data-manipulation-with-datatable.html#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 5:   Montana Germany          28061.0           1625.50</span></span>
+<span id="cb25-10"><a href="data-manipulation-with-datatable.html#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 6:   Montana  Canada          31488.5           1898.50</span></span></code></pre></div>
+<p><br /></p>
+<p>Your Sales team only needs the <strong>Top 2 Selling Countries per Product</strong> :</p>
 <p>For this, we first copy the grouped dataframe in a new variable <code>DT_grouped</code> :</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">DT_grouped</span> <span class="op">&lt;-</span> <span class="va">DT_sales</span><span class="op">[</span>,<span class="fu">.</span><span class="op">(</span>total_units_sold<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">Units.Sold</span><span class="op">)</span><span class="op">)</span>, by<span class="op">=</span><span class="fu">.</span><span class="op">(</span><span class="va">Product</span>, <span class="va">Country</span><span class="op">)</span><span class="op">]</span>
-<span class="va">DT_grouped</span><span class="op">[</span>,<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">.SD</span>, <span class="fl">2</span><span class="op">)</span>, by<span class="op">=</span><span class="fu">.</span><span class="op">(</span><span class="va">Product</span>, <span class="va">Country</span><span class="op">)</span><span class="op">]</span>
-<span class="co">#&gt;       Product                  Country total_units_sold</span>
-<span class="co">#&gt;  1: Carretera                   Canada          34804.0</span>
-<span class="co">#&gt;  2: Carretera                  Germany          24944.0</span>
-<span class="co">#&gt;  3: Carretera                   France          34056.0</span>
-<span class="co">#&gt;  4: Carretera                   Mexico          27224.0</span>
-<span class="co">#&gt;  5:   Montana                  Germany          28061.0</span>
-<span class="co">#&gt;  6:   Montana                   Canada          31488.5</span>
-<span class="co">#&gt;  7:   Montana                   France          31282.0</span>
-<span class="co">#&gt;  8:   Montana                   Mexico          31754.0</span>
-<span class="co">#&gt;  9:   Montana United States of America          31612.5</span>
-<span class="co">#&gt; 10:     Paseo                   Canada          78191.5</span>
-<span class="co">#&gt; 11:     Paseo                   Mexico          63282.0</span>
-<span class="co">#&gt; 12:     Paseo                  Germany          55693.5</span>
-<span class="co">#&gt; 13:     Paseo                   France          71606.0</span>
-<span class="co">#&gt; 14:     Paseo United States of America          69466.5</span>
-<span class="co">#&gt; 15:      Velo                   Mexico          26540.0</span>
-<span class="co">#&gt; 16:      Velo                   France          36609.5</span>
-<span class="co">#&gt; 17:      Velo                  Germany          31050.0</span>
-<span class="co">#&gt; 18:      Velo United States of America          35761.0</span>
-<span class="co">#&gt; 19:      Velo                   Canada          32464.0</span>
-<span class="co">#&gt; 20:       VTT                   Canada          41248.5</span>
-<span class="co">#&gt; 21:       VTT                  Germany          31131.0</span>
-<span class="co">#&gt; 22:       VTT                   France          35774.5</span>
-<span class="co">#&gt; 23:  Amarilla                   France          31603.0</span>
-<span class="co">#&gt; 24:  Amarilla United States of America          35469.5</span>
-<span class="co">#&gt; 25:  Amarilla                  Germany          30614.5</span>
-<span class="co">#&gt; 26: Carretera United States of America          25818.0</span>
-<span class="co">#&gt; 27:       VTT United States of America          34500.0</span>
-<span class="co">#&gt; 28:       VTT                   Mexico          26129.0</span>
-<span class="co">#&gt; 29:  Amarilla                   Mexico          28396.0</span>
-<span class="co">#&gt; 30:  Amarilla                   Canada          29232.0</span>
-<span class="co">#&gt;       Product                  Country total_units_sold</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="data-manipulation-with-datatable.html#cb26-1" aria-hidden="true" tabindex="-1"></a>DT_grouped <span class="ot">&lt;-</span> DT_sales[, .(<span class="at">total_units_sold =</span> <span class="fu">sum</span>(Units.Sold)), by <span class="ot">=</span> .(Product, Country)]</span>
+<span id="cb26-2"><a href="data-manipulation-with-datatable.html#cb26-2" aria-hidden="true" tabindex="-1"></a>DT_grouped[, <span class="fu">head</span>(.SD, <span class="dv">2</span>), by <span class="ot">=</span> .(Product)]</span>
+<span id="cb26-3"><a href="data-manipulation-with-datatable.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       Product Country total_units_sold</span></span>
+<span id="cb26-4"><a href="data-manipulation-with-datatable.html#cb26-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1: Carretera  Canada          34804.0</span></span>
+<span id="cb26-5"><a href="data-manipulation-with-datatable.html#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2: Carretera Germany          24944.0</span></span>
+<span id="cb26-6"><a href="data-manipulation-with-datatable.html#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3:   Montana Germany          28061.0</span></span>
+<span id="cb26-7"><a href="data-manipulation-with-datatable.html#cb26-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4:   Montana  Canada          31488.5</span></span>
+<span id="cb26-8"><a href="data-manipulation-with-datatable.html#cb26-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5:     Paseo  Canada          78191.5</span></span>
+<span id="cb26-9"><a href="data-manipulation-with-datatable.html#cb26-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6:     Paseo  Mexico          63282.0</span></span>
+<span id="cb26-10"><a href="data-manipulation-with-datatable.html#cb26-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7:      Velo  Mexico          26540.0</span></span>
+<span id="cb26-11"><a href="data-manipulation-with-datatable.html#cb26-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8:      Velo  France          36609.5</span></span>
+<span id="cb26-12"><a href="data-manipulation-with-datatable.html#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9:       VTT  Canada          41248.5</span></span>
+<span id="cb26-13"><a href="data-manipulation-with-datatable.html#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10:       VTT Germany          31131.0</span></span>
+<span id="cb26-14"><a href="data-manipulation-with-datatable.html#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11:  Amarilla  France          31603.0</span></span>
+<span id="cb26-15"><a href="data-manipulation-with-datatable.html#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12:  Amarilla     USA          35469.5</span></span></code></pre></div>
+<p><br></p>
+<p>Your Sales team only needs the <strong>Worst 2 Selling Countries per Product</strong> :</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="data-manipulation-with-datatable.html#cb27-1" aria-hidden="true" tabindex="-1"></a>DT_grouped[, <span class="fu">tail</span>(.SD, <span class="dv">2</span>), by <span class="ot">=</span> .(Product)]</span>
+<span id="cb27-2"><a href="data-manipulation-with-datatable.html#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       Product Country total_units_sold</span></span>
+<span id="cb27-3"><a href="data-manipulation-with-datatable.html#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1: Carretera  Mexico          27224.0</span></span>
+<span id="cb27-4"><a href="data-manipulation-with-datatable.html#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2: Carretera     USA          25818.0</span></span>
+<span id="cb27-5"><a href="data-manipulation-with-datatable.html#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3:   Montana  Mexico          31754.0</span></span>
+<span id="cb27-6"><a href="data-manipulation-with-datatable.html#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4:   Montana     USA          31612.5</span></span>
+<span id="cb27-7"><a href="data-manipulation-with-datatable.html#cb27-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5:     Paseo  France          71606.0</span></span>
+<span id="cb27-8"><a href="data-manipulation-with-datatable.html#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6:     Paseo     USA          69466.5</span></span>
+<span id="cb27-9"><a href="data-manipulation-with-datatable.html#cb27-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7:      Velo     USA          35761.0</span></span>
+<span id="cb27-10"><a href="data-manipulation-with-datatable.html#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8:      Velo  Canada          32464.0</span></span>
+<span id="cb27-11"><a href="data-manipulation-with-datatable.html#cb27-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9:       VTT     USA          34500.0</span></span>
+<span id="cb27-12"><a href="data-manipulation-with-datatable.html#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10:       VTT  Mexico          26129.0</span></span>
+<span id="cb27-13"><a href="data-manipulation-with-datatable.html#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11:  Amarilla  Mexico          28396.0</span></span>
+<span id="cb27-14"><a href="data-manipulation-with-datatable.html#cb27-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12:  Amarilla  Canada          29232.0</span></span></code></pre></div>
+<p><br></p>
+<p>Your Sales team finally made its mind : it needs the <strong>Top 2 Selling Countries per Product</strong> AND the <strong>Worst 2 Selling Countries per Product</strong><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> :</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="data-manipulation-with-datatable.html#cb28-1" aria-hidden="true" tabindex="-1"></a>DT_top_2 <span class="ot">&lt;-</span> DT_grouped[, <span class="fu">head</span>(.SD, <span class="dv">2</span>), by <span class="ot">=</span> .(Product)]</span>
+<span id="cb28-2"><a href="data-manipulation-with-datatable.html#cb28-2" aria-hidden="true" tabindex="-1"></a>DT_top_2[, category <span class="sc">:</span><span class="er">=</span> <span class="st">&quot;TOP&quot;</span>]</span>
+<span id="cb28-3"><a href="data-manipulation-with-datatable.html#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="data-manipulation-with-datatable.html#cb28-4" aria-hidden="true" tabindex="-1"></a>DT_worst_2 <span class="ot">&lt;-</span> DT_grouped[, <span class="fu">tail</span>(.SD, <span class="dv">2</span>), by <span class="ot">=</span> .(Product)]</span>
+<span id="cb28-5"><a href="data-manipulation-with-datatable.html#cb28-5" aria-hidden="true" tabindex="-1"></a>DT_worst_2[, category <span class="sc">:</span><span class="er">=</span> <span class="st">&quot;WORST&quot;</span>]</span>
+<span id="cb28-6"><a href="data-manipulation-with-datatable.html#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="data-manipulation-with-datatable.html#cb28-7" aria-hidden="true" tabindex="-1"></a>DT_top_worst_2 <span class="ot">&lt;-</span> <span class="fu">rbindlist</span>(<span class="fu">list</span>(DT_top_2, DT_worst_2)) <span class="co"># rbindlist will concatenate the two table.</span></span>
+<span id="cb28-8"><a href="data-manipulation-with-datatable.html#cb28-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-9"><a href="data-manipulation-with-datatable.html#cb28-9" aria-hidden="true" tabindex="-1"></a>DT_top_worst_2</span>
+<span id="cb28-10"><a href="data-manipulation-with-datatable.html#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       Product Country total_units_sold category</span></span>
+<span id="cb28-11"><a href="data-manipulation-with-datatable.html#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  1: Carretera  Canada          34804.0      TOP</span></span>
+<span id="cb28-12"><a href="data-manipulation-with-datatable.html#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  2: Carretera Germany          24944.0      TOP</span></span>
+<span id="cb28-13"><a href="data-manipulation-with-datatable.html#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  3:   Montana Germany          28061.0      TOP</span></span>
+<span id="cb28-14"><a href="data-manipulation-with-datatable.html#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  4:   Montana  Canada          31488.5      TOP</span></span>
+<span id="cb28-15"><a href="data-manipulation-with-datatable.html#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  5:     Paseo  Canada          78191.5      TOP</span></span>
+<span id="cb28-16"><a href="data-manipulation-with-datatable.html#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  6:     Paseo  Mexico          63282.0      TOP</span></span>
+<span id="cb28-17"><a href="data-manipulation-with-datatable.html#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  7:      Velo  Mexico          26540.0      TOP</span></span>
+<span id="cb28-18"><a href="data-manipulation-with-datatable.html#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  8:      Velo  France          36609.5      TOP</span></span>
+<span id="cb28-19"><a href="data-manipulation-with-datatable.html#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;  9:       VTT  Canada          41248.5      TOP</span></span>
+<span id="cb28-20"><a href="data-manipulation-with-datatable.html#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 10:       VTT Germany          31131.0      TOP</span></span>
+<span id="cb28-21"><a href="data-manipulation-with-datatable.html#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 11:  Amarilla  France          31603.0      TOP</span></span>
+<span id="cb28-22"><a href="data-manipulation-with-datatable.html#cb28-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 12:  Amarilla     USA          35469.5      TOP</span></span>
+<span id="cb28-23"><a href="data-manipulation-with-datatable.html#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 13: Carretera  Mexico          27224.0    WORST</span></span>
+<span id="cb28-24"><a href="data-manipulation-with-datatable.html#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 14: Carretera     USA          25818.0    WORST</span></span>
+<span id="cb28-25"><a href="data-manipulation-with-datatable.html#cb28-25" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 15:   Montana  Mexico          31754.0    WORST</span></span>
+<span id="cb28-26"><a href="data-manipulation-with-datatable.html#cb28-26" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 16:   Montana     USA          31612.5    WORST</span></span>
+<span id="cb28-27"><a href="data-manipulation-with-datatable.html#cb28-27" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 17:     Paseo  France          71606.0    WORST</span></span>
+<span id="cb28-28"><a href="data-manipulation-with-datatable.html#cb28-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 18:     Paseo     USA          69466.5    WORST</span></span>
+<span id="cb28-29"><a href="data-manipulation-with-datatable.html#cb28-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 19:      Velo     USA          35761.0    WORST</span></span>
+<span id="cb28-30"><a href="data-manipulation-with-datatable.html#cb28-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 20:      Velo  Canada          32464.0    WORST</span></span>
+<span id="cb28-31"><a href="data-manipulation-with-datatable.html#cb28-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 21:       VTT     USA          34500.0    WORST</span></span>
+<span id="cb28-32"><a href="data-manipulation-with-datatable.html#cb28-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 22:       VTT  Mexico          26129.0    WORST</span></span>
+<span id="cb28-33"><a href="data-manipulation-with-datatable.html#cb28-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 23:  Amarilla  Mexico          28396.0    WORST</span></span>
+<span id="cb28-34"><a href="data-manipulation-with-datatable.html#cb28-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 24:  Amarilla  Canada          29232.0    WORST</span></span>
+<span id="cb28-35"><a href="data-manipulation-with-datatable.html#cb28-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       Product Country total_units_sold category</span></span></code></pre></div>
 </div>
-<div id="merge-the-vlookup-variant-in-r" class="section level3" number="4.3.3">
-<h3>
-<span class="header-section-number">4.3.3</span> Merge, the VLOOKUP variant in R<a class="anchor" aria-label="anchor" href="#merge-the-vlookup-variant-in-r"><i class="fas fa-link"></i></a>
-</h3>
-<p>One common operation in Excel is to combine two tables, based on a specific column.</p>
+<div id="merge-the-vlookup-variant-in-r" class="section level3 unnumbered">
+<h3>Merge, the VLOOKUP variant in R</h3>
+<p>One common operation in Excel is to combine two tables, with the <code>VLOOKUP</code> (or <code>XLOOKUP</code>) formula.</p>
+<p>You can very easily do the same in R.
+Remember the <strong><code>CustomerSupport.csv</code></strong> file provided by Leandro ?
+Let’s say we want to add the Name of the Customer Support person to the previous Top/Worst Table.
+To combine both <code>DT_top_worst_2</code> and <code>DT_customer_support</code>, we use the <strong>merge</strong> function :</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="data-manipulation-with-datatable.html#cb29-1" aria-hidden="true" tabindex="-1"></a>DT_top_worst_2_with_customer_support <span class="ot">&lt;-</span> <span class="fu">merge</span>(DT_top_worst_2, DT_customer_support, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;Product&quot;</span>, <span class="st">&quot;Country&quot;</span>), <span class="at">all.x =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<p>Check the content of the newly created <code>DT_top_worst_2_with_customer_support</code> dataframe.</p>
+<p>Alleluia, we now have a new column <code>Sales.Person</code>.</p>
+<p>But, but wait… for “USA” the names of the <code>Sales.Person</code> are missing.</p>
+<p>Before you send an angry email to Leandro’s boss, remember where the “USA” value comes from ? Indeed, we replaced “United States of America” with “USA” in the <code>DT_sales</code> dataframe (from which the <code>DT_top_worst_2</code> is based on)<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a>.</p>
+<p>Relax, take it easy. What we have to do, yes you guessed correctly, is to adjust the <em>Country</em> column in the <code>DT_customer_support</code> dataframe :</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="data-manipulation-with-datatable.html#cb30-1" aria-hidden="true" tabindex="-1"></a>DT_customer_support[, Country <span class="sc">:</span><span class="er">=</span> <span class="fu">str_replace</span>(Country, <span class="st">&quot;United States of America&quot;</span>, <span class="st">&quot;USA&quot;</span>)]</span></code></pre></div>
+<p>And now we are good to merge :</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="data-manipulation-with-datatable.html#cb31-1" aria-hidden="true" tabindex="-1"></a>DT_top_worst_2_with_customer_support <span class="ot">&lt;-</span> <span class="fu">merge</span>(DT_top_worst_2, DT_customer_support,</span>
+<span id="cb31-2"><a href="data-manipulation-with-datatable.html#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">by =</span> <span class="fu">c</span>(<span class="st">&quot;Product&quot;</span>, <span class="st">&quot;Country&quot;</span>),</span>
+<span id="cb31-3"><a href="data-manipulation-with-datatable.html#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">all.x =</span> <span class="cn">TRUE</span></span>
+<span id="cb31-4"><a href="data-manipulation-with-datatable.html#cb31-4" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+<p>Some more explanations regarding the <strong>merge</strong> operation :</p>
+<ul>
+<li><strong>merge</strong> takes the following parameters : <code>merge(the_first_dataframe,  the_second_dataframe, by=c("the_first_column_to_match_on","the_second_column_to_match_on"))</code></li>
+<li>you can only merge two dataframe at the time. you can use as many matching columns as you want.</li>
+<li>we added the <code>all.x=TRUE</code> option to make sure that all rows of the first dataframe are kept, even if there was not match with the second dataframe.</li>
+</ul>
+<p>But how to merge two dataframes when the column names do not match ?</p>
+<p>Relax, take it easy. In this case, let’s imagine Leandro’s <code>DT_customer_support</code> dataframe has <strong>“country_sales”</strong> instead of <strong>“Country”</strong> for column. To merge with our <code>DT_top_worst_2</code>, we would then write :</p>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="data-manipulation-with-datatable.html#cb32-1" aria-hidden="true" tabindex="-1"></a>DT_top_worst_2_with_customer_support <span class="ot">&lt;-</span> <span class="fu">merge</span>(DT_top_worst_2, DT_customer_support,</span>
+<span id="cb32-2"><a href="data-manipulation-with-datatable.html#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">by.x =</span> <span class="fu">c</span>(<span class="st">&quot;Product&quot;</span>, <span class="st">&quot;Country&quot;</span>),</span>
+<span id="cb32-3"><a href="data-manipulation-with-datatable.html#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">by.y =</span> <span class="fu">c</span>(<span class="st">&quot;Product&quot;</span>, <span class="st">&quot;country_sales&quot;</span>),</span>
+<span id="cb32-4"><a href="data-manipulation-with-datatable.html#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">all.x =</span> <span class="cn">TRUE</span></span>
+<span id="cb32-5"><a href="data-manipulation-with-datatable.html#cb32-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
 </div>
-<div id="export-the-result-as-an-excel-file" class="section level3" number="4.3.4">
-<h3>
-<span class="header-section-number">4.3.4</span> Export the result as an Excel file :<a class="anchor" aria-label="anchor" href="#export-the-result-as-an-excel-file"><i class="fas fa-link"></i></a>
-</h3>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/openxlsx/man/write.xlsx.html">write.xlsx</a></span><span class="op">(</span><span class="va">DT_grouped</span>, <span class="st">"DT_grouped.xlsx"</span>, sheetName<span class="op">=</span><span class="st">"grouped Sales"</span><span class="op">)</span></code></pre></div>
-<p>To download this file, just check the box besides the filename (DT_grouped.xlsx) in the file explorer (bottom right) and <code>More</code> -&gt; <code>export</code></p>
-<p>Useful resources to learn data.table :</p>
+<div id="export-the-result-to-excel" class="section level3 unnumbered">
+<h3>Export the result to Excel</h3>
+<p>And finally, the last step : export your dataframe in to an Excel file :</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="data-manipulation-with-datatable.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.xlsx</span>(DT_top_worst_2_with_customer_support, <span class="st">&quot;./data/DT_top_worst_2_with_customer_support.xlsx&quot;</span>, <span class="at">sheetName =</span> <span class="st">&quot;grouped Sales&quot;</span>)</span></code></pre></div>
+<p>To download this file, just check the box besides the filename <code>DT_top_worst_2_with_customer_support.xlsx</code> in the file explorer (bottom right) and <code>More</code> -&gt; <code>export</code>.</p>
+</div>
+<div id="send-the-result-to-leandro" class="section level3 unnumbered">
+<h3>Send the result to Leandro</h3>
+<ul>
+<li>Note : this only works if you are using the Desktop Version of RStudio (e.g not the RStudio Cloud). For more info on how to install R and RStudio desktop see [here]</li>
+</ul>
+</div>
+<div id="exercice" class="section level3 unnumbered">
+<h3>Exercice</h3>
+<p>The <strong><code>Financial sample.xlsx</code></strong> file in the data folder contains 2 sheets : “Sales” &amp; “Managers.”</p>
+<ul>
+<li>Load the “Managers” sheet into adataframe named <code>DT_managers</code>,</li>
+<li>Compute the total sales per Year and per Product,</li>
+<li>merge the resulting dataframe with the <code>DT_managers</code> dataframe,</li>
+<li>save it as <code>DT_yearly_sales_per_manager.xlsx</code></li>
+</ul>
+<p>33.9</p>
+<p><input type="text" id="myText" value="Some text..."></p>
+<p id="result1">
+Coucou
+</p>
+<p id="result2">
+Coucou
+</p>
+<p><button onclick="myFunction()">Try it</button></p>
+<p><label for="cars">Choose a car:</label>
+<select name="cars" id="cars">
+<option value="volvo">Volvo</option>
+<option value="saab">Saab</option>
+<option value="opel">Opel</option>
+<option value="audi">Audi</option>
+</select>
+<br><br>
+<button onclick="myFunction2()">Try it</button></p>
+<p>
+Please select your age:
+</p>
+<p><input type="radio" id="age1" name="age" value="30">
+<label for="age1">0 - 30</label><br>
+<input type="radio" id="age2" name="age" value="60">
+<label for="age2">31 - 60</label><br><br />
+<input type="radio" id="age3" name="age" value="100">
+<label for="age3">61 - 100</label><br><br></p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="data-manipulation-with-datatable.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># i help you here : </span></span>
+<span id="cb34-2"><a href="data-manipulation-with-datatable.html#cb34-2" aria-hidden="true" tabindex="-1"></a>DT_managers <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">&quot;./data/Financial sample.xlsx&quot;</span>, <span class="at">sheet =</span> <span class="st">&quot;Managers&quot;</span>, <span class="at">detectDates =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+</div>
+<div id="useful-resources-to-learn-data.table" class="section level3 unnumbered">
+<h3>Useful resources to learn data.table :</h3>
 <ul>
 <li><a href="https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html" class="uri">https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html</a></li>
 <li><a href="https://franknarf1.github.io/r-tutorial/_book/tables.html#tables" class="uri">https://franknarf1.github.io/r-tutorial/_book/tables.html#tables</a></li>
 </ul>
-</div>
-</div>
-</div>
-  <div class="chapter-nav">
-<div class="empty"></div>
-<div class="empty"></div>
-</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <div id="book-on-this-page"></div>
-
-      <div class="book-extra">
-        <ul class="list-unstyled">
-          
-        </ul>
-</div>
-    </nav>
-</div>
 
 </div>
-</div> <!-- .container -->
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Leandro has nothing to do with this<a href="data-manipulation-with-datatable.html#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p>Leandro has nothing to do with this<a href="data-manipulation-with-datatable.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
 
-<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
-
-  <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Intro to R</strong>" was written by Clement Lefevre. It was last built on 2022-02-18.</p>
+          </div>
+        </div>
+      </div>
+<a href="your-first-notebook.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="visualization-with-ggplot2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
   </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/clementlefevre/r_training/tree/main/R/r_training/03-datable.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
 
-  <div class="col-12 col-md-6 mt-3">
-    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
-  </div>
-
-</div></div>
-</footer>
 </body>
+
 </html>
