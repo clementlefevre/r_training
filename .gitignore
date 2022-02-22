@@ -44,4 +44,4 @@ vignettes/*.pdf
 .csv
 .xlsx
 R/r_training/*.md
-R/r_training/_book/*.*
+R/r_training/_book

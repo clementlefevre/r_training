@@ -2,7 +2,7 @@
 
 
 ## Create a new Notebook {-}
-with your **Rstudio** project open :
+with your **RStudio** project open :
 
 `File` -> `New` -> `R Notebook` 
 (always click OK if you are suggested to install any additional packages)
@@ -40,7 +40,7 @@ RStudio will load the package, and we are now good to read our first Excel file 
 
 In the Code chunk, add the following line :
 
-`DT <- read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")`
+`DT <- read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/power_plants.xlsx")`
 
 
 Your code chunk should look like this :
@@ -49,28 +49,70 @@ Your code chunk should look like this :
 ````
 ```{r eval=FALSE}
 library(openxlsx)
-DT <- read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx")
+DT <- read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/power_plants.xlsx")
 ```
 ````
 
 Click again on the <span style="color:green;font-size: 24px">**►**</span> button
 
 You should then see in the top right area of your notebook, in the `Environment` tab a new variable `DT`. Click on it, a new View Tab should pop up with the content of your first Dataframe. 
-You can't believe it ? Neither i do. OK, open your favorite internet browser and open the following link : https://r-training-bookdown.s3.amazonaws.com/data/Financial+Sample.xlsx
+You can't believe it ? Neither i do. OK, open your favorite internet browser and open the following link : https://r-training-bookdown.s3.amazonaws.com/data/power_plants.xlsx
 
 This should download the very same Excel file. Open it with Excel. What do you see ? the same table as in the `DT` tab.
 
-You are now officially a Data Scientist.    
+You are now officially a Data Scientist.
 
+
+### Monkey See, Monkey Do. {-}
+Now, go to 
+
+`Tools` -> `Install Packages` 
+
+type **`leaflet`** in the search bar and click `install`
+
+Then just copy and past the following code in your chunk.
+
+For the moment, you do need to understand what we are doing, it is just about having a feeling how efficient working with R can be.
+
+
+```{r warning = FALSE}
+library(openxlsx)
+library(leaflet)
+DT <- read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/power_plants.xlsx")
+pal <- colorFactor(c("navy", "red"), domain = c("active", "phased out"))
+
+leaflet(DT) %>% addTiles() %>%
+  addCircleMarkers(
+    radius = ~ifelse(status == "active", 6, 10),
+    color = ~pal(status),
+    stroke = FALSE, fillOpacity = 0.5,label = ~Power.station
+  ) %>% addLegend(pal = pal, values = ~status, opacity = .8)
+```
+**Nuclear Power Plants in the world - source : Wikipedia**
+
+
+
+You are now officially a Senior Data Scientist. 
+
+Time to post the map on Instagram with the ***#Digitalierung*** hashtag and call it a day.
 
 #### Exercise {-}
 
 Upload an Excel of your own :
 
+##### With RStudio Cloud : {-}
+
 - click on the **`Upload`** button at the bottom right,
 - click on `Select File` (`Datei Auswählen`)
 - select your file 
 - click on `OK`.
+
+
+##### With RStudio Desktop : {-}
+
+- click on **`More`** button at the bottom right,
+- `Show Folder in new Window`. This should open the current folder where your RStudio Project is located.
+- Copy your Excel in this folder.
 
 The name of the file should then appear in the file explorer (bottom right of the screen). 
 
@@ -110,36 +152,8 @@ If you delete one of the ` character (a backtick), RStudio will not recognize it
 
 
 
-## How to read...  {-}
-
-
-
-#### ...an Excel file  {-}
-
-```{r eval=FALSE}
-library(openxlsx)
-DT  <- openxlsx::read.xlsx("/path/to/file.xlsx", sheet="the-name-of-the-sheet",startRow=1)
-```
-
-Make sure to adjust the sheet name if you have more than one sheet in your Excel file, and also the starting row index.
-
-#### ...a Comma separated values file (aka .csv)  {-}
-
-```{r eval=FALSE}
-library(data.table)
-DT<- data.table::fread("/path/to/file.csv", sep=";")
-```
-
-Make sure to adjust the separator.
-
-#### ...a Json file {-}
-
-```{r eval=FALSE}
-library(jsonlite)
-DT<- jsonlite::fromJSON("https://raw.githubusercontent.com/statsbomb/open-data/master/data/competitions.json",flatten = T)
-```
-
 
 ## Help ! {-}
 You are not alone. When facing an error message, or when trying to implement some logic (let's say you want to convert a date into a week number), the one and only way to solve this is to do [**this**](https://letmegooglethat.com/?q=R+extract+week+number+from+Date+stackoverflow).
-  
+
+

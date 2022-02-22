@@ -1,7 +1,7 @@
 {
-    "1": {
-        "question": "how many rows contains the DT Dataframe ?",
-         "choices": [
+    "A1": {
+        "question": "",
+        "choices": [
             1,
             100,
             4,
@@ -13,7 +13,7 @@
         ],
         "type": "radio-single"
     },
-    "2": {
+    "A2": {
         "question": "what is the median value of the Sales for Product ?",
         "choices": [
             1,
@@ -27,7 +27,7 @@
         ],
         "type": "radio-single"
     },
-      "3": {
+    "B1": {
         "question": "what is the median value of the Sales for Product ?",
         "choices": [
             1,
@@ -41,7 +41,7 @@
         ],
         "type": "radio-single"
     },
-      "4": {
+    "B2": {
         "question": "what is the median value of the Sales for Product ?",
         "choices": [
             1,
@@ -55,5 +55,4 @@
         ],
         "type": "radio-single"
     }
-    
 }

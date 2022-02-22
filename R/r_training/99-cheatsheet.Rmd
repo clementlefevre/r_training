@@ -1,0 +1,28 @@
+# Cheatsheet 
+
+
+## How to read...  {-}
+#### ...an Excel file  {-}
+
+```{r eval=FALSE}
+library(openxlsx)
+DT  <- openxlsx::read.xlsx("/path/to/file.xlsx", sheet="the-name-of-the-sheet",startRow=1)
+```
+
+Make sure to adjust the sheet name if you have more than one sheet in your Excel file, and also the starting row index.
+
+#### ...a Comma separated values file (aka .csv)  {-}
+
+```{r eval=FALSE}
+library(data.table)
+DT<- data.table::fread("/path/to/file.csv", sep=";")
+```
+
+Make sure to adjust the separator.
+
+#### ...a Json file {-}
+
+```{r eval=FALSE}
+library(jsonlite)
+DT<- jsonlite::fromJSON("https://raw.githubusercontent.com/statsbomb/open-data/master/data/competitions.json",flatten = T)
+```

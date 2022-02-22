@@ -1,24 +1,111 @@
 ---
-title: "R Notebook"
+title: "Scrap data from Wikipedia"
 output: html_notebook
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
-
 ```{r}
 library(rvest)
+library(stringr)
+library(data.table)
+library(openxlsx)
+```
 
+
+```{r}
 simple <- read_html("https://en.wikipedia.org/wiki/List_of_Nigerian_actors")
 
 DF <- simple %>%
  html_nodes(xpath='//*[@class="div-col"]//li//a')%>% html_attr('title') %>% as.data.frame()
 write.csv(DF, "names.csv")
+
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
 
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
+```{r}
+simple <- read_html("https://en.wikipedia.org/wiki/List_of_Russian-language_writers")
 
-The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+DT <- simple %>%
+ html_nodes(xpath='//*[@id="mw-content-text"]//div//ul//li[a[starts-with(@href, "/wiki")] and contains(text(),"(")]') %>%html_text()  %>% as.data.frame()
+names(DT) <- "raw_text"
+setDT(DT)
+
+DT[, c("Author", "rest", "_") := tstrsplit(raw_text, "(", fixed=TRUE)]
+DT[, c("Dates", "Comment") := tstrsplit(rest, ")", fixed=TRUE)]
+DT <-  DT[,c("Author","Dates","Comment")]
+DT[,Comment:= sub(", | ", "", Comment)]
+
+DT[, c("Birth", "Death") := tstrsplit(Dates, "–", fixed=TRUE)]
+DT[,Birth:= sub("born", "", Birth)]
+
+
+openxlsx::write.xlsx(DT, "Russians_authors.xslx")
+
+```
+
+
+
+```{r}
+html_page <- read_html("https://en.wikipedia.org/wiki/List_of_nuclear_power_stations")
+
+DT <- html_page %>%
+ html_nodes('table.wikitable') 
+
+DT_current <- DT[[1]] %>% html_table(table, header = TRUE)
+
+DT_in_construction <- DT[[2]] %>% html_table(table, header = TRUE)
+
+DT_phased_out <- DT[[3]] %>% html_table(table, header = TRUE)
+
+setDT(DT_current)
+setDT(DT_in_construction)
+setDT(DT_phased_out)
+
+DT_current[,status:="active"]
+dput(names(DT_current))
+setnames(DT_current, old=c("# units[note 1]", "Net capacity[note 2](MWe)"), new=c("number_of_units", "capacity.MWe"))
+
+DT_in_construction[,status:="in construction"]
+dput(names(DT_in_construction))
+setnames(DT_in_construction, old=c("No. ofunits", "Location\n", "Net capacityunder construction(MW)"), new=c("number_of_units", "Location","capacity.MWe"))
+
+DT_phased_out[,status:="phased out"]
+dput(names(DT_phased_out))
+setnames(DT_phased_out, old=c("Location\n", "Past capacity (MW)"), new=c("Location", "capacity.MWe"))
+```
+
+
+```{r}
+DT <-  rbindlist(list(DT_current, DT_in_construction, DT_phased_out), fill = TRUE)
+names(DT) <- make.names(names(DT))
+
+DT[,capacity.MWe := gsub("[\\(\\[].*?[\\)\\]]", "",capacity.MWe, perl = TRUE)]
+
+# Drop Akademik Lomonosov
+
+DT <- DT[Power.station !="Akademik Lomonosov\n"]
+
+splits <- max(lengths(strsplit(DT$Location, "/")))
+DT[, paste0("geocordinates_", 1:splits) := tstrsplit(Location, "/", fixed=T)]
+DT[,geocordinates_3:= gsub("[\\(\\[].*?[\\)\\]]", "",geocordinates_3, perl = TRUE)]
+DT[,c("lat", "lon"):= tstrsplit(geocordinates_3, ";", fixed=T)]
+DT[,lat:=as.numeric(gsub(" ", "", lat, fixed = TRUE))]
+DT[,lon:=gsub(" ", "", lon, fixed = TRUE)]
+DT[,lon:=gsub("\n|", "", lon, fixed = TRUE)]
+DT[,lon:=  gsub("\\xef\\xbb\\xbf", "", lon, useBytes = T)]
+DT[,lon:=  as.numeric(lon)]
+
+DT[,Country:=gsub("\n", "", Country, fixed = TRUE)]
+DT[,Country:=gsub('[^\x20-\x7E]', ' ', Country)]
+DT[,Country:=trimws(Country)]
+unique(DT$Country)
+
+DT <-  DT[,c("Power.station", "number_of_units", "capacity.MWe", "Country", 
+"status", "Constructionstart", "Plannedconnection", "lat","lon")]
+
+openxlsx::write.xlsx(DT, "power_plants.xlsx")
+
+
+
+```
+
+

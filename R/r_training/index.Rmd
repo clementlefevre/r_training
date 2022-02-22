@@ -13,15 +13,19 @@ biblio-style: apalike
 csl: chicago-fullnote-bibliography.csl
 ---
 
+
 # About  {-}
 
-A gentle introduction to data manipulation with R. 
+
+```{r pressure-plot, echo=FALSE ,  fig.cap='', fig.align='center', out.width='60%', out.extra='style="background-color: #b10034; padding:10px; display: inline-block;"'}
+knitr::include_graphics("images/cover.png")
+```
 
 
 
 ## Prerequisite   {-}
 
-No prior programming experience is required. The only requirements are :
+No prior programming experience is required. The minimum requirements are :
 
 - a [**RStudio Cloud account**](https://rstudio.cloud/), it's free.
 - a strong motivation to learn.
@@ -36,8 +40,9 @@ At the end of this course, you should be able to :
 - replace your Excel workflow with R
 - manipulate different types of data sources (excel, csv, json, database, pdf).
 - create and share relevant KPI (both figures and charts).
+- use basic statistical modeling : regression, clustering.
 - create a simple interactive Dashboard with Shiny.
-- make basic statistical modeling : regression, clustering.
+
 
 
 ## Why this course ?  {-}
@@ -48,65 +53,7 @@ From [Quora](https://qr.ae/pGDngn) : **Have you ever seen a data scientist get f
 
 
 ## Why R ?  {-}
-Why here ? Why me ?
+Sure, all the cool kids in town use python. But did you know that an R User has 32% more matching chances on Tinder than a python user ? Facts matter.
 
-
-
-
-#### Quizz {-}
-
-<div id="main_Quizz">
-<div id="Quizz_1" ></div>
-<div id="Answer_1" class="toggle"><p id="p_Answer_1">.</p>
-```{r eval=TRUE}
-    max(mtcars$mpg)
-```
-</div>
-
-
-<div id="Quizz_2" tabindex=-1></div>
-<div id="Answer_2" class="toggle"><p id="p_Answer_2">.</p>
-```{r eval=FALSE}
-    setdiff(mtcars, mtcars) %>% nrow()
-```
-</div>
-</div>
-
-
-```{r}
-htmltools::tags$script(src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-htmltools::tags$script(src = "quizz.json")
-htmltools::tags$script(src = "quizz9.js")
-```
-
-
-```{js}
-
-```
-
-
-
-
-```{r setup, echo=FALSE}
-library(knitr)
-```
-
-```{r run-numeric-md, include=FALSE}
-out = NULL
-for (i in as.character(unique(iris$Species))) {
-  out = c(out, knit_expand(text='#### Species = {{i}}'))
-}
-
-
-```
-
-`r paste(knit(text = out), collapse = '\n')`
-
-
-<input type="text" id="Q1" value="Some text...">
-
-<p id="A1">Coucou</p>
-
-
-<button onclick="checkAnswer('Q1', 'A1')">Try it</button>
+The biggest selling point for R is RStudio. RStudio is an amazing tool to work with when you are handling data. It is user friendly and provides a smooth introduction to programming for non-technical users. And keep in mind that for data manipulation, both R & python can achieve the same.
 

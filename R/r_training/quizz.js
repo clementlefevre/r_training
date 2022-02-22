@@ -14,6 +14,7 @@ var quizz_json = (function () {
   return json;
 })();
 
+var linked_level = { 0: "Head of Digital Transformation", 1: "Powerpoint TikTok Influencer", 2: "Tableau's Technical Debt Designer", 3: "Green Blockchain Expert", 4: "AI-generated Employee", 5: "Chief VisualBasic Officer" }
 
 
 function checkMultipleAnswers(quizz_id, answers) {
@@ -27,8 +28,8 @@ function checkMultipleAnswers(quizz_id, answers) {
 }
 
 function checkAnswer(quizz_id) {
-  var is_answer_correct;
 
+  var is_answer_correct = false;
 
   var radios = document.getElementsByName("radio-".concat(quizz_id.toString()))
   user_answer = [...radios].filter((x) => (x.checked)).map((x) => (x.value))[0]
@@ -38,13 +39,11 @@ function checkAnswer(quizz_id) {
     is_answer_correct = true;
   }
 
-
   var answer_chunk = document.getElementById("Answer_".concat(quizz_id.toString()))
-
   answer_chunk.classList.toggle('open');
+  document.getElementById("p_Answer_".concat(quizz_id)).innerHTML = is_answer_correct ? "<b>Correct !</b><br>Solution :" : "<b>Wrong !</b><br>Solution :";
 
-  document.getElementById("p_Answer_".concat(quizz_id.toString())).innerHTML = is_answer_correct ? "<b>Correct !</b><br>Solution :" : "<b>Wrong !</b><br>Solution :";
-
+  return (is_answer_correct)
 }
 
 function create_question_block(quizz_id) {
@@ -82,20 +81,22 @@ function create_question_block(quizz_id) {
     frag.appendChild(br);
   })
   parent.appendChild(frag);
-
-
-
-
 }
 
 var all_quizzes_id = $('[id^="Quizz_"]')
-var unique_quizzes_ids = new Set([...all_quizzes_id].map((x) => (x.id.split("_")[1])))
+var unique_quizzes_ids = [...all_quizzes_id].map((x) => (x.id.split("_")[1]))
 
-for (const id of [...unique_quizzes_ids]) {
+for (const id of unique_quizzes_ids) {
   create_question_block(id)
-
-
 }
+
+var score_elem = document.createElement("p");
+score_elem.id = "score-id"
+
+score_elem.innerHTML = ""
+score_elem.style.fontSize = "x-large";
+var src = document.getElementById("main_Quizz");
+src.appendChild(score_elem)
 
 $(":radio").change(function () {
   var names = {};
@@ -113,20 +114,41 @@ $(":radio").change(function () {
 }).change();
 
 
+
+var audio_OK = new Audio('https://r-training-bookdown.s3.amazonaws.com/data/soviet_union_national_anthem.mp3');
+var audio_NOK = new Audio('https://r-training-bookdown.s3.amazonaws.com/data/answer_NOK.mp3')
+
+
 var button = document.createElement("button");
 button.id = "button-answer"
 button.innerHTML = "Check my answers !";
 button.disabled = "true"
 button.onclick = function () {
 
-  for (const id of [...unique_quizzes_ids]) {
-    checkAnswer(id)
+  var all_anwers_OK = unique_quizzes_ids.map(checkAnswer)
 
+  let checker = arr => arr.every(Boolean);
+
+  var score = all_anwers_OK.filter(Boolean).length;
+
+  //
+
+  if (checker(all_anwers_OK)) {
+    audio_OK.play()
   }
+  else {
+    audio_NOK.play()
+  }
+
   var element = $("#main_Quizz");
   element.css('outline', 'none !important')
     .attr("tabindex", -1)
     .focus();
+
+  score_elem.innerHTML = `<br><span style="color:dodgerblue;font-weight:bold;font-size:40px;">${score} </span> / ${all_anwers_OK.length} -  <span style="font-weight:bold;font-size:18px;">LinkedIn rank : </span><br><span style="color:dodgerblue;font-size:36px"><b><i>${linked_level[score]}.</i></b></span>`
 }
 var parent_main = document.getElementById("main_Quizz");
 parent_main.appendChild(button);
+
+
+

@@ -4,39 +4,12 @@
 For this course we will use RStudio, a graphic interface to work with R.
 You have two options, and both are free :
 
-- option 1 : use the **RStudio Cloud** version, which does not requires any program to install, as it runs in your browser.You can even use it on your tablet !
+- option 1 : use the **RStudio Cloud** version, which does not requires any program to install, as it runs in your browser. You can even use it on your tablet !
 But RStudio Cloud (the free version) has limited computing resources, and your files are stored on an [US server](https://en.wikipedia.org/wiki/Patriot_Act).
 ^[Patriot Act : Under the act, US officials were granted access to any information physically within the United States (such as server farms), regardless of the information's origin. This meant that any information collected by an American server would have no protection from the US government.]
 - option 2 : install **RStudio Desktop**, it is faster to use  and your data are stored on your computer.
 
 
-
-#### Quizz {-}
-
-<div id="main_Quizz" tabindex=-1>
-<div id="Quizz_3" ></div>
-<div id="Answer_3" class="toggle"><p id="p_Answer_3">.</p>
-```{r eval=TRUE}
-    max(mtcars$mpg)
-```
-</div>
-
-
-<div id="Quizz_4" ></div>
-<div id="Answer_4" class="toggle"><p id="p_Answer_4">.</p>
-```{r eval=FALSE}
-    setdiff(mtcars, mtcars) %>% nrow()
-```
-</div>
-</div>
-
-
-
-```{r echo=FALSE}
-htmltools::tags$script(src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-htmltools::tags$script(src = "quizz.json")
-htmltools::tags$script(src = "quizz9.js")
-```
 
 ## Option 1 : Start RStudio Cloud {-}
 
@@ -82,6 +55,6 @@ Now that R is installed, you need to download and install RStudio.
 you're good to go !
 
 ### Overview of RStudio {-}
-```{r pressure-plot, echo=FALSE ,  fig.cap='A RStudio project', fig.align='center', out.width='200%'}
+```{r , echo=FALSE ,  fig.cap='A RStudio project', fig.align='center', out.width='200%', out.extra='style="background-color: #9ecff7; padding:10px; display: inline-block;"'}
 knitr::include_graphics("images/Rstudio_oveview.PNG")
 ```
