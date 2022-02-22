@@ -78,6 +78,8 @@ setnames(DT_phased_out, old=c("Location\n", "Past capacity (MW)"), new=c("Locati
 DT <-  rbindlist(list(DT_current, DT_in_construction, DT_phased_out), fill = TRUE)
 names(DT) <- make.names(names(DT))
 
+
+# Remove all text in brackets and brackets themselves :
 DT[,capacity.MWe := gsub("[\\(\\[].*?[\\)\\]]", "",capacity.MWe, perl = TRUE)]
 
 # Drop Akademik Lomonosov
@@ -97,7 +99,11 @@ DT[,lon:=  as.numeric(lon)]
 DT[,Country:=gsub("\n", "", Country, fixed = TRUE)]
 DT[,Country:=gsub('[^\x20-\x7E]', ' ', Country)]
 DT[,Country:=trimws(Country)]
-unique(DT$Country)
+
+DT[,capacity.MWe:=gsub(",", "", capacity.MWe, fixed = TRUE)]
+DT[,capacity.MWe:=as.numeric(capacity.MWe)]
+
+DT[,Power.station:=gsub("[\\(\\[].*?[\\)\\]]", "",Power.station, perl = TRUE)]
 
 DT <-  DT[,c("Power.station", "number_of_units", "capacity.MWe", "Country", 
 "status", "Constructionstart", "Plannedconnection", "lat","lon")]

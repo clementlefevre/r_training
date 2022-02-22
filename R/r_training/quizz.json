@@ -1,58 +1,102 @@
-{
-    "A1": {
-        "question": "",
-        "choices": [
-            1,
-            100,
-            4,
-            56,
-            987
-        ],
-        "answer": [
-            100
-        ],
-        "type": "radio-single"
-    },
-    "A2": {
-        "question": "what is the median value of the Sales for Product ?",
-        "choices": [
-            1,
-            23,
-            4,
-            56,
-            987
-        ],
-        "answer": [
-            1
-        ],
-        "type": "radio-single"
-    },
-    "B1": {
-        "question": "what is the median value of the Sales for Product ?",
-        "choices": [
-            1,
-            23,
-            4,
-            56,
-            987
-        ],
-        "answer": [
-            1
-        ],
-        "type": "radio-single"
-    },
-    "B2": {
-        "question": "what is the median value of the Sales for Product ?",
-        "choices": [
-            1,
-            23,
-            4,
-            56,
-            987
-        ],
-        "answer": [
-            1
-        ],
-        "type": "radio-single"
+[
+    {
+        "A1": {
+            "question": "How many power plants are listed in this table ?",
+            "choices": [
+                10,
+                100,
+                45,
+                215,
+                987
+            ],
+            "answer": [
+                215
+            ],
+            "type": "radio-single"
+        },
+        "A2": {
+            "question": "How many columns of type `num` (numeric) does this table contain ?",
+            "choices": [
+                1,
+                3,
+                4,
+                6,
+                0
+            ],
+            "answer": [
+                6
+            ],
+            "type": "radio-single"
+        },
+        "A3": {
+            "question": "Was is the biggest capacity in MWe ?",
+            "choices": [
+                1884,
+                7965,
+                3640,
+                23676,
+                5460
+            ],
+            "answer": [
+                7965
+            ],
+            "type": "radio-single"
+        },
+        "A4": {
+            "question": "Was is the median installed units ?",
+            "choices": [
+                0,
+                5,
+                6.4,
+                7.2,
+                2
+            ],
+            "answer": [
+                2
+            ],
+            "type": "radio-single"
+        },
+        "A5": {
+            "question": "What are the years of construction of the plant currently in construction ?",
+            "choices": [
+                "NA, 2015, 2018, 2010, 2017, 2020, 2021, 2019",
+                "NA, 2023, 2026, 2028, 2024",
+                "2015, 2018, 2010, 2017, 2020, 2021, 2019",
+                "2018, 2010, 2017, 2020, 2021",
+                "None"
+            ],
+            "answer": [
+                "NA, 2015, 2018, 2010, 2017, 2020, 2021, 2019"
+            ],
+            "type": "radio-single"
+        },
+        "B1": {
+            "question": "what is the median value of the Sales for Product ?",
+            "choices": [
+                1,
+                23,
+                4,
+                56,
+                987
+            ],
+            "answer": [
+                1
+            ],
+            "type": "radio-single"
+        },
+        "B2": {
+            "question": "what is the median value of the Sales for Product ?",
+            "choices": [
+                1,
+                23,
+                4,
+                56,
+                987
+            ],
+            "answer": [
+                1
+            ],
+            "type": "radio-single"
+        }
     }
-}
+]

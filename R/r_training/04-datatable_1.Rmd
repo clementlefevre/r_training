@@ -19,7 +19,7 @@ library(data.table)
 
 We start by loading our Sales Files again :
 
-```{r echo=FALSE, results='hide'}
+```{r echo=TRUE, results='hide'}
 # create a new 'data' folder to store the files :
 dir.create(file.path("./data"), showWarnings = FALSE)
 
@@ -29,19 +29,13 @@ download.file("https://r-training-bookdown.s3.amazonaws.com/data/Financial+sampl
 
 DT_sales <- read.xlsx("./data/Financial sample.xlsx", sheet = "Sales", detectDates = TRUE)
 ```
-Nobody is perfect, especially Leandro from Accounting. Although you begged him to send you the List of the Customer Support Staff as an Excel file, he insists on sending it as a .csv file. Relax, take it easy™ :
-
-```{r}
-download.file("https://r-training-bookdown.s3.amazonaws.com/data/CustomerSupport.csv", "./data/CustomerSupport.csv", mode = "wb")
-DT_customer_support <- fread("./data/CustomerSupport.csv")
-```
 
 
-And then, we use the `setDT` function to able to use data.table on our dataframes. Think of it like a magic incantation that unleash special skills  never seen on Linkedin.
+
+And then, we use the `setDT` function to able to use data.table on our dataframe. Think of it like a magic incantation that unleash special skills  never seen on Linkedin.
 
 ```{r}
 setDT(DT_sales)
-setDT(DT_customer_support)
 ```
 
 
@@ -213,6 +207,16 @@ DT_top_worst_2
 
 
 ### Merge, the VLOOKUP variant in R {-}
+
+Nobody is perfect, especially Leandro from Accounting. Although you begged him to send you the List of the Customer Support Staff as an Excel file, he insists on sending it as a .csv file. Relax, take it easy™ :
+
+```{r}
+download.file("https://r-training-bookdown.s3.amazonaws.com/data/CustomerSupport.csv", "./data/CustomerSupport.csv", mode = "wb")
+DT_customer_support <- fread("./data/CustomerSupport.csv")
+
+# The magic, the magic ...
+setDT(DT_customer_support)
+```
 
 One common operation in Excel is to combine two tables, with the `VLOOKUP` (or `XLOOKUP`) formula.
 

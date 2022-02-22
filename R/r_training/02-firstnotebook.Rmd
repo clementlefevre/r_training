@@ -94,7 +94,7 @@ leaflet(DT) %>% addTiles() %>%
 
 You are now officially a Senior Data Scientist. 
 
-Time to post the map on Instagram with the ***#Digitalierung*** hashtag and call it a day.
+Time to post the map on Instagram with the ***#DIGITALISIERUNG*** hashtag and call it a day.
 
 #### Exercise {-}
 

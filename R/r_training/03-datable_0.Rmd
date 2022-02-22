@@ -69,9 +69,8 @@ Now time to download our input files :
 # create a new 'data' folder to store the files :
 dir.create(file.path("./data"), showWarnings = FALSE)
 
-# download the samples files from the cloud :
+# download the sample file from the cloud :
 download.file("https://r-training-bookdown.s3.amazonaws.com/data/Financial+sample.xlsx", "./data/Financial sample.xlsx", mode = "wb")
-download.file("https://r-training-bookdown.s3.amazonaws.com/data/CustomerSupport.csv", "./data/CustomerSupport.csv", mode = "wb")
 ```
 *don't forget to click on the <span style="color:green;font-size: 24px">**►**</span> button above the code chunk to execute the code.*
 
@@ -155,34 +154,81 @@ max(DT_sales$Profit)
 
 
 
-## Quizz {-}
+## Quiz {-}
 
-Download the  [**Financial+sample.xlsx** Excel file](https://r-training-bookdown.s3.amazonaws.com/data/Financial+sample.xlsx) and copy it in your RStudio project.
-Load this file `openxlsx` into a Dataframe.
+
+```{r echo=FALSE}
+htmltools::tags$script(src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+htmltools::tags$script(src = "quizz.json")
+```
+
+Download the  [List of Nuclear Plants Excel file]("https://r-training-bookdown.s3.amazonaws.com/data/power_plants.xlsx") and copy/upload it in your RStudio project. Load this file with `openxlsx` into a Dataframe.
+
 
 
 <div id="main_Quizz" tabindex=-1>
 <div id="Quizz_A1" ></div>
 <div id="Answer_A1" class="toggle"><p id="p_Answer_A1">.</p>
 ```{r eval=TRUE}
-    max(mtcars$mpg)
+library(openxlsx)
+
+# create a new 'data' folder to store the files :
+dir.create(file.path("./data"), showWarnings = FALSE)
+
+# download the samples files from the cloud :
+download.file("https://r-training-bookdown.s3.amazonaws.com/data/power_plants.xlsx", "./data/power_plants.xlsx", mode = "wb")
+
+# load the file into R :
+DT <- openxlsx::read.xlsx("./data/power_plants.xlsx")
+
+# count the number of rows :
+nrow(DT)
 ```
 </div>
 ******
 
 <div id="Quizz_A2" ></div>
 <div id="Answer_A2" class="toggle"><p id="p_Answer_A2">.</p>
-```{r eval=FALSE}
-    setdiff(mtcars, mtcars) %>% nrow()
+```{r eval=TRUE}
+str(DT)
 ```
 </div>
+
+
+******
+
+<div id="Quizz_A3" ></div>
+<div id="Answer_A3" class="toggle"><p id="p_Answer_A3">.</p>
+```{r eval=TRUE}
+max(DT$capacity.MWe)
+```
 </div>
+
+
+******
+
+<div id="Quizz_A4" ></div>
+<div id="Answer_A4" class="toggle"><p id="p_Answer_A4">.</p>
+```{r eval=TRUE}
+# na.rm=TRUE means that we exclude the missing value to compute the median. Otherwise the result would be NULL.
+median(DT$number_of_units, na.rm=TRUE)
+```
+</div>
+
+
+******
+
+<div id="Quizz_A5" ></div>
+<div id="Answer_A5" class="toggle"><p id="p_Answer_A5">.</p>
+```{r eval=TRUE}
+unique(DT$Plannedconnection)
+```
+</div>
+
 
 
 
 ```{r echo=FALSE}
-htmltools::tags$script(src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-htmltools::tags$script(src = "quizz.json")
 htmltools::tags$script(src = "quizz.js")
 ```
 
