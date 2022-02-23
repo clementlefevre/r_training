@@ -12,7 +12,7 @@ bookdown::gitbook:
       text: "Edit"
     fontsettings:
       theme: white
-      family: sans
+      family: serif
       size: 2
 bookdown::pdf_book:
   includes:

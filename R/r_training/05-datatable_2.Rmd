@@ -2,7 +2,7 @@
 
 ## Pivot Table {-}
 
-The R equivalent an Excel Pivot Table is the group operation.
+The R equivalent of the Excel Pivot Table is the group operation.
 
 First thing first, we load the necessary packages :
 
@@ -13,7 +13,7 @@ library(stringr)
 ```
 
 <br />
-and load our sample Exce file :
+and load our sample Excel file :
 ```{r echo=TRUE, results='hide'}
 # create a new 'data' folder to store the files :
 dir.create(file.path("./data"), showWarnings = FALSE)
@@ -265,10 +265,29 @@ kable(head(DT_top_worst_2_with_customer_support)) %>%
 
 ## Export the result to Excel  {-}
 
-And finally, the last step : export your dataframe in to an Excel file :
+And finally, the last step : export your dataframe into an Excel file.
+
+As an authentic Excel aficionados, you want to add a filter button to the column names :
+
 ```{r}
-write.xlsx(DT_top_worst_2_with_customer_support, "./data/DT_top_worst_2_with_customer_support.xlsx", sheetName = "grouped Sales")
+# First we create a new Excel Wrokbook (wb):
+wb <- createWorkbook()
+
+# Then we create a sheet names grouped Sales" in this workbook :
+addWorksheet(wb, "grouped Sales")
+
+# We set the content of the first sheet of the workbook with our dataframe :
+writeData(wb, 1, DT_top_worst_2_with_customer_support)
+
+# we add a column filter on this sheet :
+addFilter(wb, 1, row = 1, cols = 1:ncol(DT_top_worst_2_with_customer_support))
+
+# Finally we save the workbook :
+saveWorkbook(wb, file = "./data/DT_top_worst_2_with_customer_support.xlsx", overwrite = TRUE)
+
 ```
+
+<br />
 
 
 To download this file when using RStudio Cloud, just check the box besides the filename `DT_top_worst_2_with_customer_support.xlsx` in the file explorer (bottom right) and `More` -> `export`.
@@ -303,7 +322,7 @@ Now just just fill and adjust the code chunk below with :
 
 - the recipient(s) adresses, separated with a comma
 - the "attachments" should be the full path of the file you want to attach.
-- you can attach as many attachments as you wish, just add a new line with  `Email[["attachments"]]$Add("D:/Users/clementlefevre/data/the_name_of_the_additional_file.xlsx")`
+
 
 ```{r eval = FALSE}
 # Load the DCOM library
@@ -323,10 +342,10 @@ Email[["subject"]] = "Quarterly Sales Analysis Updated"
 Email[["htmlbody"]] =
   "<h1>Quarterly Sales Analysis</h1>
   <p>Dear Leandro, the quarterly sales analysis has been updated.</p>
-  <p>You can find it attached
+  <p>You can find it attached. Please send me the listing as an Excel file next time or i unfriend you on LinkedIn. Best Regards.
   </p>"
 
-Email[["attachments"]]$Add("D:/danila_katzenberger/data/DT_top_worst_2_with_customer_support.xlsx")
+Email[["attachments"]]$Add("D:/daniela_katzenberger/data/DT_top_worst_2_with_customer_support.xlsx")
 Email$Send()
 
 # Close Outlook, clear the message
@@ -334,17 +353,13 @@ rm(Outlook, Email)
 ```
 
 
+>*you can attach as many attachments as you wish, just copy-paste the `Email[["attachments"]]...` line *
+>*and adjust the additional file name*
+
+
 
 
 ## Quizz {-}
-
-The **`Financial sample.xlsx`** file in the data folder contains 2 sheets : "Sales" & "Managers".
-
-
-- Compute the total sales per Year and per Product,
-- Load the "Managers" sheet into a dataframe named `DT_managers`,
-- merge the resulting dataframe with the `DT_managers` dataframe,
-- save it as `DT_yearly_sales_per_manager.xlsx`
 
 
 

@@ -81,7 +81,17 @@ In this course, we are going to achieve all those steps with R.
 At the end of this lesson, you will be able to write a script that complete all those tasks automatically.
 Bear with me, it can be challenging at times, but the rewards are worth the pain.
 
->*Non quia difficilia sunt, non audemus; sed quid non audemus, difficilia sunt.*
->*(Seneca, Epistuale Morales 104.26)*
+
+## Seneca, Epistuale Morales 104.26 {-}
+
+>*Non quia difficilia sunt, non audemus,*
+>*sed quid non audemus, difficilia sunt.*
+
+<br>
+
+>*It is not because things are difficult that we do not dare,*
+>*it is because we don't yet use R that they are difficult.*
+
+
 
 
