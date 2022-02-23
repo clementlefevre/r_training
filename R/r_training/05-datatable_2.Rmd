@@ -436,13 +436,6 @@ htmltools::tags$script(src = "quizz.js")
 
 
 
-
-
-```{r}
-# i help you here :
-DT_managers <- read.xlsx("./data/Financial sample.xlsx", sheet = "Managers", detectDates = TRUE)
-```
-
 ### Useful resources to learn data.table : {-}
 
 - https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html
