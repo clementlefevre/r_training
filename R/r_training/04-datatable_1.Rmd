@@ -2,6 +2,17 @@
 
 ## First steps with data.table  {-}
 
+
+To manipulate data with R, there are two options :
+
+- the **dplyr** package. Very beginner friendly, most of the tutorials you can find online are using `dplyr`.
+- the **data.table** package is the workhorse of data manipulation in R. For this introduction we will use it, for the following reasons : the syntax is more concise than `dplyr`, and it works seamlessly with large datasets (more than 1 million rows). In comparison, Excel can handle a maximum of 1,048,576 rows.
+
+```{r , echo=FALSE ,  fig.cap='when diving into the datalake, which one would you take with you ?', fig.align='center', out.width='50%'}
+knitr::include_graphics("images/dplyr_datatable_stickers.png")
+```
+
+
 The data.table syntax is as follow :
 
 **`DT[     filtering_condition    ,    formula    ,   grouping_columns    ]`**
@@ -9,7 +20,7 @@ The data.table syntax is as follow :
 That's it. The next part of this lesson will show you how to use it.
 
 
-First thing first, we load the necessary pacakges :
+First thing first, we load the necessary packages :
 
 ```{r}
 library(openxlsx)
@@ -38,6 +49,8 @@ And then, we use the `setDT` function to able to use data.table on our dataframe
 setDT(DT_sales)
 ```
 
+## Filtering  {-}
+
 
 Time to use the data.table syntax. First with the **`filtering_condition`** :
 Filter the dataframe on the "Carretera" **Product**  :
@@ -53,7 +66,100 @@ kable(head(DT_sales[Product == "Carretera"])) %>%
 ```
 
 
+
 <br />
+You can filter on multiple criteria :
+```{r results='hide'}
+DT_sales[(Product == "Carretera") & (Units.Sold > 3000)]
+```
+
+```{r echo=FALSE}
+library(kableExtra)
+kable(head(DT_sales[(Product == "Carretera") & (Units.Sold > 3000)])) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+
+
+
+<br />
+
+You can also Filter based on a **list of values** with the `%in%` operator :
+
+
+```{r results='hide'}
+DT_sales[Product %in% c("Carretera", "Montana")][order(Country)]
+```
+
+```{r echo=FALSE}
+library(kableExtra)
+kable(head(DT_sales[Product %in% c("Carretera", "Montana")][order(Country)])) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+
+<br />
+
+You can also Filter based on a **excluding condition**   :
+
+
+```{r results='hide'}
+# Show all Product that are NOT Montana
+DT_sales[Product != "Montana"][order(Country)]
+```
+
+```{r echo=FALSE}
+library(kableExtra)
+kable(head(DT_sales[Product != "Montana"][order(Country)])) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+<br />
+
+## Sorting  {-}
+
+To order (i.e. "sort") your table, guess what, we use the `order` function :
+```{r results='hide'}
+DT_sales[order(Units.Sold)]
+```
+
+
+```{r echo=FALSE}
+library(kableExtra)
+kable(head(DT_sales[order(Units.Sold)])) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+<br />
+To reverse the sorting order :
+```{r results='hide'}
+DT_sales[order(-Units.Sold)]
+```
+
+```{r echo=FALSE}
+library(kableExtra)
+kable(head(DT_sales[order(-Units.Sold)])) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+
+<br />
+To order using multiple columns :
+```{r results='hide'}
+DT_sales[order(Units.Sold, Manufacturing.Price)]
+```
+
+```{r echo=FALSE}
+library(kableExtra)
+kable(head(DT_sales[order(Units.Sold, Manufacturing.Price)])) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+
+<br />
+
+
+## Adding new columns  {-}
 And now the second data.table part, the **`formula`**: 
 
 We add a new column **"Profit.Margin"** = "Sale.Price" - "Manufacturing.Price" :*
@@ -77,10 +183,10 @@ unique(DT_sales$Country)
 ```
 
 
-
+## Selecting columns  {-}
 
 <br />
-Select three columns : "Product", "Country", "Profit.Margin" and copy the result in a new dataframe :
+Select three columns : **"Product", "Country", "Profit.Margin"** and copy the result into a new dataframe :
 ```{r results='hide'}
 DT_sales_light <- DT_sales[, c("Product", "Country", "Profit.Margin")]
 head(DT_sales_light)
@@ -95,216 +201,87 @@ kable(head(DT_sales_light[Product == "Carretera"])) %>%
 ```
 
 
+<br />
+```{r , echo=FALSE ,  fig.cap='when you forgot to use setDT', fig.align='center', out.width='50%'}
+knitr::include_graphics("images/caravaggio2.jpg")
+```
 
-#### Quizz {-}
+## Quizz {-}
 
-Download the  [**Financial+sample.xlsx** Excel file](https://r-training-bookdown.s3.amazonaws.com/data/Financial+sample.xlsx) and copy it in your RStudio project.
-Load this file `openxlsx` into a Dataframe.
+Download the  [List of Nuclear Plants Excel file](https://r-training-bookdown.s3.amazonaws.com/data/power_plants.xlsx) and copy/upload it in your RStudio project. Load this file with `openxlsx` into a Dataframe.
+Do not forget to apply the `setDT` function to your dataframe.
+
 
 
 <div id="main_Quizz" tabindex=-1>
-<div id="Quizz_A1" ></div>
-<div id="Answer_A1" class="toggle"><p id="p_Answer_A1">.</p>
+<div id="Quizz_B1" ></div>
+<div id="Answer_B1" class="toggle"><p id="p_Answer_B1">.</p>
 ```{r eval=TRUE}
-    max(mtcars$mpg)
+library(openxlsx)
+library(data.table)
+
+# create a new 'data' folder to store the files :
+dir.create(file.path("./data"), showWarnings = FALSE)
+
+# download the samples files from the cloud :
+download.file("https://r-training-bookdown.s3.amazonaws.com/data/power_plants.xlsx", "./data/power_plants.xlsx", mode = "wb")
+
+# load the file into R :
+DT <- openxlsx::read.xlsx("./data/power_plants.xlsx")
+
+# use the data.table magical powers :
+setDT(DT)
+
+DT[(Country == "Russia") & (status == "active") & (capacity.MWe > 2000)]
 ```
 </div>
 ******
 
-<div id="Quizz_A2" ></div>
-<div id="Answer_A2" class="toggle"><p id="p_Answer_A2">.</p>
-```{r eval=FALSE}
-    setdiff(mtcars, mtcars) %>% nrow()
+<div id="Quizz_B2" ></div>
+<div id="Answer_B2" class="toggle"><p id="p_Answer_B2">.</p>
+```{r eval=TRUE}
+DT[,capacity_per_unit_MWe := capacity.MWe/number_of_units]
+print(min(DT$capacity_per_unit_MWe, na.rm=TRUE))
+print(max(DT$capacity_per_unit_MWe, na.rm=TRUE))
 ```
 </div>
+
+
+******
+
+<div id="Quizz_B3" ></div>
+<div id="Answer_B3" class="toggle"><p id="p_Answer_B3">.</p>
+```{r eval=TRUE}
+DT[(lat>55.72)& (lat<55.97)&(lon<0), Country:="Democratic Republic of Scotland"]
+nrow(DT[Country=="Democratic Republic of Scotland"])
+```
 </div>
+
+
+******
+
+<div id="Quizz_B4" ></div>
+<div id="Answer_B4" class="toggle"><p id="p_Answer_B4">.</p>
+```{r eval=TRUE}
+DT_China_in_construction <- DT[(status=="in construction")& (Country == "China")][order(-Plannedconnection)]
+head(DT_China_in_construction, 1) # show only the first row
+```
+</div>
+
+
+******
+
+<div id="Quizz_B5" ></div>
+<div id="Answer_B5" class="toggle"><p id="p_Answer_B5">.</p>
+```{r eval=TRUE}
+DT_Germany_phased_out <- DT[(Country=="Germany") & (status=="phased out")]
+nrow(DT_Germany_phased_out)
+```
+</div>
+
 
 
 
 ```{r echo=FALSE}
-htmltools::tags$script(src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-htmltools::tags$script(src = "quizz.json")
 htmltools::tags$script(src = "quizz.js")
 ```
-
-  
-  
-  
-### Pivot table in R  {-}
-The R equivalent of the Excel Pivot Table is the group operation.
-
-We want to count the **number of Product categories per Country** :
-
-```{r}
-DT_sales[, .(count_Products = uniqueN(Product)), by = .(Country)]
-```
-
-<br />
-Create a pivot table with the **total number of units sold** per **Product** :
-
-```{r}
-DT_sales[, .(total_units_sold = sum(Units.Sold)), by = .(Product)]
-```
-
-Neat isn't it ?
-
-<br />
-But your Boss© want those results sorted per value. No big deal here :
-```{r}
-DT_sales[, .(total_units_sold = sum(Units.Sold)), by = .(Product)][order(total_units_sold)]
-```
-<br />
-But your Boss© want those results sorted per value, in the descending order :
-
-```{r}
-DT_sales[, .(total_units_sold = sum(Units.Sold)), by = .(Product)][order(-total_units_sold)]
-```
-<br />
-How about grouping the data on multiple columns ? Like per **Product** and **Country** ?
-```{r}
-DT_sales[, .(total_units_sold = sum(Units.Sold)), by = .(Product, Country)] %>% head()
-```
-<br />
-How about grouping the data on multiple columns ? Like by **Product** and **Country** ? With two grouping variables ?
-```{r}
-DT_sales[, .(total_units_sold = sum(Units.Sold), median_units_sold = median(Units.Sold)),
-  by = .(Product, Country)
-] %>% head()
-```
-
-<br />
-
-Your Sales team only needs the **Top 2 Selling Countries per Product** :
-
-For this, we first copy the grouped dataframe in a new variable `DT_grouped` :
-```{r}
-DT_grouped <- DT_sales[, .(total_units_sold = sum(Units.Sold)), by = .(Product, Country)]
-DT_grouped[, head(.SD, 2), by = .(Product)]
-```
-<br>
-
-Your Sales team only needs the **Worst 2 Selling Countries per Product** :
-```{r}
-DT_grouped[, tail(.SD, 2), by = .(Product)]
-```
-<br>
-
-Your Sales team finally made its mind : it needs the **Top 2 Selling Countries per Product** AND the **Worst 2 Selling Countries per Product**^[Leandro has nothing to do with this] :
-
-```{r}
-DT_top_2 <- DT_grouped[, head(.SD, 2), by = .(Product)]
-DT_top_2[, category := "TOP"]
-
-DT_worst_2 <- DT_grouped[, tail(.SD, 2), by = .(Product)]
-DT_worst_2[, category := "WORST"]
-
-DT_top_worst_2 <- rbindlist(list(DT_top_2, DT_worst_2)) # rbindlist will concatenate the two table.
-
-DT_top_worst_2
-```
-
-
-
-
-### Merge, the VLOOKUP variant in R {-}
-
-Nobody is perfect, especially Leandro from Accounting. Although you begged him to send you the List of the Customer Support Staff as an Excel file, he insists on sending it as a .csv file. Relax, take it easy™ :
-
-```{r}
-download.file("https://r-training-bookdown.s3.amazonaws.com/data/CustomerSupport.csv", "./data/CustomerSupport.csv", mode = "wb")
-DT_customer_support <- fread("./data/CustomerSupport.csv")
-
-# The magic, the magic ...
-setDT(DT_customer_support)
-```
-
-One common operation in Excel is to combine two tables, with the `VLOOKUP` (or `XLOOKUP`) formula.
-
-You can very easily do the same in R.
-Remember the **`CustomerSupport.csv`** file provided by Leandro ? 
-Let's say we want to add the Name of the Customer Support person to the previous Top/Worst Table.
-To combine both `DT_top_worst_2` and `DT_customer_support`, we use the **merge** function :
-```{r}
-DT_top_worst_2_with_customer_support <- merge(DT_top_worst_2, DT_customer_support, by = c("Product", "Country"), all.x = TRUE)
-```
-
-Check the content of the newly created `DT_top_worst_2_with_customer_support` dataframe.
-
-Alleluia, we now have a new column `Sales.Person`.
-
-But, but wait... for "USA" the names of the `Sales.Person` are missing.
-
-Before you send an angry email to Leandro's boss, remember where the "USA" value comes from ? Indeed, we replaced "United States of America" with "USA" in the `DT_sales` dataframe (from which the `DT_top_worst_2` is based on)^[Leandro has nothing to do with this].
-
-
-Relax, take it easy. What we have to do, yes you guessed correctly, is to adjust the *Country* column in the `DT_customer_support` dataframe :
-```{r}
-DT_customer_support[, Country := str_replace(Country, "United States of America", "USA")]
-```
-
-
-And now we are good to merge :
-```{r tidy = FALSE}
-DT_top_worst_2_with_customer_support <- merge(DT_top_worst_2, DT_customer_support,
-  by = c("Product", "Country"),
-  all.x = TRUE
-)
-```
-
-
-Some more explanations regarding the **merge** operation :
-
-- **merge** takes the following parameters : `merge(the_first_dataframe,  the_second_dataframe, by=c("the_first_column_to_match_on","the_second_column_to_match_on"))`
-- you can only merge two dataframe at the time. you can use as many matching columns as you want.
-- we added the `all.x=TRUE` option to make sure that all rows of the first dataframe are kept, even if there was not match with the second dataframe.
-
-But how to merge two dataframes when the column names do not match ?
-
-
-Relax, take it easy. In this case, let's imagine Leandro's `DT_customer_support` dataframe has  **"country_sales"** instead of **"Country"** for column. To merge with our `DT_top_worst_2`, we would then write :
-```{r tidy = FALSE, eval=FALSE}
-DT_top_worst_2_with_customer_support <- merge(DT_top_worst_2, DT_customer_support,
-  by.x = c("Product", "Country"),
-  by.y = c("Product", "country_sales"),
-  all.x = TRUE
-)
-```
-
-
-### Export the result to Excel  {-}
-
-And finally, the last step : export your dataframe in to an Excel file :
-```{r}
-write.xlsx(DT_top_worst_2_with_customer_support, "./data/DT_top_worst_2_with_customer_support.xlsx", sheetName = "grouped Sales")
-```
-
-
-To download this file, just check the box besides the filename `DT_top_worst_2_with_customer_support.xlsx` in the file explorer (bottom right) and `More` -> `export`.
-
-### Send the result to Leandro {-}
-
-* Note : this only works if you are using the Desktop Version of RStudio (e.g not the RStudio Cloud). For more info on how to install R and RStudio desktop see [here]
-
-### Exercice  {-}
-The **`Financial sample.xlsx`** file in the data folder contains 2 sheets : "Sales" & "Managers".
-
-- Load the "Managers" sheet into adataframe named `DT_managers`,
-- Compute the total sales per Year and per Product,
-- merge the resulting dataframe with the `DT_managers` dataframe,
-- save it as `DT_yearly_sales_per_manager.xlsx`
-
-
-
-
-
-
-
-```{r}
-# i help you here : 
-DT_managers <- read.xlsx("./data/Financial sample.xlsx", sheet = "Managers", detectDates = TRUE)
-```
-
-### Useful resources to learn data.table : {-}
-
-- https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html
-- https://franknarf1.github.io/r-tutorial/_book/tables.html#tables

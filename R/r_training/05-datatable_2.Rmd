@@ -1,0 +1,434 @@
+# Data manipulation - part 3
+
+## Pivot Table {-}
+
+The R equivalent an Excel Pivot Table is the group operation.
+
+First thing first, we load the necessary packages :
+
+```{r}
+library(openxlsx)
+library(data.table)
+library(stringr)
+```
+
+<br />
+and load our sample Exce file :
+```{r echo=TRUE, results='hide'}
+# create a new 'data' folder to store the files :
+dir.create(file.path("./data"), showWarnings = FALSE)
+
+# download the samples files from the cloud :
+download.file("https://r-training-bookdown.s3.amazonaws.com/data/Financial+sample.xlsx", "./data/Financial sample.xlsx", mode = "wb")
+
+DT_sales <- read.xlsx("./data/Financial sample.xlsx", sheet = "Sales", detectDates = TRUE)
+setDT(DT_sales)
+```
+
+Do no forget to adjust the Country Name for USA :
+```{r}
+DT_sales[, Country := str_replace(Country, "United States of America", "USA")]
+```
+
+
+We want to count the **number of Product categories per Country** :
+
+```{r results='hide'}
+DT_sales[, .(count_Products = uniqueN(Product)), by = .(Country)]
+```
+```{r echo=FALSE}
+library(kableExtra)
+kable(head(DT_sales[, .(count_Products = uniqueN(Product)), by = .(Country)])) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+
+
+
+<br />
+Create a pivot table with the **total number of units sold** per **Product** :
+
+```{r results='hide'}
+DT_sales[, .(total_units_sold = sum(Units.Sold)), by = .(Product)]
+```
+
+```{r echo=FALSE}
+kable(head(DT_sales[, .(total_units_sold = sum(Units.Sold)), by = .(Product)])) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+
+Neat isn't it ?
+
+<br />
+But your Boss© want those results sorted per value. No big deal here :
+```{r results='hide'}
+DT_sales[, .(total_units_sold = sum(Units.Sold)), by = .(Product)][order(total_units_sold)]
+```
+
+```{r echo=FALSE}
+kable(head(DT_sales[, .(total_units_sold = sum(Units.Sold)), by = .(Product)][order(total_units_sold)])) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+<br />
+But your Boss© want those results sorted per value, in the descending order :
+
+```{r results='hide'}
+DT_sales[, .(total_units_sold = sum(Units.Sold)), by = .(Product)][order(-total_units_sold)]
+```
+
+```{r echo=FALSE}
+kable(head(DT_sales[, .(total_units_sold = sum(Units.Sold)), by = .(Product)][order(-total_units_sold)])) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+<br />
+How about grouping the data on multiple columns ? Like per **Product** and **Country** ?
+```{r results='hide'}
+DT_grouped <- DT_sales[, .(total_units_sold = sum(Units.Sold)),
+  by = .(Product, Country)
+]
+```
+
+```{r echo=FALSE}
+kable(head(DT_grouped)) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+<br />
+How about grouping the data on multiple columns ? Like by **Product** and **Country** ? With two grouping variables ?
+```{r results='hide'}
+DT_grouped <- DT_sales[, .(
+  total_units_sold = sum(Units.Sold),
+  median_units_sold = median(Units.Sold)
+),
+by = .(Product, Country)
+]
+```
+
+```{r echo=FALSE}
+kable(head(DT_grouped)) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+
+<br />
+
+Your Sales team only needs the **Top 2 Selling Countries per Product** :
+
+For this, we first copy the grouped dataframe in a new variable `DT_grouped` :
+```{r results='hide'}
+DT_grouped <- DT_sales[, .(total_units_sold = sum(Units.Sold)),
+  by = .(Product, Country)
+]
+DT_grouped[, head(.SD, 2), by = .(Product)]
+```
+
+```{r echo=FALSE}
+kable(head(DT_grouped[, head(.SD, 2), by = .(Product)])) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+<br>
+
+Your Sales team only needs the **Worst 2 Selling Countries per Product** :
+```{r results='hide'}
+DT_grouped[, tail(.SD, 2), by = .(Product)]
+```
+
+```{r echo=FALSE}
+kable(DT_grouped[, tail(.SD, 2), by = .(Product)]) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+<br>
+
+Your Sales team finally made its mind : they need the **Top 2 Selling Countries per Product** AND the **Worst 2 Selling Countries per Product**^[Leandro has nothing to do with this] :
+
+```{r results='hide'}
+DT_top_2 <- DT_grouped[, head(.SD, 2), by = .(Product)]
+DT_top_2[, category := "TOP"]
+
+DT_worst_2 <- DT_grouped[, tail(.SD, 2), by = .(Product)]
+DT_worst_2[, category := "WORST"]
+
+DT_top_worst_2 <- rbindlist(list(DT_top_2, DT_worst_2)) # rbindlist will concatenate the two table.
+
+DT_top_worst_2
+```
+
+```{r echo=FALSE}
+kable(DT_top_worst_2) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+
+
+
+## VLOOKUP{-}
+
+Nobody is perfect, especially Leandro from Accounting. Although you begged him to send you the List of the Customer Support Staff as an Excel file, he insists on sending it as a .csv file. Relax, take it easy™ :
+
+```{r}
+download.file("https://r-training-bookdown.s3.amazonaws.com/data/CustomerSupport.csv", "./data/CustomerSupport.csv", mode = "wb")
+DT_customer_support <- fread("./data/CustomerSupport.csv")
+
+# The magic, the magic ...
+setDT(DT_customer_support)
+```
+
+One common operation in Excel is to combine two tables, with the `VLOOKUP` (or `XLOOKUP`) formula.
+
+You can very easily do the same in R.
+Remember the **`CustomerSupport.csv`** file provided by Leandro ? 
+Let's say we want to add the Name of the Customer Support person to the previous Top/Worst Table.
+To combine both `DT_top_worst_2` and `DT_customer_support`, we use the **merge** function :
+```{r results='hide'}
+DT_top_worst_2_with_customer_support <- merge(DT_top_worst_2, DT_customer_support,
+  by = c("Product", "Country"), all.x = TRUE
+)
+head(DT_top_worst_2_with_customer_support)
+```
+
+```{r echo=FALSE}
+kable(head(DT_top_worst_2_with_customer_support)) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+
+Check the content of the newly created `DT_top_worst_2_with_customer_support` dataframe.
+
+Alleluia, we now have a new column `Sales.Person`.
+
+But, but wait... for "USA" the names of the `Sales.Person` are missing.
+
+Before you send an angry email to Leandro's boss, remember where the "USA" value comes from ? Indeed, we replaced "United States of America" with "USA" in the `DT_sales` dataframe (from which the `DT_top_worst_2` is based on)^[Leandro has nothing to do with this].
+
+
+Relax, take it easy™. What we have to do, yes you guessed correctly, is to adjust the *Country* column in the `DT_customer_support` dataframe :
+```{r results='hide'}
+DT_customer_support[, Country := str_replace(Country, "United States of America", "USA")]
+DT_customer_support[Country=="USA"]
+```
+
+```{r echo=FALSE}
+kable(DT_customer_support[Country=="USA"]) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+
+<br />
+
+And now we are good to merge :
+```{r tidy = FALSE, results='hide'}
+DT_top_worst_2_with_customer_support <- merge(DT_top_worst_2, DT_customer_support,
+  by = c("Product", "Country"),
+  all.x = TRUE
+)
+
+head(DT_top_worst_2_with_customer_support)
+```
+
+```{r echo=FALSE}
+kable(head(DT_top_worst_2_with_customer_support)) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+<br />
+
+Some more explanations regarding the **merge** operation :
+
+- **merge** takes the following parameters : `merge(the_first_dataframe,  the_second_dataframe, by=c("the_first_column_to_match_on","the_second_column_to_match_on"))`
+- you can only merge two dataframe at the time. you can use as many matching columns as you want.
+- we added the `all.x=TRUE` option to make sure that all rows of the first dataframe are kept, even if there was not match with the second dataframe.
+
+But how to merge two dataframes when the column names do not match ?
+
+
+Relax, take it easy™. In this case, let's imagine Leandro's `DT_customer_support` dataframe has  **"country_sales"** instead of **"Country"** for column. To merge with our `DT_top_worst_2`, we would then write :
+```{r tidy = FALSE, eval=FALSE}
+DT_top_worst_2_with_customer_support <- merge(DT_top_worst_2, DT_customer_support,
+  by.x = c("Product", "Country"),
+  by.y = c("Product", "country_sales"),
+  all.x = TRUE
+)
+head(DT_top_worst_2_with_customer_support)
+```
+
+```{r echo=FALSE}
+kable(head(DT_top_worst_2_with_customer_support)) %>%
+  kable_styling() %>%
+  scroll_box(width = "100%", box_css = "border: 0px;")
+```
+
+
+## Export the result to Excel  {-}
+
+And finally, the last step : export your dataframe in to an Excel file :
+```{r}
+write.xlsx(DT_top_worst_2_with_customer_support, "./data/DT_top_worst_2_with_customer_support.xlsx", sheetName = "grouped Sales")
+```
+
+
+To download this file when using RStudio Cloud, just check the box besides the filename `DT_top_worst_2_with_customer_support.xlsx` in the file explorer (bottom right) and `More` -> `export`.
+
+## (optional) Email the result to Leandro {-}
+
+*Note : this only works if you are using the Desktop Version of RStudio (e.g not the RStudio Cloud).*
+
+Run this code only once to install the `RDMCOMClient`. 
+
+
+```{r eval = FALSE}
+install.packages("RDCOMClient", repos = "http://www.omegahat.net/R")
+```
+
+Once installed, you should see the following message in the `Console` :
+
+
+`package ‘RDCOMClient’ successfully unpacked and MD5 sums checked`
+
+
+If correctly installed, add an `#` to comment the line above. You code chunk should then look like this :
+
+```{r}
+#install.packages("RDCOMClient", repos = "http://www.omegahat.net/R")
+```
+
+
+<br />
+
+Now just just fill and adjust the code chunk below with :
+
+- the recipient(s) adresses, separated with a comma
+- the "attachments" should be the full path of the file you want to attach.
+- you can attach as many attachments as you wish, just add a new line with  `Email[["attachments"]]$Add("D:/Users/clementlefevre/data/the_name_of_the_additional_file.xlsx")`
+
+```{r eval = FALSE}
+# Load the DCOM library
+library (RDCOMClient)
+
+# Open Outlook
+Outlook <- COMCreate("Outlook.Application")
+
+# Create a new message
+Email = Outlook$CreateItem(0)
+
+# Set the recipient, subject, and body
+Email[["to"]] = "leandro.wurstenmeier@crazy-bikes.com"
+Email[["cc"]] = ""
+Email[["bcc"]] = ""
+Email[["subject"]] = "Quarterly Sales Analysis Updated"
+Email[["htmlbody"]] =
+  "<h1>Quarterly Sales Analysis</h1>
+  <p>Dear Leandro, the quarterly sales analysis has been updated.</p>
+  <p>You can find it attached
+  </p>"
+
+Email[["attachments"]]$Add("D:/danila_katzenberger/data/DT_top_worst_2_with_customer_support.xlsx")
+Email$Send()
+
+# Close Outlook, clear the message
+rm(Outlook, Email)
+```
+
+
+
+
+## Quizz {-}
+
+The **`Financial sample.xlsx`** file in the data folder contains 2 sheets : "Sales" & "Managers".
+
+
+- Compute the total sales per Year and per Product,
+- Load the "Managers" sheet into a dataframe named `DT_managers`,
+- merge the resulting dataframe with the `DT_managers` dataframe,
+- save it as `DT_yearly_sales_per_manager.xlsx`
+
+
+
+
+<div id="main_Quizz" tabindex=-1>
+<div id="Quizz_C1" ></div>
+<div id="Answer_C1" class="toggle"><p id="p_Answer_C1">.</p>
+```{r eval=TRUE}
+library(openxlsx)
+library(data.table)
+
+# create a new 'data' folder to store the files :
+dir.create(file.path("./data"), showWarnings = FALSE)
+
+# download the samples files from the cloud :
+download.file("https://r-training-bookdown.s3.amazonaws.com/data/Financial+sample.xlsx", "./data/Financial sample.xlsx", mode = "wb")
+
+DT_sales[Product=="Montana",.(total_sales=sum(Sales)), by=.(Country, Product)][Country=="Mexico"]
+
+```
+</div>
+******
+
+<div id="Quizz_C2" ></div>
+<div id="Answer_C2" class="toggle"><p id="p_Answer_C2">.</p>
+```{r eval=TRUE}
+DT_sales[(Month.Name %in% c("January", "February", "March"))&(Segment=="Midmarket"), .(total_Profit=sum(Profit,na.rm=TRUE)), by=.(Country)][order(total_Profit)]
+```
+</div>
+
+
+******
+
+<div id="Quizz_C3" ></div>
+<div id="Answer_C3" class="toggle"><p id="p_Answer_C3">.</p>
+```{r eval=TRUE}
+DT_managers <-  read.xlsx("./data/Financial sample.xlsx", sheet = "Managers", detectDates = TRUE)
+
+DT_sales_with_managers <- merge(DT_sales, DT_managers, by=c("Product"), all.x = TRUE)
+
+DT_sales_with_managers[Month.Name=="May",.(total_sales_may=sum(Sales,na.rm=TRUE)), by=.( Manager)][total_sales_may>1e6]
+
+```
+</div>
+
+
+******
+
+<div id="Quizz_C4" ></div>
+<div id="Answer_C4" class="toggle"><p id="p_Answer_C4">.</p>
+```{r eval=TRUE}
+DT_sales_with_managers[(Manager=="Gina Lolofrigida"),.(total_sales=sum(Sales,na.rm=TRUE)), by=.(Month.Name )][order(total_sales)]
+```
+</div>
+
+
+******
+
+<div id="Quizz_C5" ></div>
+<div id="Answer_C5" class="toggle"><p id="p_Answer_C5">.</p>
+```{r eval=TRUE}
+DT_sales_with_managers_and_customers_service <- merge(DT_sales_with_managers, DT_customer_support, by=c("Country", "Product"), all.x = TRUE)
+
+DT_sales_with_managers_and_customers_service[,.(number_of_rows=.N), by=.(Manager, Sales.Person)][order(-number_of_rows)]
+```
+</div>
+
+
+
+
+```{r echo=FALSE}
+htmltools::tags$script(src = "quizz.js")
+```
+
+
+
+
+
+```{r}
+# i help you here :
+DT_managers <- read.xlsx("./data/Financial sample.xlsx", sheet = "Managers", detectDates = TRUE)
+```
+
+### Useful resources to learn data.table : {-}
+
+- https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html
+- https://franknarf1.github.io/r-tutorial/_book/tables.html#tables

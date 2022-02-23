@@ -31,11 +31,11 @@
         "A3": {
             "question": "Was is the biggest capacity in MWe ?",
             "choices": [
-                1884,
-                7965,
-                3640,
-                23676,
-                5460
+                "1884 MWe",
+                "7965 MWe",
+                "3640 MWe",
+                "23676 MWe",
+                "5460 MWe"
             ],
             "answer": [
                 7965
@@ -57,7 +57,7 @@
             "type": "radio-single"
         },
         "A5": {
-            "question": "What are the years of construction of the plant currently in construction ?",
+            "question": "What are the years of construction of the plants currently in construction ?",
             "choices": [
                 "NA, 2015, 2018, 2010, 2017, 2020, 2021, 2019",
                 "NA, 2023, 2026, 2028, 2024",
@@ -71,30 +71,142 @@
             "type": "radio-single"
         },
         "B1": {
-            "question": "what is the median value of the Sales for Product ?",
+            "question": "Display the active Power Plants in Russia with a capacity bigger than 2000 MWe. How many are they ?",
             "choices": [
-                1,
-                23,
-                4,
-                56,
-                987
+                0,
+                5,
+                3,
+                7,
+                2
             ],
             "answer": [
-                1
+                7
             ],
             "type": "radio-single"
         },
         "B2": {
-            "question": "what is the median value of the Sales for Product ?",
+            "question": "Create new column called 'Capacity per Unit MWe'. What are the smallest and biggest capacities per unit ?",
             "choices": [
-                1,
-                23,
-                4,
-                56,
-                987
+                "min 11, max 1660",
+                "min 120, max 2569",
+                "min NA, max 560",
+                "min 1450, max 5320",
+                "min 2300, max 11890"
             ],
             "answer": [
-                1
+                "min 11, max 1660"
+            ],
+            "type": "radio-single"
+        },
+        "B3": {
+            "question": "For the Plants with a Latitude between 55.72 & 55.97 and a positive Longitude, change the 'Country' to 'Democratic Republic of Scotland'. How many plants are located in this new country ?",
+            "choices": [
+                0,
+                2,
+                3,
+                7,
+                12
+            ],
+            "answer": [
+                2
+            ],
+            "type": "radio-single"
+        },
+        "B4": {
+            "question": "Which Chinese plant will be the last to be connected ?",
+            "choices": [
+                "Kola",
+                "Xudabao",
+                "Zhangzhou",
+                "Kuosheng",
+                "San’ao"
+            ],
+            "answer": [
+                "Xudabao"
+            ],
+            "type": "radio-single"
+        },
+        "B5": {
+            "question": "How many plants did Germany phased out ?",
+            "choices": [
+                0,
+                5,
+                3,
+                12,
+                10
+            ],
+            "answer": [
+                10
+            ],
+            "type": "radio-single"
+        },
+        "C1": {
+            "question": "Using the DT_sales dataframe, compute the total Sales per Year and Per Country for the Product Montana.<br>What is the sales value for Mexico ?",
+            "choices": [
+                "1941329$",
+                "2711919$",
+                "3527382$",
+                "3566044$",
+                "3644127$"
+            ],
+            "answer": [
+                "1941329$"
+            ],
+            "type": "radio-single"
+        },
+        "C2": {
+            "question": "For the Midmarket Segment, compute the Total Profits per Country for the first Quartal 2014 (Jan to March). Which Country performed the best ?",
+            "choices": [
+                "Canada",
+                "Germany",
+                "France",
+                "Mexico",
+                "USA"
+            ],
+            "answer": [
+                "France"
+            ],
+            "type": "radio-single"
+        },
+        "C3": {
+            "question": "The **`Financial sample.xlsx`** file in the data folder contains 2 sheets : `Sales` & `Managers`. <br>Load the Managers sheet into a DT_manager dataframe. Then merge both DT_sales and DT_managers based on the Product  column. Name this dataframe DT_sales_managers.<br> Which Manager(s) sold for more than one Million $ of bikes in May ?",
+            "choices": [
+                "Albert Uberzoo & Johnny To",
+                "Kumbia Jankelevitch & Ronny Size",
+                "Gina Lolofrigida",
+                "Sonny Van der Plouf",
+                "Albert Uberzoo & Sonny Van der Plouf"
+            ],
+            "answer": [
+                "Kumbia Jankelevitch & Ronny Size"
+            ],
+            "type": "radio-single"
+        },
+        "C4": {
+            "question": "When did Gina Lolofrigida reached her target of 1 millions $ Sales ?",
+            "choices": [
+                "February",
+                "March",
+                "April",
+                "September",
+                "did not reached the target."
+            ],
+            "answer": [
+                "April"
+            ],
+            "type": "radio-single"
+        },
+        "C5": {
+            "question": "Now, merge the DT_sales_managers dataframe of Question 3 with the DT_customer_support dataframe provided by Leandro. Use the ´Country` and the `Product` column as merging column.<br> Which combination of Managers/Salesman got the most rows overall ? (Hint : use the `.N` operator to count the number of rows.)",
+            "choices": [
+                "Gina Lolofrigida with Muyiwa Ademola",
+                "Johnny To with Osita Iheme",
+                "Sonny Van der Plouf with Femi Branch",
+                "Kumbia Jankelevitch with Mike Bamiloye",
+                "Ronny Size with Adewale Akinnuoye-Agbaje"
+            ],
+            "answer": [
+                "Kumbia Jankelevitch with Mike Bamiloye"
             ],
             "type": "radio-single"
         }

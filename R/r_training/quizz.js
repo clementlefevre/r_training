@@ -1,7 +1,7 @@
 // For Prod, copy this snippet into "quizz.js" :
 
 function start_quiz(quizz_data) {
-  var linked_level = { 0: "Head of Digital Transformation", 1: "Powerpoint TikTok Influencer", 2: "Tableau's Technical Debt Designer", 3: "Green Blockchain Expert", 4: "AI-generated Employee", 5: "Chief VisualBasic Officer" }
+  var linked_level = { 0: "Head of Digital Transformation", 1: "Powerpoint TikTok Influencer", 2: "Tableau's Technical Debt Designer", 3: "Green Blockchain Evangelist", 4: "AI-generated Employee", 5: "Chief VisualBasic Officer" }
 
 
 
@@ -42,6 +42,7 @@ function start_quiz(quizz_data) {
     frag.appendChild(br);
     question_data.choices.forEach(function (choice, i) {
       var choiceLabel = document.createElement('label');
+      choiceLabel.style.fontFamily = "courier";
       var choiceSelection = document.createElement('input');
 
       choiceSelection.setAttribute('type', 'radio');
@@ -117,7 +118,7 @@ function start_quiz(quizz_data) {
       .attr("tabindex", -1)
       .focus();
 
-    score_elem.innerHTML = `<br><span style="color:dodgerblue;font-weight:bold;font-size:40px;">${score} </span> / ${all_anwers_OK.length} -  <span style="font-weight:bold;font-size:18px;">LinkedIn rank : </span><br><span style="color:dodgerblue;font-size:36px"><b><i>${linked_level[score]}.</i></b></span>`
+    score_elem.innerHTML = `<br><span style="color:dodgerblue;font-weight:bold;font-size:40px;">${score} </span> / ${all_anwers_OK.length} <span style="font-weight:bold;font-size:18px;">LinkedIn rank : </span><br><span style="color:dodgerblue;font-size:36px"><b><i>${linked_level[score]}.</i></b></span>`
   }
   var parent_main = document.getElementById("main_Quizz");
   parent_main.appendChild(button);

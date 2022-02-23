@@ -1,5 +1,5 @@
 --- 
-title: "Intro to R"
+title: "Excel in R !"
 author: "Clement Lefevre"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -14,12 +14,24 @@ csl: chicago-fullnote-bibliography.csl
 ---
 
 
-# About  {-}
+#   {-}
 
 
 ```{r pressure-plot, echo=FALSE ,  fig.cap='', fig.align='center', out.width='60%', out.extra='style="background-color: #b10034; padding:10px; display: inline-block;"'}
 knitr::include_graphics("images/cover.png")
 ```
+
+
+
+
+## What you will learn  {-}
+
+At the end of this course, you should be able to :
+
+- replace your Excel workflow with R
+- manipulate different types of data sources (excel, csv, json, database, pdf).
+- create and share relevant KPI (both figures and charts).
+- create a simple interactive Dashboard with Shiny.
 
 
 
@@ -32,19 +44,6 @@ No prior programming experience is required. The minimum requirements are :
 - time.
 
 
-
-## What you will learn  {-}
-
-At the end of this course, you should be able to :
-
-- replace your Excel workflow with R
-- manipulate different types of data sources (excel, csv, json, database, pdf).
-- create and share relevant KPI (both figures and charts).
-- use basic statistical modeling : regression, clustering.
-- create a simple interactive Dashboard with Shiny.
-
-
-
 ## Why this course ?  {-}
 
 From [Quora](https://qr.ae/pGDngn) : **Have you ever seen a data scientist get fired? If yes, why?**
@@ -53,7 +52,36 @@ From [Quora](https://qr.ae/pGDngn) : **Have you ever seen a data scientist get f
 
 
 ## Why R ?  {-}
-Sure, all the cool kids in town use python. But did you know that an R User has 32% more matching chances on Tinder than a python user ? Facts matter.
+Sure, all the cool kids in town use python. But did you know that a R User has 32% more matching chances on Tinder than a python user ? Facts matter.
 
 The biggest selling point for R is RStudio. RStudio is an amazing tool to work with when you are handling data. It is user friendly and provides a smooth introduction to programming for non-technical users. And keep in mind that for data manipulation, both R & python can achieve the same.
+
+
+## Workflow with Excel  {-}
+A typical workflow with Excel consists in the following steps :
+
+- load a couple of Excel or csv files,
+- filter the tables based on given criteria,
+- join the tables (using the  'VLOOKUP' Formula in english, 'SVERWEIS' in German, 'RECHERCHEV' in french)
+- select columns of interest
+- add new columns such as `=(A1-D4)*24`
+- create a pivot table
+- add two barcharts
+- save the output in an other Excel file & sent it via Email.
+- call it a day.    
+
+```{r excel_meme, echo=FALSE,  fig.cap='', fig.align='center', out.width='50%'}
+knitr::include_graphics("images/excel_meme.jfif")
+```
+
+
+
+When this task occurs once a week, R can automatize it and allows you to spend more time on highly-valuable Teams© meetings.
+In this course, we are going to achieve all those steps with R.
+At the end of this lesson, you will be able to write a script that complete all those tasks automatically.
+Bear with me, it can be challenging at times, but the rewards are worth the pain.
+
+>*Non quia difficilia sunt, non audemus; sed quid non audemus, difficilia sunt.*
+>*(Seneca, Epistuale Morales 104.26)*
+
 

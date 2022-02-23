@@ -64,9 +64,7 @@ You are now officially a Data Scientist.
 
 
 ### Monkey See, Monkey Do. {-}
-Now, go to 
-
-`Tools` -> `Install Packages` 
+Now, go to `Tools` -> `Install Packages` 
 
 type **`leaflet`** in the search bar and click `install`
 
@@ -75,7 +73,7 @@ Then just copy and past the following code in your chunk.
 For the moment, you do need to understand what we are doing, it is just about having a feeling how efficient working with R can be.
 
 
-```{r warning = FALSE}
+```{r figs, warning = FALSE}
 library(openxlsx)
 library(leaflet)
 DT <- read.xlsx("https://r-training-bookdown.s3.amazonaws.com/data/power_plants.xlsx")
@@ -88,8 +86,8 @@ leaflet(DT) %>% addTiles() %>%
     stroke = FALSE, fillOpacity = 0.5,label = ~Power.station
   ) %>% addLegend(pal = pal, values = ~status, opacity = .8)
 ```
-**Nuclear Power Plants in the world - source : Wikipedia**
 
+*Nuclear Power Plants in the world (source : Wikipedia)*
 
 
 You are now officially a Senior Data Scientist. 
