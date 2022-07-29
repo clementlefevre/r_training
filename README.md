@@ -1,6 +1,5 @@
 # training
-Usesul resources
+A very hands-on introduction to R for Excel users.
 
 
-## [DP-203 Azure Data Engineer](https://github.com/clementlefevre/training/blob/main/DP_203.md)
-## [Become a Data Scientist in 32 minutes]
+
